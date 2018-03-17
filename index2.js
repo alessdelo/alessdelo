@@ -28,7 +28,7 @@ express()
   */
 
 router.get('/', function(req, res, next) {
-  res.render('pages/index2', {title: 'Router test' })
+  res.render('pages/index3', {title: 'Router test' })
   })
 
 module.exports=router
