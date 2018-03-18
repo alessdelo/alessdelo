@@ -39,4 +39,4 @@ router.get('/', function(req, res, next) {
 
 module.exports=router
 
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+  app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
