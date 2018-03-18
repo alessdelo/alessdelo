@@ -5,6 +5,8 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const PORT = process.env.PORT || 5000
+
+/*
 const router = express.Router()
 
 const header = "header1.ejs"
@@ -13,7 +15,9 @@ const footer = "footer.ejs"
 
 app.use('/', routes)
 
-/*
+*/
+
+
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
@@ -26,7 +30,7 @@ express()
     .get('/pag5', (req, res) => res.render('pages/pag5'))
 .post('bla', (req, res) => res.render('pages/post'))
 
-  */
+  /*
 
   router.use(express.static(path.join(__dirname, 'public')))
   app.set('views', path.join(__dirname, 'views'))
@@ -38,5 +42,7 @@ router.get('/', function(req, res, next) {
   })
 
 module.exports=router
+
+*/
 
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
