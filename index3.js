@@ -32,24 +32,24 @@ express()
 */
 
 
-/*
+
 var pageData = {
-  'home': {
+  home: {
     title:'home',
     content:'this is the home page...',
     nav: nav,
     header: header
     footer: footer
   },
-    'about': {
+  about: {
     title:'about',
     content:'this is the page about....',
     nav: nav,
-    header: header
+    header: header,
     footer: footer
   }
 }
-*/
+
 
 /*
 var pageRowData = require('./pageData')
