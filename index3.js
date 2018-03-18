@@ -32,7 +32,7 @@ express()
 */
 
 
-
+/*
 var pageData = {
   home {
     title:'home',
@@ -49,7 +49,7 @@ var pageData = {
     footer: footer
   }
 }
-
+*/
 
 /*
 var pageRowData = require('./pageData')
@@ -66,5 +66,5 @@ var app = express()
 
 
 
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+  app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
