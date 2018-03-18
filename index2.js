@@ -11,7 +11,7 @@ const header = "header1.ejs"
 const navbar = "nav1.ejs"
 const footer = "footer.ejs"
 
-
+app.use('/', routes)
 
 /*
 express()
