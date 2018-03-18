@@ -20,7 +20,7 @@ var indexData = {
 
 var homeData = {
   title:'page two',
-  content:'bla2 bla2...',
+  content:'../contents/home.ejs',
   testfile:'testfile.ejs', 
   nav: nav,
   header: header,
@@ -37,7 +37,7 @@ var aboutData = {
 
 var productsData = {
   title:'products',
-  content:'bla2 bla2...',
+  content:'../contents/products.ejs',
   nav: nav,
   header: header,
   footer: footer
