@@ -28,8 +28,8 @@ express()
   */
 
   router.use(express.static(path.join(__dirname, 'public')))
-  router.set('views', path.join(__dirname, 'views'))
-  router.set('view engine', 'ejs')
+  express.set('views', path.join(__dirname, 'views'))
+  express.set('view engine', 'ejs')
 
 
 router.get('/', function(req, res, next) {
