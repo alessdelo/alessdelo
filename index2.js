@@ -2,6 +2,7 @@
 
 
 const express = require('express')
+const app = express()
 const path = require('path')
 const PORT = process.env.PORT || 5000
 const router = express.Router()
@@ -28,8 +29,8 @@ express()
   */
 
   router.use(express.static(path.join(__dirname, 'public')))
-  express.set('views', path.join(__dirname, 'views'))
-  express.set('view engine', 'ejs')
+  app.set('views', path.join(__dirname, 'views'))
+  app.set('view engine', 'ejs')
 
 
 router.get('/', function(req, res, next) {
