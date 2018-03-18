@@ -4,7 +4,9 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
+var header = "../partials/header2.ejs"
 var nav = "../partials/nav4.ejs"
+var footer = "../partials/footer1.ejs"
 
 var indexData = {
   title:'page two',
