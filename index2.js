@@ -24,7 +24,7 @@ express()
     .get('/pag4', (req, res) => res.render('pages/pag4'))
     .get('/pag5', (req, res) => res.render('pages/pag5'))
 .post('bla', (req, res) => res.render('pages/post'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
   */
 
   router.use(express.static(path.join(__dirname, 'public')))
@@ -37,3 +37,5 @@ router.get('/', function(req, res, next) {
   })
 
 module.exports=router
+
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
