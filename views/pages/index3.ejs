@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-  <% include ../partials/header2.ejs %>
+   <%- include(header) %>
 </head>
 
 <body>
 
-  <% include ../partials/nav4.ejs %>
   <%- include(nav) %>
 
 
@@ -18,7 +17,7 @@
     <%- include('../partials/' +  testfile) %>
 
    
-  <% include ../partials/footer1.ejs %>
+   <%- include(footer) %>
   
   </body>
 </html>
