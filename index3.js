@@ -8,6 +8,7 @@ var header = "../partials/header2.ejs"
 var nav = "../partials/nav4.ejs"
 var footer = "../partials/footer1.ejs"
 
+/*
 var indexData = {
   title:'page two',
   content:'bla2 bla2...',
@@ -16,6 +17,7 @@ var indexData = {
   header: header,
   footer: footer
 }
+*/
 
 
 express()
