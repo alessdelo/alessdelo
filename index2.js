@@ -6,15 +6,15 @@ const app = express()
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
-/*
-const router = express.Router()
-
 const header = "header1.ejs"
 const navbar = "nav1.ejs"
 const footer = "footer.ejs"
 
-app.use('/', routes)
 
+/*
+const router = express.Router()
+
+app.use('/', routes)
 */
 
 
