@@ -29,7 +29,7 @@ var homeData = {
 
 var aboutData = {
   title:'about',
-  content:'bla2 bla2...',
+  content:'../contents/about.ejs',
   nav: nav,
   header: header,
   footer: footer
