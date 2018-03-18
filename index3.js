@@ -8,7 +8,7 @@ var header = "../partials/header2.ejs"
 var nav = "../partials/nav4.ejs"
 var footer = "../partials/footer1.ejs"
 
-/*
+
 var indexData = {
   title:'page two',
   content:'bla2 bla2...',
@@ -17,17 +17,18 @@ var indexData = {
   header: header,
   footer: footer
 }
-*/
 
+/*
 var pageRowData = require('./pageData')
 
 var pageJsonData = JSON.parse(pageRowData)
+*/
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
- .get('/', (req, res) => res.render('pages/index3',pageJsonData))
+ .get('/', (req, res) => res.render('pages/index3',indexData))
     .get('/pag2', (req, res) => res.render('pages/pag2'))
     .get('/pag3', (req, res) => res.render('pages/pag3'))
     .get('/pag4', (req, res) => res.render('pages/pag4'))
