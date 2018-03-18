@@ -4,6 +4,7 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
+var index = 'pages/index4'
 var header = "../partials/header2.ejs"
 var nav = "../partials/nav5.ejs"
 var footer = "../partials/footer1.ejs"
@@ -90,10 +91,10 @@ var app = express()
 
  // app.get('/', (req, res) => res.render('pages/index3',indexData))
 
- app.get('/', (req, res) => res.render('pages/index3',homeData))
+ app.get('/', (req, res) => res.render(index,homeData))
 // app.get('/home', (req, res) => res.render('pages/index3',homeData))
- app.get('/about', (req, res) => res.render('pages/index3',aboutData))
- app.get('/products', (req, res) => res.render('pages/index3',productsData))
+ app.get('/about', (req, res) => res.render(index,aboutData))
+ app.get('/products', (req, res) => res.render(index,productsData))
 
 
 
