@@ -19,6 +19,7 @@ var indexData = {
 }
 */
 
+var indexData = require('./pageData')
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
