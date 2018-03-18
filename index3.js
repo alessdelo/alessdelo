@@ -38,7 +38,7 @@ var pageData = {
     title:'home',
     content:'this is the home page...',
     nav: nav,
-    header: header
+    header: header,
     footer: footer
   },
   about: {
