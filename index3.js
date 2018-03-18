@@ -12,7 +12,9 @@ var indexData = {
   title:'page two',
   content:'bla2 bla2...',
   testfile:'testfile.ejs', 
-  nav: nav
+  nav: nav,
+  header: header,
+  footer: footer
 }
 
 
