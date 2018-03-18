@@ -91,7 +91,7 @@ var app = express()
  // app.get('/', (req, res) => res.render('pages/index3',indexData))
 
  app.get('/', (req, res) => res.render('pages/index3',homeData))
- app.get('/home', (req, res) => res.render('pages/index3',homeData))
+// app.get('/home', (req, res) => res.render('pages/index3',homeData))
  app.get('/about', (req, res) => res.render('pages/index3',aboutData))
  app.get('/products', (req, res) => res.render('pages/index3',productsData))
 
