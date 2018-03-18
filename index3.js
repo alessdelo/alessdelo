@@ -18,6 +18,22 @@ var indexData = {
   footer: footer
 }
 
+var aboutData = {
+  title:'about',
+  content:'bla2 bla2...',
+  nav: nav,
+  header: header,
+  footer: footer
+}
+
+var productsData = {
+  title:'products',
+  content:'bla2 bla2...',
+  nav: nav,
+  header: header,
+  footer: footer
+}
+
 /*
 express()
   .use(express.static(path.join(__dirname, 'public')))
