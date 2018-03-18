@@ -20,9 +20,8 @@ var indexData = {
 }
 
 var homeData = {
-  title:'page two',
-  content:'../contents/home.ejs',
-  testfile:'testfile.ejs', 
+  title:'home',
+  content:'../contents/home.ejs', 
   nav: nav,
   header: header,
   footer: footer
