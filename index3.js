@@ -32,7 +32,7 @@ express()
 */
 
 
-/*
+
 var pageData = {
   home {
     title:'home',
@@ -49,7 +49,7 @@ var pageData = {
     footer: footer
   }
 }
-*/
+
 
 /*
 var pageRowData = require('./pageData')
