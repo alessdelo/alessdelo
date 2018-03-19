@@ -7,7 +7,6 @@ var header = "../partials/header2.ejs"
 var nav = "../partials/nav5.ejs"
 var footer = "../partials/footer1.ejs"
 
-
 var pageData = {
   home: {
     title:'the home',
