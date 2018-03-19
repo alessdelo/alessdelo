@@ -29,6 +29,20 @@ var pageData = {
     header: header,
     footer: footer
   },
+  form1: {
+    title:'form 1',
+    content:'../contents/form1.ejs',
+    nav: nav,
+    header: header,
+    footer: footer
+  },
+  form2: {
+    title:'form 2',
+    content:'../contents/form2.ejs',
+    nav: nav,
+    header: header,
+    footer: footer
+  },
   products: {
     title:'the products',
     content:'../contents/products.ejs',
@@ -49,5 +63,7 @@ var app = express()
  app.get('/products', (req, res) => res.render(index,pageData.products))
  app.get('/gallery1', (req, res) => res.render(index,pageData.gallery1))
  app.get('/gallery2', (req, res) => res.render(index,pageData.gallery2))
+ app.get('/form1', (req, res) => res.render(index,pageData.form1))
+ app.get('/form2', (req, res) => res.render(index,pageData.form2))
 
  app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
