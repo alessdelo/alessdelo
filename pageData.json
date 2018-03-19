@@ -1,7 +1,7 @@
 {
-  home: {
-    title:'my home',
-    content:'../contents/home.ejs', 
+  "home": {
+    "title":"my home",
+    "content":'../contents/home.ejs', 
     nav: nav,
     header: header,
     footer: footer
