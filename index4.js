@@ -2,12 +2,12 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
+var pageData = require('pageData')
 var index = 'pages/index4'
 var header = "../partials/header2.ejs"
 var nav = "../partials/nav5.ejs"
 var footer = "../partials/footer1.ejs"
 
-var pageData = loadJSON('pageData.json')
 /*
 var pageData = {
   home: {
