@@ -1,3 +1,4 @@
+/*
 var pageData = {
   home: {
     title:'my home',
@@ -21,3 +22,4 @@ var pageData = {
     footer: footer
   }
 }
+*/
