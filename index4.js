@@ -7,7 +7,8 @@ var header = "../partials/header2.ejs"
 var nav = "../partials/nav5.ejs"
 var footer = "../partials/footer1.ejs"
 
-
+var pageData = loadJSON('pageData.json')
+/*
 var pageData = {
   home: {
     title:'the home',
@@ -31,6 +32,7 @@ var pageData = {
     footer: footer
   }
 }
+*/
 
 var app = express()
   app.use(express.static(path.join(__dirname, 'public')))
