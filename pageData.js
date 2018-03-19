@@ -1,4 +1,4 @@
-{
+var pageData = {
   home: {
     title:'my home',
     content:'../contents/home.ejs', 
