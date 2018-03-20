@@ -3,6 +3,12 @@
   border: 2px solid white; 
 }
 
+.fixed-bottom {
+ background-color: #B01302;
+  border: 2px solid white; 
+}
+
+
 body {
   background-color: #532F8C;
 }
