@@ -69,7 +69,7 @@ var app = express()
  app.get('/search/:word', sendWord)
     function sendWord(req, res) {
       var data = req.params
-      res.send('your word is: ' + data.word))
+      res.send('your word is: ' + data.word)
     }
 
 
