@@ -1,9 +1,11 @@
-body {
-  background: #532F8C;
-}
 .footer {
   background: #B01302;
 }
+
+body {
+  background: #532F8C;
+}
+
 .jumbotron {
   background: #532F8C;
   color: white;
