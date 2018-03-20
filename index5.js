@@ -65,6 +65,13 @@ var app = express()
  app.get('/gallery1', (req, res) => res.render(index,pageData.gallery1))
  app.get('/gallery2', (req, res) => res.render(index,pageData.gallery2))
  app.get('/form1', (req, res) => res.render(index,pageData.form1))
- app.get('/form2', (req, res) => res.render(index,pageData.form2))
+
+ app.get('/search/:word', sendWord)
+    function sendWord(req, res) {
+      var data = req.params
+      res.send('your word is: ' + params.word))
+    }
+
+
 
  app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
