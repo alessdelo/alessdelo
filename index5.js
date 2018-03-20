@@ -43,6 +43,13 @@ var pageData = {
     header: header,
     footer: footer
   },
+  search: {
+    title:'search',
+    content:'../contents/search.ejs',
+    nav: nav,
+    header: header,
+    footer: footer
+  },
   products: {
     title:'the products',
     content:'../contents/products.ejs',
@@ -69,7 +76,8 @@ var app = express()
  app.get('/search/:word', sendWord)
     function sendWord(req, res) {
       var data = req.params
-      res.send('your word is: ' + data.word)
+      // res.send('your word is: ' + data.word)
+       res.render(index,pageData.search,{datum: data.word})
     }
 
 
