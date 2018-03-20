@@ -76,8 +76,9 @@ var app = express()
  app.get('/search/:word', sendWord)
     function sendWord(req, res) {
       var data = req.params
+      pageData.search.push({datum: data.word})
       // res.send('your word is: ' + data.word)
-       res.render(index,pageData.search,{datum: data.word})
+       res.render(index,pageData.search)
     }
 
 
