@@ -31,13 +31,14 @@ $("#other" ).click(function() {
 <br/>
 <br/>
 <h4>jquery search test</h4>
-<input id="word">
+<input id="theWord">
 <br/>
 <button id="submit">submit</button>
 
 <script>
 $("#submit").click(function() {
-var theWord = $('#word').val;
+var theWord = $('#theWord').val;
+alert(theWord);
 window.location.href = '/search/' + 'delo';
 });
 
