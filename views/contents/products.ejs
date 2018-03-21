@@ -3,9 +3,7 @@
 
 <?php echo "this is an echo!"; ?>
 <br/>
-<input id="word">
-<br/>
-<button id="submit">submit</button>
+
 
 <br/>
 <br/>
@@ -27,6 +25,26 @@ $("#other" ).click(function() {
   // $( "#toClick" ).click();
   window.location.href = '/search/' + word;
 });
+
+</script>
+
+<br/>
+<br/>
+<h4>jquery search test</h4>
+<input id="word">
+<br/>
+<button id="submit">submit</button>
+
+<script>
+$("#submit").click(function() {
+var word = $('#word').val;
+window.location.href = '/search/' + word;
+});
+
+</script>
+
+
+<script>
 
 /*
 var theAlert = 'products page';
