@@ -10,7 +10,7 @@
 <br/>
 <br/>
 <h4>jquery test</h4>
-<div id="target">
+<div id="toClick">
   Click here
 </div>
 <div id="other">
@@ -19,12 +19,12 @@
 
 <script>
 
-$( "#target" ).click(function() {
+$( "#toClick" ).click(function() {
   alert( "Handler for .click() called." );
 });
 
 $( "#other" ).click(function() {
-  $( "#target" ).click();
+  $( "#toClick" ).click();
 });
 
 /*
@@ -42,3 +42,45 @@ function submitWord() {
 }
 */
 </script>
+
+
+	<script>
+            
+                // AJAX TEST 1 (retrieve a simple text)
+                
+                // takes simple text from php	
+                
+                function ajaxTest1(target) {
+                
+                    $(target).click(function() {
+                    
+                        $.ajax({
+                                        url: '../scriptNotes/ajaxTest1.php',
+                                        type: 'get',
+                                        dataType:'text',
+                                        success: function(data){
+                                            window.alert(data);
+                                        },
+                                        
+                                        error: function(text){
+                                            alert("error");
+                                            printObject(data);
+                                        }
+
+                               });    
+
+                    }); // end $target function
+
+                } // end ajaxTest1  
+                
+             
+
+           </script>
+
+           <h4>Test invio ricezione verso file di destinazione</h4>
+			<button id="target">clicca per testare</button>
+
+            <script>
+              // richiama la funzione ajax
+                ajaxTest1("#target");
+           </script>
