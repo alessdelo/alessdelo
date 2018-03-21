@@ -1,2 +1,16 @@
-   <%- include('static/test') %>
+
 <p>These are the PRODUCTS page contents</p>
+<br/>
+<input id="word">
+<br/>
+<button id="submit">submit</button>
+
+<%
+var button =select('#submit');
+button.mousePressed(submitWord);
+
+function submitWord() {
+   var word = select(#word').value();
+   window.location.href = '/search/' + word;
+}
+%>
