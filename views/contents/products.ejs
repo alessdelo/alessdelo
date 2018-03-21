@@ -37,9 +37,9 @@ $("#other" ).click(function() {
 
 <script>
 $("#submit").click(function() {
-var theWord = $('#theWord').val;
+var theWord = $('#theWord').val();
 alert(theWord);
-window.location.href = '/search/' + 'delo';
+window.location.href = '/search/' + theWord;
 });
 
 </script>
