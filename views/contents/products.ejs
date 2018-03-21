@@ -19,11 +19,11 @@
 
 <script>
 
-$( "#toClick" ).click(function() {
+$("#toClick" ).click(function() {
   alert( "Handler for .click() called." );
 });
 
-$( "#other" ).click(function() {
+$("#other" ).click(function() {
   $( "#toClick" ).click();
 });
 
@@ -55,7 +55,7 @@ function submitWord() {
                     $(target).click(function() {
                     
                         $.ajax({
-                                        url: 'static/testa/ajaxTest1.php',
+                                        url: '../../public/testa/ajaxTest1.php',
                                         type: 'get',
                                         dataType:'text',
                                         success: function(data){
