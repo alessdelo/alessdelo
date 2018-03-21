@@ -7,9 +7,30 @@
 <br/>
 <button id="submit">submit</button>
 
+<br/>
+<br/>
+<h4>jquery test</h4>
+<div id="target">
+  Click here
+</div>
+<div id="other">
+  Trigger the handler
+</div>
+
 <script>
+
+$( "#target" ).click(function() {
+  alert( "Handler for .click() called." );
+});
+
+$( "#other" ).click(function() {
+  $( "#target" ).click();
+});
+
+/*
 var theAlert = 'products page';
-alert(theAlert)/*
+alert(theAlert)
+
 var button =select('#submit');
 button.mousePressed(submitWord);
 
