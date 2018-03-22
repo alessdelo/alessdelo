@@ -74,6 +74,14 @@ var pageData = {
     footer: footer,
     params: myJson
   },
+  addperson: {
+    title:'Add Person',
+    content:'../contents/addperson.html',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: myJson
+  }
   
 }
 
@@ -102,11 +110,17 @@ var app = express()
 
 // ---------------------------------
 
- app.get('/add/:name/:rate', addPerson)
+ app.get('/addperson/:name/:rate', addPerson)
 function sendWord(req, res) {
   var data = req.params
   var name = data.name
   var rate = data.rate
+  
+  myJson[name] = rate
+  
+  res.render(index,pageData.addperson)
+  
+  }
 
 // ---------------------------------
 
