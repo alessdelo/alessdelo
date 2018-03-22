@@ -94,6 +94,7 @@ var myJson = {
  app.get('/showjson', sendJson)
 
 function sendJson (req, res) {
+   res.render(index,pageData.search)
   res.send(myJson)
   }
 
