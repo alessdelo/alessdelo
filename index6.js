@@ -102,6 +102,9 @@ var app = express()
 
 // ---------------------------------
 
+ app.get('/add/:name/:rate', sendWord)
+
+// ---------------------------------
 
 
  app.get('/showjson', sendJson)
