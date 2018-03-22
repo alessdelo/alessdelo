@@ -7,6 +7,14 @@ var header = "../partials/header2.ejs"
 var nav = "../partials/nav7.ejs"
 var footer = "../partials/footer1.ejs"
 
+var myJson = {
+  hellen: 20,
+  lisa: -2,
+  judy: 6,
+  sharon: -5
+  }
+
+
 var pageData = {
   home: {
     title:'the home',
@@ -56,7 +64,16 @@ var pageData = {
     nav: nav,
     header: header,
     footer: footer
-  }
+  },
+  showjson: {
+    title:'the products',
+    content:'../contents/showjson.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    theJson: myJson
+  },
+  
 }
 
 
@@ -84,18 +101,13 @@ var app = express()
 
 // ---------------------------------
 
-var myJson = {
-  hellen: 20,
-  lisa: -2,
-  judy: 6,
-  sharon: -5
-  }
+
 
  app.get('/showjson', sendJson)
 
 function sendJson (req, res) {
    res.render(index,pageData.search)
-  res.send(myJson)
+  // res.send(myJson)
   }
 
 // ---------------------------------
