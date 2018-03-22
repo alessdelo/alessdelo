@@ -102,7 +102,11 @@ var app = express()
 
 // ---------------------------------
 
- app.get('/add/:name/:rate', sendWord)
+ app.get('/add/:name/:rate', addPerson)
+function sendWord(req, res) {
+  var data = req.params
+  var name = data.name
+  var rate = data.rate
 
 // ---------------------------------
 
