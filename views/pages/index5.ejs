@@ -17,7 +17,7 @@
 
 <% if(typeof params !== 'undefined') { 
 
-var writeParams = Object.values(params) %>
+var writeParams = Object.entries(params) %>
    <p>params: <%= writeParams %></p>
     <%- include(content, {writeParams}) %>
 <% } else { %>  
