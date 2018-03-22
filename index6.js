@@ -82,6 +82,21 @@ var app = express()
        res.render(index,pageData.search)
     }
 
+// ---------------------------------
 
+var myJson = {
+  hellen: 20,
+  lisa: -2,
+  judy: 6,
+  sharon: -5
+  }
+
+ app.get('/showjson', sendJson)
+
+function sendJson (req, res) {
+  res.send(myJson)
+  }
+
+// ---------------------------------
 
  app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
