@@ -2,17 +2,23 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
+var fs = require('fs')
+
+
 var index = 'pages/index5'
 var header = "../partials/header2.ejs"
 var nav = "../partials/nav7.ejs"
 var footer = "../partials/footer1.ejs"
 
+var myJson = fs.readFileSync('myJson.json');
+/*
 var myJson = {
   hellen: 20,
   lisa: -2,
   judy: 6,
   sharon: -5
   }
+ */
 
 
 var pageData = {
