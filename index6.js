@@ -21,7 +21,8 @@ var pageData = {
     content:'../contents/home.ejs', 
     nav: nav,
     header: header,
-    footer: footer
+    footer: footer,
+    params: myJson
   },
   gallery1: {
     title:'gallery 1',
