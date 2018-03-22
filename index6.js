@@ -66,7 +66,7 @@ var pageData = {
     footer: footer
   },
   showjson: {
-    title:'the products',
+    title:'show JSON',
     content:'../contents/showjson.ejs',
     nav: nav,
     header: header,
