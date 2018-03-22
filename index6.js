@@ -76,7 +76,7 @@ var pageData = {
   },
   addperson: {
     title:'Add Person',
-    content:'../contents/addperson.html',
+    content:'../contents/addperson.ejs',
     nav: nav,
     header: header,
     footer: footer,
@@ -111,7 +111,7 @@ var app = express()
 // ---------------------------------
 
  app.get('/addperson/:name/:rate', addPerson)
-function sendWord(req, res) {
+function addPerson(req, res) {
   var data = req.params
   var name = data.name
   var rate = data.rate
