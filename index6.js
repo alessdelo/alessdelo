@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 5000
 
 var index = 'pages/index4'
 var header = "../partials/header2.ejs"
-var nav = "../partials/nav6.ejs"
+var nav = "../partials/nav7.ejs"
 var footer = "../partials/footer1.ejs"
 
 var pageData = {
