@@ -10,7 +10,8 @@ var header = "../partials/header2.ejs"
 var nav = "../partials/nav7.ejs"
 var footer = "../partials/footer1.ejs"
 
-var myJson = fs.readFileSync('myJson.json');
+var myJsonRaw = fs.readFileSync('myJson.json');
+var myJson = JSON.parse(myJsonRaw)
 /*
 var myJson = {
   hellen: 20,
