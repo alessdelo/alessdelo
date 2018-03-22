@@ -1,17 +1,17 @@
 <!-- <form class="form-inline my-2 my-lg-0"> -->
       <input id="inputName" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
       <input id="inputRate" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
-      <button id="search" class="btn btn-outline-success my-2 my-sm-0" >Search</button>
+      <button id="addItem" class="btn btn-outline-success my-2 my-sm-0" >Add</button>
     <!-- </form> -->
 
 
 <script>
 alert('funziona');
-$("#search").click(function() {
+$("#addItem").click(function() {
 var inputName = $('#inputName').val();
 var inputRate = $('#inputRate').val();
 alert(inputName + " - " + inputRate);
-window.location.href = '/search/' + inputName + '/' + inputRate;
+window.location.href = '/add/' + inputName + '/' + inputRate;
 });
 </script>
 
