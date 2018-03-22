@@ -71,7 +71,7 @@ var pageData = {
     nav: nav,
     header: header,
     footer: footer,
-    theJson: myJson
+    params: myJson
   },
   
 }
