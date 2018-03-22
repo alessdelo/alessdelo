@@ -68,7 +68,7 @@ var pageData = {
   },
   showjson: {
     title:'show JSON',
-    content:'../contents/showjson.html',
+    content:'../contents/showjson.ejs',
     nav: nav,
     header: header,
     footer: footer,
