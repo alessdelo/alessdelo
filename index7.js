@@ -126,6 +126,10 @@ function addPerson(req, res) {
   
   myJson[name] = rate
   
+  fs.writeFile('myJson.json', myJson, written)
+  
+  function written() {}
+  
   res.render(index,pageData.addperson)
   
   }
