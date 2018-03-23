@@ -140,7 +140,7 @@ function addPerson(req, res) {
  app.get('/showjson', sendJson)
 
 function sendJson (req, res) {
-   res.render(index,pageData.search)
+   res.render(index,pageData.showjson)
   // res.send(myJson)
   }
 
