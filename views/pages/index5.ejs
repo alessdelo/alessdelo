@@ -19,7 +19,7 @@
 
 var writeParams = Object.entries(params) %>
    <p>params: <%= writeParams %></p>
-    <%- include(content, {myVar: 'this is a var'}) %>
+    <%- include(content) %>
 <% } else { %>  
  <p>no params</p>
    <%- include(content) %>
