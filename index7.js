@@ -32,7 +32,7 @@ var myJson = {
 
 var pageData = {
   home: {
-    title: mongoMsg
+    title: 'home'
     content:'../contents/home.ejs', 
     nav: nav,
     header: header,
