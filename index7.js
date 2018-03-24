@@ -5,8 +5,10 @@ const mongoose = require('mongoose')
 const PORT = process.env.PORT || 5000
 
 
+
+
 mongoose.connect(process.env.MONGOLAB_URI, function (error) {
-  /*
+   /*
   var mongoMsg =''
   if(error) mongoMsg =error
   else mongoMsg ='mongo connected'
@@ -35,7 +37,7 @@ var myJson = {
 
 var pageData = {
   home: {
-    title: 'home'
+    title: 'home',
     content:'../contents/home.ejs', 
     nav: nav,
     header: header,
