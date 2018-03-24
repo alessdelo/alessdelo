@@ -8,11 +8,11 @@ const PORT = process.env.PORT || 5000
  var mongoMsg ='boh'
 
 mongoose.connect(process.env.MONGOLAB_URI, function (error) {
-   /*
+   
  
-  if(error) mongoMsg =error
+  if(error) mongoMsg = error
   else mongoMsg ='mongo connected'
-  */
+  
   })
 
 var fs = require('fs')
