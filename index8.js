@@ -208,8 +208,8 @@ function insertToMongo(req, res, next) {
       
       cursor.forEach(function(doc, err) {
         assert.equal(null, err)
-        // resultArray.push(doc)
-        pageData.mongo1.params = doc
+         resultArray.push(doc)
+        pageData.mongo1.params = resultArray
       }, function() {
           db.close()
           res.render(index,pageData.mongo1)
