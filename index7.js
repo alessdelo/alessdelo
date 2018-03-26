@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 5000
 
 
  var mongoMsg ='boh'
-
+/*
 mongoose.connect(process.env.MONGOLAB_URI, function (error) {
    
    if(error) mongoMsg = error
@@ -14,6 +14,16 @@ mongoose.connect(process.env.MONGOLAB_URI, function (error) {
  // mongoMsg = error
   
   })
+  
+  */
+
+mongoose.connect(process.env.MONGOLAB_URI)
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  mongoMsg ='mongo connected'
+});
 
 var fs = require('fs')
 
