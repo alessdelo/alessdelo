@@ -114,6 +114,14 @@ var pageData = {
     header: header,
     footer: footer,
     params: myJson
+  },
+ mongo1: {
+    title:'Mongo Test n.1',
+    content:'../contents/mongo1.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: '...'
   }
   
 }
