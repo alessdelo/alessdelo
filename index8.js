@@ -1,5 +1,4 @@
 const express = require('express')
-const router = express.Router()
 const path = require('path')
 const mongo= require('mongodb')
 const assert = require('assert')
@@ -193,7 +192,7 @@ function sendJson (req, res) {
   }
 
 // ---------------------------------
-
+/*
 app.get('/mongo1', insertToMongo)
            
            
@@ -212,7 +211,7 @@ function insertToMongo(req, res, next) {
     });
   });
 });
-
+/*
 
 // ----------------------------------
 
