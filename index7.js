@@ -17,9 +17,9 @@ mongoose.connect(process.env.MONGOLAB_URI, function (error) {
   
   */
 
-// mongoose.connect(process.env.MONGOLAB_URI)
-var uri = 'mongodb://admin:PWD4Admin@ds221339.mlab.com:21339/delotest10'
-mongoose.connect('cosa')
+mongoose.connect(process.env.MONGOLAB_URI)
+// var uri = 'mongodb://admin:PWD4Admin@ds221339.mlab.com:21339/delotest10'
+// mongoose.connect('cosa')
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
