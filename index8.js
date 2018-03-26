@@ -1,6 +1,8 @@
 const express = require('express')
+const router = express.Router()
 const path = require('path')
-const mongoose = require('mongoose')
+const mongo= require('mongodb')
+const assert = require('assert')
 
 const PORT = process.env.PORT || 5000
 
@@ -16,7 +18,7 @@ mongoose.connect(process.env.MONGOLAB_URI, function (error) {
   })
   
   */
-
+/*
 mongoose.connect(process.env.MONGOLAB_URI)
 // var uri = 'mongodb://admin:PWD4Admin@ds221339.mlab.com:21339/delotest10'
 // mongoose.connect('cosa')
@@ -27,6 +29,8 @@ db.once('open', function() {
   console.log('mongo connected')
   mongoMsg ='mongo connected'
 });
+*/
+
 
 var fs = require('fs')
 
