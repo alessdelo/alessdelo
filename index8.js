@@ -192,7 +192,7 @@ function sendJson (req, res) {
   }
 
 // ---------------------------------
-
+/*
 app.get('/mongo1', insertToMongo)
            
            
@@ -217,7 +217,7 @@ function insertToMongo(req, res, next) {
       )
    })
  }
-
+*/
 
 // ----------------------------------
 
