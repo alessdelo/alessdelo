@@ -192,26 +192,32 @@ function sendJson (req, res) {
   }
 
 // ---------------------------------
-/*
+
 app.get('/mongo1', insertToMongo)
            
            
 function insertToMongo(req, res, next) {
-  var resultArray = [];
-  mongo.connect(dbUri, function(err, db) {
-    assert.equal(null, err);
-    var cursor = db.collection('test1').find();
-    cursor.forEach(function(doc, err) {
-      assert.equal(null, err);
-      // resultArray.push(doc);
-      pageData.mongo1.params = doc
-    }, function() {
-      db.close();
-      res.render(index,pageData.mongo1);
-    });
-  });
-});
-*/
+
+    var resultArray = [];
+    
+    mongo.connect(dbUri, function(err, db) {
+    
+      assert.equal(null, err)
+      
+      var cursor = db.collection('test1').find()
+      
+      cursor.forEach(function(doc, err) {
+        assert.equal(null, err)
+        // resultArray.push(doc)
+        pageData.mongo1.params = doc
+      }, function() {
+          db.close()
+          res.render(index,pageData.mongo1)
+          }
+      )
+   })
+ }
+
 
 // ----------------------------------
 
