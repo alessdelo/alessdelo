@@ -1,6 +1,7 @@
 <html lang="en">
 <p class="lead">This is a variable passed to an included file via ejs</p>
 <hr class="my-4">
-<%= myVar %>
+<% strMyVar = JSON.stringify(myVar, null, 4); %>
+<%= strMyVar %>
 
 
