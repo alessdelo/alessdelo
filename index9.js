@@ -226,17 +226,19 @@ function insertToMongo(req, res, next) {
  
    var db = mongoose.connection
    db.on('error', function() {
-      resultArray = {'error': 'connection problem!'}
+      
+      pageData.mongo1.params = {'error': 'connection problem!'}
    })
         
    db.once('open', function() {
       resultArray = {4: 'orso', 5:'scimmia', 6:'antilope'}
-   }), function() {
     
-          pageData.mongo1.params = resultArray
+        pageData.mongo1.params = resultArray
  
-          res.render(index,pageData.mongo1)
-      }
+         
+    
+   })
+ res.render(index,pageData.mongo1)
  
  } // fine insertToMongo
 
