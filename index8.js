@@ -200,9 +200,16 @@ function insertToMongo(req, res, next) {
  
     // var cursor = {1: 'cane', 2: 'gatto', 3:'topo'}
  
-    // var resultArray = {1: 'cane', 2: 'gatto', 3:'topo'}
+    resultArray = {1: 'cane', 2: 'gatto', 3:'topo'}
     
-    mongo.connect(dbUri, function(err, db) {
+    pageData.mongo1.params = resultArray
+ 
+    res.render(index,pageData.mongo1)
+ 
+ }
+    
+  /*  
+ mongo.connect(dbUri, function(err, db) {
      
      assert.equal(null, err)
       
@@ -225,6 +232,7 @@ function insertToMongo(req, res, next) {
     
  
 }
+*/
 
 // ---------------------------------
 /*
