@@ -221,7 +221,8 @@ function insertToMongo(req, res) {
  
     var resultArray = dbUri
     
-    mongoose.connect(dbUri)
+   // mongoose.connect(dbUri)
+ mongoose.connect('gatto')
  
    var db = mongoose.connection
    db.on('error', function() {
