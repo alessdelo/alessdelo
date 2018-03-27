@@ -216,7 +216,7 @@ function insertToMongo(req, res, next) {
 
 function insertToMongo(req, res, next) {
  
-    var resultArray = 'bla bla'
+    var resultArray = dbUri
     
     mongo.connect(dbUri, function(err, db) {
           if(!err) {
