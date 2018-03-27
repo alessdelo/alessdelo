@@ -196,7 +196,7 @@ app.get('/mongo1', insertToMongo)
 
 function insertToMongo(req, res, next) {
  
-    // var resultArray = []
+    var resultArray = ''
  
     // var cursor = {1: 'cane', 2: 'gatto', 3:'topo'}
  
@@ -209,15 +209,20 @@ function insertToMongo(req, res, next) {
      
      // var cursor = db.collection('test1').find()
      
-     var resultArray = {1: 'pippo', 2: 'pluto', 3:'ernesto'}
+      resultArray = {1: 'pippo', 2: 'pluto', 3:'ernesto'}
      
-     db.close()
      
-    })
-    
-    pageData.mongo1.params = resultArray
+     
+    }),
+     
+    function() {
+          db.close()
+         pageData.mongo1.params = resultArray
  
-    res.render(index,pageData.mongo1)
+         res.render(index,pageData.mongo1)
+    }
+    
+    
  
 }
 
