@@ -4,7 +4,7 @@ PROVA DI CONNESSIONE A MLab MONGODB TRAMITE MONGOOSE PACKAGE
 
 const express = require('express')
 const path = require('path')
-const mongo= require('mongodb')
+const mongoose = require('mongoose');
 const assert = require('assert')
 
 const PORT = process.env.PORT || 5000
@@ -221,6 +221,15 @@ function insertToMongo(req, res, next) {
  
     var resultArray = dbUri
     
+    mongoose.connect(dbUri)
+ 
+   var db = mongoose.connection
+   db.on('error', console.error.bind(console, 'connection error:'))
+   db.once('open', function() {
+      resultArray = {4: 'orso', 5:'scimmia', 6:'antilope'}
+   })
+    
+ /*
     mongo.connect(dbUri, function(err, db) {
           if(!err) {
               // resultArray = db.collection('test1').find()
@@ -230,9 +239,9 @@ function insertToMongo(req, res, next) {
               err = {'error': 'problems with db connections to: ' + dbUri}
               resultArray = err
            }
-     
+     */
           
-    })
+    }) // fine insertToMongo
  
     pageData.mongo1.params = resultArray
  
