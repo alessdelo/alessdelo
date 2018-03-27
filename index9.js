@@ -217,12 +217,12 @@ function insertToMongo(req, res, next) {
 
  app.get('/mongo1', insertToMongo)
 
-function insertToMongo(req, res) {
+function insertToMongo(req, res, next) {
  
     var resultArray = dbUri
     
-   // mongoose.connect(dbUri)
- mongoose.connect('gatto')
+   mongoose.connect(dbUri)
+
  
    var db = mongoose.connection
    db.on('error', function() {
@@ -231,11 +231,12 @@ function insertToMongo(req, res) {
         
    db.once('open', function() {
       resultArray = {4: 'orso', 5:'scimmia', 6:'antilope'}
-   })
+   }), function() {
     
-    pageData.mongo1.params = resultArray
+          pageData.mongo1.params = resultArray
  
-    res.render(index,pageData.mongo1)
+          res.render(index,pageData.mongo1)
+      }
  
  } // fine insertToMongo
 
