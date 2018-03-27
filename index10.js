@@ -237,7 +237,7 @@ function insertToMongo(req, res, next) {
    })
         
    db.once('open', function() {
-       /*
+       
         var Schema = mongoose.Schema
         
         var userDataSchema = new Schema({
@@ -246,21 +246,21 @@ function insertToMongo(req, res, next) {
              author: String
         }, {collection: 'test2'})
 
-   var UserData = mongoose.model('UserData', userDataSchema);
+        var UserData = mongoose.model('UserData', userDataSchema);
     
-          var item = {
-           title: req.body.title,
-           content: req.body.content,
-           author: req.body.author
+        var item = {
+           title: theTitle,
+           content: theContent,
+           author: theAuthor
          };
 
          var data = new UserData(item);
          data.save();
 
-         res.redirect('/');
-        */
+       //  res.redirect('/');
+        
           
-        pageData.mongo1.params = {4: 'orso', 5:'bufalo', 6:'antilope'} 
+        pageData.mongo1.params = {'aurhor': theAuthor, 'content':theContent, 'title':theTitle} 
    })
  
  res.render(index,pageData.mongo1)
