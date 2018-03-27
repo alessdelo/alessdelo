@@ -152,7 +152,7 @@ var app = express()
  app.get('/gallery2', (req, res) => res.render(index,pageData.gallery2))
  app.get('/form1', (req, res) => res.render(index,pageData.form1))
  app.get('/addperson', (req, res) => res.render(index,pageData.addperson))
- app.get('/mongo1', (req, res) => res.render(index,pageData.mongo1))
+ // app.get('/mongo1', (req, res) => res.render(index,pageData.mongo1))
 
  app.get('/search/:word', sendWord)
     function sendWord(req, res) {
@@ -190,6 +190,15 @@ function sendJson (req, res) {
    res.render(index,pageData.showjson)
   // res.send(myJson)
   }
+
+// ---------------------------------
+app.get('/mongo1', insertToMongo)
+
+function insertToMongo(req, res, next) {
+ 
+    res.render(index,pageData.mongo1)
+ 
+}
 
 // ---------------------------------
 /*
