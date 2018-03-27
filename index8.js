@@ -226,6 +226,8 @@ function insertToMongo(req, res, next) {
               err = {'error': 'problems with db connections... '}
               resultArray = err
            }
+     
+             db.close()
     })
     
  
