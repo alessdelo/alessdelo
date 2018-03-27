@@ -192,6 +192,7 @@ function sendJson (req, res) {
   }
 
 // ---------------------------------
+/*
 app.get('/mongo1', insertToMongo)
 
 function insertToMongo(req, res, next) {
@@ -202,11 +203,39 @@ function insertToMongo(req, res, next) {
  
     resultArray = {1: 'cane', 2: 'gatto', 3:'topo'}
     
+    //pageData.mongo1.params = resultArray
+ 
     pageData.mongo1.params = resultArray
  
     res.render(index,pageData.mongo1)
  
  }
+ */
+ app.get('/mongo1', insertToMongo)
+
+function insertToMongo(req, res, next) {
+ 
+    var resultArray = ''
+    
+    mongo.connect(dbUri, function(err, db) {
+          if(!err) {
+              var cursor = db.collection('test1').find()
+          }
+    })
+    
+ 
+    // var cursor = {1: 'cane', 2: 'gatto', 3:'topo'}
+ 
+    resultArray = {1: 'cane', 2: 'gatto', 3:'topo'}
+    
+    //pageData.mongo1.params = resultArray
+ 
+    pageData.mongo1.params = resultArray
+ 
+    res.render(index,pageData.mongo1)
+ 
+ }
+ 
     
   /*  
  mongo.connect(dbUri, function(err, db) {
