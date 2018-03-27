@@ -5,10 +5,7 @@ const assert = require('assert')
 
 const PORT = process.env.PORT || 5000
 
-var dbUri = process.env.MONGOLAB_URI
-// var dbUri = process.env.MONGODB_URI
-
-
+var dbUri = process.env.MONGODB_URI
 
 
  var mongoMsg ='boh'
