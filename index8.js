@@ -133,7 +133,7 @@ var pageData = {
     nav: nav,
     header: header,
     footer: footer,
-    params: ''
+    params: 'coso'
   }
   
 }
