@@ -217,33 +217,21 @@ function insertToMongo(req, res, next) {
 
  app.get('/mongo1', insertToMongo)
 
-function insertToMongo(req, res, next) {
+function insertToMongo(req, res) {
  
     var resultArray = dbUri
     
     mongoose.connect(dbUri)
  
    var db = mongoose.connection
-   db.on('error', console.error.bind(console, 'connection error:'))
+   db.on('error', function() {
+      resultArray = {'error': 'connection problem!'}
+   })
+        
    db.once('open', function() {
       resultArray = {4: 'orso', 5:'scimmia', 6:'antilope'}
    })
     
-    /*
-    mongo.connect(dbUri, function(err, db) {
-          if(!err) {
-              // resultArray = db.collection('test1').find()
-              resultArray = {4: 'orso', 5:'scimmia', 6:'antilope'}
-              db.close()
-          } else {
-              err = {'error': 'problems with db connections to: ' + dbUri}
-              resultArray = err
-           }
-    
-          
-    }) 
-     */
- 
     pageData.mongo1.params = resultArray
  
     res.render(index,pageData.mongo1)
