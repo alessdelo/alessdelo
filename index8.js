@@ -209,6 +209,10 @@ function insertToMongo(req, res, next) {
  
  }
  */
+// took inspitation by:
+// https://youtu.be/ZKwrOXl5TDI
+// https://github.com/mschwarzmueller/nodejs-basics-tutorial/blob/master/09-mongodb/routes/index.js
+
  app.get('/mongo1', insertToMongo)
 
 function insertToMongo(req, res, next) {
@@ -227,74 +231,12 @@ function insertToMongo(req, res, next) {
      
           
     })
-    
- 
-    // var cursor = {1: 'cane', 2: 'gatto', 3:'topo'}
- 
-    // resultArray = {1: 'cane', 2: 'gatto', 3:'topo'}
-    
-    //pageData.mongo1.params = resultArray
  
     pageData.mongo1.params = resultArray
  
     res.render(index,pageData.mongo1)
  
  }
- 
-    
-  /*  
- mongo.connect(dbUri, function(err, db) {
-     
-     assert.equal(null, err)
-      
-     
-     // var cursor = db.collection('test1').find()
-     
-      resultArray = {1: 'pippo', 2: 'pluto', 3:'ernesto'}
-     
-     
-     
-    }),
-     
-    function() {
-          db.close()
-         pageData.mongo1.params = resultArray
- 
-         res.render(index,pageData.mongo1)
-    }
-    
-    
- 
-}
-*/
-
-// ---------------------------------
-/*
-app.get('/mongo1', insertToMongo)
-           
-           
-function insertToMongo(req, res, next) {
-
-    var resultArray = [];
-    
-    mongo.connect(dbUri, function(err, db) {
-    
-      assert.equal(null, err)
-      
-      var cursor = db.collection('test1').find()
-      
-      cursor.forEach(function(doc, err) {
-        assert.equal(null, err)
-         resultArray.push(doc)
-        pageData.mongo1.params = resultArray
-      }, function() {
-          db.close()
-          res.render(index,pageData.mongo1)
-          }
-      )
-   })
- }
-*/
 
 // ----------------------------------
 
