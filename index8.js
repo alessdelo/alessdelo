@@ -219,14 +219,14 @@ function insertToMongo(req, res, next) {
     
     mongo.connect(dbUri, function(err, db) {
           if(!err) {
-              var cursor = db.collection('test1').find()
+              resultArray = db.collection('test1').find()
           }
     })
     
  
     // var cursor = {1: 'cane', 2: 'gatto', 3:'topo'}
  
-    resultArray = {1: 'cane', 2: 'gatto', 3:'topo'}
+    // resultArray = {1: 'cane', 2: 'gatto', 3:'topo'}
     
     //pageData.mongo1.params = resultArray
  
