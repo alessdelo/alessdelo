@@ -5,9 +5,9 @@
 <%= strMyVar %>
 
 <!-- <form class="form-inline my-2 my-lg-0"> -->
-      <input id="inputAuthor" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
-      <input id="inputContent" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">
-      <input id="inputTitle" class="form-control mr-sm-2" placeholder="Search" aria-label="Search">  
+      <input id="inputAuthor" class="form-control mr-sm-2" placeholder="Author" aria-label="Author">
+      <input id="inputContent" class="form-control mr-sm-2" placeholder="Content" aria-label="Content">
+      <input id="inputTitle" class="form-control mr-sm-2" placeholder="Title" aria-label="Title">  
       <button id="addItem" class="btn btn-outline-success my-2 my-sm-0" >Add</button>
     <!-- </form> -->
 
@@ -20,6 +20,6 @@ var inputContent = $('#inputContent').val();
 var inputTitle = $('#inputTitle').val();
 
 alert(inputAuthor + " - " + inputContent + " - " + inputTitle);
-window.location.href = '/addperson/' + inputAuthor + '/' + inputContent + '/' + inputTitle;
+window.location.href = '/mongo1/' + inputAuthor + '/' + inputContent + '/' + inputTitle;
 });
 </script>
