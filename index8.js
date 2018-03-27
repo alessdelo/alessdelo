@@ -200,7 +200,20 @@ function insertToMongo(req, res, next) {
  
     // var cursor = {1: 'cane', 2: 'gatto', 3:'topo'}
  
-    var resultArray = {1: 'cane', 2: 'gatto', 3:'topo'}
+    // var resultArray = {1: 'cane', 2: 'gatto', 3:'topo'}
+    
+    mongo.connect(dbUri, function(err, db) {
+     
+     assert.equal(null, err)
+      
+     
+     // var cursor = db.collection('test1').find()
+     
+     var resultArray = {1: 'pippo', 2: 'pluto', 3:'ernesto'}
+     
+     db.close()
+     
+    })
     
     pageData.mongo1.params = resultArray
  
