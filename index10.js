@@ -1,5 +1,7 @@
 /*
 PROVA DI CONNESSIONE A MLab MONGODB TRAMITE MONGOOSE PACKAGE E INTERAZIONE CON DATABASE
+https://www.youtube.com/watch?v=h4A0-53Olm4&list=PL55RiY5tL51oGJorjEgl6NVeDbx_fO5jR&index=18
+https://github.com/mschwarzmueller/nodejs-basics-tutorial/blob/master/11-mongoose/routes/index.js
 */
 
 const express = require('express')
@@ -230,6 +232,28 @@ function insertToMongo(req, res, next) {
    })
         
    db.once('open', function() {
+       /*
+        var Schema = mongoose.Schema
+        
+        var userDataSchema = new Schema({
+             title: {type: String, required: true},
+             content: String,
+             author: String
+        }, {collection: 'test2'})
+
+   var UserData = mongoose.model('UserData', userDataSchema);
+    
+          var item = {
+           title: req.body.title,
+           content: req.body.content,
+           author: req.body.author
+         };
+
+         var data = new UserData(item);
+         data.save();
+
+         res.redirect('/');
+        */
           
         pageData.mongo1.params = {4: 'orso', 5:'bufalo', 6:'antilope'} 
    })
