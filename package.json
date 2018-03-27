@@ -5,15 +5,16 @@
   "engines": {
     "node": "8.9.1"
   },
-  "main": "index8.js",
+  "main": "index9.js",
   "scripts": {
-    "start": "node index8.js",
+    "start": "node index9.js",
     "test": "node test.js"
   },
   "dependencies": {
     "ejs": "^2.5.6",
     "express": "^4.15.2",
-    "mongodb": "^3.0.5"
+    "mongodb": "^3.0.5",
+    "mongoose": "^5.0.11",
   },
   "devDependencies": {
     "request": "^2.81.0",
