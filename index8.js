@@ -220,9 +220,9 @@ function insertToMongo(req, res, next) {
     
     mongo.connect(dbUri, function(err, db) {
           if(!err) {
-              resultArray = db.collection('test1').find()
-              // resultArray = {4: 'orso', 5:'scimmia', 6:'antilope'}
-              // db.close()
+              // resultArray = db.collection('test1').find()
+              resultArray = {4: 'orso', 5:'scimmia', 6:'antilope'}
+              db.close()
           } else {
               err = {'error': 'problems with db connections... '}
               resultArray = err
