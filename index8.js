@@ -222,6 +222,7 @@ function insertToMongo(req, res, next) {
               // resultArray = db.collection('test1').find()
               resultArray = {4: 'orso', 5:'scimmia', 6:'antilope'}
           } else {
+              err = {'error': 'problems with db connections... '}
               resultArray = err
            }
     })
