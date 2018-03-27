@@ -155,7 +155,7 @@ var app = express()
  app.get('/gallery2', (req, res) => res.render(index,pageData.gallery2))
  app.get('/form1', (req, res) => res.render(index,pageData.form1))
  app.get('/addperson', (req, res) => res.render(index,pageData.addperson))
- // app.get('/mongo1', (req, res) => res.render(index,pageData.mongo1))
+ app.get('/mongo1', (req, res) => res.render(index,pageData.mongo1))
 
  app.get('/search/:word', sendWord)
     function sendWord(req, res) {
@@ -217,9 +217,14 @@ function insertToMongo(req, res, next) {
 // https://youtu.be/ZKwrOXl5TDI
 // https://github.com/mschwarzmueller/nodejs-basics-tutorial/blob/master/09-mongodb/routes/index.js
 
- app.get('/mongo1', insertToMongo)
+ app.get('/mongo1/:author/:content/:title', insertToMongo)
 
 function insertToMongo(req, res, next) {
+ 
+       var data = req.params
+       var theAuthor= data.author
+       var theContent = data.content
+       var theTitle = data.title
  
     // var resultArray = dbUri
     
