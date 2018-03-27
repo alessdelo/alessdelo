@@ -258,9 +258,15 @@ function insertToMongo(req, res, next) {
          data.save();
 
        //  res.redirect('/');
+    
+       UserData.find()
+         .then(function(doc) {
+            pageData.mongo1.params = doc
+           // res.render('index', {items: doc})
+         })
         
-          
-        pageData.mongo1.params = {'aurhor': theAuthor, 'content':theContent, 'title':theTitle} 
+          // pageData.mongo1.params = {'aurhor': theAuthor, 'content':theContent, 'title':theTitle} 
+        
    })
  
  res.render(index,pageData.mongo1)
