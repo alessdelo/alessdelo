@@ -196,6 +196,14 @@ app.get('/mongo1', insertToMongo)
 
 function insertToMongo(req, res, next) {
  
+    // var resultArray = []
+ 
+    // var cursor = {1: 'cane', 2: 'gatto', 3:'topo'}
+ 
+    var resultArray = {1: 'cane', 2: 'gatto', 3:'topo'}
+    
+    pageData.mongo1.params = resultArray
+ 
     res.render(index,pageData.mongo1)
  
 }
