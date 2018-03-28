@@ -15,30 +15,6 @@ var dbUri = process.env.MONGODB_URI
 
 
  var mongoMsg ='boh'
-/*
-mongoose.connect(process.env.MONGOLAB_URI, function (error) {
-   
-   if(error) mongoMsg = error
-   else mongoMsg ='mongo connected'
- // mongoMsg = error
-  
-  })
-  
-  */
-/*
-mongoose.connect(process.env.MONGOLAB_URI)
-// var uri = 'mongodb://admin:PWD4Admin@ds221339.mlab.com:21339/delotest10'
-// mongoose.connect('cosa')
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('mongo connected')
-  mongoMsg ='mongo connected'
-});
-*/
- 
-
-
 
 
  // -------------------------------------------------
@@ -195,24 +171,7 @@ function sendJson (req, res) {
   }
 
 // ---------------------------------
-/*
-app.get('/mongo1', insertToMongo)
-function insertToMongo(req, res, next) {
- 
-    var resultArray = ''
- 
-    // var cursor = {1: 'cane', 2: 'gatto', 3:'topo'}
- 
-    resultArray = {1: 'cane', 2: 'gatto', 3:'topo'}
-    
-    //pageData.mongo1.params = resultArray
- 
-    pageData.mongo1.params = resultArray
- 
-    res.render(index,pageData.mongo1)
- 
- }
- */
+
 // took inspitation by:
 // https://youtu.be/ZKwrOXl5TDI
 // https://github.com/mschwarzmueller/nodejs-basics-tutorial/blob/master/09-mongodb/routes/index.js
@@ -225,8 +184,6 @@ function insertToMongo(req, res, next) {
        var theAuthor= data.author
        var theContent = data.content
        var theTitle = data.title
- 
-    // var resultArray = dbUri
     
    mongoose.connect(dbUri)
 
@@ -256,16 +213,12 @@ function insertToMongo(req, res, next) {
 
          var data = new UserData(item);
          data.save();
-
-       //  res.redirect('/');
     
        UserData.find()
          .then(function(doc) {
             pageData.mongo1.params = doc
-           // res.render('index', {items: doc})
+           
          })
-        
-          // pageData.mongo1.params = {'aurhor': theAuthor, 'content':theContent, 'title':theTitle} 
         
    })
  
