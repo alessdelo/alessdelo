@@ -240,11 +240,15 @@ function insertToMongo(req, res, next) {
  app.post('/postdata', showPostData)
 
 function showPostData(req, res) {
+ 
+ res.send('POST request to the homepage')
+ /*
  var postAuthor = req.body.author
  var postTitle = req.body.title
  var postContent = req.body.content
  
  pageData.postdata.params = {'postAuthor': postAuthor, 'postTitle': postTitle, 'postContent': postContent}
+ */
 }
 
 // ----------------------------------
