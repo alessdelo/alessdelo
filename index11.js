@@ -106,6 +106,14 @@ var pageData = {
     footer: footer,
     params: myJson
   },
+ postdata: {
+    title:'Sending data via POST from a form',
+    content:'../contents/postdata.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: 'empty'
+  },
  mongo1: {
     title:'Mongo Test n.1',
     content:'../contents/mongo1.ejs',
@@ -226,6 +234,21 @@ function insertToMongo(req, res, next) {
  
  } // fine insertToMongo
 
+// ----------------------------------
+// send post data from a form
+
+ app.post('/postdata', showPostData)
+
+function showPostData(req, res) {
+ var postAuthor = req.body.author
+ var postTitle = req.body.title
+ var postContent = req.body.content
+ 
+ pageData.postdata.params = {'postAuthor': postAuthor, 'postTitle': postTitle, 'postContent': postContent}
+}
+
+// ----------------------------------
+// ----------------------------------
 // ----------------------------------
 
  app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
