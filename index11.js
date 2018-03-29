@@ -238,9 +238,10 @@ function insertToMongo(req, res, next) {
 // send post data from a form
 
 app.get('/postdata', function (req, res) {
-  res.send('POST request to the homepage')
+ // res.send('POST request to the homepage')
+ res.render(index,pageData.postdata)
 })
-/*
+
  app.post('/postdata', showPostData)
 
 function showPostData(req, res) {
@@ -252,9 +253,10 @@ function showPostData(req, res) {
  var postContent = req.body.content
  
  pageData.postdata.params = {'postAuthor': postAuthor, 'postTitle': postTitle, 'postContent': postContent}
+ res.render(index,pageData.postdata)
  
 }
-*/
+
 // ----------------------------------
 // ----------------------------------
 // ----------------------------------
