@@ -237,7 +237,7 @@ function insertToMongo(req, res, next) {
 // ----------------------------------
 // send post data from a form
 
-app.post('/postdata', function (req, res) {
+app.get('/postdata', function (req, res) {
   res.send('POST request to the homepage')
 })
 /*
