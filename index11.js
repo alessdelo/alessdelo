@@ -249,9 +249,9 @@ function showPostData(req, res) {
 // res.send('POST request to the homepage')
  
  var item = {
-      postAuthor = req.body.author,
-      postTitle = req.body.title,
-      postContent = req.body.content
+      postAuthor: req.body.author,
+      postTitle: req.body.title,
+      postContent: req.body.content
   }
  
  pageData.postdata.params = item
