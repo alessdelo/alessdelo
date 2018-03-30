@@ -251,7 +251,7 @@ app.get('/postdata', function (req, res) {
 
 function showPostData(req, res) {
  
-res.send(req.body.author)
+res.send(req.body)
  
 /*
   var item = {
