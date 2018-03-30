@@ -183,7 +183,7 @@ function sendJson (req, res) {
   }
 
 // ---------------------------------
-
+// 10. INTERACTION EXPRESS - MLAB(MONGO DB)
 // took inspitation by:
 // https://youtu.be/ZKwrOXl5TDI
 // https://github.com/mschwarzmueller/nodejs-basics-tutorial/blob/master/09-mongodb/routes/index.js
@@ -239,7 +239,7 @@ function insertToMongo(req, res, next) {
  } // fine insertToMongo
 
 // ----------------------------------
-// SEND POST DATA VIA FORM (using app.post and bodyParser)
+// 11. SEND POST DATA VIA FORM (using app.post and bodyParser)
 
 // Use bodyParser.urlencoded() middleware
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -264,9 +264,10 @@ function showPostData(req, res) {
  
  pageData.postdata.params = item
  res.render(index,pageData.postdata)
- 
 
 }
+// ----------------------------------
+
 
 // ----------------------------------
 // ----------------------------------
