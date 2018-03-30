@@ -277,6 +277,10 @@ function showPostData(req, res) {
 // ----------------------------------
 // 11. SEND AND RETRIEVE DATA TO MONGO VIA POST (FROM A FORM)
 
+app.get('/postmongo', function (req, res) {
+ res.render(index,pageData.postdmongo)
+})
+
 app.post('/postmongo/:author/:content/:title', postMongo)
 
 function postMongo(req, res, next) {
