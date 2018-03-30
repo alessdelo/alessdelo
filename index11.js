@@ -246,9 +246,10 @@ app.get('/postdata', function (req, res) {
 
 function showPostData(req, res) {
  
-// res.send('POST request to the homepage')
+ res.send('POST request to the homepage')
  
- var item = {
+ /*
+  var item = {
       postAuthor: req.body.author,
       postTitle: req.body.title,
       postContent: req.body.content
@@ -256,7 +257,7 @@ function showPostData(req, res) {
  
  pageData.postdata.params = item
  res.render(index,pageData.postdata)
- 
+ */
 }
 
 // ----------------------------------
