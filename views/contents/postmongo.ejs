@@ -1,0 +1,11 @@
+<p class="lead">Read and Write data to MongoDB via POST</p>
+<hr class="my-4">
+<% strMyVar = JSON.stringify(myVar, null, 4); %>
+<%= strMyVar %>
+
+<form action="/postdata" method="post" class="form-inline my-2 my-lg-0">
+      <input name="author" class="form-control mr-sm-2" placeholder="Author" aria-label="Author">
+      <input name="content" class="form-control mr-sm-2" placeholder="Content" aria-label="Content">
+      <input name="title" class="form-control mr-sm-2" placeholder="Title" aria-label="Title">  
+      <button id="addItem" class="btn btn-outline-success my-2 my-sm-0" >Add</button>
+</form>
