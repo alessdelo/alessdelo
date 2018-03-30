@@ -123,7 +123,15 @@ var pageData = {
     nav: nav,
     header: header,
     footer: footer,
-    params: 'coso'
+    params: 'empty'
+  },
+  postmongo: {
+    title:'Write and Read data from MongoDB via POST',
+    content:'../contents/postmongo.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: 'empty'
   }
   
 }
@@ -187,7 +195,7 @@ function sendJson (req, res) {
 // https://youtu.be/ZKwrOXl5TDI
 // https://github.com/mschwarzmueller/nodejs-basics-tutorial/blob/master/09-mongodb/routes/index.js
 
- app.get('/mongo1/:author/:content/:title', insertToMongo)
+app.get('/mongo1/:author/:content/:title', insertToMongo)
 
 function insertToMongo(req, res, next) {
  
@@ -265,8 +273,54 @@ function showPostData(req, res) {
  res.render(index,pageData.postdata)
 
 }
-// ----------------------------------
 
+// ----------------------------------
+// 11. SEND AND RETRIEVE DATA TO MONGO VIA POST (FROM A FORM)
+
+app.post('/postmongo/:author/:content/:title', postMongo)
+
+function postMongo(req, res, next) {
+    
+   mongoose.connect(dbUri)
+
+ 
+   var db = mongoose.connection
+   db.on('error', function() {
+      pageData.mongo1.params = {'error': 'connection problem!'}
+   })
+        
+   db.once('open', function() {
+       
+        var Schema = mongoose.Schema
+        
+        var userDataSchema = new Schema({
+             title: {type: String, required: true},
+             content: String,
+             author: String
+        }, {collection: 'test2'})
+
+        var UserData = mongoose.model('UserData', userDataSchema);
+    
+        var item = {
+           title: req.body.title,
+           content: req.body.content,
+           author: req.body.author
+         };
+
+         var data = new UserData(item);
+         data.save();
+    
+       UserData.find()
+         .then(function(doc) {
+            pageData.postmongo.params = doc
+           
+         })
+        
+   })
+ 
+ res.render(index,pageData.postmongo)
+ 
+ } // fine postToMongo
 
 // ----------------------------------
 // ----------------------------------
