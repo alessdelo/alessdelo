@@ -240,7 +240,7 @@ function insertToMongo(req, res, next) {
 // send post data from a form
 
 // Use bodyParser.urlencoded() middleware
-// app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/postdata', function (req, res) {
  // res.send('POST request to the homepage')
@@ -251,9 +251,9 @@ app.get('/postdata', function (req, res) {
 
 function showPostData(req, res) {
  
-res.send(req.body.author)
+// res.send(req.body.author)
  
-/*
+
   var item = {
       postAuthor: req.body.author,
       postTitle: req.body.title,
@@ -262,7 +262,7 @@ res.send(req.body.author)
  
  pageData.postdata.params = item
  res.render(index,pageData.postdata)
- */
+ 
 
 }
 
