@@ -8,7 +8,7 @@ const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
 const assert = require('assert')
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser')
 
 
 const PORT = process.env.PORT || 5000
@@ -240,7 +240,7 @@ function insertToMongo(req, res, next) {
 // send post data from a form
 
 // Use bodyParser.urlencoded() middleware
-app.use(bodyParser.urlencoded({ extended: true }))
+// app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/postdata', function (req, res) {
  // res.send('POST request to the homepage')
@@ -251,9 +251,9 @@ app.get('/postdata', function (req, res) {
 
 function showPostData(req, res) {
  
-// res.send(req.body.author)
+res.send(req.body.author)
  
-
+/*
   var item = {
       postAuthor: req.body.author,
       postTitle: req.body.title,
@@ -262,6 +262,7 @@ function showPostData(req, res) {
  
  pageData.postdata.params = item
  res.render(index,pageData.postdata)
+ */
 
 }
 
