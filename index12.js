@@ -290,7 +290,7 @@ function postMongo(req, res, next) {
  
    var db = mongoose.connection
    db.on('error', function() {
-      pageData.mongo1.params = {'error': 'connection problem!'}
+      pageData.postmongo.params = {'error': 'connection problem!'}
    })
         
    db.once('open', function() {
