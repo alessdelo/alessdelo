@@ -281,7 +281,7 @@ app.get('/postmongo', function (req, res) {
  res.render(index,pageData.postmongo)
 })
 
-app.post('/postmongo/:author/:content/:title', postMongo)
+app.post('/postmongo', postMongo)
 
 function postMongo(req, res, next) {
     
