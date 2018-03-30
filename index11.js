@@ -1,5 +1,7 @@
 /*
-PROVA DI CONNESSIONE A MLab MONGODB TRAMITE MONGOOSE PACKAGE E INTERAZIONE CON DATABASE
+11. INVIO DATI VIA POST DA FORM SEMPLICE (con Express app.post e bodyParser)
+
+10. PROVA DI CONNESSIONE A MLab MONGODB TRAMITE MONGOOSE PACKAGE E INTERAZIONE CON DATABASE
 https://www.youtube.com/watch?v=h4A0-53Olm4&list=PL55RiY5tL51oGJorjEgl6NVeDbx_fO5jR&index=18
 https://github.com/mschwarzmueller/nodejs-basics-tutorial/blob/master/11-mongoose/routes/index.js
 */
@@ -237,7 +239,7 @@ function insertToMongo(req, res, next) {
  } // fine insertToMongo
 
 // ----------------------------------
-// send post data from a form
+// SEND POST DATA VIA FORM (using app.post and bodyParser)
 
 // Use bodyParser.urlencoded() middleware
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -251,9 +253,9 @@ app.get('/postdata', function (req, res) {
 
 function showPostData(req, res) {
  
-res.send(req.body)
+// res.send(req.body)
  
-/*
+
   var item = {
       postAuthor: req.body.author,
       postTitle: req.body.title,
@@ -263,7 +265,7 @@ res.send(req.body)
  pageData.postdata.params = item
  res.render(index,pageData.postdata)
  
-*/
+
 }
 
 // ----------------------------------
