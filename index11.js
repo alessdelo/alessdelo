@@ -251,9 +251,9 @@ app.get('/postdata', function (req, res) {
 
 function showPostData(req, res) {
  
-// res.send(req.body.author)
+res.send(req.body.author)
  
-
+/*
   var item = {
       postAuthor: req.body.author,
       postTitle: req.body.title,
@@ -263,7 +263,7 @@ function showPostData(req, res) {
  pageData.postdata.params = item
  res.render(index,pageData.postdata)
  
-
+*/
 }
 
 // ----------------------------------
