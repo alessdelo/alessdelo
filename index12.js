@@ -314,7 +314,7 @@ function postMongo(req, res, next) {
          var data = new UserData(item);
          data.save();
     
-       UserData.find({author:"Gino"}).pretty()
+       UserData.find({author:"Gino"})
          .then(function(doc) {
             pageData.postmongo.params = doc
            
