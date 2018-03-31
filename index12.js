@@ -132,6 +132,14 @@ var pageData = {
     header: header,
     footer: footer,
     params: 'empty'
+  },
+ maps1: {
+    title:'Google Maps API embedding test',
+    content:'../contents/maps1.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: 'empty'
   }
   
 }
@@ -151,6 +159,7 @@ var app = express()
  app.get('/form1', (req, res) => res.render(index,pageData.form1))
  app.get('/addperson', (req, res) => res.render(index,pageData.addperson))
  app.get('/mongo1', (req, res) => res.render(index,pageData.mongo1))
+ app.get('/maps1', (req, res) => res.render(index,pageData.maps1))
 
  app.get('/search/:word', sendWord)
     function sendWord(req, res) {
