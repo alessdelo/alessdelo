@@ -356,8 +356,8 @@ function postMongo(req, res, next) {
 // ----------------------------------
 // 11. GEODATA GENERATOR FOR MONGODB COLLECTION
 
-app.get('/mapsmongo', function (req, res) {
- res.render(index,pageData.mapsmongo)
+app.get('/mapmongo', function (req, res) {
+ res.render(index,pageData.mapmongo)
 })
 
 app.post('/mapmongo', mapMongo)
