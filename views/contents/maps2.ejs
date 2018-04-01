@@ -58,3 +58,30 @@ var theObj = JSON.stringify(points);
 
 <p>theObj: <%= theObj %></p>
 
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var roma = {lat: 41.9000000, lng: 12.5299999};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: roma
+        });
+        var marker = new google.maps.Marker({
+                position: roma,
+          map: map
+        });
+      }
+    </script>
+    
+     <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwBHsazZiwOM_daIT60BctPGfQYWw8T38&callback=initMap">
+    </script>
+
