@@ -1,4 +1,5 @@
 /*
+12. GENERATORE DI UNA MONGODB COLLECTION (CON GEODATA)
 11. INVIO DATI VIA POST DA FORM SEMPLICE (con Express app.post e bodyParser)
 10. PROVA DI CONNESSIONE A MLab MONGODB TRAMITE MONGOOSE PACKAGE E INTERAZIONE CON DATABASE
 https://www.youtube.com/watch?v=h4A0-53Olm4&list=PL55RiY5tL51oGJorjEgl6NVeDbx_fO5jR&index=18
@@ -144,6 +145,14 @@ var pageData = {
  maps2: {
     title:'JS object generates random points in Google Maps area',
     content:'../contents/maps2.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: 'empty'
+  },
+ mapmongo: {
+    title:'Google Maps markers from MongoDB',
+    content:'../contents/mapmongo.ejs',
     nav: nav,
     header: header,
     footer: footer,
@@ -343,6 +352,47 @@ function postMongo(req, res, next) {
  res.render(index,pageData.postmongo)
  
  } // fine postToMongo
+
+// ----------------------------------
+// 11. GEODATA GENERATOR FOR MONGODB COLLECTION
+
+app.get('/mapsmongo', function (req, res) {
+ res.render(index,pageData.mapsmongo)
+})
+
+app.post('/mapmongo', mapMongo)
+
+function mapMongo(req, res, next) {
+ 
+   mongoose.connect(dbUri)
+
+   var db = mongoose.connection
+   db.on('error', function() {
+      pageData.mapmongo.params = {'error': 'connection problem!'}
+   })
+ 
+   db.once('open', function() {
+       
+        var Schema = mongoose.Schema
+        /*
+        var userDataSchema = new Schema({
+             name: {type: String, required: true},
+             location: String,
+             author: String
+        }, {collection: 'maps1'})
+        
+
+        var UserData = mongoose.model('UserData', userDataSchema);
+        */
+        
+        
+        
+    }) // fine db.once    
+   
+  res.render(index,pageData.mapmongo)
+ 
+}
+
 
 // ----------------------------------
 // ----------------------------------
