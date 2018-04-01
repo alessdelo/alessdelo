@@ -142,7 +142,7 @@ var pageData = {
     params: 'empty'
   },
  maps2: {
-    title:'Random points in Google Maps area',
+    title:'JS object generates random points in Google Maps area',
     content:'../contents/maps2.ejs',
     nav: nav,
     header: header,
