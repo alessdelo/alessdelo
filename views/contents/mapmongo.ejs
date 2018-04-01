@@ -1,0 +1,92 @@
+<script>
+function randomStr(m) {
+	var m = m || 9; s = '', r = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	for (var i=0; i < m; i++) { s += r.charAt(Math.floor(Math.random()*r.length)); }
+	return s;
+};
+function fillCoords(length){
+	var multip = Math.pow(10,length); 
+	var randnum = Math.floor(Math.random() * multip);
+	return randnum;
+}
+function randomIntFromInterval(min,max,decimals)
+{
+    return Number((Math.random()*(max-min)+min).toFixed(decimals));
+}
+/*
+// Area limits (Roma):
+// - top-left: 41.9999999, 12.3999999
+// - bot-right: 41.7999999, 12.6599999
+location: {
+      type: "Point",
+      coordinates: [-73.856077, 40.848447]
+}
+*/
+var points =  {};
+var pointsnum = 20;
+for (i = 0; i < pointsnum; i++) { 
+   	var theX = randomIntFromInterval(41.8000000,41.9999999,7);
+	var theY = randomIntFromInterval(12.3999999,12.6599999,7);
+	var key = "point" + i.toString();
+	var theString= randomStr(6);
+    points[key] = {name: 	theString,
+    			location: {
+				type: "Points",
+    				coordinates: [theX, theY]
+				}
+				};
+    			
+}
+// var randnum = randomIntFromInterval(41.8000000,41.9999999,7);
+var theObj = JSON.stringify(points);
+</script>
+
+<p class="lead">Random points in Maps area</p>
+<hr class="my-4">
+
+<p>randstring: </p>
+
+<p>theObj: </p>
+
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var roma = {lat: 41.9000000, lng: 12.5299999};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: roma
+        });
+	
+	
+	
+	for (i = 0; i < pointsnum; i++) { 
+	
+	 
+		    	var theX = randomIntFromInterval(41.8000000,41.9999999,7);
+			var theY = randomIntFromInterval(12.3999999,12.6599999,7);
+			
+       		 var marker = new google.maps.Marker({
+		
+               		 position: {lat: theX, lng: theY},
+          		map: map
+			
+       		 });
+		 
+		} // fine for 
+		
+		
+      	} // fine initMap
+	
+    </script>
+    
+     <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwBHsazZiwOM_daIT60BctPGfQYWw8T38&callback=initMap">
+    </script>
