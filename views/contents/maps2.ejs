@@ -1,4 +1,4 @@
-<%
+<script>
 function randomStr(m) {
 	var m = m || 9; s = '', r = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 	for (var i=0; i < m; i++) { s += r.charAt(Math.floor(Math.random()*r.length)); }
@@ -49,14 +49,14 @@ for (i = 0; i < pointsnum; i++) {
 
 var theObj = JSON.stringify(points);
 
-%>
+</script>
 
 <p class="lead">Random points in Maps area</p>
 <hr class="my-4">
 
-<p>randstring: <%= theString %></p>
+<p>randstring: <%=  %></p>
 
-<p>theObj: <%= theObj %></p>
+<p>theObj: <%=  %></p>
 
     <style>
        #map {
@@ -74,11 +74,15 @@ var theObj = JSON.stringify(points);
           zoom: 4,
           center: roma
         });
-        var marker = new google.maps.Marker({
-                position: roma,
-          map: map
-        });
-      }
+	for (i = 0; i < pointsnum; i++) { 
+	
+       		 var marker = new google.maps.Marker({
+		    	var theX = randomIntFromInterval(41.8000000,41.9999999,7);
+			var theY = randomIntFromInterval(12.3999999,12.6599999,7);
+               		 position: {lat: theX, lng: theY},
+          		map: map
+       		 });
+      	}
     </script>
     
      <script async defer
