@@ -375,10 +375,19 @@ function mapMongo(req, res, next) {
        
         var Schema = mongoose.Schema
         /*
+        points[key] = {name: 	theString,
+    			location: {
+				type: "Points",
+    				coordinates: [theX, theY]
+				}
+				};
+    */
+    
+        /*
         var userDataSchema = new Schema({
-             name: {type: String, required: true},
-             location: String,
-             author: String
+             name:  String, 
+             location: {type:String,
+                       coordinates: [{theX:Number, theY:Number}]}
         }, {collection: 'maps1'})
         
 
