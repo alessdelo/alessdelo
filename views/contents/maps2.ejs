@@ -11,9 +11,9 @@ function fillCoords(length){
 	return randnum;
 }
 
-function randomIntFromInterval(min,max)
+function randomIntFromInterval(min,max,decimals)
 {
-    return (Math.random()*(max-min+1)+min).toFixed(4);
+    return (Math.random()*(max-min+1)+min).toFixed(decimals);
 }
 
 /*
@@ -29,7 +29,7 @@ location: {
 
 var theString= randomStr(6);
 
-var randnum = randomIntFromInterval(1,6)
+var randnum = randomIntFromInterval(42,41.8,7)
 
 %>
 
