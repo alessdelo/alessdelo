@@ -11,6 +11,11 @@ function fillCoords(length){
 	return randnum;
 }
 
+function randomIntFromInterval(min,max)
+{
+    return (Math.random()*(max-min+1)+min).toFixed(4);
+}
+
 /*
 // Area limits (Roma):
 // - top-left: 41.9999999, 12.3999999
@@ -24,7 +29,7 @@ location: {
 
 var theString= randomStr(6);
 
-var randnum = fillCoords(6)
+var randnum = randomIntFromInterval(1,6)
 
 %>
 
