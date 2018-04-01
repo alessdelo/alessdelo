@@ -5,7 +5,7 @@ function randomStr(m) {
 	return s;
 };
 
-
+var randnum = Math.floor(Math.random() * 1000000000);
 
 /*
 // Area limits (Roma):
@@ -25,6 +25,7 @@ var theString= randomStr(6);
 <p class="lead">Random points in Maps area</p>
 <hr class="my-4">
 
-<%= theString %>
+<p>randstring: <%= theString %></p>
+<p>randnum: <%= randnum %></p>
 
 
