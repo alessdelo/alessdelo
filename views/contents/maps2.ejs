@@ -54,9 +54,9 @@ var theObj = JSON.stringify(points);
 <p class="lead">Random points in Maps area</p>
 <hr class="my-4">
 
-<p>randstring: <%=  %></p>
+<p>randstring: </p>
 
-<p>theObj: <%=  %></p>
+<p>theObj: </p>
 
     <style>
        #map {
@@ -74,6 +74,8 @@ var theObj = JSON.stringify(points);
           zoom: 4,
           center: roma
         });
+	
+	
 	for (i = 0; i < pointsnum; i++) { 
 	
        		 var marker = new google.maps.Marker({
@@ -82,7 +84,10 @@ var theObj = JSON.stringify(points);
                		 position: {lat: theX, lng: theY},
           		map: map
        		 });
-      	}
+		} // fine for
+		
+      	} // fine initMap
+	
     </script>
     
      <script async defer
