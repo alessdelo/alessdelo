@@ -5,7 +5,11 @@ function randomStr(m) {
 	return s;
 };
 
-var randnum = Math.floor(Math.random() * 1000000000);
+function fillCoords(length){
+	var multip = Math.pow(10,length); 
+	var randnum = Math.floor(Math.random() * 1000000000);
+	return randnum;
+}
 
 /*
 // Area limits (Roma):
@@ -19,6 +23,8 @@ location: {
 */
 
 var theString= randomStr(6);
+
+var randnum = fillCoords(6)
 
 %>
 
