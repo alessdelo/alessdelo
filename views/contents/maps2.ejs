@@ -33,7 +33,8 @@ for (i = 0; i < pointsnum; i++) {
    	var theX = randomIntFromInterval(41.8000000,41.9999999,7);
 	var theY = randomIntFromInterval(12.3999999,12.6599999,7);
 	var key = "point" + i.toString();
-    points[key] = {
+	var theString= randomStr(6);
+    points[key] = {name: 	theString,
     			location: {
 				type: "Points",
     				coordinates: [theX, theY]
@@ -42,7 +43,7 @@ for (i = 0; i < pointsnum; i++) {
     			
 }
 
-var theString= randomStr(6);
+
 
 // var randnum = randomIntFromInterval(41.8000000,41.9999999,7);
 
