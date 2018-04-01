@@ -140,6 +140,14 @@ var pageData = {
     header: header,
     footer: footer,
     params: 'empty'
+  },
+ maps2: {
+    title:'Random points in Google Maps area',
+    content:'../contents/maps2.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: 'empty'
   }
   
 }
@@ -160,6 +168,7 @@ var app = express()
  app.get('/addperson', (req, res) => res.render(index,pageData.addperson))
  app.get('/mongo1', (req, res) => res.render(index,pageData.mongo1))
  app.get('/maps1', (req, res) => res.render(index,pageData.maps1))
+ app.get('/maps2', (req, res) => res.render(index,pageData.maps2))
 
  app.get('/search/:word', sendWord)
     function sendWord(req, res) {
