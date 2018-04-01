@@ -30,9 +30,10 @@ var points =  {};
 var pointsnum = 20;
 
 for (i = 0; i < pointsnum; i++) { 
-   	var randnum = randomIntFromInterval(41.8000000,41.9999999,7);
-	var key = "key" + i.toString();
-    points[key] = randnum;
+   	var theX = randomIntFromInterval(41.8000000,41.9999999,7);
+	var theY = randomIntFromInterval(12.3999999,12.6599999,7);
+	var key = "point" + i.toString();
+    points[key] = {"x": theX, "y": theY };
 }
 
 var theString= randomStr(6);
