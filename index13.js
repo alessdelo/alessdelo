@@ -338,8 +338,8 @@ function postMongo(req, res, next) {
            author: req.body.author
          };
 
-         var data = new UserData(item);
-         data.save();
+         var data = new UserData(item)
+         data.save()
     
        UserData.find({author:{ $regex:"o"} }, {title: true, _id: false})
          .then(function(doc) {
@@ -383,7 +383,7 @@ function mapMongo(req, res, next) {
 				coordinates: [Number],// [<longitude>, <latitude>],
    		 	index: '2d'      // create the geospatial index
    		 }
-	},{collection: 'maps1'});
+	},{collection: 'maps1'})
 	
 
         
@@ -400,7 +400,7 @@ function mapMongo(req, res, next) {
          }
 	
 	var data = new UserData(item);
-         data.save();
+         data.save()
         
         
     }) // fine db.once    
