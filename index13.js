@@ -392,7 +392,7 @@ function mapMongo(req, res, next) {
 	*/
 	var LocationSchema = new Schema({ 
 		name: String, 
-		location: {type: String,
+		location: {
 			
 			
 			coordinates:[Number]
@@ -416,7 +416,7 @@ function mapMongo(req, res, next) {
 	   
 	   var item = {
 			name: req.body.name,
-		   location:{type: 'Point',
+		   location:{
 			   
 				coordinates:[req.body.coordx, req.body.coordy]
 			   	
