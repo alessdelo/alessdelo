@@ -375,7 +375,7 @@ function mapMongo(req, res, next) {
        
         var Schema = mongoose.Schema
 	
-	/*
+	
 	
 	
 	
@@ -383,12 +383,12 @@ function mapMongo(req, res, next) {
    		 name: String,
    			location: {
 		    	type: String,  // geometrical entity type (Point, LineString, Polygon...)
-				coordinates: [Number],// [<longitude>, <latitude>],
-   		 	index: '2d'      // create the geospatial index
+				coordinates: [Number, Number],  // [<longitude>, <latitude>],
+   		 	index: String      // create the geospatial index
    		 }
 	},{collection: 'maps1'})
 	
-	*/
+	/*
 	var LocationSchema = new Schema({ 
 		name: String, 
 		coords:[Number,Number]
@@ -396,11 +396,13 @@ function mapMongo(req, res, next) {
 			
 		
 		},{collection: 'maps1'})
+		*/
 	
 
         
 
-        var UserData = mongoose.model('UserData', LocationSchema);
+        var UserData = mongoose.model('UserData', LocationSchema) 
+	/*
 	   
 	   var item = {
 			name: req.body.name, 
@@ -410,7 +412,7 @@ function mapMongo(req, res, next) {
 		   }
 	   
 	   
-	   /*
+	   */
 	   
         
         var item = {
@@ -421,7 +423,7 @@ function mapMongo(req, res, next) {
            			index: '2d'
 		   }
          }
-	 */
+	 
 	
 	var data = new UserData(item);
          data.save()
