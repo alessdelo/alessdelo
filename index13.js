@@ -374,7 +374,7 @@ function mapMongo(req, res, next) {
    db.once('open', function() {
        
         var Schema = mongoose.Schema
-	/*
+	
 	
 	
 	var LocationSchema = new Schema({  
@@ -402,7 +402,7 @@ function mapMongo(req, res, next) {
 	
 	var data = new UserData(item);
          data.save()
-	 */
+	 
         
         
     }) // fine db.once    
