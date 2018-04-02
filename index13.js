@@ -429,7 +429,7 @@ function mapMongo(req, res, next) {
 	   
         UserData.find()
          .then(function(doc) {
-            pageData.postmongo.params = doc
+            pageData.mapmongo.params = doc
            
          })
         
