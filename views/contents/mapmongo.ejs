@@ -1,4 +1,11 @@
-<script>
+<p class="lead">Read and Write data to MongoDB via POST</p>
+<hr class="my-4">
+<% strMyVar = JSON.stringify(myVar, null, 4); %>
+<%= strMyVar %>
+
+
+
+<%
 function randomStr(m) {
 	var m = m || 9; s = '', r = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 	for (var i=0; i < m; i++) { s += r.charAt(Math.floor(Math.random()*r.length)); }
@@ -17,34 +24,24 @@ function randomIntFromInterval(min,max,decimals)
 // Area limits (Roma):
 // - top-left: 41.9999999, 12.3999999
 // - bot-right: 41.7999999, 12.6599999
-location: {
-      type: "Point",
-      coordinates: [-73.856077, 40.848447]
-}
-*/
-var points =  {};
-var pointsnum = 20;
-for (i = 0; i < pointsnum; i++) { 
-   	var theX = randomIntFromInterval(41.8000000,41.9999999,7);
-	var theY = randomIntFromInterval(12.3999999,12.6599999,7);
-	var key = "point" + i.toString();
-	var theString= randomStr(6);
-    points[key] = {name: 	theString,
-    			location: {
-				type: "Points",
-    				coordinates: [theX, theY]
-				}
-				};
-    			
-}
-// var randnum = randomIntFromInterval(41.8000000,41.9999999,7);
-var theObj = JSON.stringify(points);
-</script>
 
-<p class="lead">Random points in Maps area</p>
+var coordX = randomIntFromInterval(41.8000000,41.9999999,7);
+var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
+
+
+%>
+
+<p class="lead">Mongo points in Maps area</p>
 <hr class="my-4">
 
-<p>randstring: </p>
+<form action="/mapmongo" method="post" class="form-inline my-2 my-lg-0">
+      <input name="name" class="form-control mr-sm-2" placeholder="Point Name" aria-label="Name">
+      <input name="coordx" class="form-control mr-sm-2" value="<%= coordX %>" aria-label="CoordX">
+      <input name="coordy" class="form-control mr-sm-2" value="<%= coordY %>" aria-label="CoordY">  
+      <button id="addItem" class="btn btn-outline-success my-2 my-sm-0" >Add</button>
+</form>
+
+
 
 <p>theObj: </p>
 
@@ -65,6 +62,8 @@ var theObj = JSON.stringify(points);
           center: roma
         });
 	
+	/*
+	
 	
 	
 	for (i = 0; i < pointsnum; i++) { 
@@ -81,6 +80,8 @@ var theObj = JSON.stringify(points);
        		 });
 		 
 		} // fine for 
+		
+		*/
 		
 		
       	} // fine initMap
