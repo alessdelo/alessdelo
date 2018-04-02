@@ -375,6 +375,8 @@ function mapMongo(req, res, next) {
        
         var Schema = mongoose.Schema
 	
+	/*
+	
 	
 	
 	var LocationSchema = new Schema({  
@@ -386,10 +388,30 @@ function mapMongo(req, res, next) {
    		 }
 	},{collection: 'maps1'})
 	
+	*/
+	var LocationSchema = new Schema({ 
+		name: String, 
+		coordX:Number, 
+		coordY:Number
+			
+		
+		},{collection: 'maps1'})
+	
 
         
 
         var UserData = mongoose.model('UserData', LocationSchema);
+	   
+	   var item = {
+			name: req.body.name, 
+		coordX:req.body.coordx, 
+		coordY:req.body.coordy	   
+		   
+		   }
+	   
+	   
+	   /*
+	   
         
         var item = {
            name: req.body.name,
@@ -399,6 +421,7 @@ function mapMongo(req, res, next) {
            			index: '2d'
 		   }
          }
+	 */
 	
 	var data = new UserData(item);
          data.save()
