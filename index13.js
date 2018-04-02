@@ -395,7 +395,9 @@ function mapMongo(req, res, next) {
 		location: {
 			
 		
-			coordinates:[Number,Number]
+			coordinates:[Number,Number],
+			type: String
+			
 			
 			
 		}
@@ -416,7 +418,8 @@ function mapMongo(req, res, next) {
 			name: req.body.name,
 		   location:{
 			   
-				coordinates:[req.body.coordx, req.body.coordy]
+				coordinates:[req.body.coordx, req.body.coordy],
+			   	type: 'Point'
 			   
 		   }
 		   
