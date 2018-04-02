@@ -10,7 +10,7 @@ alert(data);
 var mydata = JSON.parse(data);
  alert(mydata);
  alert(mydata[0]);
-	alert(mydata[0].name);
+	alert(mydata[0].location.coordinates[0]);
 // alert(mydata[1].name);
 // alert(mydata[1].age);
 </script>
@@ -77,9 +77,12 @@ var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
           center: roma
         });
 	
-	 	 var marker = new google.maps.Marker({
+	 	 xCoord = mydata[0].location.coordinates[0];
+		 yCoord = mydata[0].location.coordinates[1];
+		 
+		 var marker = new google.maps.Marker({ 
 		
-               		 position: {lat: mydata[0].coordinates[0], lng: mydata[0].coordinates[1]},
+               		 position: {lat: xCoord, lng: yCoord},
           		map: map
 			
        		 });
