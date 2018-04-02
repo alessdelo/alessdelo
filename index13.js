@@ -403,13 +403,18 @@ function mapMongo(req, res, next) {
 	var data = new UserData(item);
          data.save()
 	 
-        
+	   
+        UserData.find()
+         .then(function(doc) {
+            pageData.postmongo.params = doc
+           
+         })
         
     }) // fine db.once    
    
   res.render(index,pageData.mapmongo)
  
-}
+} // fine mapMongo
 
 
 // ----------------------------------
