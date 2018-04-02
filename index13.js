@@ -374,26 +374,33 @@ function mapMongo(req, res, next) {
    db.once('open', function() {
        
         var Schema = mongoose.Schema
-        /*
-        points[key] = {name: 	theString,
-    			location: {
-				type: "Points",
-    				coordinates: [theX, theY]
-				}
-				};
-    */
-    
-        /*
-        var userDataSchema = new Schema({
-             name:  String, 
-             location: {type:String,
-                       coordinates: [{theX:Number, theY:Number}]}
-        }, {collection: 'maps1'})
+	
+	
+	var LocationSchema = new Schema({  
+   		 name: String,
+   			location: {
+		    	type: String,  // geometrical entity type (Point, LineString, Polygon...)
+				coordinates: [Number],// [<longitude>, <latitude>],
+   		 	index: '2d'      // create the geospatial index
+   		 }
+	},{collection: 'maps1'});
+	
+
         
 
-        var UserData = mongoose.model('UserData', userDataSchema);
-        */
+        var UserData = mongoose.model('UserData', LocationSchema);
         
+        var item = {
+           name: req.body.name,
+           location: {
+		   type: 'Point',
+		   coordinates:[req.body.coordx,req.body.coordy],
+           			index: '2d'
+		   }
+         }
+	
+	var data = new UserData(item);
+         data.save();
         
         
     }) // fine db.once    
