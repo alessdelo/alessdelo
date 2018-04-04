@@ -386,7 +386,7 @@ function mapMongo(req, res, next) {
 		    type: [Number]
 		}
 	    }   
-	});
+	}, { collection: "maps1"})
 	   
 	LocationSchema.index({ loc: '2dsphere'});
 	   
