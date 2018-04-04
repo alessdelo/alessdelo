@@ -393,105 +393,13 @@ function mapMongo(req, res, next) {
 	var UserData = mongoose.model('UserData', LocationSchema) 
 	
 	var item = {
+		"name": 
 		"loc": {
-                    "type": "Point",
+                    "type": "Point", req.body.name,
                     "coordinates": [req.body.coordx, req.body.coordy]
                 }
 		
 		}
-	
-	/*
-	var LocationSchema = new Schema({  
-   		 name: String,
-   			location: {
-		    	type: String,  // geometrical entity type (Point, LineString, Polygon...)
-			coordinates: [Number, Number],  // [<longitude>, <latitude>],
-   		 	index: String      // create the geospatial index
-   		 }
-	},{collection: 'maps1'})
-	
-	*/
-	
-	/*
-	var LocationSchema = new Schema({ 
-					name: String, 
-					location: {
-						coordinates:[Number]
-					}
-				},{collection: 'maps1'})
-				*/
-	
-	/*
-		var LocationSchema = new Schema({ 
-					name: String, 
-					location: {
-						type:[Number],
-						index:'2d'
-						
-					}
-				},{collection: 'maps1'})
-				
-				*/
-	/*
-	var geoJSONSchema = new Schema({
-				  name: String,	
-				  location: {
-				    type: {type: String},
-				    coordinates: []
-				  }
-				}, {
-				  collection: "maps1"
-				});
-
-        var UserData = mongoose.model('UserData', LocationSchema) 
-	*/
-	/*
-	
-	   
-	   var item = {
-			name: req.body.name,
-		   	location: {
-				coordinates:[req.body.coordx, req.body.coordy]
-			}
-		   
-		   } // fine item 
-		   */
-	   
-	   
-	/*
-        var item = {
-           name: req.body.name,
-           location: {
-		   	type: 'Point',
-		   	coordinates:[req.body.coordx,req.body.coordy],
-           		index: '2d'
-		   }
-         }
-	 */
-	
-	/*
-	   var item = {
-           name: req.body.name,
-           location: {
-		   	type: 'Point',
-		   	coordinates:[req.body.coordx,req.body.coordy]
-           		
-		   }
-         }
-	 */
-	
-	/*
-	  var item = {
-		   name: req.body.name,
-		   location: {
-				type: 'Point',
-				coordinates:[req.body.coordx,req.body.coordy]
-
-			   }
-		 }
-		 
-		 */
-	
 	
 	var data = new UserData(item);
          data.save()
