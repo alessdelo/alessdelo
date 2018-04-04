@@ -375,6 +375,31 @@ function mapMongo(req, res, next) {
        
         var Schema = mongoose.Schema
 	
+	// Models
+	var LocationSchema = new Schema({
+	    loc: {
+		type: {
+		    type: String,
+		    default: "Point"
+		},
+		coordinates: {
+		    type: [Number]
+		}
+	    }   
+	});
+	   
+	LocationSchema.index({ loc: '2dsphere'});
+	   
+	var UserData = mongoose.model('UserData', LocationSchema) 
+	
+	var item = {
+		"loc": {
+                    "type": "Point",
+                    "coordinates": [req.body.coordx, req.body.coordy]
+                }
+		
+		}
+	
 	/*
 	var LocationSchema = new Schema({  
    		 name: String,
@@ -407,7 +432,7 @@ function mapMongo(req, res, next) {
 				},{collection: 'maps1'})
 				
 				*/
-	
+	/*
 	var geoJSONSchema = new Schema({
 				  name: String,	
 				  location: {
@@ -419,6 +444,7 @@ function mapMongo(req, res, next) {
 				});
 
         var UserData = mongoose.model('UserData', LocationSchema) 
+	*/
 	/*
 	
 	   
@@ -453,6 +479,8 @@ function mapMongo(req, res, next) {
 		   }
          }
 	 */
+	
+	/*
 	  var item = {
 		   name: req.body.name,
 		   location: {
@@ -461,6 +489,8 @@ function mapMongo(req, res, next) {
 
 			   }
 		 }
+		 
+		 */
 	
 	
 	var data = new UserData(item);
