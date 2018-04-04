@@ -395,8 +395,7 @@ function mapMongo(req, res, next) {
 	var UserData = mongoose.model('UserData', LocationSchema) 
 	
 	var item = {
-		"name": req.body.name,
-		"time": Date.now,		
+		"name": req.body.name,	
 		"loc": {
                     "type": "Point",
                     "coordinates": [req.body.coordx, req.body.coordy]
