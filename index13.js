@@ -377,15 +377,16 @@ function mapMongo(req, res, next) {
 	
 	// Models
 	var LocationSchema = new Schema({
-	    loc: {
-		type: {
-		    type: String,
-		    default: "Point"
-		},
-		coordinates: {
-		    type: [Number]
-		}
-	    }   
+		    name: String,
+		    loc: {
+			type: {
+			    type: String,
+			    default: "Point"
+			},
+			coordinates: {
+			    type: [Number]
+			}
+		    }   
 	}, { collection: "maps1"})
 	   
 	LocationSchema.index({ loc: '2dsphere'});
@@ -393,9 +394,9 @@ function mapMongo(req, res, next) {
 	var UserData = mongoose.model('UserData', LocationSchema) 
 	
 	var item = {
-		"name": 
+		"name": req.body.name,
 		"loc": {
-                    "type": "Point", req.body.name,
+                    "type": "Point",
                     "coordinates": [req.body.coordx, req.body.coordy]
                 }
 		
