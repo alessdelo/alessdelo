@@ -405,6 +405,7 @@ function mapMongo(req, res, next) {
 				},{collection: 'maps1'})
 
         var UserData = mongoose.model('UserData', LocationSchema) 
+	/*
 	
 	   
 	   var item = {
@@ -413,7 +414,8 @@ function mapMongo(req, res, next) {
 				coordinates:[req.body.coordx, req.body.coordy]
 			}
 		   
-		   } // fine item
+		   } // fine item 
+		   */
 	   
 	   
 	/*
