@@ -10,12 +10,15 @@ var myEjs = JSON.stringify(<%- passEjs %>);
 
 alert(myEjs);
 
+$(document).ready( function() {
+            $('#myDiv').html(myEjs);
+});
+
 var dataArray = $.parseJSON(<%- passEjs %>).data;
 
 var theFirstData = dataArray[0]; //get the data with id "1"
 
 $(document).ready( function() {
-            $('#myDiv').html(myEjs);
             $('#firstItem').html(theFirstData);
 });
 
