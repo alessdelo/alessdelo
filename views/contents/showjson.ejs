@@ -14,9 +14,9 @@ $(document).ready( function() {
             $('#myDiv').html(myEjs);
 });
 
-var dataArray = JSON.parse(myEjs);
+var dataArray = JSON.parse(<%- passEjs %>);
 
-var theFirstData = myEjs[0]; //get the data with id "1"
+var theFirstData = dataArray[0]; //get the data with id "1"
 
 $(document).ready( function() {
             $('#firstItem').html(theFirstData);
