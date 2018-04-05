@@ -4,10 +4,14 @@
 <% strMyVar = JSON.stringify(myVar, null, 4); %>
 <%= strMyVar %>
 
-<script> alert(<%- strMyVar %>);
+<script>
+
+// alert(<%- strMyVar %>);
+
+var ejsTest = <%= strMyVar %>;
 
 $(document).ready( function() {
-            $('#myDiv').html(<%= strMyVar %>);
+            $('#myDiv').html("my html");
 });
 
 </script>
