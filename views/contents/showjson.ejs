@@ -10,12 +10,20 @@ var myEjs = JSON.stringify(<%- passEjs %>);
 
 alert(myEjs);
 
+var dataArray = $.parseJSON(myJson).data;
+
+var theFirstData = dataArray[0]; //get the data with id "1"
+
 $(document).ready( function() {
             $('#myDiv').html(myEjs);
+            $('#firstItem').html(theFirstData);
 });
 
 </script>
 
 <p>This is the variable passed from EJS, re- passed into a Javscript tag:</p>
 <div id="myDiv">no info..</div>
+
+<p>This is the first item extracted from the JSON:</p>
+<div id="firstItem">no info..</div>
 
