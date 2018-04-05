@@ -6,12 +6,12 @@
 
 <script>
 
-var myEjs = <%- passEjs %>;
+var myEjs = JSON.stringify(<%- passEjs %>);
 
 alert(myEjs);
 
 $(document).ready( function() {
-            $('#myDiv').html(JSON.stringify(myEjs));
+            $('#myDiv').html(myEjs);
 });
 
 </script>
