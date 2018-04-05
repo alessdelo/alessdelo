@@ -10,7 +10,7 @@ var myEjs = JSON.stringify(<%- passEjs %>);
 
 alert(myEjs);
 
-var dataArray = $.parseJSON(myJson).data;
+var dataArray = $.parseJSON(<%- passEjs %>).data;
 
 var theFirstData = dataArray[0]; //get the data with id "1"
 
