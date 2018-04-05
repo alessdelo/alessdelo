@@ -4,6 +4,15 @@
 <% strMyVar = JSON.stringify(myVar, null, 4); %>
 <%= strMyVar %>
 
-<script> alert(<% strMyVar %>);</script>
+<script> alert(<%- strMyVar %>);
+
+$(document).ready( function() {
+            $('#myDiv').html(<%- strMyVar %>);
+});
+
+</script>
+
+<p>tag myDiv:</p>
+<div id="myDiv">no info..</div>
 
 
