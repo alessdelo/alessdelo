@@ -89,18 +89,20 @@ var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
 		*/
 
 		var pointsnum = 10;
+		var theX = 41.8000000;
+		var theY = 12.3999999;
 
 		for (i = 0; i < pointsnum; i++) {
 
 			// var theX = randomIntFromInterval(41.8000000,41.9999999,7);
 			// var theY = randomIntFromInterval(12.3999999,12.6599999,7);
                
-               var theX = 41.8000000;
-			var theY = 12.3999999;
+			var incr = i+0.01;
+			
 
 			 var marker = new google.maps.Marker({
 
-				 position: {lat: theX, lng: theY},
+				 position: {lat: theX+incr, lng: theY+incr},
 				 map: map
 			 });
 
