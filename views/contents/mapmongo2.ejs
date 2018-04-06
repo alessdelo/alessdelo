@@ -91,13 +91,21 @@ $(document).ready( function() {
 			var theY = randomIntFromInterval(12.3999999,12.6599999,7);
                
 			// var incr = i+0.01;
+			// var contentString = '<p>Point ' + i + '</p>';
 			
-
+			var infowindow = new google.maps.InfoWindow({
+          			content: contentString
+        		});
+			
 			 var marker = new google.maps.Marker({
 
 				 position: {lat: theX, lng: theY},
 				 map: map
 			 });
+			 
+			 marker.addListener('click', function() {
+          			infowindow.open(map, marker);
+       			 });
 
 		 } // fine for
 
