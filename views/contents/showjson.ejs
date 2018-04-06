@@ -26,10 +26,12 @@ $(document).ready( function() {
             $('#firstItem').html(theFirstData);
 });
 
-for(var propName in dataArray) {
-    if(dataArray.hasOwnProperty(propName)) {
-        var propValue = data[propName];
-            $( "#objVals" ).append( "<p>" + propValue + "</p>" );
+for(var theKey in dataArray) {
+    if(dataArray.hasOwnProperty(theKey)) {
+        var theVal = data[theKey];
+            alert(theVal);
+            alert(data[theKey]);
+            // $( "#objVals" ).append( "<p>" + theVal + "</p>" );
     }
 }
 
