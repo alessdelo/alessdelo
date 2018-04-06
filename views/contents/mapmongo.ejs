@@ -1,7 +1,50 @@
+
 <p class="lead">Read and Write data to MongoDB via POST</p>
 <hr class="my-4">
 <% strMyVar = JSON.stringify(myVar, null, 4); %>
 <%= strMyVar %>
+
+<script>
+// var data = <%- myVar %>;
+// alert(<%- strMyVar %>);
+// alert(data);
+// var mydata = JSON.parse(data);
+// alert(mydata);
+// alert(mydata[0]);
+//
+// alert(mydata[1].name);
+// alert(mydata[1].age);
+</script>
+
+<%
+
+function randomStr(m) {
+	var m = m || 9; s = '', r = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	for (var i=0; i < m; i++) { s += r.charAt(Math.floor(Math.random()*r.length)); }
+	return s;
+}
+
+
+function fillCoords(length){
+	var multip = Math.pow(10,length);
+	var randnum = Math.floor(Math.random() * multip);
+	return randnum;
+}
+
+
+function randomIntFromInterval(min,max,decimals)
+{
+  return Number((Math.random()*(max-min)+min).toFixed(decimals));
+}
+
+// Area limits (Roma):
+// - top-left: 41.9999999, 12.3999999
+// - bot-right: 41.7999999, 12.6599999
+
+var coordX = randomIntFromInterval(41.8000000,41.9999999,7);
+var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
+
+%>
 
 <p class="lead">Mongo points in Maps area</p>
 
@@ -15,6 +58,59 @@
 </form>
 
 
-     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwBHsazZiwOM_daIT60BctPGfQYWw8T38&callback=initMap">
-    </script>
+<p>theObj: </p>
+
+   <style>
+      #map {
+       height: 400px;
+       width: 100%;
+      }
+
+   </style>
+   <h3>My Google Maps Demo</h3>
+   <div id="map"></div>
+   <script>
+
+     function initMap() {
+       var roma = {lat: 41.9000000, lng: 12.5299999};
+       var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 4,
+         center: roma
+       });
+
+	 	 /*
+		 xCoord = mydata[0].loc.coordinates[0];
+		 yCoord = mydata[0].loc.coordinates[1];
+
+		 var marker = new google.maps.Marker({
+              		     position: {lat: xCoord, lng: yCoord},
+         		          map: map
+      		 });
+		*/
+
+		var pointsnum = 10;
+
+		for (i = 0; i < pointsnum; i++) {
+
+			// var theX = randomIntFromInterval(41.8000000,41.9999999,7);
+			// var theY = randomIntFromInterval(12.3999999,12.6599999,7);
+               
+               var theX = 41.8000000;
+			var theY = 12.3999999;
+
+			 var marker = new google.maps.Marker({
+
+				 position: {lat: theX, lng: theY},
+				 map: map
+			 });
+
+		 } // fine for
+
+     	} // fine initMap
+
+   </script>
+
+    <script async defer
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwBHsazZiwOM_daIT60BctPGfQYWw8T38&callback=initMap">
+   </script>
+
