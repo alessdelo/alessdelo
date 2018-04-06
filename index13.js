@@ -151,14 +151,21 @@ var pageData = {
     params: 'empty'
   },
  mapmongo: {
-    title:'Google Maps markers from MongoDB',
+    title:'Google Maps markers with other random points',
     content:'../contents/mapmongo.ejs',
     nav: nav,
     header: header,
     footer: footer,
     params: 'empty'
+  },
+   mapmongo2: {
+    title:'Google Maps markers from MongoDB',
+    content:'../contents/mapmongo2.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: 'empty'
   }
-  
 }
 
 
@@ -360,7 +367,11 @@ app.get('/mapmongo', function (req, res) {
  res.render(index,pageData.mapmongo)
 })
 
-app.post('/mapmongo', mapMongo)
+app.get('/mapmongo2', function (req, res) {
+ res.render(index,pageData.mapmongo2)
+})
+
+app.post('/mapmongo2', mapMongo)
 
 function mapMongo(req, res, next) {
  
@@ -368,7 +379,7 @@ function mapMongo(req, res, next) {
 
    var db = mongoose.connection
    db.on('error', function() {
-      pageData.mapmongo.params = {'error': 'connection problem!'}
+      pageData.mapmongo2.params = {'error': 'connection problem!'}
    })
  
    db.once('open', function() {
@@ -409,13 +420,13 @@ function mapMongo(req, res, next) {
 	   
         UserData.find()
          .then(function(doc) {
-            pageData.mapmongo.params = doc
+            pageData.mapmongo2.params = doc
            
          })
         
     }) // fine db.once    
    
-  res.render(index,pageData.mapmongo)
+  res.render(index,pageData.mapmongo2)
  
 } // fine mapMongo
 
