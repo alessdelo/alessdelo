@@ -101,12 +101,13 @@ $(document).ready( function() {
 
 				 position: {lat: theX, lng: theY},
 				 map: map
-			 });
+			 }); 
 			 
-			 attachMessage(marker, theContents[i]);
+			// attachMessage(marker, theContents[i]);
 			 
 
 		 } // fine for
+		 */
 		 
 		 function attachMessage(marker, theMsg) {
         var infowindow = new google.maps.InfoWindow({
@@ -115,7 +116,8 @@ $(document).ready( function() {
 	
 	marker.addListener('click', function() {
           infowindow.open(marker.get('map'), marker);
-        });
+        }); 
+	*/
 
      	} // fine initMap
 
