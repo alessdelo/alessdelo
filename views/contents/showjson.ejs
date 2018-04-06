@@ -31,7 +31,9 @@ for(var theKey in dataArray) {
         var theVal = dataArray[theKey];
             alert(theKey + " - " + theVal);
           
-             $( "#objVals" ).append( "<p>" + theKey + " - " + theVal + "</p>" );
+            // $( "#objVals" ).append( "<p>" + theKey + " - " + theVal + "</p>" );
+            $('#objVals').append(theVal);
+            
     }
 }
 
