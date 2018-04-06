@@ -93,18 +93,18 @@ $(document).ready( function() {
 			// var incr = i+0.01;
 			var contentString = '<div><p>Point ' + i + '</p></div>';
 			
-			var infowindow = new google.maps.InfoWindow({
+			var infowindow+i = new google.maps.InfoWindow({
           			content: contentString
         		});
 			
-			 var marker = new google.maps.Marker({
+			 var marker+i = new google.maps.Marker({
 
 				 position: {lat: theX, lng: theY},
 				 map: map
 			 });
 			 
-			 marker.addListener('click', function() {
-          			infowindow.open(map, marker);
+			 marker+i.addListener('click', function() {
+          			infowindow.open(map, marker+i);
        			 });
 
 		 } // fine for
