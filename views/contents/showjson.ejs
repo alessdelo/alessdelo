@@ -24,25 +24,22 @@ alert(theFirstData);
 
 $(document).ready( function() {
             $('#firstItem').html(theFirstData);
-});
-
-for(var theKey in dataArray) {
-    if(dataArray.hasOwnProperty(theKey)) {
-        var theVal = dataArray[theKey];
-            alert(theKey + " - " + theVal);
-          
-           // $('#objVals').html(theVal);
-           //  $( "#objVals" ).html( "<p>" + theKey + " - " + theVal + "</p>" );
-           //  $("ol").append("<li>" + theKey + " - " + theVal + "</li>" );
-           // $("ol").append("<li>foo</li>" );
-            
-    }
-}
 
 
-$(document).ready( function() {
- $('#objVals').html("<p>foo...</p>");
-});
+            for(var theKey in dataArray) {
+                if(dataArray.hasOwnProperty(theKey)) {
+                    var theVal = dataArray[theKey];
+                        alert(theKey + " - " + theVal);
+
+                       // $('#objVals').html(theVal);
+                       //  $( "#objVals" ).html( "<p>" + theKey + " - " + theVal + "</p>" );
+                       //  $("ol").append("<li>" + theKey + " - " + theVal + "</li>" );
+                       // $("ol").append("<li>foo</li>" );
+
+                }
+            } // fine for
+
+}); // fine document.ready
 
 </script>
 
