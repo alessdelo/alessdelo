@@ -2,8 +2,9 @@
 <hr class="my-4">
 <% strMyVar = JSON.stringify(myVar, null, 4); %>
 <%= strMyVar %>
+<% var passEjs = strMyVar; %>
 
-<%
+<script>
 
 function randomStr(m) {
 	var m = m || 9; s = '', r = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -31,7 +32,12 @@ function randomIntFromInterval(min,max,decimals)
 var coordX = randomIntFromInterval(41.8000000,41.9999999,7);
 var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
 
-%>
+$(document).ready( function() {
+	$( "input[name='coordx']" ).val(coordX);
+	$( "input[name='coordy']" ).val(coordY);	
+}); // fine document.ready
+
+</script>
 
 <p class="lead">Mongo points in Maps area</p>
 
@@ -39,8 +45,8 @@ var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
 
 <form action="/mapmongo2" method="post" class="form-inline my-2 my-lg-0">
      <input name="name" class="form-control mr-sm-2" placeholder="Point Name" aria-label="Name">
-     <input name="coordx" class="form-control mr-sm-2" value="<%= coordX %>" aria-label="CoordX">
-     <input name="coordy" class="form-control mr-sm-2" value="<%= coordY %>" aria-label="CoordY"> 
+     <input name="coordx" class="form-control mr-sm-2" aria-label="CoordX">
+     <input name="coordy" class="form-control mr-sm-2" aria-label="CoordY"> 
      <button id="addItem" class="btn btn-outline-success my-2 my-sm-0" >Add</button>
 </form>
 
