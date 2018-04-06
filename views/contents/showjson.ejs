@@ -26,6 +26,13 @@ $(document).ready( function() {
             $('#firstItem').html(theFirstData);
 });
 
+for(var propName in dataArray) {
+    if(dataArray.hasOwnProperty(propName)) {
+        var propValue = data[propName];
+            $( "#objVals" ).append( "<p>" + propValue + "</p>" );
+    }
+}
+
 </script>
 
 <p>This is the variable passed from EJS, re- passed into a Javscript tag:</p>
@@ -33,4 +40,7 @@ $(document).ready( function() {
 
 <p>This is the first item extracted from the JSON:</p>
 <div id="firstItem">no info..</div>
+
+<p>This is the first item extracted from the JSON:</p>
+<div id="objVals">no info..</div>
 
