@@ -3,6 +3,17 @@
 <% strMyVar = JSON.stringify(myVar, null, 4); %>
 <%= strMyVar %>
 
+<p class="lead">Mongo points in Maps area</p>
+
+<hr class="my-4">
+
+<form action="/mapmongo" method="post" class="form-inline my-2 my-lg-0">
+     <input name="name" class="form-control mr-sm-2" placeholder="Point Name" aria-label="Name">
+     <input name="coordx" class="form-control mr-sm-2" value="<%= coordX %>" aria-label="CoordX">
+     <input name="coordy" class="form-control mr-sm-2" value="<%= coordY %>" aria-label="CoordY"> 
+     <button id="addItem" class="btn btn-outline-success my-2 my-sm-0" >Add</button>
+</form>
+
 
      <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwBHsazZiwOM_daIT60BctPGfQYWw8T38&callback=initMap">
