@@ -77,7 +77,8 @@ var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
           center: roma
         });
 	
-	 	 xCoord = mydata[0].loc.coordinates[0];
+	 	 /*
+		 xCoord = mydata[0].loc.coordinates[0];
 		 yCoord = mydata[0].loc.coordinates[1];
 		 
 		 var marker = new google.maps.Marker({ 
@@ -86,28 +87,28 @@ var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
           		map: map
 			
        		 });
+		*/
 	
 	
 	
 	
 	
+		var pointsnum = 10;
 	
-	
-	
-	// for (i = 0; i < pointsnum; i++) { 
-	
-	 
-		    	var theX = randomIntFromInterval(41.8000000,41.9999999,7);
+		for (i = 0; i < pointsnum; i++) { 
+
+
+			var theX = randomIntFromInterval(41.8000000,41.9999999,7);
 			var theY = randomIntFromInterval(12.3999999,12.6599999,7);
-			
-       		 var marker = new google.maps.Marker({
-		
-               		 position: {lat: theX, lng: theY},
-          		map: map
-			
-       		 });
-		 
-		// } // fine for 
+
+			 var marker = new google.maps.Marker({
+
+				 position: {lat: theX, lng: theY},
+				map: map
+
+			 });
+
+		 } // fine for 
 		
 		
 		
