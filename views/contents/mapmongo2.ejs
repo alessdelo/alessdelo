@@ -82,6 +82,8 @@ $(document).ready( function() {
 		*/
 
 		var pointsnum = 10;
+		var theContents[];
+		
 		// var theX = 41.8000000;
 		// var theY = 12.3999999;
 
@@ -91,11 +93,9 @@ $(document).ready( function() {
 			var theY = randomIntFromInterval(12.3999999,12.6599999,7);
                
 			// var incr = i+0.01;
-			var contentString = '<div><p>Point ' + i + '</p></div>';
+			theContents[i]= '<div><p>Point ' + i + '</p></div>';
 			
-			var infowindow = new google.maps.InfoWindow({
-          			content: contentString
-        		});
+			
 			
 			 var marker = new google.maps.Marker({
 
@@ -103,6 +103,7 @@ $(document).ready( function() {
 				 map: map
 			 });
 			 
+			 attachMessage(marker, theContents[i]);
 			 
 
 		 } // fine for
