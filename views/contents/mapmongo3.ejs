@@ -62,7 +62,7 @@ $(document).ready( function() {
 			if(dataArray.hasOwnProperty(theKey)) {
 			    var theVal = dataArray[theKey]; 			    
 				// alert(theKey + " - " + theVal);	
-				$("ol").append("<li>" + theKey + " - " + theVal + "</li>" );
+				$("ol").append("<li>" + theKey + " - " + JSON.stringify(theVal, null, 4) + "</li>" );
 			}
 		    } // fine for
 	}); // fine document.ready   
