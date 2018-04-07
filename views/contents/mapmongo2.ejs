@@ -114,7 +114,7 @@ $(document).ready( function() {
         var infowindow = new google.maps.InfoWindow({
           content: theMsg
         });
-	}
+	
 	
 	
 	
@@ -122,6 +122,8 @@ $(document).ready( function() {
 	marker.addListener('click', function() {
           infowindow.open(marker.get('map'), marker);
         }); 
+	
+	} // fine attachMessage()
 	
 
      	} // fine initMap
