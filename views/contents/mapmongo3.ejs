@@ -62,17 +62,17 @@ $(document).ready( function() {
 			if(dataArray.hasOwnProperty(theKey)) {
 			    var theVal = dataArray[theKey]; 			    
 				// alert(theKey + " - " + theVal); 	
-				// $("ol").append("<li>" + theKey + " - " + JSON.stringify(theVal, null, 4) + "</li>" );
-				$("ol").append("<li>" + theKey + " - " + theVal.loc.coordinates[0] + " - " + theVal.loc.coordinates[1] + "</li>" );
+				// $("ul").append("<li>" + theKey + " - " + JSON.stringify(theVal, null, 4) + "</li>" );
+				$("ul").append("<li>" + theKey + " - " + theVal.loc.coordinates[0] + " - " + theVal.loc.coordinates[1] + "</li>" );
 			}
 		    } // fine for
 	}); // fine document.ready   
    
    </script> 
    
-<ol>
+<ul>
 <li>MONGO RECORDS</li>
-</ol>
+</ul>
    
    <script>
      function initMap() {
@@ -95,8 +95,8 @@ $(document).ready( function() {
 				       var theX = theVal.loc.coordinates[0];
 					var theY = theVal.loc.coordinates[1];
 				
-					 var marker = new google.maps.Marker({
-						 position: {lat: theX, lng: theY},
+					 var marker = new google.maps.Marker({ 
+						 position: {lat: theX, lng: theY},						
 						 map: map
 					 }); 	
 					 
