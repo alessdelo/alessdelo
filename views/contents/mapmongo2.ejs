@@ -69,63 +69,40 @@ $(document).ready( function() {
        var map = new google.maps.Map(document.getElementById('map'), {
          zoom: 8,
          center: roma
-       });
-
-	 	 /*
-		 xCoord = mydata[0].loc.coordinates[0];
-		 yCoord = mydata[0].loc.coordinates[1];
-
-		 var marker = new google.maps.Marker({
-              		     position: {lat: xCoord, lng: yCoord},
-         		          map: map
-      		 });
-		*/  // 
-
-		 // var pointsnum = 40;
+       });	 	
+		
 		var theContents=[1,2,3,4,5,6,7,8,9,10];
 		
-		// var theX = 41.8000000;
-		// var theY = 12.3999999;
 
 		for (i = 0; i < theContents.length; i++) {
 
 			var theX = randomIntFromInterval(41.8000000,41.9999999,7);
 			var theY = randomIntFromInterval(12.3999999,12.6599999,7);
-               
-			// var incr = i+0.01; 
+               			
 			var infoContent = '<div><p>Point ' + theContents[i] + '</p></div>';
-			
-			
-			
+									
 			 var marker = new google.maps.Marker({
-
 				 position: {lat: theX, lng: theY},
 				 map: map
 			 }); 
 			 
 			 attachMessage(marker, infoContent);
-			// attachMessage(marker, '<div><p>Point000</p></div>');
-			 
-
+						 
 		 } // fine for
 		 
 		 
 		 function attachMessage(marker, theMsg) {
-        var infowindow = new google.maps.InfoWindow({
-          content: theMsg
-        });
+		 
+		        var infowindow = new google.maps.InfoWindow({
+ 		         content: theMsg
+		        });
+					
+			marker.addListener('click', function() {
+		          infowindow.open(marker.get('map'), marker);
+		        }); 
 	
+		} // fine attachMessage()
 	
-	
-	
-	
-	marker.addListener('click', function() {
-          infowindow.open(marker.get('map'), marker);
-        }); 
-	
-	} // fine attachMessage()
-	
-
      	} // fine initMap
 
    </script>
