@@ -159,7 +159,15 @@ var pageData = {
     params: 'empty'
   },
    mapmongo2: {
-    title:'Google Maps random markers wirh infowindows from array',
+    title:'Google Maps random markers with infowindows from array',
+    content:'../contents/mapmongo2.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: 'empty'
+  },
+	mapmongo3: {
+    title:'Google Maps markers from MongoDB',
     content:'../contents/mapmongo2.ejs',
     nav: nav,
     header: header,
@@ -431,7 +439,7 @@ function mapMongo(req, res, next) {
 } // fine mapMongo
 
 // ----------------------------------
-// 11. GEODATA GENERATOR FOR MONGODB COLLECTION
+// 11. MONGODB GEODATA FOR GOOGLE MAPS API
 
 app.get('/mapmongo3', function (req, res) {
  res.render(index,pageData.mapmongo3)
