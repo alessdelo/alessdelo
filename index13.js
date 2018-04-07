@@ -441,15 +441,13 @@ function mapMongo(req, res, next) {
 // ----------------------------------
 // 11. MONGODB GEODATA FOR GOOGLE MAPS API
 
-/*
-
 app.get('/mapmongo3', function (req, res) {
  res.render(index,pageData.mapmongo3)
 })
 
-app.post('/mapmongo3', mapMongo)
+app.post('/mapmongo3', mapMongo3)
 
-function mapMongo(req, res, next) {
+function mapMongo3(req, res, next) {
  
    mongoose.connect(dbUri)
 
@@ -503,9 +501,9 @@ function mapMongo(req, res, next) {
    
   res.render(index,pageData.mapmongo3)
  
-} // fine mapMongo
+} // fine mapMongo3
 
-*/
+
 
 
 
