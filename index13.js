@@ -168,7 +168,7 @@ var pageData = {
   },
 	mapmongo3: {
     title:'Google Maps markers from MongoDB',
-    content:'../contents/mapmongo2.ejs',
+    content:'../contents/mapmongo3.ejs',
     nav: nav,
     header: header,
     footer: footer,
@@ -439,7 +439,7 @@ function mapMongo(req, res, next) {
 } // fine mapMongo
 
 // ----------------------------------
-// 11. MONGODB GEODATA FOR GOOGLE MAPS API
+// 12. MONGODB GEODATA FOR GOOGLE MAPS API
 
 app.get('/mapmongo3', function (req, res) {
  res.render(index,pageData.mapmongo3)
