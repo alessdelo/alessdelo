@@ -61,8 +61,9 @@ $(document).ready( function() {
 		    for(var theKey in dataArray) {
 			if(dataArray.hasOwnProperty(theKey)) {
 			    var theVal = dataArray[theKey]; 			    
-				// alert(theKey + " - " + theVal);	
-				$("ol").append("<li>" + theKey + " - " + JSON.stringify(theVal, null, 4) + "</li>" );
+				// alert(theKey + " - " + theVal); 	
+				// $("ol").append("<li>" + theKey + " - " + JSON.stringify(theVal, null, 4) + "</li>" );
+				$("ol").append("<li>" + theKey + " - " + theVal.loc.coordinates[0] + "</li>" );
 			}
 		    } // fine for
 	}); // fine document.ready   
