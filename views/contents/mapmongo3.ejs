@@ -63,7 +63,25 @@ $(document).ready( function() {
 		var theContents=[1,2,3,4,5,6,7,8,9,10];
 		var dataArray = <%- passEjs %>;
 		
-		
+		for(var theKey in dataArray) {
+	                if(dataArray.hasOwnProperty(theKey)) {
+				
+	                    var theVal = dataArray[theKey];
+			    
+			    	if (typeof(theVal.loc.coordinates) !== 'undefined') {
+	                       
+			       
+				       var theX = theVal.loc.coordinates[0];
+					var theY = theVal.loc.coordinates[1];
+				
+					 var marker = new google.maps.Marker({
+						 position: {lat: theX, lng: theY},
+						 map: map
+					 }); 			
+	                      
+ 	               } // fine if 1
+		       
+	            } // fine for	
 		
 		
 		
