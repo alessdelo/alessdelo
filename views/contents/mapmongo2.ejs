@@ -79,21 +79,21 @@ $(document).ready( function() {
               		     position: {lat: xCoord, lng: yCoord},
          		          map: map
       		 });
-		*/
+		*/  // 
 
-		var pointsnum = 40;
-		var theContents=[];
+		 // var pointsnum = 40;
+		var theContents=[1,2,3,4,5,6,7,8,9,10];
 		
 		// var theX = 41.8000000;
 		// var theY = 12.3999999;
 
-		for (i = 0; i < pointsnum; i++) {
+		for (i = 0; i < theContents.length; i++) {
 
 			var theX = randomIntFromInterval(41.8000000,41.9999999,7);
 			var theY = randomIntFromInterval(12.3999999,12.6599999,7);
                
 			// var incr = i+0.01; 
-			// theContents[i]= '<div><p>Point ' + i + '</p></div>';
+			var infoContent = '<div><p>Point ' + theContents[i] + '</p></div>';
 			
 			
 			
@@ -103,7 +103,7 @@ $(document).ready( function() {
 				 map: map
 			 }); 
 			 
-			// attachMessage(marker, theContents[i]);
+			 attachMessage(marker, infoContent);
 			// attachMessage(marker, '<div><p>Point000</p></div>');
 			 
 
