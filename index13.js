@@ -441,6 +441,8 @@ function mapMongo(req, res, next) {
 // ----------------------------------
 // 11. MONGODB GEODATA FOR GOOGLE MAPS API
 
+/*
+
 app.get('/mapmongo3', function (req, res) {
  res.render(index,pageData.mapmongo3)
 })
@@ -502,6 +504,10 @@ function mapMongo(req, res, next) {
   res.render(index,pageData.mapmongo3)
  
 } // fine mapMongo
+
+*/
+
+
 
 // ----------------------------------
 // ----------------------------------
