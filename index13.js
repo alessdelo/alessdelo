@@ -159,7 +159,7 @@ var pageData = {
     params: 'empty'
   },
    mapmongo2: {
-    title:'Google Maps markers from MongoDB',
+    title:'Google Maps random markers wirh infowindows from array',
     content:'../contents/mapmongo2.ejs',
     nav: nav,
     header: header,
