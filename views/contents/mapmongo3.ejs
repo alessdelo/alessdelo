@@ -1,0 +1,98 @@
+<p class="lead">Create random markers and their infowindows from an array</p>
+<hr class="my-4">
+<% strMyVar = JSON.stringify(myVar, null, 4); %>
+<%= strMyVar %>
+<% var passEjs = strMyVar; %>
+
+<script>
+function randomStr(m) {
+	var m = m || 9; s = '', r = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	for (var i=0; i < m; i++) { s += r.charAt(Math.floor(Math.random()*r.length)); }
+	return s;
+}
+function fillCoords(length){
+	var multip = Math.pow(10,length);
+	var randnum = Math.floor(Math.random() * multip);
+	return randnum;
+}
+function randomIntFromInterval(min,max,decimals)
+{
+  return Number((Math.random()*(max-min)+min).toFixed(decimals));
+}
+// Area limits (Roma):
+// - top-left: 41.9999999, 12.3999999
+// - bot-right: 41.7999999, 12.6599999
+var coordX = randomIntFromInterval(41.8000000,41.9999999,7);
+var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
+$(document).ready( function() {
+	$( "input[name='coordx']" ).val(coordX);
+	$( "input[name='coordy']" ).val(coordY);	
+}); // fine document.ready
+</script>
+
+<p class="lead">Mongo points in Maps area</p>
+
+<hr class="my-4">
+
+<form action="/mapmongo2" method="post" class="form-inline my-2 my-lg-0">
+     <input name="name" class="form-control mr-sm-2" placeholder="Point Name" aria-label="Name">
+     <input name="coordx" class="form-control mr-sm-2" aria-label="CoordX">
+     <input name="coordy" class="form-control mr-sm-2" aria-label="CoordY"> 
+     <button id="addItem" class="btn btn-outline-success my-2 my-sm-0" >Add</button>
+</form>
+
+
+<p>theObj: </p>
+
+   <style>
+      #map {
+       height: 400px;
+       width: 100%;
+      }
+   </style>
+   <h3>My Google Maps Demo</h3>
+   <div id="map"></div>
+   <script>
+     function initMap() {
+       var roma = {lat: 41.9000000, lng: 12.5299999};
+       var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 8,
+         center: roma
+       });	 	
+		
+		var theContents=[1,2,3,4,5,6,7,8,9,10];
+		
+		for (i = 0; i < theContents.length; i++) {
+			var theX = randomIntFromInterval(41.8000000,41.9999999,7);
+			var theY = randomIntFromInterval(12.3999999,12.6599999,7);
+               			
+			var infoContent = '<div><p>Point ' + theContents[i] + '</p></div>';
+									
+			 var marker = new google.maps.Marker({
+				 position: {lat: theX, lng: theY},
+				 map: map
+			 }); 
+			 
+			 attachMessage(marker, infoContent);
+						 
+		 } // fine for
+		 
+		 
+		 function attachMessage(marker, theMsg) {
+		 
+		        var infowindow = new google.maps.InfoWindow({
+ 		         content: theMsg
+		        });
+					
+			marker.addListener('click', function() {
+		          infowindow.open(marker.get('map'), marker);
+		        }); 
+	
+		} // fine attachMessage()
+	
+     	} // fine initMap
+   </script>
+
+    <script async defer
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwBHsazZiwOM_daIT60BctPGfQYWw8T38&callback=initMap">
+   </script>
