@@ -430,6 +430,70 @@ function mapMongo(req, res, next) {
  
 } // fine mapMongo
 
+// ----------------------------------
+// 11. GEODATA GENERATOR FOR MONGODB COLLECTION
+
+app.get('/mapmongo3', function (req, res) {
+ res.render(index,pageData.mapmongo3)
+})
+
+app.post('/mapmongo3', mapMongo)
+
+function mapMongo(req, res, next) {
+ 
+   mongoose.connect(dbUri)
+
+   var db = mongoose.connection
+   db.on('error', function() {
+      pageData.mapmongo3.params = {'error': 'connection problem!'}
+   })
+ 
+   db.once('open', function() {
+       
+        var Schema = mongoose.Schema
+	
+	// Models
+	var LocationSchema = new Schema({
+		    name: String,
+			time : { type : Date, default: Date.now },
+		    loc: {
+			type: {
+			    type: String,
+			    default: "Point"
+			},
+			coordinates: {
+			    type: [Number]
+			}
+		    }   
+	}, { collection: "maps1"})
+	   
+	LocationSchema.index({ loc: '2dsphere'});
+	   
+	var UserData = mongoose.model('UserData', LocationSchema) 
+	
+	var item = {
+		"name": req.body.name,	
+		"loc": {
+                    "type": "Point",
+                    "coordinates": [req.body.coordx, req.body.coordy]
+                }
+		
+		}
+	
+	var data = new UserData(item);
+         data.save()
+	 
+	   UserData.find()
+         .then(function(doc) {
+            pageData.mapmongo3.params = doc
+           
+         })
+        
+    }) // fine db.once    
+   
+  res.render(index,pageData.mapmongo3)
+ 
+} // fine mapMongo
 
 // ----------------------------------
 // ----------------------------------
