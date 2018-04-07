@@ -92,8 +92,11 @@ $(document).ready( function() {
 			    
 	                       if (typeof theVal.loc.coordinates !== 'undefined' && theVal.loc.coordinates.length > 0) {
 			       
-				       var theX = theVal.loc.coordinates[0];
-					var theY = theVal.loc.coordinates[1];
+				       // var theX = theVal.loc.coordinates[0];
+					// var theY = theVal.loc.coordinates[1];
+					
+					var theX = 41.9000000;
+					var theY = 12.5299999;
 				
 					 var marker = new google.maps.Marker({ 
 						 position: {lat: theX, lng: theY},						
