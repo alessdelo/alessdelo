@@ -1,4 +1,4 @@
-var silverMapStyle = '[
+
   {
     "elementType": "geometry",
     "stylers": [
@@ -251,4 +251,3 @@ var silverMapStyle = '[
       }
     ]
   }
-]';
