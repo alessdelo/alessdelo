@@ -1,1 +1,1 @@
-alert('aaaaaaa');
+alert('from static folder');
