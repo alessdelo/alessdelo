@@ -76,8 +76,8 @@ $(document).ready( function() {
    
    <script>
    // this file is included in the header and stored in static/maps/styles folder
-   var mapStyle = JSON.parse(silverMapStyle);
-   
+   // var mapStyle = JSON.parse(silverMapStyle);
+    var mapStyle = silverMapStyle;  
      function initMap() {
        var roma = {lat: 41.9000000, lng: 12.5299999};
        var map = new google.maps.Map(document.getElementById('map'), {
