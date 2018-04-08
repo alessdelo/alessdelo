@@ -31,7 +31,8 @@ $(document).ready( function() {
 	$( "input[name='coordy']" ).val(coordY); 
 	// $( "#tesrVar" ).text(mapStyle); 
 	// alert(silverMapStyle);
-	alert('sssssss');
+	 loadJSON("/static/maps/styles/silver.json", silverMapStyle);
+	alert(JSON.stringify(silverMapStyle, null, 4));
 	
 }); // fine document.ready
 </script>
