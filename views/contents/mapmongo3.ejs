@@ -30,9 +30,18 @@ $(document).ready( function() {
 	$( "input[name='coordx']" ).val(coordX);
 	$( "input[name='coordy']" ).val(coordY); 
 	// $( "#tesrVar" ).text(mapStyle); 
-	// alert(silverMapStyle);
-	 var silverMapStyle = loadJSON('/static/maps/styles/silver.json');
-	alert(silverMapStyle);
+	// alert(silverMapStyle); 
+	
+	// var silverMapStyle = loadJSON('/static/maps/styles/silver.json'); s
+silverMapStyle = {};
+	jQuery.getJSON('/static/maps/styles/silver.json', function(data) { 
+	
+	silverMapStyle.push(data);
+	});
+	
+	
+
+alert(silverMapStyle);
 	
 }); // fine document.ready
 </script>
