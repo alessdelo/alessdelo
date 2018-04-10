@@ -1,4 +1,4 @@
-mapStyle = '[
+
   {
     "elementType": "geometry",
     "stylers": [
@@ -251,4 +251,4 @@ mapStyle = '[
       }
     ]
   }
-]';
+
