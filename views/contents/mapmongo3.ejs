@@ -33,8 +33,9 @@ $(document).ready( function() {
 	// alert(silverMapStyle); 
 	
 	// var silverMapStyle = loadJSON('/static/maps/styles/silver.json'); s
-silverMapStyle = {};
-	jQuery.getJSON('/static/maps/styles/silver.json', function(data) { 
+silverMapStyle = {}; 
+	//jQuery.getJSON('/static/maps/styles/silver.json', function(data) { 
+	jQuery.getJSON('/static/test.json', function(data) { 
 	
 	//silverMapStyle.push(data); 
 alert(data); 
@@ -44,7 +45,7 @@ alert('getJson');
 	
 	
 
-alert(silverMapStyle);
+//alert(silverMapStyle);
 	
 }); // fine document.ready
 </script>
