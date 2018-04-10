@@ -56,3 +56,12 @@ $(document).ready( function() {
 <li>bla 2</li>
 </ol>
 
+</script>
+            $(document).ready( function() {			
+                        $.getJSON('/static/test.json', function(data) { 			
+                                    alert(data); 
+                                    alert('getJson');
+
+                        });	
+            }); // fine document.ready
+</script>
