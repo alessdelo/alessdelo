@@ -13,18 +13,26 @@
   <h1 class="display-4"><%= title %></h1>
     
 <% if(typeof params !== 'undefined' || params == "" ) { 
-      var writeParams =[];
-      var myVar =[];
-      var contents =[];
+      var writeParams =[]     
+       
       for (var i = 0; i < params.length; i++) {
-            var writeParams[i] = Object.entries(params[i]) %>
-               <p><%= "params " + i + ": " + writeParams[i] %></p>
-                <%- include(contents[i], {myVar[i]:params[i]}) %>
-<% 
+            var writeParams[i] = Object.entries(params[i])
+  %>    
+    <p><%= "params[" + i + "]: " + writeParams[i] %></p>
+    
+ %>            
       } // fine for
-} else { %>  
+ %>
+            
+   <%- include(content, {myVar:params}) %>             
+                
+               
+<%                           
+} else {
+
+%>  
  <p>no params</p>
-   <%- include(contents) %>
+   <%- include(content) %>
 <% }  %> 
    
    <%- include(footer) %>
