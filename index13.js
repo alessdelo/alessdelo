@@ -172,7 +172,7 @@ var pageData = {
     nav: nav,
     header: header,
     footer: footer,
-    params: 'empty'
+    params: []
   }
 }
 
@@ -493,7 +493,7 @@ function mapMongo3(req, res, next) {
 	 
 	   UserData.find()
          .then(function(doc) {
-            pageData.mapmongo3.params = doc
+            pageData.mapmongo3.params[0] = doc
            
          })
         
