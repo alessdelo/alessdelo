@@ -26,7 +26,7 @@ var dbUri = process.env.MONGODB_URI
 var fs = require('fs')
 
 
-var index = 'pages/index5'
+var index = 'pages/index6'
 var header = "../partials/header2.ejs"
 var nav = "../partials/nav7.ejs"
 var footer = "../partials/footer1.ejs"
