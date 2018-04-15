@@ -116,7 +116,7 @@ var pageData = {
     nav: nav,
     header: header,
     footer: footer,
-    params: 'empty'
+    params: []
   },
  mongo1: {
     title:'Mongo Test n.1',
@@ -124,7 +124,7 @@ var pageData = {
     nav: nav,
     header: header,
     footer: footer,
-    params: 'empty'
+    params: []
   },
   postmongo: {
     title:'Write and Read data from MongoDB via POST',
@@ -132,7 +132,7 @@ var pageData = {
     nav: nav,
     header: header,
     footer: footer,
-    params: 'empty'
+    params: []
   },
  maps1: {
     title:'Google Maps API embedding test',
@@ -140,7 +140,7 @@ var pageData = {
     nav: nav,
     header: header,
     footer: footer,
-    params: 'empty'
+    params: []
   },
  maps2: {
     title:'JS object generates random points in Google Maps area',
@@ -148,7 +148,7 @@ var pageData = {
     nav: nav,
     header: header,
     footer: footer,
-    params: 'empty'
+    params: []
   },
  mapmongo: {
     title:'Google Maps markers with other random points',
@@ -156,7 +156,7 @@ var pageData = {
     nav: nav,
     header: header,
     footer: footer,
-    params: 'empty'
+    params: []
   },
    mapmongo2: {
     title:'Google Maps random markers with infowindows from array',
@@ -164,7 +164,7 @@ var pageData = {
     nav: nav,
     header: header,
     footer: footer,
-    params: 'empty'
+    params: []
   },
 	mapmongo3: {
     title:'Google Maps markers from MongoDB',
@@ -172,7 +172,7 @@ var pageData = {
     nav: nav,
     header: header,
     footer: footer,
-    params: 'empty'
+    params: []
   }
 }
 
@@ -251,7 +251,7 @@ function insertToMongo(req, res, next) {
  
    var db = mongoose.connection
    db.on('error', function() {
-      pageData.mongo1.params = {'error': 'connection problem!'}
+      pageData.mongo1.params[0] = {'error': 'connection problem!'}
    })
         
    db.once('open', function() {
@@ -277,7 +277,7 @@ function insertToMongo(req, res, next) {
     
        UserData.find()
          .then(function(doc) {
-            pageData.mongo1.params = doc
+            pageData.mongo1.params[0] = doc
            
          })
         
@@ -311,7 +311,7 @@ function showPostData(req, res) {
       postContent: req.body.content
   }
  
- pageData.postdata.params = item
+ pageData.postdata.params[0] = item
  res.render(index,pageData.postdata)
 
 }
@@ -332,7 +332,7 @@ function postMongo(req, res, next) {
  
    var db = mongoose.connection
    db.on('error', function() {
-      pageData.postmongo.params = {'error': 'connection problem!'}
+      pageData.postmongo.params[0] = {'error': 'connection problem!'}
    })
         
    db.once('open', function() {
@@ -358,7 +358,7 @@ function postMongo(req, res, next) {
     
        UserData.find({author:{ $regex:"o"} }, {title: true, _id: false})
          .then(function(doc) {
-            pageData.postmongo.params = doc
+            pageData.postmongo.params[0] = doc
            
          })
         
@@ -387,7 +387,7 @@ function mapMongo(req, res, next) {
 
    var db = mongoose.connection
    db.on('error', function() {
-      pageData.mapmongo2.params = {'error': 'connection problem!'}
+      pageData.mapmongo2.params[0] = {'error': 'connection problem!'}
    })
  
    db.once('open', function() {
@@ -428,7 +428,7 @@ function mapMongo(req, res, next) {
 	   
         UserData.find()
          .then(function(doc) {
-            pageData.mapmongo2.params = doc
+            pageData.mapmongo2.params[0] = doc
            
          })
         
@@ -453,7 +453,7 @@ function mapMongo3(req, res, next) {
 
    var db = mongoose.connection
    db.on('error', function() {
-      pageData.mapmongo3.params = {'error': 'connection problem!'}
+      pageData.mapmongo3.params[0] = {'error': 'connection problem!'}
    })
  
    db.once('open', function() {
@@ -494,7 +494,7 @@ function mapMongo3(req, res, next) {
 	 
 	   UserData.find()
          .then(function(doc) {
-            pageData.mapmongo3.params = doc
+            pageData.mapmongo3.params[0] = doc
            
          })
         
