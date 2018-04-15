@@ -11,17 +11,20 @@
 
 <div class="jumbotron">
   <h1 class="display-4"><%= title %></h1>
-  
     
-
-
-<% if(typeof params !== 'undefined') { 
-var writeParams = Object.entries(params) %>
-   <p>params: <%= writeParams %></p>
-    <%- include(content, {myVar:params}) %>
-<% } else { %>  
+<% if(typeof params !== 'undefined' || params == "" ) { 
+      var writeParams =[];
+      var myVar =[];
+      var contents =[];
+      for (var i = 0; i < params.length; i++) {
+            var writeParams[i] = Object.entries(params[i]) %>
+               <p><%= "params " + i + ": " + writeParams[i] %></p>
+                <%- include(contents[i], {myVar[i]:params[i]}) %>
+<% 
+      } // fine for
+} else { %>  
  <p>no params</p>
-   <%- include(content) %>
+   <%- include(contents) %>
 <% }  %> 
    
    <%- include(footer) %>
