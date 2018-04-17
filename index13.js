@@ -494,6 +494,8 @@ function mapMongo3(req, res, next) {
 	   UserData.find()
          .then(function(doc) {
             pageData.mapmongo3.params[0] = doc
+		   
+		var mapsStyle = require('/static/test.json')
            
          })
         
