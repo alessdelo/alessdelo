@@ -496,6 +496,7 @@ function mapMongo3(req, res, next) {
             pageData.mapmongo3.params[0] = doc
 		   
 		var mapsStyle = require('/static/test.json')
+		 pageData.mapmongo3.params[1] = mapsStyle
            
          })
         
