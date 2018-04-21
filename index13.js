@@ -42,7 +42,7 @@ var myJson = {
   }
  */
 
- var mapsStyle = require('/static/silver.json')		
+// var mapsStyle = require('/static/silver.json')		
  var mapsStyleRaw = fs.readFileSync('/static/silver.json')
 var mapsStyle = JSON.parse(mapsStyleRaw)
 
