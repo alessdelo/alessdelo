@@ -440,7 +440,7 @@ function mapMongo(req, res, next) {
 // ----------------------------------
 // 12. MONGODB GEODATA FOR GOOGLE MAPS API
 
- var mapsStyle = require('/static/silver.json')		
+ var mapsStyle = require('/static/silver')		
 // var mapsStyleRaw = fs.readFileSync('/static/silver.json')
 // var mapsStyle = JSON.parse(mapsStyleRaw)
 
