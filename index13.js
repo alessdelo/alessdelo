@@ -500,7 +500,8 @@ function mapMongo3(req, res, next) {
 		// var mapsStyle = JSON.parse(mapsStyleRaw)
 		
 		 // pageData.mapmongo3.params[1] = mapsStyle
-		   pageData.mapmongo3.params[1] = {"testJSON": "blabla"}
+		  // pageData.mapmongo3.params[1] = {"testJSON": "blabla"}
+		   pageData.mapmongo3.params[1] = myJson
            
          })
         
