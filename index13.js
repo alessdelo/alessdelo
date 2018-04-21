@@ -445,6 +445,7 @@ function mapMongo(req, res, next) {
 var mapsStyle = JSON.parse(mapsStyleRaw)
 
 app.get('/mapmongo3', function (req, res) {
+	pageData.mapmongo3.params[1] = mapsStyle
  res.render(index,pageData.mapmongo3)
 })
 
@@ -503,11 +504,12 @@ function mapMongo3(req, res, next) {
 		 // pageData.mapmongo3.params[1] = mapsStyle
 		  // pageData.mapmongo3.params[1] = {"testJSON": "blabla"}
 		   // pageData.mapmongo3.params[1] = myJson
-		    pageData.mapmongo3.params[1] = mapsStyle
+		   
            
          })
         
     }) // fine db.once    
+	pageData.mapmongo3.params[1] = mapsStyle
    
   res.render(index,pageData.mapmongo3)
  
