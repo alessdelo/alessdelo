@@ -43,8 +43,8 @@ var myJson = {
  */
 
 // var mapsStyle = require('/static/silver.json')		
- var mapsStyleRaw = fs.readFileSync('/static/silver.json')
-var mapsStyle = JSON.parse(mapsStyleRaw)
+// var mapsStyleRaw = fs.readFileSync('/static/silver.json')
+// var mapsStyle = JSON.parse(mapsStyleRaw)
 
 
 var pageData = {
@@ -501,7 +501,7 @@ function mapMongo3(req, res, next) {
 		   
 		 
 		
-		  pageData.mapmongo3.params[1] = mapsStyle
+		//   pageData.mapmongo3.params[1] = mapsStyle
 		  // pageData.mapmongo3.params[1] = {"testJSON": "blabla"}
 		  //  pageData.mapmongo3.params[1] = myJson
            
