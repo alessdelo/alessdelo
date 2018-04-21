@@ -27,7 +27,7 @@ function randomIntFromInterval(min,max,decimals)
 var coordX = randomIntFromInterval(41.8000000,41.9999999,7);
 var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
 
-/*
+
 $(document).ready( function() {
 	$( "input[name='coordx']" ).val(coordX);
 	$( "input[name='coordy']" ).val(coordY); 
@@ -37,21 +37,19 @@ $(document).ready( function() {
 	// var silverMapStyle = loadJSON('/static/maps/styles/silver.json'); 
 	// silverMapStyle = {}; 
 	//jQuery.getJSON('/static/maps/styles/silver.json', function(data) { 
+	
+	/*	
 	$.getJSON('/static/test.json', function(data) { 	
 		//silverMapStyle.push(data); 
 		alert(data); 
 		alert('getJson');
 	
-	});
-	
-	
-
+	}); 	
+	*/
+		
 //alert(silverMapStyle);
 	
 }); // fine document.ready
-
-*/
-
 
 </script>
 
@@ -102,13 +100,13 @@ $(document).ready( function() {
    <script>
    // this file is included in the header and stored in static/maps/styles folder
    // var mapStyle = JSON.parse(silverMapStyle);
-    var mapStyle = silverMapStyle;  
+    // var mapStyle = silverMapStyle;  
      function initMap() {
        var roma = {lat: 41.9000000, lng: 12.5299999};
        var map = new google.maps.Map(document.getElementById('map'), {
          zoom: 12,
-         center: roma,
-	 styles: mapStyle
+         center: roma
+	// , styles: mapStyle
        }); // fine var map	 			
 		
 		// var dataArray = <%- passEjs %>; 
