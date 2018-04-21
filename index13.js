@@ -441,7 +441,7 @@ function mapMongo(req, res, next) {
 // 12. MONGODB GEODATA FOR GOOGLE MAPS API
 
 // var mapsStyle = require('/static/silver')		
- var mapsStyleRaw = fs.readFileSync('static/silver.json')
+ var mapsStyleRaw = fs.readFileSync('/static/silver.json')
 var mapsStyle = JSON.parse(mapsStyleRaw)
 
 app.get('/mapmongo3', function (req, res) {
