@@ -495,13 +495,13 @@ function mapMongo3(req, res, next) {
          .then(function(doc) {
             pageData.mapmongo3.params[0] = doc
 		   
-		 // var mapsStyle = require('/static/test.json')
-		// var mapsStyleRaw = fs.readFileSync('/static/test.json');
-		// var mapsStyle = JSON.parse(mapsStyleRaw)
+		  var mapsStyle = require('/static/silver.json')
+		 var mapsStyleRaw = fs.readFileSync('/static/silver.json');
+		 var mapsStyle = JSON.parse(mapsStyleRaw)
 		
-		 // pageData.mapmongo3.params[1] = mapsStyle
+		  pageData.mapmongo3.params[1] = mapsStyle
 		  // pageData.mapmongo3.params[1] = {"testJSON": "blabla"}
-		   pageData.mapmongo3.params[1] = myJson
+		  //  pageData.mapmongo3.params[1] = myJson
            
          })
         
