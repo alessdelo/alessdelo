@@ -42,11 +42,6 @@ var myJson = {
   }
  */
 
-// var mapsStyle = require('/static/silver.json')		
- var mapsStyleRaw = fs.readFileSync('/static/silver.json')
-// var mapsStyle = JSON.parse(mapsStyleRaw)
-
-
 var pageData = {
   home: {
     title: mongoMsg,
@@ -445,6 +440,10 @@ function mapMongo(req, res, next) {
 // ----------------------------------
 // 12. MONGODB GEODATA FOR GOOGLE MAPS API
 
+// var mapsStyle = require('/static/silver.json')		
+ var mapsStyleRaw = fs.readFileSync('/static/silver.json')
+ var mapsStyle = JSON.parse(mapsStyleRaw)
+
 app.get('/mapmongo3', function (req, res) {
  res.render(index,pageData.mapmongo3)
 })
@@ -501,7 +500,7 @@ function mapMongo3(req, res, next) {
 		   
 		 
 		
-		//   pageData.mapmongo3.params[1] = mapsStyle
+		 pageData.mapmongo3.params[1] = mapsStyle
 		  // pageData.mapmongo3.params[1] = {"testJSON": "blabla"}
 		  //  pageData.mapmongo3.params[1] = myJson
            
