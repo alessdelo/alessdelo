@@ -31,6 +31,15 @@ function randomIntFromInterval(min,max,decimals)
 var coordX = randomIntFromInterval(41.8000000,41.9999999,7);
 var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
 
+    function initMap() {
+       var roma = {lat: 41.9000000, lng: 12.5299999};
+       var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 12,
+         center: roma
+	
+       }); // fine var map
+     } // fine initMap
+
 
 $(document).ready( function() {
 	$( "input[name='coordx']" ).val(coordX);
@@ -58,14 +67,7 @@ $(document).ready( function() {
 </script>
 
  <script>
-     function initMap() {
-       var roma = {lat: 41.9000000, lng: 12.5299999};
-       var map = new google.maps.Map(document.getElementById('map'), {
-         zoom: 12,
-         center: roma
-	
-       }); // fine var map
-     } // fine initMap
+ 
  </script>
 
 <p class="lead">Mongo points in Maps area</p>
