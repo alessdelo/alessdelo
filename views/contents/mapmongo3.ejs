@@ -73,9 +73,9 @@ $(document).ready( function() {
 	
        }); // fine var map
        
-       		var dataArray = <%- passEjs[0] %>; 
+       		var dataArray =  passEjs[0]; 
 		
-				
+			 	
 		for(var theKey in dataArray) {
 	                if(dataArray.hasOwnProperty(theKey)) {
 				
@@ -88,7 +88,7 @@ $(document).ready( function() {
 					
 					
 					
-					 /*
+					
 					var theX = 41.9000000;
 					var theY = 12.5299999;
 				
@@ -96,7 +96,7 @@ $(document).ready( function() {
 						 position: {lat: theX, lng: theY},						
 						 map: map
 					 });  
-					 */
+					
 					 
 					 
 					 
@@ -107,7 +107,7 @@ $(document).ready( function() {
 		       
 	            } // fine for
 		   	
-       
+        
        
        
      } // fine initMap
