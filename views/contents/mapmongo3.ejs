@@ -3,12 +3,13 @@
 
 <% strMyVar = JSON.stringify(myVar, null, 4); %>
 <%= strMyVar %>
-<%- var passEjs = strMyVar; %>
+
 
 
 
 
 <script>
+<% var passEjs = strMyVar; %>
 alert(passEjs);
 
 function randomStr(m) {
