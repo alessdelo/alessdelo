@@ -9,10 +9,11 @@
 
 
 <script>
-if (typeof passEjs !== 'undefined') { //  || passEjs == "" 
+var getPassEjs = passEjs;
+if (typeof getPassEjs !== 'undefined') { //  || passEjs == "" 
 alert("??????");
 } else {
-alert(passEjs);
+alert(getPassEjs);
 }
 
 function randomStr(m) {
