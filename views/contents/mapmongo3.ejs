@@ -9,7 +9,8 @@
 
 
 <script>
-var getPassEjs = JSON.stringify(<%- passEjs %>);
+// var getPassEjs = JSON.stringify(<%- passEjs %>);
+var getPassEjs = <%- passEjs %>;
 if (typeof getPassEjs !== 'undefined') { //  || passEjs == "" 
 	alert(getPassEjs[1]);
 } else {
