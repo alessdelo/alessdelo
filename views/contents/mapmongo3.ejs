@@ -11,9 +11,9 @@
 <script>
 var getPassEjs = JSON.stringify(<%- passEjs %>);
 if (typeof getPassEjs !== 'undefined') { //  || passEjs == "" 
-alert("??????");
+	alert(getPassEjs);
 } else {
-alert(getPassEjs);
+	alert("??????");
 }
 
 function randomStr(m) {
