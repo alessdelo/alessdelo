@@ -62,6 +62,9 @@ $(document).ready( function() {
 	// takes the map style passed from index via ejs	
 	var mapStyle = passEjs[1][0];
 	 mapStyle = JSON.stringify(mapStyle, null, 4);
+	 alert(mapStyle);
+	var dataArray =  passEjs[0];
+	alert(dataArray);
 	
 
     function initMap() {
@@ -75,7 +78,7 @@ $(document).ready( function() {
 	
        }); // fine var map
        
-       		var dataArray =  passEjs[0]; 
+ 
 		
 			/* 	
 		for(var theKey in dataArray) { 
