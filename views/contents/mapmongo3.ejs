@@ -33,7 +33,12 @@ var coordX = randomIntFromInterval(41.8000000,41.9999999,7);
 var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
 
 
+	// takes the map style passed from index via ejs	
+	var mapStyle = passEjs[1];
+	 mapStyle = JSON.stringify(mapStyle, null, 4);
 
+	var dataArray =  passEjs[0];
+	
 
 $(document).ready( function() {
 	$( "input[name='coordx']" ).val(coordX);
@@ -55,17 +60,15 @@ $(document).ready( function() {
 	*/
 		
 //alert(silverMapStyle);
+
+	 alert(mapStyle);
+	 alert(dataArray);
 	
 }); // fine document.ready
 
 //-------------------------------------------------
 // GOOGLE MAPS API
-	// takes the map style passed from index via ejs	
-	var mapStyle = passEjs[1];
-	 mapStyle = JSON.stringify(mapStyle, null, 4);
-	 alert(mapStyle);
-	var dataArray =  passEjs[0];
-	alert(dataArray);
+
 	
 
     function initMap() {
