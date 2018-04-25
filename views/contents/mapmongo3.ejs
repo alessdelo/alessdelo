@@ -100,9 +100,11 @@ $(document).ready( function() {
 	                       if (typeof theVal.loc.coordinates !== 'undefined' || theVal.loc.coordinates.length > 0) {
 			       
 				        var theX = theVal.loc.coordinates[0];
-					 var theY = theVal.loc.coordinates[1]; 
+					 var theY = theVal.loc.coordinates[1];
+					 var theName = theVal.name;
+					 var theName = theVal.time.$date;
 					
-					
+					var infoContent = '<div><p>Point ' + theName + '</p></div>';
 					
 					
 					
@@ -114,7 +116,7 @@ $(document).ready( function() {
 						 map: map
 					 });  
 					 
-					 										 					 					 
+					 	attachMessage(marker, infoContent);									 					 					 
 					 
 				} // fine if 2	 
 	                      
@@ -124,7 +126,17 @@ $(document).ready( function() {
 		       
 	            } // fine for
 		   	
-            
+             function attachMessage(marker, theMsg) {
+		 
+		        var infowindow = new google.maps.InfoWindow({
+ 		         content: theMsg
+		        });
+					
+			marker.addListener('click', function() {
+		          infowindow.open(marker.get('map'), marker);
+		        }); 
+	
+		} // fine attachMessage()
        
        
      } // fine initMap
