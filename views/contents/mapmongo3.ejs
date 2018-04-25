@@ -38,7 +38,19 @@ function randomIntFromInterval(min,max,decimals)
 var coordX = randomIntFromInterval(41.8000000,41.9999999,7);
 var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
 
+// var timeStr = "2010-01-13T18:31:16Z";
 
+function dateFromTimestamp(timeStr) {
+	var date = new Date(timeStr);
+	var day = date.getDate();
+	var year = date.getFullYear();
+	var month = date.getMonth()+1;
+	var dateStr = month+"/"+day+"/"+year;
+	
+	return dateStr;
+	}
+	
+	
 
 	
 
@@ -113,7 +125,7 @@ $(document).ready( function() {
 					
 					  if (typeof theVal.time !== 'undefined'){
 					 
-						var theTime = theVal.time;
+						var theTime = dateFromTimestamp(theVal.time);
 					 
 					 } else {
 					  	var theTime = "no time";
