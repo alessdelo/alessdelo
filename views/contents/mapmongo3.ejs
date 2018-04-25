@@ -101,10 +101,33 @@ $(document).ready( function() {
 			       
 				        var theX = theVal.loc.coordinates[0];
 					 var theY = theVal.loc.coordinates[1];
-					 var theName = theVal[name];
-					 var theTime = theVal.time.$date;
+					  if (typeof theVal.name !== 'undefined'){
+					 
+						 var theName = theVal.name;
+					 
+					 } else {
+					  	var theName = "no name";
+					 
+					 }
 					
-					var infoContent = '<div><p>Point ' + theName + '</p></div>';
+					
+					  if (typeof theVal.time.$date !== 'undefined'){
+					 
+						var theTime = theVal.time.$date;
+					 
+					 } else {
+					  	var theTime = "no time";
+					 
+					 }
+					
+					
+					
+					
+					
+					var infoContent = '<div>' +
+								'<p>Point ' + theName + '</p>' +
+								'<p>Point ' + theTime + '</p>' +
+								</div>';
 					
 					
 					
