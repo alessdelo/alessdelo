@@ -111,9 +111,9 @@ $(document).ready( function() {
 					 }
 					
 					
-					  if (typeof theVal.time.$date !== 'undefined'){
+					  if (typeof theVal.time.date !== 'undefined'){
 					 
-						var theTime = theVal.time.$date;
+						var theTime = theVal.time.date;
 					 
 					 } else {
 					  	var theTime = "no time";
@@ -125,8 +125,8 @@ $(document).ready( function() {
 					
 					
 					var infoContent = '<div>' +
-								'<p>Point ' + theName + '</p>' +
-								'<p>Point ' + theTime + '</p>' +
+								'<p>Name: ' + theName + '</p>' +
+								'<p>Time: ' + theTime + '</p>' +
 								'</div>';
 					
 					
