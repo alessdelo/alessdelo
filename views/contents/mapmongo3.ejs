@@ -148,6 +148,7 @@ $(document).ready( function() {
 		        });
 					
 			marker.addListener('click', function() {
+				infowindow.close();
 		          infowindow.open(marker.get('map'), marker);
 		        }); 
 	
