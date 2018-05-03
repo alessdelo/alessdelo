@@ -152,8 +152,10 @@ $(document).ready( function() {
 		         // infowindow.open(marker.get('map'), marker);
 			  
 			  //Close active window if exists 
-			  if(activeWindow != null)
+			  if(activeWindow != null) {
                        		activeWindow.close(); 
+				}
+				
                    	 //Open new window 
                    	 infowindow.open(marker.get('map'), marker); 
                     	 //Store new window in global variable 
