@@ -149,6 +149,10 @@ $(document).ready( function() {
 					
 			marker.addListener('click', function() { 			
 			//infowindow.close();
+			if (typeof activeWindow !== 'undefined'){
+			activeWindow.close(); 
+				}
+			
 		          infowindow.open(marker.get('map'), marker);
 			 
 			 /*
