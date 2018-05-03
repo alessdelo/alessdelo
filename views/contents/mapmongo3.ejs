@@ -149,9 +149,10 @@ $(document).ready( function() {
 					
 			marker.addListener('click', function() { 			
 			//infowindow.close();
-		         // infowindow.open(marker.get('map'), marker);
-			  
-			  //Close active window if exists 
+		          infowindow.open(marker.get('map'), marker);
+			 
+			 /*
+			 //Close active window if exists 
 			  if(activeWindow != null) { 
                        		// activeWindow.close(); 
 				}
@@ -160,6 +161,7 @@ $(document).ready( function() {
                    	 infowindow.open(marker.get('map'), marker); 
                     	 //Store new window in global variable 
                  	   activeWindow = infowindow; 
+			   */
 			  
 		        }); 
 	
