@@ -147,9 +147,18 @@ $(document).ready( function() {
  		         content: theMsg
 		        });
 					
-			marker.addListener('click', function() {
-				infowindow.close();
-		          infowindow.open(marker.get('map'), marker);
+			marker.addListener('click', function() { 			
+			//infowindow.close();
+		         // infowindow.open(marker.get('map'), marker);
+			  
+			  //Close active window if exists 
+			  if(activeWindow != null)
+                       		activeWindow.close(); 
+                   	 //Open new window 
+                   	 infowindow.open(marker.get('map'), marker); 
+                    	 //Store new window in global variable 
+                 	   activeWindow = infowindow; 
+			  
 		        }); 
 	
 		} // fine attachMessage()
