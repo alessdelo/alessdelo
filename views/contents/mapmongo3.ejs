@@ -51,12 +51,17 @@ function dateFromTimestamp(timeStr) {
 	var dateStr = day + "/"+ month + "/" + year;
 	
 	return dateStr;
-	}
-		
+	} 
+	
+	// random number 1-10	
+	var theRate = Math.floor(Math.random() * 10)+1;
+
+
 		
 $(document).ready( function() {
 	$( "input[name='coordx']" ).val(coordX);
-	$( "input[name='coordy']" ).val(coordY); 
+	$( "input[name='coordy']" ).val(coordY);
+	$( "input[name='rate']" ).val(theRate);
 	
 		
 }); // fine document.ready
@@ -187,6 +192,7 @@ $(document).ready( function() {
 
 <form action="/mapmongo3" method="post" class="form-inline my-2 my-lg-0">
      <input name="name" class="form-control mr-sm-2" placeholder="Point Name" aria-label="Name">
+     <input name="rate" class="form-control mr-sm-2" aria-label="Rate"> 
      <input name="coordx" class="form-control mr-sm-2" aria-label="CoordX">
      <input name="coordy" class="form-control mr-sm-2" aria-label="CoordY"> 
      <button id="addItem" class="btn btn-outline-success my-2 my-sm-0" >Add</button>
