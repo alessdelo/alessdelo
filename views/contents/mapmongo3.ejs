@@ -119,10 +119,12 @@ $(document).ready( function() {
 					 
 					   if (typeof theVal.rate !== 'undefined'){
 					 
-						var myRate = dateFromTimestamp(theVal.rate);
+						var myRate = theVal.rate; 
+						var theLabel = theVal.rate;
 					 
 					 } else {
-					  	var myRate = "no rate";
+					  	var myRate = "no rate"; 
+						var theLabel = 0;
 					 
 					 }
 					
@@ -142,7 +144,8 @@ $(document).ready( function() {
 					// var theY = 12.5299999;
 				
 					 var marker = new google.maps.Marker({ 
-						 position: {lat: theX, lng: theY},						
+						 position: {lat: theX, lng: theY},
+						 label: theLabel,						
 						 map: map
 					 });  
 					 
