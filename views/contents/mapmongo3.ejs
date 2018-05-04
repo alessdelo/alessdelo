@@ -116,6 +116,15 @@ $(document).ready( function() {
 					  	var theTime = "no time";
 					 
 					 }
+					 
+					   if (typeof theVal.rate !== 'undefined'){
+					 
+						var myRate = dateFromTimestamp(theVal.rate);
+					 
+					 } else {
+					  	var myRate = "no rate";
+					 
+					 }
 					
 					
 					
@@ -124,6 +133,7 @@ $(document).ready( function() {
 					var infoContent = '<div>' +
 								'<p>Name: ' + theName + '</p>' +
 								'<p>Time: ' + theTime + '</p>' +
+								'<p>Rate: ' + myRate + '</p>' +
 								'</div>';
 					
 					
