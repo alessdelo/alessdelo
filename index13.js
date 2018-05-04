@@ -466,7 +466,9 @@ function mapMongo3(req, res, next) {
 	
 	// Models
 	var LocationSchema = new Schema({
-		    name: String,
+		    name: String, 
+			rate: Number,
+		
 			time : { type : Date, default: Date.now },
 		    loc: {
 			type: {
@@ -485,6 +487,8 @@ function mapMongo3(req, res, next) {
 	
 	var item = {
 		"name": req.body.name,	
+		"rate": 	req.body.rate,
+		
 		"loc": {
                     "type": "Point",
                     "coordinates": [req.body.coordx, req.body.coordy]
