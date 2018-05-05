@@ -120,7 +120,7 @@ $(document).ready( function() {
 					   if (typeof theVal.rate !== 'undefined'){
 					 
 						var myRate = theVal.rate; 
-						var theLabel = toString(theVal.rate);
+						var theLabel = JSON.stringify(theVal.rate);
 					 
 					 } else {
 					  	var myRate = "no rate"; 
