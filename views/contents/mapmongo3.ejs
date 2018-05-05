@@ -129,7 +129,26 @@ $(document).ready( function() {
 					 }
 					
 					
-					
+	       var icon = ""; 
+	       var x =parseInt(theLabel);
+        switch (true) {
+            case (x = 0):
+                icon = "blue";
+                break;
+            case (x < 3):
+                icon = "green";
+                break;
+            case (x < 6):
+                icon = "yellow";
+                break;
+		case (x < 9):
+                icon = "red";
+                break;		
+            default:
+                icon = "blue";
+                break;
+        }
+        icon = "http://maps.google.com/mapfiles/ms/icons/" + icon + ".png";				
 					
 					
 					var infoContent = '<div>' +
