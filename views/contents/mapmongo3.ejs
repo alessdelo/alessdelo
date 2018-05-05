@@ -165,7 +165,9 @@ $(document).ready( function() {
 					 var marker = new google.maps.Marker({ 
 						 position: {lat: theX, lng: theY},
 						 label: theLabel,						
-						 map: map
+						 map: map,
+						 animation: google.maps.Animation.DROP,
+						 icon: new google.maps.MarkerImage(icon)
 					 });  
 					 
 					 	attachMessage(marker, infoContent);									 					 					 
