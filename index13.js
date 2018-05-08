@@ -527,8 +527,12 @@ function mapMongo3(req, res, next) {
  
 } // fine mapMongo3
 
-
-
+// --------------
+// 13. LEAFLET
+app.get('/leaflet', function (req, res) { 
+	//	pageData.leaflet.params[1] = mapsStyle
+ res.render(index,pageData.leaflet)
+})
 
 
 // ----------------------------------
