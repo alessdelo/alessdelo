@@ -173,9 +173,17 @@ var pageData = {
     footer: footer,
     params: []
   },
-		leaflet: {
+	leaflet: {
     title:'Leaflet markers from MongoDB',
     content:'../contents/leaflet.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
+  },
+		openstreetmap: { 
+    title:'Openstreetmap markers',
+    content:'../contents/openstreetmap.ejs',
     nav: nav,
     header: header,
     footer: footer,
@@ -532,6 +540,13 @@ function mapMongo3(req, res, next) {
 app.get('/leaflet', function (req, res) { 
 	//	pageData.leaflet.params[1] = mapsStyle
  res.render(index,pageData.leaflet)
+})
+
+// --------------
+// 14. OPENSTREETMAP
+app.get('/openstreetmap', function (req, res) { 
+	//	pageData.openstreetmap.params[1] = mapsStyle
+ res.render(index,pageData.openstreetmap)
 })
 
 
