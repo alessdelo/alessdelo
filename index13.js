@@ -172,6 +172,14 @@ var pageData = {
     header: header,
     footer: footer,
     params: []
+  },
+		leaflet: {
+    title:'Leaflet markers from MongoDB',
+    content:'../contents/leaflet.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
   }
 }
 
@@ -449,7 +457,8 @@ app.get('/mapmongo3', function (req, res) {
  res.render(index,pageData.mapmongo3)
 })
 
-app.post('/mapmongo3', mapMongo3)
+app.post('/mapmongo3', mapMongo3),
+	app.post('/leaflet', leaflet)
 
 function mapMongo3(req, res, next) {
  
