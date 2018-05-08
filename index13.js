@@ -457,7 +457,7 @@ app.get('/mapmongo3', function (req, res) {
  res.render(index,pageData.mapmongo3)
 })
 
-app.post('/mapmongo3', mapMongo3),	
+app.post('/mapmongo3', mapMongo3)	
 
 function mapMongo3(req, res, next) {
  
