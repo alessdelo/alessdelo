@@ -80,8 +80,8 @@ var pageData = {
     footer: footer
   },
   form3: {
-    title:'form 2',
-    content:'../contents/form2.ejs',
+    title:'form 3',
+    content:'../contents/form3.ejs',
     nav: nav,
     header: header,
     footer: footer
@@ -556,6 +556,8 @@ app.get('/openstreetmap', function (req, res) {
  res.render(index,pageData.openstreetmap)
 })
 
+// ----------------------------------
+// 12. FORM FOR GOOGLE MAPS API
 
 // ----------------------------------
 // ----------------------------------
