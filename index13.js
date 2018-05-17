@@ -79,9 +79,9 @@ var pageData = {
     header: header,
     footer: footer
   },
-  form3: {
-    title:'form 3',
-    content:'../contents/form3.ejs',
+  mapsform: {
+    title:'maps form',
+    content:'../contents/mapsform.ejs',
     nav: nav,
     header: header,
     footer: footer
