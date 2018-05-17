@@ -557,7 +557,12 @@ app.get('/openstreetmap', function (req, res) {
 })
 
 // ----------------------------------
-// 12. FORM FOR GOOGLE MAPS API
+// 15. FORM FOR GOOGLE MAPS 
+app.get('/mapsform', function (req, res) {
+	// pageData.mapsform.params[1] = mapsStyle
+ res.render(index,pageData.mapsform)
+})
+
 
 // ----------------------------------
 // ----------------------------------
