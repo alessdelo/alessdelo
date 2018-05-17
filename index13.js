@@ -79,6 +79,13 @@ var pageData = {
     header: header,
     footer: footer
   },
+  form3: {
+    title:'form 2',
+    content:'../contents/form2.ejs',
+    nav: nav,
+    header: header,
+    footer: footer
+  },
   search: {
     title:'search',
     content:'../contents/search.ejs',
