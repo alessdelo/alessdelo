@@ -10,7 +10,13 @@ var getPassEjs = <%- passEjs %>;
 </script>
 
 <h2>OpenLayers Simplest Example</h2>
-<div id="map" style="height:250px"></div>
+<div id="map"></div>
+   <style>
+      #map {
+       height: 400px;
+       width: 100%;
+      }
+   </style>
 
 <script>
         var map = new ol.Map({
