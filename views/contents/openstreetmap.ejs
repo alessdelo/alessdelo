@@ -19,6 +19,9 @@ var getPassEjs = <%- passEjs %>;
    </style>
 
 <script>
+      var roma.lat = 41.9000000;
+      var roma.lng = 12.5299999;
+
         var map = new ol.Map({
         target: 'map',
         layers: [
@@ -27,8 +30,8 @@ var getPassEjs = <%- passEjs %>;
           })
         ],
         view: new ol.View({
-          center: ol.proj.fromLonLat([37.41, 8.82]),
-          zoom: 4
+          center: ol.proj.fromLonLat([ roma.lat, roma.lng]),
+          zoom: 12
         })
       });
 </script>
