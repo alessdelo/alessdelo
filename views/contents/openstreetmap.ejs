@@ -7,10 +7,14 @@
 
 <script>
 var getPassEjs = <%- passEjs %>;
+
+      var roma.lat = 41.9000000;
+      var roma.lng = 12.5299999;
+
 </script>
 
   <style>
-      #map {
+      #map1 {
        height: 400px;
        width: 100%;
       }
@@ -18,12 +22,11 @@ var getPassEjs = <%- passEjs %>;
 
 <h2>OpenLayers Simplest Example</h2>
 <div id="map"></div>
- 
+
+<h2>OpenLayers Simplest Example</h2>
+<div id="map" style="height:250px"></div>
 
 <script>
-      var roma.lat = 41.9000000;
-      var roma.lng = 12.5299999;
-
         var map = new ol.Map({
         target: 'map',
         layers: [
@@ -32,7 +35,7 @@ var getPassEjs = <%- passEjs %>;
           })
         ],
         view: new ol.View({
-          center: ol.proj.fromLonLat([0, 0]),
+          center: ol.proj.fromLonLat([37.41, 8.82]),
           zoom: 4
         })
       });
