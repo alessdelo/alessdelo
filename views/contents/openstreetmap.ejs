@@ -10,6 +10,8 @@ var getPassEjs = <%- passEjs %>;
 
       var roma.lat = 41.9000000;
       var roma.lng = 12.5299999;
+      
+      // fromLonLat([37.41, 8.82]),
 
 </script>
 
@@ -32,7 +34,7 @@ var getPassEjs = <%- passEjs %>;
           })
         ],
         view: new ol.View({
-          center: ol.proj.fromLonLat([37.41, 8.82]),
+          center: ol.proj.fromLonLat([roma.lat, roma.lng]),
           zoom: 4
         })
       });
