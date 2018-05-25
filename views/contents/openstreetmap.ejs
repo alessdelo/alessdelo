@@ -27,16 +27,17 @@ var getPassEjs = <%- passEjs %>;
 
 <script>
         var map = new ol.Map({
-        target: 'map',
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM()
-          })
-        ],
-        view: new ol.View({
-          center: ol.proj.fromLonLat([12.529999, 41.900000]),
-          zoom: 12
-        }),
+              target: 'map',
+              layers: [
+                new ol.layer.Tile({
+                  source: new ol.source.OSM()
+                })
+              ],
+              view: new ol.View({
+                center: ol.proj.fromLonLat([12.529999, 41.900000]),
+                zoom: 12
+              })
+        });
         
         // Creo una variabile contenete il layer dei marker poi collego il layer dei markers alla mappa
     var LayerMarkers = new ol.Layer.Markers( "Markers" );
@@ -46,7 +47,7 @@ var getPassEjs = <%- passEjs %>;
     LayerMarkers.addMarker(new ol.Marker(12.529999, 41.900000)); 
         
         
-      });
+
 </script>
 
   
