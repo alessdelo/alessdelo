@@ -36,7 +36,16 @@ var getPassEjs = <%- passEjs %>;
         view: new ol.View({
           center: ol.proj.fromLonLat([12.529999, 41.900000]),
           zoom: 12
-        })
+        }),
+        
+        // Creo una variabile contenete il layer dei marker poi collego il layer dei markers alla mappa
+    var LayerMarkers = new ol.Layer.Markers( "Markers" );
+    Map.addLayer(LayerMarkers);
+    
+    // Aggiungo al layer dei marker un marker (utilizzando l'oggetto lonLat per le coordinate)
+    LayerMarkers.addMarker(new ol.Marker(12.529999, 41.900000)); 
+        
+        
       });
 </script>
 
