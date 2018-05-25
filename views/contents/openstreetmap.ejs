@@ -22,10 +22,12 @@ var getPassEjs = <%- passEjs %>;
       }
    </style>
 
+<!-- 
 <h2>OpenLayers Simplest Example</h2>
 <div id="map"></div>
-
+-->
 <script>
+       /*
         var map = new ol.Map({
               target: 'map',
               layers: [
@@ -38,17 +40,9 @@ var getPassEjs = <%- passEjs %>;
                 zoom: 12
               })
         });
-        
-         var pos = ol.proj.fromLonLat([12.529999, 41.900000]);
-
-      // Vienna marker
-      var marker = new ol.Overlay({
-        position: pos,
-        positioning: 'center-center',
-        element: document.getElementById('marker'),
-        stopEvent: false
-      });
-      map.addOverlay(marker);
+               */ 
+               
+               
         /*
         // Creo una variabile contenete il layer dei marker poi collego il layer dei markers alla mappa
     var LayerMarkers = new ol.Layer.Markers( "Markers" );
@@ -60,6 +54,70 @@ var getPassEjs = <%- passEjs %>;
         
 
 </script>
+
+<div style="display: none;">
+      <!-- Clickable label for Vienna -->
+      <a class="overlay" id="vienna" target="_blank" href="http://en.wikipedia.org/wiki/Vienna">Vienna</a>
+      <div id="marker" title="Marker"></div>
+      <!-- Popup -->
+      <div id="popup" title="Welcome to OpenLayers"></div>
+    </div>
+    <script>
+      var layer = new ol.layer.Tile({
+        source: new ol.source.OSM()
+      });
+
+      var map = new ol.Map({
+        layers: [layer],
+        target: 'map',
+        view: new ol.View({
+          center: [0, 0],
+          zoom: 2
+        })
+      });
+
+      var pos = ol.proj.fromLonLat([16.3725, 48.208889]);
+
+      // Vienna marker
+      var marker = new ol.Overlay({
+        position: pos,
+        positioning: 'center-center',
+        element: document.getElementById('marker'),
+        stopEvent: false
+      });
+      map.addOverlay(marker);
+
+      // Vienna label
+      var vienna = new ol.Overlay({
+        position: pos,
+        element: document.getElementById('vienna')
+      });
+      map.addOverlay(vienna);
+
+      // Popup showing the position the user clicked
+      var popup = new ol.Overlay({
+        element: document.getElementById('popup')
+      });
+      map.addOverlay(popup);
+
+      map.on('click', function(evt) {
+        var element = popup.getElement();
+        var coordinate = evt.coordinate;
+        var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(
+            coordinate, 'EPSG:3857', 'EPSG:4326'));
+
+        $(element).popover('destroy');
+        popup.setPosition(coordinate);
+        // the keys are quoted to prevent renaming in ADVANCED mode.
+        $(element).popover({
+          'placement': 'top',
+          'animation': false,
+          'html': true,
+          'content': '<p>The location you clicked was:</p><code>' + hdms + '</code>'
+        });
+        $(element).popover('show');
+      });
+    </script>
 
   
   
