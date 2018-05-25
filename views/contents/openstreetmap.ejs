@@ -24,9 +24,16 @@ var getPassEjs = <%- passEjs %>;
 
 
 <h2>OpenLayers Simplest Example</h2>
-<div id="map"></div>
+<div id="map" class="map"></div>
+<div style="display: none;">
+
+      <div id="marker" title="Marker"></div>
+
+    </div>
 
 <script>
+
+// https://openlayers.org/en/latest/examples/overlay.html
 
 var roma = ol.proj.fromLonLat([12.529999, 41.900000]);
     
@@ -43,7 +50,14 @@ var roma = ol.proj.fromLonLat([12.529999, 41.900000]);
               })
         });
        
-               
+   // Vienna marker
+      var marker = new ol.Overlay({
+        position: roma,
+        positioning: 'center-center',
+        element: document.getElementById('marker'),
+        stopEvent: false
+      });
+      map.addOverlay(marker);            
                
         /*
         // Creo una variabile contenete il layer dei marker poi collego il layer dei markers alla mappa
