@@ -47,9 +47,11 @@ var getPassEjs = <%- passEjs %>;
 <h2>OpenLayers Simplest Example</h2>
 <div id="map" class="map"></div>
 <div style="display: none;">
-
+      <!-- Clickable label for Vienna -->
+      <a class="overlay" id="roma" target="_blank" href="http://en.wikipedia.org/wiki/Roma">Roma</a>
       <div id="marker" title="Marker"></div>
-
+      <!-- Popup -->
+      <div id="popup" title="Welcome to OpenLayers"></div>
     </div>
 
 <script>
@@ -80,14 +82,6 @@ var roma = ol.proj.fromLonLat([12.529999, 41.900000]);
       });
       map.addOverlay(marker);            
                
-        /*
-        // Creo una variabile contenete il layer dei marker poi collego il layer dei markers alla mappa
-    var LayerMarkers = new ol.Layer.Markers( "Markers" );
-    Map.addLayer(LayerMarkers);
-    
-    // Aggiungo al layer dei marker un marker (utilizzando l'oggetto lonLat per le coordinate)
-    LayerMarkers.addMarker(new ol.Marker(12.529999, 41.900000)); 
-        */
         
 
 </script>
