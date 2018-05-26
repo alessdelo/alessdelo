@@ -58,6 +58,15 @@ var getPassEjs = <%- passEjs %>;
 
 // https://openlayers.org/en/latest/examples/overlay.html
 
+var logoElement = document.createElement('a');
+      logoElement.href = 'https://www.osgeo.org/';
+      logoElement.target = '_blank';
+
+      var logoImage = document.createElement('img');
+      logoImage.src = 'https://www.osgeo.org/sites/all/themes/osgeo/logo.png';
+
+      logoElement.appendChild(logoImage);
+
 var roma = ol.proj.fromLonLat([12.529999, 41.900000]);
     
         var map = new ol.Map({
@@ -70,7 +79,8 @@ var roma = ol.proj.fromLonLat([12.529999, 41.900000]);
               view: new ol.View({
                 center: roma,
                 zoom: 12
-              })
+              }),
+              logo:logoElement
         });
        
    // Vienna marker
