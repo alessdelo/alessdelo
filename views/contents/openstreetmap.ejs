@@ -197,7 +197,7 @@ var i = 0;
         }
         icon = "http://maps.google.com/mapfiles/ms/icons/" + icon + ".png";				
 					
-                              multiIconFeature[i] = new ol.Feature({
+                              multiIconFeatures[i] = new ol.Feature({
                                          geometry: new ol.geom.Point([theX, theY]),
                                           name: theName,
                                           rate: myRate
@@ -212,7 +212,7 @@ var i = 0;
                                           }))
                                  });
                               
-                              multiIconFeature[i].setStyle(iconStyle);
+                              multiIconFeatures[i].setStyle(iconStyle);
                               
 														 					 					 
 					 
@@ -222,6 +222,12 @@ var i = 0;
 		       
 	            } // fine for
 
+   var multiVectorSource = new ol.source.Vector({
+        features: [multiIconFeatures]
+      });
+      var multiVectorLayer = new ol.layer.Vector({
+        source: multiVectorSource
+      });
 
 // -------------------------------------
 // PLACES
@@ -240,7 +246,7 @@ var pointLayer = new ol.layer.Tile({
     
         var map = new ol.Map({
               target: 'map',
-              layers: [pointLayer, vectorLayer],
+              layers: [pointLayer, vectorLayer, multiVectorLayer],
               view: new ol.View({
                 center: roma,
                 zoom: 12
