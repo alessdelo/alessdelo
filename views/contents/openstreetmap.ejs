@@ -98,13 +98,17 @@ var logoElement = document.createElement('a');
       logoElement.appendChild(logoImage);
 
 var roma = ol.proj.fromLonLat([12.529999, 41.900000]);
+
+var pointLayer = new ol.layer.Tile({
+                  source: new ol.source.OSM()
+                });
+
+// vectorLayer
     
         var map = new ol.Map({
               target: 'map',
-              layers: [
-                new ol.layer.Tile({
-                  source: new ol.source.OSM()
-                })
+              layers: [pointLayer
+                
               ],
               view: new ol.View({
                 center: roma,
