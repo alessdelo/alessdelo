@@ -95,35 +95,6 @@ var iconFeature = new ol.Feature({
 // MULTIPLE MARKER IMAGES
 // http://openlayers.org/en/latest/examples/icon.html?q=Marker
 
-
-var vatican = [41.9029468, 12.4544835];
-
-var iconFeature = new ol.Feature({
-        geometry: new ol.geom.Point([41.9029468, 12.4544835]),
-        name: 'Null Island',
-        rate: 4000
-      });
-
-      var iconStyle = new ol.style.Style({
-        image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
-          anchor: [0.5, 46],
-          anchorXUnits: 'fraction',
-          anchorYUnits: 'pixels',
-          src: '/static/icon360.png'
-        }))
-      });
-
-      iconFeature.setStyle(iconStyle);
-
-      var vectorSource = new ol.source.Vector({
-        features: [iconFeature]
-      });
-
-      var vectorLayer = new ol.layer.Vector({
-        source: vectorSource
-      });     
-// -------------------------------------
-
 var dataArray = [];
 
 var MultiIconFeatures = [];
