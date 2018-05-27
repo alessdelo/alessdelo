@@ -204,7 +204,7 @@ var i = 0;
 
 var map2 = new ol.Map({
               target: 'map2',
-              layers: [pointLayer, vectorLayer, multiVectorLayer],
+              layers: [multiVectorLayer],
               view: new ol.View({
                 center: roma,
                 zoom: 12
@@ -228,7 +228,7 @@ var pointLayer = new ol.layer.Tile({
     
         var map = new ol.Map({
               target: 'map',
-              layers: [pointLayer, vectorLayer, multiVectorLayer],
+              layers: [pointLayer, vectorLayer],
               view: new ol.View({
                 center: roma,
                 zoom: 12
