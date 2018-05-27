@@ -62,8 +62,11 @@ var getPassEjs = <%- passEjs %>;
 // MARKER IMAGES
 // http://openlayers.org/en/latest/examples/icon.html?q=Marker
 
+
+var vatican = [41.9029468, 12.4544835];
+
 var iconFeature = new ol.Feature({
-        geometry: new ol.geom.Point([0, 0]),
+        geometry: new ol.geom.Point(vatican),
         name: 'Null Island',
         population: 4000,
         rainfall: 500
@@ -93,7 +96,7 @@ var iconFeature = new ol.Feature({
 
 var roma = ol.proj.fromLonLat([12.529999, 41.900000]);
 
-var vatican = ol.proj.fromLonLat([41.9029468, 12.4544835]);
+// var vatican = ol.proj.fromLonLat([41.9029468, 12.4544835]);
 
 // -------------------------------------
 
