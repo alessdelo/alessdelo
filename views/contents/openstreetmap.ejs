@@ -107,9 +107,7 @@ var pointLayer = new ol.layer.Tile({
     
         var map = new ol.Map({
               target: 'map',
-              layers: [pointLayer
-                
-              ],
+              layers: [pointLayer, vectorLayer],
               view: new ol.View({
                 center: roma,
                 zoom: 12
