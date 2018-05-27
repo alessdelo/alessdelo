@@ -16,7 +16,7 @@ var getPassEjs = <%- passEjs %>;
 </script>
 
   <style>
-      #map1 {
+      .map {
        height: 400px;
        width: 100%;
       }
@@ -53,6 +53,8 @@ var getPassEjs = <%- passEjs %>;
       <!-- Popup -->
       <div id="popup" title="Welcome to OpenLayers"></div>
     </div>
+    
+   <div id="map2" class="map"></div> 
 
 <script>
 
@@ -199,6 +201,15 @@ var i = 0;
       var multiVectorLayer = new ol.layer.Vector({
         source: multiVectorSource
       });
+
+var map2 = new ol.Map({
+              target: 'map2',
+              layers: [pointLayer, vectorLayer, multiVectorLayer],
+              view: new ol.View({
+                center: roma,
+                zoom: 12
+              })              
+        }); // end var map2
 
 // -------------------------------------
 // PLACES
