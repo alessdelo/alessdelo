@@ -59,8 +59,8 @@ var getPassEjs = <%- passEjs %>;
 // https://openlayers.org/en/latest/examples/overlay.html
 
 // -------------------------------------
+MARKER IMAGES
 // http://openlayers.org/en/latest/examples/icon.html?q=Marker
-
 
 var iconFeature = new ol.Feature({
         geometry: new ol.geom.Point([0, 0]),
@@ -90,22 +90,13 @@ var iconFeature = new ol.Feature({
 
 // -------------------------------------
 
-var logoElement = document.createElement('a');
-      logoElement.href = 'https://www.osgeo.org/';
-      logoElement.target = '_blank';
-
-      var logoImage = document.createElement('img');
-      logoImage.src = 'http://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/48/Home-icon.png';
-
-      logoElement.appendChild(logoImage);
-
 var roma = ol.proj.fromLonLat([12.529999, 41.900000]);
 
 var pointLayer = new ol.layer.Tile({
                   source: new ol.source.OSM()
                 });
 
-// vectorLayer
+// CREATES THE MAP WITH ITS LAYERS AND PROPERTIES
     
         var map = new ol.Map({
               target: 'map',
@@ -113,11 +104,10 @@ var pointLayer = new ol.layer.Tile({
               view: new ol.View({
                 center: roma,
                 zoom: 12
-              }),
-              logo:logoElement
-        });
+              })              
+        }); // end var map
        
-   // Vienna marker
+   // Roma marker
       var marker = new ol.Overlay({
         position: roma,
         positioning: 'center-center',
@@ -126,12 +116,12 @@ var pointLayer = new ol.layer.Tile({
       });
       map.addOverlay(marker);            
                
-   // Vienna label
-      var vienna = new ol.Overlay({
+   // Roma label
+      var romaLabel = new ol.Overlay({
         position: roma,
         element: document.getElementById('roma')
       });
-      map.addOverlay(vienna);
+      map.addOverlay(romaLabel);
 
       // Popup showing the position the user clicked
       var popup = new ol.Overlay({
