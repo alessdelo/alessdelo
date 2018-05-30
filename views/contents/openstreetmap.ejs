@@ -276,12 +276,12 @@ var i = 0;
       
       // var testString = "<p>"+ theName + " - " + theX + " - " + theY + " - " + theTime + " - " + myRate + " - " +  "</p>";
       var testString = "<p>" + theName + " - " +  theX + " - " + theY + " - " + myRate + "</p>";
-      alert(testString);
+      // alert(testString);
       $( "#array" ).append(testString);
       
       
       
-      /*
+      
      
     
       
@@ -304,7 +304,7 @@ var i = 0;
                               
                               multiIconFeatures[i].setStyle(iconStyle);
 			      
-			           */  
+			          
 				   
 														 					 					 					 
 				} // fine if 2	 
@@ -317,9 +317,9 @@ var i = 0;
 		      
 	            } // fine for
 		    
-		    //  
+		   
 		    
-		    /*		    		
+		        		
 		
 	   var multiVectorSource = new ol.source.Vector({
         features: [multiIconFeatures]
@@ -327,7 +327,7 @@ var i = 0;
       var multiVectorLayer = new ol.layer.Vector({
         source: multiVectorSource
       });
-      */
+      
       
        // layers: [multiVectorLayer],
        var map2BaseLayer = new ol.layer.Tile({
@@ -336,7 +336,7 @@ var i = 0;
 
 var map2 = new ol.Map({
               target: 'map2',
-	      layers: [map2BaseLayer],             
+	      layers: [map2BaseLayer, multiVectorLayer],             
               view: new ol.View({
                 center: roma,
                 zoom: 12
