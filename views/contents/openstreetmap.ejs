@@ -54,7 +54,7 @@ var getPassEjs = <%- passEjs %>;
       <div id="popup" title="Welcome to OpenLayers"></div>
     </div>
     
-   <div id="map2" class="map"></div> 
+ 
 
 <script>
 
@@ -92,18 +92,10 @@ var iconFeature = new ol.Feature({
       var vectorLayer = new ol.layer.Vector({
         source: vectorSource
       });
-      
-      //----------------------------------------
-      
-
-                          
-					
-					
-	
-  
-
+   								
 
 // -------------------------------------
+
 // PLACES
 
 var roma = ol.proj.fromLonLat([12.529999, 41.900000]);
@@ -174,7 +166,7 @@ var pointLayer = new ol.layer.Tile({
 // MULTIPLE MARKER IMAGES
 // http://openlayers.org/en/latest/examples/icon.html?q=Marker
 
-/*
+
 var dataArray = [];
 
 var MultiIconFeatures = [];
@@ -182,6 +174,8 @@ var MultiIconFeatures = [];
 var i = 0;
 	 	
 		for(var theKey in dataArray) { 
+		
+		/*
 		
 	                if(dataArray.hasOwnProperty(theKey)) {
                       
@@ -273,11 +267,15 @@ var i = 0;
 				} // fine if 2	 
 	                      
  	               } // fine if 1  		   		       
-		       
+		      
+		      */
+		      
 	            } // fine for
 		    
+		    // multiIconFeatures
+		    
 	   var multiVectorSource = new ol.source.Vector({
-        features: [multiIconFeatures]
+        features: []
       });
       var multiVectorLayer = new ol.layer.Vector({
         source: multiVectorSource
@@ -291,11 +289,11 @@ var map2 = new ol.Map({
                 zoom: 12
               })              
         }); // end var map2
-*/	    
+	    
 
 </script>
 
-
+  <div id="map2" class="map"></div> 
 
 
 
