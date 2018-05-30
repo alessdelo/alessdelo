@@ -285,10 +285,13 @@ var i = 0;
       */
       
        // layers: [multiVectorLayer],
+       var map2BaseLayer = new ol.layer.Tile({
+                  source: new ol.source.OSM()
+                });
 
 var map2 = new ol.Map({
               target: 'map2',
-             
+	      layers: [map2BaseLayer],             
               view: new ol.View({
                 center: roma,
                 zoom: 12
