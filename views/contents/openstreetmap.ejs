@@ -283,7 +283,7 @@ var i = 0;
       
       
      
-    
+    				//http://openlayers.org/en/latest/examples/cluster.html
       
       	            				
 					
@@ -322,14 +322,14 @@ var i = 0;
 		        		
 		
 	   var multiVectorSource = new ol.source.Vector({
-        features: [multiIconFeatures]
+        features: multiIconFeatures
       });
       var multiVectorLayer = new ol.layer.Vector({
         source: multiVectorSource
       });
       
       
-       // layers: [multiVectorLayer],
+      
        var map2BaseLayer = new ol.layer.Tile({
                   source: new ol.source.OSM()
                 });
