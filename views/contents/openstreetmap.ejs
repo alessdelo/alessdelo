@@ -317,10 +317,12 @@ var i = 0;
                               multiIconFeatures[i].setStyle(iconStyle); 
 			      */
 			      
+			      
+			      /*
 			          var coordinates = [theX, theY];
         			multiIconFeatures[i] = new ol.Feature(new ol.geom.Point(coordinates)); 
 				multiIconFeatures[i].setStyle(markerStyle);
-				   
+				 */  
 														 					 					 					 
 				} // fine if 2	 
 				
@@ -336,12 +338,14 @@ var i = 0;
 		    
 		        		
 		
-	   var multiVectorSource = new ol.source.Vector({
+	  /*
+	  var multiVectorSource = new ol.source.Vector({
         features: multiIconFeatures
       });
       var multiVectorLayer = new ol.layer.Vector({
         source: multiVectorSource
-      });
+      }); 
+      */
       
       
       
@@ -351,7 +355,7 @@ var i = 0;
 
 var map2 = new ol.Map({
               target: 'map2',
-	      layers: [map2BaseLayer, multiVectorLayer],             
+	      layers: [map2BaseLayer],             
               view: new ol.View({
                 center: roma,
                 zoom: 12
