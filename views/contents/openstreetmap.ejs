@@ -273,17 +273,21 @@ var i = 0;
 	            } // fine for
 		    
 		    // multiIconFeatures
-		    
+		
+		
 	   var multiVectorSource = new ol.source.Vector({
         features: []
       });
       var multiVectorLayer = new ol.layer.Vector({
         source: multiVectorSource
       });
+      */
+      
+       // layers: [multiVectorLayer],
 
 var map2 = new ol.Map({
               target: 'map2',
-              layers: [multiVectorLayer],
+             
               view: new ol.View({
                 center: roma,
                 zoom: 12
