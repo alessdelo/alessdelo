@@ -93,125 +93,16 @@ var iconFeature = new ol.Feature({
         source: vectorSource
       });
       
- // -------------------------------------
-// MULTIPLE MARKER IMAGES
-// http://openlayers.org/en/latest/examples/icon.html?q=Marker
-/*
-var dataArray = [];
+      //----------------------------------------
+      
 
-var MultiIconFeatures = [];
+                          
+					
+					
+	
+  
 
-var i = 0;
-	 	
-		for(var theKey in dataArray) { 
-		
-	                if(dataArray.hasOwnProperty(theKey)) {
-                      
-                              i++;
-				
-	                    var theVal = dataArray[theKey];
-			    
-	                       if (typeof theVal.loc.coordinates !== 'undefined' || theVal.loc.coordinates.length > 0) {
-			       
-				        var theX = theVal.loc.coordinates[0];
-					 var theY = theVal.loc.coordinates[1];
-					  if (typeof theVal.name !== 'undefined'){
-					 
-						 var theName = theVal.name;
-					 
-					 } else {
-					  	var theName = "no name";
-					 
-					 }
-					 
-					
-                            */  /*
-					
-					  if (typeof theVal.time !== 'undefined'){
-					 
-						var theTime = dateFromTimestamp(theVal.time);
-					 
-					 } else {
-					  	var theTime = "no time";
-					 
-					 }
-                               
-                               */  /*
-					 
-					   if (typeof theVal.rate !== 'undefined'){
-					 
-						var myRate = theVal.rate; 
-						var theLabel = JSON.stringify(theVal.rate);
-					 
-					 } else {
-					  	var myRate = "no rate"; 
-						var theLabel = "0";
-					 
-					 }
-					
-					
-	       var icon = ""; 
-	       var x =parseInt(theLabel);
-        switch (true) {
-            case (x < 1):
-                icon = "grey";
-                break;
-            case (x < 3):
-                icon = "green";
-                break;
-            case (x < 6):
-                icon = "yellow";
-                break;
-		case (x < 9):
-                icon = "red";
-                break;		
-            default:
-                icon = "grey";
-                break;
-        }
-        icon = "http://maps.google.com/mapfiles/ms/icons/" + icon + ".png";				
-					
-                              multiIconFeatures[i] = new ol.Feature({
-                                         geometry: new ol.geom.Point([theX, theY]),
-                                          name: theName,
-                                          rate: myRate
-                              });	
-                              
-                              var iconStyle = new ol.style.Style({
-                                         image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
-                                          anchor: [0.5, 46],
-                                          anchorXUnits: 'fraction',
-                                          anchorYUnits: 'pixels',
-                                          src: icon
-                                          }))
-                                 });
-                              
-                              multiIconFeatures[i].setStyle(iconStyle);
-                              
-														 					 					 
-					 
-				} // fine if 2	 
-	                      
- 	               } // fine if 1  		   		       
-		       
-	            } // fine for
 
-   var multiVectorSource = new ol.source.Vector({
-        features: [multiIconFeatures]
-      });
-      var multiVectorLayer = new ol.layer.Vector({
-        source: multiVectorSource
-      });
-
-var map2 = new ol.Map({
-              target: 'map2',
-              layers: [multiVectorLayer],
-              view: new ol.View({
-                center: roma,
-                zoom: 12
-              })              
-        }); // end var map2
-*/
 // -------------------------------------
 // PLACES
 
@@ -274,9 +165,138 @@ var pointLayer = new ol.layer.Tile({
           'content': '<p>The location you clicked was:</p><code>' + hdms + '</code>'
         });
         $(element).popover('show');
-      });      
+      });   
+      
+      // ---------------------------------- 
+      //-------------------------------------
+      
+       // -------------------------------------
+// MULTIPLE MARKER IMAGES
+// http://openlayers.org/en/latest/examples/icon.html?q=Marker
+
+/*
+var dataArray = [];
+
+var MultiIconFeatures = [];
+
+var i = 0;
+	 	
+		for(var theKey in dataArray) { 
+		
+	                if(dataArray.hasOwnProperty(theKey)) {
+                      
+                              i++;
+				
+	                    var theVal = dataArray[theKey];
+			    
+	                       if (typeof theVal.loc.coordinates !== 'undefined' || theVal.loc.coordinates.length > 0) {
+			       
+				        var theX = theVal.loc.coordinates[0];
+					 var theY = theVal.loc.coordinates[1];
+					  if (typeof theVal.name !== 'undefined'){
+					 
+						 var theName = theVal.name;
+					 
+					 } else {
+					  	var theName = "no name";
+					 
+					 }
+					 
+					
+       */  
+       /*
+					
+					  if (typeof theVal.time !== 'undefined'){
+					 
+						var theTime = dateFromTimestamp(theVal.time);
+					 
+					 } else {
+					  	var theTime = "no time";
+					 
+					 }
+                               
+                               */
+			       /*
+					 
+					   if (typeof theVal.rate !== 'undefined'){
+					 
+						var myRate = theVal.rate; 
+						var theLabel = JSON.stringify(theVal.rate);
+					 
+					 } else {
+					  	var myRate = "no rate"; 
+						var theLabel = "0";
+					 
+					 } 
+					 
+	       var icon = ""; 
+	       var x =parseInt(theLabel);
+        switch (true) {
+            case (x < 1):
+                icon = "grey";
+                break;
+            case (x < 3):
+                icon = "green";
+                break;
+            case (x < 6):
+                icon = "yellow";
+                break;
+		case (x < 9):
+                icon = "red";
+                break;		
+            default:
+                icon = "grey";
+                break;
+        }				 
+
+      icon = "http://maps.google.com/mapfiles/ms/icons/" + icon + ".png";				
+					
+                              multiIconFeatures[i] = new ol.Feature({
+                                         geometry: new ol.geom.Point([theX, theY]),
+                                          name: theName,
+                                          rate: myRate
+                              });	
+                              
+                              var iconStyle = new ol.style.Style({
+                                         image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+                                          anchor: [0.5, 46],
+                                          anchorXUnits: 'fraction',
+                                          anchorYUnits: 'pixels',
+                                          src: icon
+                                          }))
+                                 });
+                              
+                              multiIconFeatures[i].setStyle(iconStyle);
+                              
+														 					 					 
+					 
+				} // fine if 2	 
+	                      
+ 	               } // fine if 1  		   		       
+		       
+	            } // fine for
+		    
+	   var multiVectorSource = new ol.source.Vector({
+        features: [multiIconFeatures]
+      });
+      var multiVectorLayer = new ol.layer.Vector({
+        source: multiVectorSource
+      });
+
+var map2 = new ol.Map({
+              target: 'map2',
+              layers: [multiVectorLayer],
+              view: new ol.View({
+                center: roma,
+                zoom: 12
+              })              
+        }); // end var map2
+*/	    
 
 </script>
+
+
+
 
 
 
