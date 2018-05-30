@@ -254,7 +254,12 @@ var i = 0;
                 break;
         }				 
 
-      icon = "http://maps.google.com/mapfiles/ms/icons/" + icon + ".png";				
+      icon = "http://maps.google.com/mapfiles/ms/icons/" + icon + ".png"; 
+      
+      $( "#div" ).append( "<p>"+ theName + " - " + theX + " - " + theY + " - " + theTime + " - " + myRate + " - " +  "</p>" );
+      
+      
+      /*	            				
 					
                               multiIconFeatures[i] = new ol.Feature({
                                          geometry: new ol.geom.Point([theX, theY]),
@@ -273,11 +278,11 @@ var i = 0;
                               
                               multiIconFeatures[i].setStyle(iconStyle);
 			      
-			                                   
+			           */                        
 														 					 					 					 
 				} // fine if 2	 
 				
-				 */
+				 
 	                      
  	               } // fine if 1  		   		       
 		      
@@ -285,12 +290,12 @@ var i = 0;
 		      
 	            } // fine for
 		    
-		    // multiIconFeatures 
+		    //  
 		    
 		    /*		    		
 		
 	   var multiVectorSource = new ol.source.Vector({
-        features: []
+        features: [multiIconFeatures]
       });
       var multiVectorLayer = new ol.layer.Vector({
         source: multiVectorSource
@@ -315,6 +320,8 @@ var map2 = new ol.Map({
 </script>
 
   <div id="map2" class="map"></div> 
+  
+  <div id="array"></div> 
 
 
 
