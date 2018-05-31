@@ -362,7 +362,7 @@ var i = 0;
 		
 	  
 	 
-	 
+	/* 
 	 var multiVectorSource = new ol.source.Vector({
         features: multiIconFeatures
       });
@@ -370,7 +370,15 @@ var i = 0;
         source: multiVectorSource
       }); 
       
+      */
       
+      var source = new ol.source.Vector({
+        features: multiIconFeatures
+      });
+
+      var vectorLayer = new ol.layer.Vector({
+        source: source
+      });
       
       
       
