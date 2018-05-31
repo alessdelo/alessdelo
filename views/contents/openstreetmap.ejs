@@ -202,7 +202,7 @@ var dataArray = {
 		};
 						
 
-var MultiIconFeatures = [];
+var multiIconFeatures = [];
 
 var i = 0;
 	 	
@@ -326,8 +326,8 @@ var i = 0;
 			      
 			      
 			      
-			          var coordinates = [theX, theY];
-        			multiIconFeatures[i] = new ol.Feature(new ol.geom.Point(coordinates)); 
+			        
+        			multiIconFeatures[i] = new ol.Feature(new ol.geom.Point([theX, theY])); 
 				multiIconFeatures[i].setStyle(iconStyle);
 				 
 														 					 					 					 
