@@ -215,6 +215,7 @@ var markerStyle =  new ol.style.Style({
 			
 			*/
 			 
+			 /*
 			 var markerStyle =		 new ol.style.Style({
         image: new ol.style.Circle({
           radius: 5,
@@ -222,6 +223,15 @@ var markerStyle =  new ol.style.Style({
           fill: new ol.style.Fill({color: 'yellow'}),
           stroke: new ol.style.Stroke({color: 'red', width: 1})
         })
+      });
+      */
+      
+      var markerStyle =   new ol.style.Style({
+        image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+          color: '#8959A8',
+          crossOrigin: 'anonymous',
+          src: 'https://openlayers.org/en/v4.6.5/examples/data/dot.png'
+        }))
       });
 
 var dataArray = {
