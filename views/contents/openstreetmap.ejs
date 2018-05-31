@@ -187,7 +187,7 @@ var pointLayer = new ol.layer.Tile({
           $(element).popover({
             'placement': 'top',
             'html': true,
-            'content': feature.get('name')
+            'content': '<h3>point name</h3><p>' + feature.get('name') + '</p>'
           });
           $(element).popover('show');
         } else {
