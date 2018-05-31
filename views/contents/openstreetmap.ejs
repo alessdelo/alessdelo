@@ -45,13 +45,15 @@ var getPassEjs = <%- passEjs %>;
 
 
 <h2>OpenLayers Simplest Example</h2>
-<div id="map" class="map"></div>
+<div id="map" class="map"> 
+	 <div id="popup" title="Welcome to OpenLayers"></div>
+</div>
 <div style="display: none;">
       <!-- Clickable label for Vienna -->
       <a class="overlay" id="roma" target="_blank" href="http://en.wikipedia.org/wiki/Roma">Roma</a>
       <div id="marker" title="Marker"></div>
       <!-- Popup -->
-      <div id="popup" title="Welcome to OpenLayers"></div>
+    <!--  <div id="popup" title="Welcome to OpenLayers"></div> -->
     </div>
     
  
@@ -163,6 +165,48 @@ var pointLayer = new ol.layer.Tile({
       
       */
       // ---------------------------------- 
+      
+        var element = document.getElementById('popup');
+
+      var popup = new ol.Overlay({
+        element: element,
+        positioning: 'bottom-center',
+        stopEvent: false,
+        offset: [0, -50]
+      });
+      map.addOverlay(popup);
+
+      // display popup on click
+      map.on('click', function(evt) {
+        var feature = map.forEachFeatureAtPixel(evt.pixel,
+            function(feature) {
+              return feature;
+            });
+        if (feature) {
+          var coordinates = feature.getGeometry().getCoordinates();
+          popup.setPosition(coordinates);
+          $(element).popover({
+            'placement': 'top',
+            'html': true,
+            'content': feature.get('name')
+          });
+          $(element).popover('show');
+        } else {
+          $(element).popover('destroy');
+        }
+      });
+
+      // change mouse cursor when over marker
+      map.on('pointermove', function(e) {
+        if (e.dragging) {
+          $(element).popover('destroy');
+          return;
+        }
+        var pixel = map.getEventPixel(e.originalEvent);
+        var hit = map.hasFeatureAtPixel(pixel);
+        map.getTarget().style.cursor = hit ? 'pointer' : '';
+      });
+      
       //-------------------------------------
       
       </script>
