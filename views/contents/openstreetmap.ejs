@@ -179,7 +179,7 @@ var pointLayer = new ol.layer.Tile({
 // http://openlayers.org/en/latest/examples/icon.html?q=Marker
 
 
-/*
+
 var markerStyle = new ol.style.Style({
          		 image: new ol.style.RegularShape({
            			 fill: fill,
@@ -191,7 +191,7 @@ var markerStyle = new ol.style.Style({
        			 })
 			 }); 
 			 
-			 */
+			 
 
 var dataArray = {
 		 0:{ "loc": { "type": "Point", "coordinates": [ 41.8750589, 12.5795684 ] }, "_id": "5aee1e0d3586f100043d9109", "name": "Point1", "rate": 6, "time": "2018-05-05T21:11:41.148Z", "__v": 0 },
@@ -328,7 +328,7 @@ var i = 0;
 			      
 			        
         			multiIconFeatures[i] = new ol.Feature(new ol.geom.Point([theX, theY])); 
-				multiIconFeatures[i].setStyle(iconStyle);
+				multiIconFeatures[i].setStyle(markerStyle);
 				 
 														 					 					 					 
 				} // fine if 2	 
@@ -344,6 +344,7 @@ var i = 0;
 		        		
 		
 	  
+	 
 	 /*
 	 var multiVectorSource = new ol.source.Vector({
         features: multiIconFeatures
