@@ -179,7 +179,7 @@ var pointLayer = new ol.layer.Tile({
 // http://openlayers.org/en/latest/examples/icon.html?q=Marker
 
 
-
+/*
 var markerStyle = new ol.style.Style({
          		 image: new ol.style.RegularShape({
            			 fill: fill,
@@ -191,6 +191,7 @@ var markerStyle = new ol.style.Style({
        			 })
 			 }); 
 			 
+			 */
 			 
 
 var dataArray = {
@@ -328,7 +329,7 @@ var i = 0;
 			      
 			        
         			multiIconFeatures[i] = new ol.Feature(new ol.geom.Point([theX, theY])); 
-				multiIconFeatures[i].setStyle(markerStyle);
+				multiIconFeatures[i].setStyle(iconStyle);
 				 
 														 					 					 					 
 				} // fine if 2	 
