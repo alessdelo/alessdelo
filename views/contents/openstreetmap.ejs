@@ -225,6 +225,23 @@ var pointLayer = new ol.layer.Tile({
 // http://openlayers.org/en/latest/examples/icon.html?q=Marker
 
 
+ // Fare il print() di un oggetto
+
+            function printObject(o) {
+
+                var out = '';
+
+                for (var p in o) {
+
+                  out += p + ': ' + o[p] + '\n';
+
+                }
+
+                alert(out);
+
+            }
+
+
 /*
 var markerStyle = new ol.style.Style({
          		 image: new ol.style.RegularShape({
@@ -417,7 +434,7 @@ var i = 0;
         			multiIconFeatures[i] = new ol.Feature(new ol.geom.Point([theX, theY])); 
 				
 				   alert(multiIconFeatures[i]); 
-				alert(JSON.stringify(multiIconFeatures[i]));
+				printObject(multiIconFeatures[i]);
 				
 				multiIconFeatures[i].setStyle(markerStyle);
 				
