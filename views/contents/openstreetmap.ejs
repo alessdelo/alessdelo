@@ -315,7 +315,7 @@ var dataArray = {
 
 
 
-/*
+
 
 var multiIconFeatures = {};
 
@@ -352,7 +352,7 @@ var i = 0;
 					 
 					 } 
 					 
-					 */					 
+					 					 
 					 					         
        					
 					/*
@@ -368,7 +368,7 @@ var i = 0;
                                
                                		*/ 
 					
-					/*
+					
 													       
 					 
 					   if (typeof theVal.rate !== 'undefined'){
@@ -417,7 +417,7 @@ var i = 0;
      
     				//http://openlayers.org/en/latest/examples/cluster.html
 				
-				/*
+				
 								
    
       	            				
@@ -445,10 +445,10 @@ var i = 0;
                               multiIconFeatures[i].setStyle(iconStyle); 
 			      */
 			      
-			      /*
 			      
 			      
-			      var theCoords = [theY, theX];
+			      // conversion of coordinates system (X and Y are inverted)
+			      var theCoords = ol.proj.fromLonLat([theY, theX]);
 			        
         			multiIconFeatures[i] = new ol.Feature(new ol.geom.Point(theCoords)); 
 				
@@ -460,7 +460,7 @@ var i = 0;
 				   // alert(multiIconFeatures[i]); 
 				// alert(JSON.stringify(multiIconFeatures[i])); 
 				
-				printObject(multiIconFeatures[i]);
+				// printObject(multiIconFeatures[i]);
 				 
 														 					 					 					 
 				} // fine if 2	 
@@ -475,8 +475,8 @@ var i = 0;
 	            } // fine for
 		    		   		    
 
-	   alert(multiIconFeatures); 
-	printObject(multiIconFeatures); 
+	  // alert(multiIconFeatures); 
+	// printObject(multiIconFeatures); 
 	
 	// ----------------------------------------- 
 	
@@ -493,6 +493,8 @@ var i = 0;
       }
 	
 	*/
+	
+	/*
 	
 	var multiIconFeatures = [];
 	
@@ -515,9 +517,9 @@ var i = 0;
 	
       }
 	
+	*/
 	
-	
-	printObject(multiIconFeatures); 
+	// printObject(multiIconFeatures); 
 	
 	
 	 
