@@ -489,7 +489,7 @@ var i = 0;
 	
 	*/
 	
-	var multiIconFeatures = [
+	var coordArray = [
 		 [ 41.8750589, 12.5795684 ],
 		 [ 41.9023871, 12.43071 ],
 		 [ 41.9693125, 12.4934085 ],
@@ -498,8 +498,8 @@ var i = 0;
 		];		
    
       
-      for (var i = 0; i < multiIconFeatures.length; ++i) {
-        var coordinates = [multiIconFeatures[i][0], multiIconFeatures[i][1]];
+      for (var i = 0; i < coordArray.length; ++i) {
+        var coordinates = [coordArray[i][0], coordArray[i][1]];
         multiIconFeatures[i] = new ol.Feature(new ol.geom.Point(coordinates));
 	multiIconFeatures[i].setStyle(markerStyle);
 	printObject(multiIconFeatures[i]); 
