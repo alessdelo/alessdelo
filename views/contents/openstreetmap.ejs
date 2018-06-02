@@ -480,6 +480,7 @@ var i = 0;
       for (var i = 0; i < count; ++i) {
         var coordinates = [2 * e * Math.random() - e, 2 * e * Math.random() - e];
         multiIconFeatures[i] = new ol.Feature(new ol.geom.Point(coordinates));
+	multiIconFeatures[i].setStyle(markerStyle);
       }
 	
 	printObject(multiIconFeatures); 
