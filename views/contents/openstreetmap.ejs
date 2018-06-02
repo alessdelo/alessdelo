@@ -501,7 +501,7 @@ var i = 0;
    
       
       for (var i = 0; i < coordArray.length; ++i) {
-        var coordinates = ol.proj.fromLonLat([coordArray[i][0], coordArray[i][1]]);
+        var coordinates = ol.proj.fromLonLat([coordArray[i][1], coordArray[i][0]]);
 	
         multiIconFeatures[i] = new ol.Feature(new ol.geom.Point(coordinates));
 	multiIconFeatures[i].setStyle(markerStyle);
