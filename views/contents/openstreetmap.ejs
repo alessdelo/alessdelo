@@ -501,7 +501,8 @@ var i = 0;
    
       
       for (var i = 0; i < coordArray.length; ++i) {
-        var coordinates = [coordArray[i][0], coordArray[i][1]];
+        var coordinates = ol.proj.transform([coordArray[i][0], coordArray[i][1]], 'EPSG:4326', new ol.source.OSM().getProjection());
+	
         multiIconFeatures[i] = new ol.Feature(new ol.geom.Point(coordinates));
 	multiIconFeatures[i].setStyle(markerStyle);
 	printObject(multiIconFeatures[i]); 
