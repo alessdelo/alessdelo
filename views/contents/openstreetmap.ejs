@@ -66,10 +66,12 @@ var getPassEjs = <%- passEjs %>;
 // http://openlayers.org/en/latest/examples/icon.html?q=Marker
 
 
-var stPeter = [41.90217064,12.45336004]; 
+var stPeterX = 41.90217064; 
+var stPeterY = 12.45336004; 
+
 
 var iconFeature = new ol.Feature({
-        geometry: new ol.geom.Point([41.9029468, 12.4544835]),
+        geometry: new ol.geom.Point(ol.proj.fromLonLat(stPeterY, stPeterX])),
         name: 'Null Island',
         population: 4000,
         rainfall: 500
