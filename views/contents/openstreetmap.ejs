@@ -309,7 +309,7 @@ var dataArray = {
 						
 
 
-/**
+/*
 
 
 var multiIconFeatures = {};
@@ -345,11 +345,12 @@ var i = 0;
 					 } else {
 					  	var theName = "no name";
 					 
-					 }
+					 } 
 					 
-					
-         
-       					/*
+					 */					 
+					 					         
+       					
+					/*
 					
 					  if (typeof theVal.time !== 'undefined'){
 					 
@@ -362,7 +363,7 @@ var i = 0;
                                
                                		*/
 			       
-					 
+					 /*
 					   if (typeof theVal.rate !== 'undefined'){
 					 
 						var myRate = theVal.rate; 
@@ -407,7 +408,9 @@ var i = 0;
       
       
      
-    				//http://openlayers.org/en/latest/examples/cluster.html
+    				//http://openlayers.org/en/latest/examples/cluster.html 
+				
+				*/
       
       	            				
 					/*
@@ -433,6 +436,8 @@ var i = 0;
                               
                               multiIconFeatures[i].setStyle(iconStyle); 
 			      */
+			      
+			      /*
 			      
 			      
 			      var theCoords = [theX, theY];
@@ -467,12 +472,20 @@ var i = 0;
 	
 	// -----------------------------------------
 	
-	**/
+	*/
+	
+	var count = 20000;
+      var multiIconFeatures = new Array(count);
+      var e = 4500000;
+      for (var i = 0; i < count; ++i) {
+        var coordinates = [2 * e * Math.random() - e, 2 * e * Math.random() - e];
+        multiIconFeatures[i] = new ol.Feature(new ol.geom.Point(coordinates));
+      }
 	
 	
 	 
 	 var multiVectorSource = new ol.source.Vector({
-        features: multiIconFeatures[1]
+        features: multiIconFeatures
       });
       var multiVectorLayer = new ol.layer.Vector({
         source: multiVectorSource
