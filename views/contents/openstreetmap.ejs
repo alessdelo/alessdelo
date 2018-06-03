@@ -358,6 +358,21 @@ var iconStyle = new ol.style.Style({
                                           src: "http://maps.google.com/mapfiles/ms/icons/grey.png"
                                           }))
                                  });
+				 
+				 
+	 function styleFunction(url){
+		 var iconStyle = new ol.style.Style({
+						 image: new ol.style.Icon(({
+						  anchor: [0.5, 1.0],
+						  anchorXUnits: 'fraction',
+						  anchorYUnits: 'fraction',
+						  src: url
+						  }))
+                                 }); 
+				 
+			return iconStyle;	 
+				 					 
+	 } // end function			 
 
 
 // 'https://openlayers.org/en/v4.6.5/examples/data/dot.png'
@@ -458,7 +473,7 @@ var i = 0;
 
       icon = "http://maps.google.com/mapfiles/ms/icons/" + icon + ".png"; 
       
-      iconStyle[image][src] = icon;
+      // iconStyle[image][src] = icon;
       
       
       
@@ -496,7 +511,11 @@ var i = 0;
                                           src: icon
                                           }))
                                  });
-				 */
+				 */ 
+				 
+				 var iconStyle = styleFunction(icon);
+				 
+				 
 				
                               
                               multiIconFeatures[i].setStyle(iconStyle); 
