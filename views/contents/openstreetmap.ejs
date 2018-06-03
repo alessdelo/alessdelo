@@ -361,7 +361,14 @@ var dataArray = {
 		};
 						
 
-
+var iconStyle = new ol.style.Style({
+                                         image: new ol.style.Icon(({
+                                          anchor: [0.5, 1.0],
+                                          anchorXUnits: 'fraction',
+                                          anchorYUnits: 'fraction',
+                                          src: "http://maps.google.com/mapfiles/ms/icons/grey.png"
+                                          }))
+                                 });
 
 
 
@@ -452,6 +459,8 @@ var i = 0;
 
       icon = "http://maps.google.com/mapfiles/ms/icons/" + icon + ".png"; 
       
+      iconStyle[src] = icon;
+      
       
       
       // var testString = "<p>"+ theName + " - " + theX + " - " + theY + " - " + theTime + " - " + myRate + " - " +  "</p>";
@@ -479,7 +488,7 @@ var i = 0;
 			      
 			      // multiIconFeatures[i].setStyle(markerStyle);
                                
-			       
+			       /*
                               var iconStyle = new ol.style.Style({
                                          image: new ol.style.Icon(({
                                           anchor: [0.5, 1.0],
@@ -488,7 +497,7 @@ var i = 0;
                                           src: icon
                                           }))
                                  });
-				 
+				 */
 				
                               
                               multiIconFeatures[i].setStyle(iconStyle); 
