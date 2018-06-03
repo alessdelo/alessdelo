@@ -41,6 +41,52 @@ var getPassEjs = <%- passEjs %>;
       .popover-content {
         min-width: 180px;
       }
+      
+      
+      // exaplle: popUp('popup', myMap);
+      function popUp (div, map) {
+      
+         var element = document.getElementById(div);
+      var popup = new ol.Overlay({
+        element: element,
+        positioning: 'bottom-center',
+        stopEvent: false,
+        offset: [0, -50]
+      });
+      map.addOverlay(popup);
+      // display popup on click
+      map.on('click', function(evt) {
+        var feature = map.forEachFeatureAtPixel(evt.pixel,
+            function(feature) {
+              return feature;
+            });
+        if (feature) {
+          var coordinates = feature.getGeometry().getCoordinates();
+          popup.setPosition(coordinates);
+          $(element).popover({
+            'placement': 'top',
+            'html': true,
+            'content': '<h3>point name</h3><p>' + feature.get('name') + '</p>'
+          });
+          $(element).popover('show');
+        } else {
+          $(element).popover('destroy');
+        }
+      });
+      // change mouse cursor when over marker
+      map.on('pointermove', function(e) {
+        if (e.dragging) {
+          $(element).popover('destroy');
+          return;
+        }
+        var pixel = map.getEventPixel(e.originalEvent);
+        var hit = map.hasFeatureAtPixel(pixel);
+        map.getTarget().style.cursor = hit ? 'pointer' : '';
+      });
+      
+      } end function popUp
+      
+      //-------------------------------------  
     </style>
 
 
@@ -215,7 +261,9 @@ var pointLayer = new ol.layer.Tile({
   
 <h2>OpenLayers - Multipoint Layer </h2>
 
-  <div id="map2" class="map"></div> 
+  <div id="map2" class="map">
+   	<div id="popup2" class="popup"></div> 
+  </div> 
   
   <div id="array"></div>     
       
@@ -482,6 +530,8 @@ var i = 0;
 	
 	// ----------------------------------------- 
 	
+	
+	
 	/*
 	// FUNZIONA!					
 		var count = 6;
@@ -557,7 +607,8 @@ var map2 = new ol.Map({
                 zoom: 12
               })              
         }); // end var map2
-	    
+	
+	popUp('popup2', map2);
 
 </script>
 
