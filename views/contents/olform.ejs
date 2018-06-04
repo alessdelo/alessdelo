@@ -10,9 +10,54 @@
 <script>
 var getPassEjs = <%- passEjs %>;
 
+
+function randomStr(m) {
+	var m = m || 9; s = '', r = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	for (var i=0; i < m; i++) { s += r.charAt(Math.floor(Math.random()*r.length)); }
+	return s;
+}
+
+function fillCoords(length){
+	var multip = Math.pow(10,length);
+	var randnum = Math.floor(Math.random() * multip);
+	return randnum;
+}
+
+// Area limits (Roma):
+// - top-left: 41.9999999, 12.3999999
+// - bot-right: 41.7999999, 12.6599999
+var coordX = randomIntFromInterval(41.8000000,41.9999999,7);
+var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
+
+// retrieves date  from timestamp
+// var timeStr = "2010-01-13T18:31:16Z";
+function dateFromTimestamp(timeStr) {
+	var date = new Date(timeStr);
+	var day = date.getDate();
+	var year = date.getFullYear();
+	var month = date.getMonth()+1;
+	var dateStr = day + "/"+ month + "/" + year;
+	
+	return dateStr;
+	} 
+	
+	// random number 1-10	
+	var theRate = Math.floor(Math.random() * 10)+1;
+  
+  $(document).ready( function() {
+	$( "input[name='coordx']" ).val(coordX);
+	$( "input[name='coordy']" ).val(coordY);
+	$( "input[name='rate']" ).val(theRate);
+	
+		
+}); // fine document.ready
+
 </script>
 
-<hr class="my-4">
-<h4>Inspired from...</h4>
-<a href="https://openlayers.org/en/latest/examples/draw-and-modify-features.html">Example!</a>
-</br>
+<form action="/olform" method="post" class="form-inline my-2 my-lg-0">
+     <input name="name" class="form-control mr-sm-2" placeholder="Point Name" aria-label="Name">
+     <input name="rate" class="form-control mr-sm-2" aria-label="Rate"> 
+     <input name="coordx" class="form-control mr-sm-2" aria-label="CoordX">
+     <input name="coordy" class="form-control mr-sm-2" aria-label="CoordY"> 
+     <button id="addItem" class="btn btn-outline-success my-2 my-sm-0" >Add</button>     
+  </form>   
