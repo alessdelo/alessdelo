@@ -153,15 +153,26 @@ function dateFromTimestamp(timeStr) {
       
       // Get the array of features
 	var features = vector.getSource().getFeatures();
-
+	
+	var featCoords = features[0].getGeometry().getCoordinates(); 
+	alert(featCoords);
+	
+	/*	
 	// Go through this array and get coordinates of their geometry.
-	features.forEach(function(feature) {
+	features.forEach(function(feature) { 
+		 
+		
 	   console.log(feature.getGeometry().getCoordinates());
 	   $( "input[name='coordx']" ).val(feature.getGeometry().getCoordinates());
-	});
+	}); 
+	
+	*/
+	
     </script>
 
   <hr class="my-4">
   <h4>Inspired by...</h4>
-  <a href="https://openlayers.org/en/latest/examples/draw-and-modify-features.html">Example!</a>
+  <a href="https://openlayers.org/en/latest/examples/draw-and-modify-features.html">Draw and modify features</a>
+  <a href="https://gis.stackexchange.com/questions/182603/openlayers-get-coordinates-of-drawn-features">Get feature coordinates</a>
+  
   
