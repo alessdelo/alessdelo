@@ -154,19 +154,17 @@ function dateFromTimestamp(timeStr) {
       // Get the array of features
 	var features = vector.getSource().getFeatures();
 	
-	var featCoords = features[0].getGeometry().getCoordinates(); 
-	alert(featCoords);
 	
-	/*	
+		
 	// Go through this array and get coordinates of their geometry.
 	features.forEach(function(feature) { 
-		 
-		
-	   console.log(feature.getGeometry().getCoordinates());
-	   $( "input[name='coordx']" ).val(feature.getGeometry().getCoordinates());
+		 var coords = feature.getGeometry().getCoordinates());
+		alert(coords);
+	   // console.log(feature.getGeometry().getCoordinates());
+	  // $( "input[name='coordx']" ).val(feature.getGeometry().getCoordinates());
 	}); 
 	
-	*/
+	
 	
     </script>
 
