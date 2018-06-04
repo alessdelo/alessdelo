@@ -150,6 +150,15 @@ function dateFromTimestamp(timeStr) {
       */
 
       addInteractions();
+      
+      // Get the array of features
+	var features = vector.getSource().getFeatures();
+
+	// Go through this array and get coordinates of their geometry.
+	features.forEach(function(feature) {
+	   console.log(feature.getGeometry().getCoordinates());
+	   $( "input[name='coordx']" ).val(feature.getGeometry().getCoordinates());
+	});
     </script>
 
   <hr class="my-4">
