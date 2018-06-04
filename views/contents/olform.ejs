@@ -23,6 +23,11 @@ function fillCoords(length){
 	return randnum;
 }
 
+function randomIntFromInterval(min,max,decimals)
+{
+  return Number((Math.random()*(max-min)+min).toFixed(decimals));
+}
+
 // Area limits (Roma):
 // - top-left: 41.9999999, 12.3999999
 // - bot-right: 41.7999999, 12.6599999
