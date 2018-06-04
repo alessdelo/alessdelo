@@ -125,7 +125,7 @@ function dateFromTimestamp(timeStr) {
       function addInteractions() {
         draw = new ol.interaction.Draw({
           source: source,
-          type: Point
+          type: 'Point'
         });
         map.addInteraction(draw);
         snap = new ol.interaction.Snap({source: source});
