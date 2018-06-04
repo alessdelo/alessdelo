@@ -188,14 +188,22 @@ var pageData = {
     footer: footer,
     params: []
   },
-		openstreetmap: { 
+  openstreetmap: { 
     title:'Openstreetmap markers',
     content:'../contents/openstreetmap.ejs',
     nav: nav,
     header: header,
     footer: footer,
     params: []
-  }
+  },
+  olform: { 
+    title:'Open Layers Form - Insert Point',
+    content:'../contents/olform.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
+  },	
 }
 
 
@@ -562,6 +570,89 @@ app.get('/mapsform', function (req, res) {
 	// pageData.mapsform.params[1] = mapsStyle
  res.render(index,pageData.mapsform)
 })
+
+// ----------------------------------
+// 16. OPENLAYERS FORM - INSERT POINT
+
+// var mapsStyle = require('/static/silver')		
+ var mapsStyleRaw = fs.readFileSync('maps/mapstyles/silver.json')
+var mapsStyle = JSON.parse(mapsStyleRaw)
+
+app.get('/olform', function (req, res) {
+	pageData.olform.params[1] = mapsStyle
+ res.render(index,pageData.olform)
+})
+
+app.post('/olform', olForm)	
+
+function olForm(req, res, next) {
+ 
+   mongoose.connect(dbUri)
+
+   var db = mongoose.connection
+   db.on('error', function() {
+      pageData.olform.params = {'error': 'connection problem!'}
+   })
+ 
+   db.once('open', function() {
+       
+        var Schema = mongoose.Schema
+	
+	// Models
+	var LocationSchema = new Schema({
+		    name: String, 
+			rate: Number,
+		
+			time : { type : Date, default: Date.now },
+		    loc: {
+			type: {
+			    type: String,
+			    default: "Point"
+			},
+			coordinates: {
+			    type: [Number]
+			}
+		    }   
+	}, { collection: "maps1"})
+	   
+	LocationSchema.index({ loc: '2dsphere'});
+	   
+	var UserData = mongoose.model('UserData', LocationSchema) 
+	
+	var item = {
+		"name": req.body.name,	
+		"rate": 	req.body.rate,
+		
+		"loc": {
+                    "type": "Point",
+                    "coordinates": [req.body.coordx, req.body.coordy]
+                }
+		
+		}
+	
+	var data = new UserData(item);
+         data.save()
+	 
+	   UserData.find()
+         .then(function(doc) {
+            pageData.olform.params[0] = doc
+		   
+		 
+		
+		 // pageData.olform.params[1] = mapsStyle
+		  // pageData.olform.params[1] = {"testJSON": "blabla"}
+		   // pageData.olform.params[1] = myJson
+		   
+           
+         })
+        
+    }) // fine db.once    
+	pageData.olform.params[1] = mapsStyle
+   
+  res.render(index,pageData.olform)
+ 
+} // fine olform
+
 
 
 // ----------------------------------
