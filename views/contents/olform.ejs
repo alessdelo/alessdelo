@@ -10,6 +10,15 @@
 <script>
 var getPassEjs = <%- passEjs %>;
 
+ // Fare il print() di un oggetto
+            function printObject(o) {
+                var out = '';
+                for (var p in o) {
+                  out += p + ': ' + o[p] + '\n';
+                }
+                alert(out);
+            }
+
 
 function randomStr(m) {
 	var m = m || 9; s = '', r = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -154,6 +163,7 @@ function dateFromTimestamp(timeStr) {
       // Get the array of features
 	var features = vector.getSource().getFeatures();
 	
+	printObject(features);
 	
 		
 	/* 
