@@ -144,8 +144,7 @@ function dateFromTimestamp(timeStr) {
 	 // var coords = feature.getGeometry().getCoordinates());
 	 // var coordsStr =  JSON.stringify(coords);
 	
-	 $( "input[name='coordx']" ).val('aaaa');
-	$( "input[name='coordy']" ).val("bbb");
+	 
 	
 
       }
@@ -182,7 +181,8 @@ function dateFromTimestamp(timeStr) {
 	source.on('addfeature', function(evt){
    		 var feature = evt.feature;
    		 var coords = feature.getGeometry().getCoordinates();
-		 alert(coords);
+		 $( "input[name='coordx']" ).val(coords[0]);
+		$( "input[name='coordy']" ).val(coords[0]);
 	});
 	
 	
