@@ -131,7 +131,7 @@ function dateFromTimestamp(timeStr) {
       var draw, snap; // global so we can remove them later
      //  var typeSelect = document.getElementById('type');
 
-      function addInteractions() {
+      function addInteractions(theVector) {
         draw = new ol.interaction.Draw({
           source: source,
           type: 'Point'
@@ -140,7 +140,7 @@ function dateFromTimestamp(timeStr) {
         snap = new ol.interaction.Snap({source: source});
         map.addInteraction(snap);
 	
-	var features = vector.getSource().getFeatures();
+	var features = theVector.getSource().getFeatures();
 	 var coords = feature.getGeometry().getCoordinates());
 	 // var coordsStr =  JSON.stringify(coords);
 	
@@ -162,7 +162,7 @@ function dateFromTimestamp(timeStr) {
       };
       */
 
-      addInteractions();
+      addInteractions(vector);
       
       // Get the array of features
 	 // var features = vector.getSource().getFeatures();
