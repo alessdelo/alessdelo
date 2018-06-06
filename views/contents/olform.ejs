@@ -212,6 +212,7 @@ function dateFromTimestamp(timeStr) {
    		 var feature = evt.feature;
    		 var coords = feature.getGeometry().getCoordinates(); 
 		 var coordsWGS84 = ol.proj.transform([coords], 'EPSG:3857','EPSG:4326');
+		 alert(coordsWGS84);
 		 $( "input[name='coordx']" ).val(coordsWGS84[0]);
 		$( "input[name='coordy']" ).val(coordsWGS84[1]);
 	});
@@ -220,6 +221,7 @@ function dateFromTimestamp(timeStr) {
 	source.on('changefeature', function(evt){
    		 var feature = evt.feature;
    		 var coords = feature.getGeometry().getCoordinates();
+		 
 		 $( "input[name='coordx']" ).val(coords[0]);
 		$( "input[name='coordy']" ).val(coords[1]);
 	});
