@@ -140,7 +140,11 @@ function dateFromTimestamp(timeStr) {
         snap = new ol.interaction.Snap({source: source});
         map.addInteraction(snap);
 	
-	 $( "input[name='coordx']" ).val("aaaa");
+	var features = vector.getSource().getFeatures();
+	 var coords = feature.getGeometry().getCoordinates());
+	 var coordsStr =  JSON.stringify(coords);
+	
+	 $( "input[name='coordx']" ).val(coordsStr);
 	// $( "input[name='coordy']" ).val("bbb");
 	
 
