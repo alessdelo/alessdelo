@@ -73,12 +73,13 @@ function dateFromTimestamp(timeStr) {
 
 <form action="/olform" method="post" class="form-inline my-2 my-lg-0">
      <input name="name" class="form-control mr-sm-2" placeholder="Point Name" aria-label="Name">
+     <br>
      <input name="rate" class="form-control mr-sm-2" aria-label="Rate"> 
+     <input type="range" min="1" max="10" value="5" class="slider" id="myRange">
+     <br>
      <input name="coordx" class="form-control mr-sm-2" aria-label="CoordX">
      <input name="coordy" class="form-control mr-sm-2" aria-label="CoordY"> 
-     	<div class="slidecontainer">
-  		<input type="range" min="1" max="10" value="5" class="slider" id="myRange">
-	</div>
+     <br>	  			
      <button id="addItem" class="btn btn-outline-success my-2 my-sm-0" >Add</button>     
   </form>   
   
@@ -98,7 +99,7 @@ function dateFromTimestamp(timeStr) {
     var slider = document.getElementById("myRange");
     
     slider.oninput = function() {
-  	$( "input[name='coordy']" ).val(this.value);
+  	$( "input[name='rate']" ).val(this.value);
 	}
     
     
