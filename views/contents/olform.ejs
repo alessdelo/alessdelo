@@ -72,19 +72,34 @@ function dateFromTimestamp(timeStr) {
 </script>
 
 <form action="/olform" method="post" class="my-2 my-lg-0">
-	<div class="form-inline">
+	<div class="form-raw">
      		<input name="name" class="form-control mr-sm-2" placeholder="Point Name" aria-label="Name">
      	</div>
-     	<div class="form-inline">
-	 <input type="range" min="1" max="10" value="5" class="slider" id="myRange">
-    	 <input name="rate" class="form-control mr-sm-2" aria-label="Rate" placeholder="Rate" value="5"> 
+     	
     
-     </div>
-     <div class="form-inline">
-     <input name="coordx" class="form-control mr-sm-2" aria-label="CoordX" placeholder="Rate">
-     <input name="coordy" class="form-control mr-sm-2" aria-label="CoordY" placeholder="Rate"> 
-     </div>  			
-     <button id="addItem" class="btn btn-outline-success my-2 my-sm-0" >Add</button>     
+      <div class="form-row">
+	    <div class="col">
+	       <input type="range" min="1" max="10" value="5" class="slider" id="myRange">
+	    </div>
+	    <div class="col">
+	     <input name="rate" class="form-control mr-sm-2" aria-label="Rate" placeholder="Rate" value="5">
+	    </div>
+	 </div>	
+     
+     
+     
+      <div class="form-row">
+	    <div class="col">
+	      <input name="coordx" class="form-control mr-sm-2" aria-label="CoordX" placeholder="CoordX">
+	    </div>
+	    <div class="col">
+	    <input name="coordy" class="form-control mr-sm-2" aria-label="CoordY" placeholder="CoordY"> 
+	    </div>
+	 </div>	
+     
+     		<div class="form-row">
+     <button id="addItem" class="btn btn-outline-success my-2 my-sm-0" >Add</button>   
+     </div>	
   </form>   
   
   <hr class="my-4">
