@@ -76,6 +76,9 @@ function dateFromTimestamp(timeStr) {
      <input name="rate" class="form-control mr-sm-2" aria-label="Rate"> 
      <input name="coordx" class="form-control mr-sm-2" aria-label="CoordX">
      <input name="coordy" class="form-control mr-sm-2" aria-label="CoordY"> 
+     	<div class="slidecontainer">
+  		<input type="range" min="1" max="10" value="5" class="slider" id="myRange">
+	</div>
      <button id="addItem" class="btn btn-outline-success my-2 my-sm-0" >Add</button>     
   </form>   
   
@@ -92,6 +95,13 @@ function dateFromTimestamp(timeStr) {
       </select>
     </form>
     <script>
+    var slider = document.getElementById("myRange");
+    
+    slider.oninput = function() {
+  	$( "input[name='coordy']" ).val(this.value);
+	}
+    
+    
       var raster = new ol.layer.Tile({
         source: new ol.source.OSM()
       });
