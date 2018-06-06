@@ -179,7 +179,11 @@ function dateFromTimestamp(timeStr) {
 	  // $( "input[name='coordx']" ).val(feature.getGeometry().getCoordinates());
 	}); 
 	*/
-	
+	source.on('addfeature', function(evt){
+   		 var feature = evt.feature;
+   		 var coords = feature.getGeometry().getCoordinates();
+		 alert(coords);
+	});
 	
 	
     </script>
