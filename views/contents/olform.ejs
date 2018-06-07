@@ -73,7 +73,12 @@ function dateFromTimestamp(timeStr) {
 
 <form action="/olform" method="post" class="my-2 my-lg-0">
 	<div class="form-raw">
-     		<input name="name" class="form-control mr-sm-2" placeholder="Point Name" aria-label="Name">
+		<div class="input-group mb-2">
+			<div class="input-group-prepend">
+				<div class="input-group-text">@</div>
+			</div>
+			<input name="name" class="form-control mr-sm-2" placeholder="Point Name" aria-label="Name">
+		</div>
      	</div>
      	
     
