@@ -75,7 +75,7 @@ function dateFromTimestamp(timeStr) {
 	<div class="form-raw">
 		<div class="input-group mb-2">
 			<div class="input-group-prepend">
-				<div class="input-group-text">@</div>
+				<div class="input-group-text">Name</div>
 			</div>
 			<input name="name" class="form-control mr-sm-2" placeholder="Point Name" aria-label="Name">
 		</div>
@@ -84,11 +84,16 @@ function dateFromTimestamp(timeStr) {
     
       <div class="form-row">
 	    <div class="col">
-	      <label for="myRange">Rate</label>
+	      
 	       <input type="range" min="1" max="10" value="5" class="slider" id="myRange">
 	    </div>
 	    <div class="col">
-	     <input name="rate" class="form-control mr-sm-2" aria-label="Rate" placeholder="Rate" value="5">
+		    <div class="input-group mb-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text">Rate</div>
+				</div>
+		    	 <input name="rate" class="form-control mr-sm-2" aria-label="Rate" placeholder="Rate" value="5">
+		     </div>
 	    </div>
 	 </div>	
      
@@ -96,12 +101,20 @@ function dateFromTimestamp(timeStr) {
      
       <div class="form-row">
 	    <div class="col">
-	     <label for="coordx">Rate</label>
-	      <input name="coordx" class="form-control mr-sm-2" aria-label="CoordX" placeholder="CoordX">
+	    	 <div class="input-group mb-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text">X coord</div>
+				</div>
+	     		 <input name="coordx" class="form-control mr-sm-2" aria-label="CoordX" placeholder="CoordX">
+	      	 </div>
 	    </div>
 	    <div class="col">
-	    <label for="coordy">Rate</label>
-	    <input name="coordy" class="form-control mr-sm-2" aria-label="CoordY" placeholder="CoordY"> 
+	   	 <div class="input-group mb-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text">X coord</div>
+				</div>
+	    			<input name="coordy" class="form-control mr-sm-2" aria-label="CoordY" placeholder="CoordY"> 
+			</div>	
 	    </div>
 	 </div>	
      
