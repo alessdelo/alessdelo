@@ -234,8 +234,8 @@ function dateFromTimestamp(timeStr) {
    		 var feature = evt.feature;
    		 var coordsWGS84 = toWGS84(feature);
 		 
-		 $( "input[name='coordx']" ).val(coords[0]);
-		$( "input[name='coordy']" ).val(coords[1]);
+		 $( "input[name='coordx']" ).val(coordsWGS84[0]);
+		$( "input[name='coordy']" ).val(coordsWGS84[1]);
 	});
 	
 	
