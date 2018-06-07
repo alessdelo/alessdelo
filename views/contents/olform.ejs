@@ -212,7 +212,7 @@ function dateFromTimestamp(timeStr) {
    		 var feature = evt.feature;
    		 var coords = feature.getGeometry().getCoordinates(); 
 		 
-		 var coordsWGS84 = ol.proj.transform([coords], 'EPSG:900913','EPSG:4326'); // 'EPSG:3857'
+		 var coordsWGS84 = ol.proj.transform([coords], 'EPSG:3857','EPSG:4326'); // 'EPSG:3857'  EPSG:900913
 		 alert(coordsWGS84);		 		
 		
 		
