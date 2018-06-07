@@ -221,25 +221,7 @@ function dateFromTimestamp(timeStr) {
    		 var feature = evt.feature;
 		 
 		var coordsWGS84 = toWGS84(feature);
-		 
-		 /*
-   		 var coords = feature.getGeometry().getCoordinates(); 
-		 		 		 
-		 var coordsWGS84 = ol.proj.transform([coords[1], coords[0]], 'EPSG:3857','EPSG:4326'); // 'EPSG:3857'  EPSG:900913
-		 alert(coordsWGS84);	
-		 */
-		
-		
-		/* 
-		
-		var fromProjection = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
-    		var toProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
-   		var coordsWGS84 = new OpenLayers.LonLat(coords[0], coords[1]).transform(fromProjection, toProjection);
-		
-		// var coordsWGS84 = new OpenLayers.LonLat(coords[0], coords[1]).transform('EPSG:4326', 'EPSG:3857');
-		*/
-		
-		
+		 		 				
 		$( "input[name='coordx']" ).val(coordsWGS84[0]);
 		$( "input[name='coordy']" ).val(coordsWGS84[1]); 
 		
@@ -250,7 +232,7 @@ function dateFromTimestamp(timeStr) {
 	
 	source.on('changefeature', function(evt){
    		 var feature = evt.feature;
-   		 var coords = feature.getGeometry().getCoordinates();
+   		 var coordsWGS84 = toWGS84(feature);
 		 
 		 $( "input[name='coordx']" ).val(coords[0]);
 		$( "input[name='coordy']" ).val(coords[1]);
