@@ -218,7 +218,11 @@ function dateFromTimestamp(timeStr) {
 		*/
 		
 		
-		var coordsWGS84 = new OpenLayers.LonLat(coords[0], coords[1]).transform('EPSG:4326', 'EPSG:3857');
+		var fromProjection = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+    		var toProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+   		var cntrposition = new OpenLayers.LonLat(coords[0], coords[1]).transform(fromProjection, toProjection);
+		
+		// var coordsWGS84 = new OpenLayers.LonLat(coords[0], coords[1]).transform('EPSG:4326', 'EPSG:3857');
 		
 		$( "input[name='coordx']" ).val(coordsWGS84[0]);
 		$( "input[name='coordy']" ).val(coordsWGS84[1]); 
