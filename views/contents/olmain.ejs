@@ -32,39 +32,318 @@ var getPassEjs = <%- passEjs %>;
 
     <script>
     
-    
-      var raster = new ol.layer.Tile({
-        source: new ol.source.OSM()
+        
+      var markerStyle =   new ol.style.Style({
+        image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
+          color: '#ffcc00',
+	  opacity: 0.6,
+	  scale: 0.6,
+          crossOrigin: 'anonymous',
+          src:'/static/icon360.png'
+        }))
       });
 
-      var source = new ol.source.Vector();
-      var vector = new ol.layer.Vector({
-        source: source,
-        style: new ol.style.Style({
-          fill: new ol.style.Fill({
-            color: 'rgba(255, 255, 255, 0.2)'
-          }),
-          stroke: new ol.style.Stroke({
-            color: '#ffcc33',
-            width: 2
-          }),
-          image: new ol.style.Circle({
-            radius: 7,
-            fill: new ol.style.Fill({
-              color: '#ffcc33'
-            })
-          })
-        })
+
+var iconStyle = new ol.style.Style({
+                                         image: new ol.style.Icon(({
+                                          anchor: [0.5, 1.0],
+                                          anchorXUnits: 'fraction',
+                                          anchorYUnits: 'fraction',
+                                          src: "http://maps.google.com/mapfiles/ms/icons/grey.png"
+                                          }))
+					  
+                                 });
+				 
+				 
+	 function styleFunction(url, rate){
+		 var iconStyle = new ol.style.Style({
+						 image: new ol.style.Icon(({
+							  anchor: [0.5, 1.0],
+							  anchorXUnits: 'fraction',
+							  anchorYUnits: 'fraction',
+							  src: url
+						  })),
+						  					  
+						  text: new ol.style.Text({
+							text: rate,
+							scale: 1.3,
+							offsetY: -20,
+								fill: new ol.style.Fill({
+							 	 color: '#000000'
+								})
+							}),	
+						stroke: new ol.style.Stroke({  	
+							color: '#FFFF99',
+							  width: 3.5
+							})
+                                 }); 
+				 
+			return iconStyle;	 
+				 					 
+	 } // end function	
+	 
+	
+
+// 'https://openlayers.org/en/v4.6.5/examples/data/dot.png'
+
+var dataArray = {
+		 0:{ "loc": { "type": "Point", "coordinates": [ 41.90217064,12.45336004 ] }, "_id": "5aee1e0d3586f100043d9109", "name": "Point1", "rate": 6, "time": "2018-05-05T21:11:41.148Z", "__v": 0 },
+		 1:{ "loc": { "type": "Point", "coordinates": [ 41.9023871, 12.43071 ] }, "_id": "5aee1f275ec9a9000461b287", "name": "Point2", "rate": 1, "time": "2018-05-05T21:16:23.362Z", "__v": 0 },
+		 2:{ "loc": { "type": "Point", "coordinates": [ 41.9693125, 12.4934085 ] }, "_id": "5af12a77d85bd60004984669", "name": "Point3", "rate": 7, "time": "2018-05-08T04:41:27.706Z", "__v": 0 },
+		 3:{ "loc": { "type": "Point", "coordinates": [ 41.8097032, 12.4039898 ] }, "_id": "5af1fee86c75f00004a43fad", "name": "Point4", "rate": 5, "time": "2018-05-08T19:47:52.750Z", "__v": 0 },
+		 4:{ "loc": { "type": "Point", "coordinates": [ 41.8890951, 12.4092448 ] }, "_id": "5afc9d6a802a540004dabc82", "name": "Point5", "rate": 2, "time": "2018-05-16T21:06:50.852Z", "__v": 0 }
+		};
+
+
+var multiIconFeatures = [];
+
+var i = 0;
+	 	
+		for(var theKey in dataArray) { 
+		
+		
+		
+	                if(dataArray.hasOwnProperty(theKey)) {
+                      
+                             
+				
+	                    var theVal = dataArray[theKey];
+			    
+			    // test
+			    alert(JSON.stringify(theVal));
+			    
+			    
+			    
+	                       if (typeof theVal.loc.coordinates !== 'undefined' || theVal.loc.coordinates.length > 0) {
+			       
+				        var theX = theVal.loc.coordinates[0];
+					 var theY = theVal.loc.coordinates[1];
+					 
+					 
+					 
+					  if (typeof theVal.name !== 'undefined'){
+					 
+						 var theName = theVal.name;
+					 
+					 } else {
+					  	var theName = "no name";
+					 
+					 } 
+					 
+					 					 
+					 					         
+       					
+					/*
+					
+					  if (typeof theVal.time !== 'undefined'){
+					 
+						var theTime = dateFromTimestamp(theVal.time);
+					 
+					 } else {
+					  	var theTime = "no time";
+					 
+					 }
+                               
+                               		*/ 
+					
+					
+													       
+					 
+					   if (typeof theVal.rate !== 'undefined'){
+					 
+						var myRate = theVal.rate; 
+						var theLabel = JSON.stringify(theVal.rate);
+					 
+					 } else {
+					  	var myRate = "no rate"; 
+						var theLabel = "0";
+					 
+					 } 
+					 
+	       var icon = ""; 
+	       var x =parseInt(theLabel);
+        switch (true) {
+            case (x < 1):
+                icon = "grey";
+                break;
+            case (x < 3):
+                icon = "green";
+                break;
+            case (x < 6):
+                icon = "yellow";
+                break;
+		case (x < 9):
+                icon = "red";
+                break;		
+            default:
+                icon = "grey";
+                break;
+        }				 
+
+      icon = "http://maps.google.com/mapfiles/ms/icons/" + icon + ".png"; 
+      
+      // iconStyle[image][src] = icon;
+      
+    // var testString = "<p>"+ theName + " - " + theX + " - " + theY + " - " + theTime + " - " + myRate + " - " +  "</p>";
+      var testString = "<p>" + theName + " - " +  theX + " - " + theY + " - " + myRate + "</p>";
+      // alert(testString);
+      $( "#array" ).append(testString);
+      
+      
+      
+      
+     
+    				//http://openlayers.org/en/latest/examples/cluster.html
+								
+								  
+    	            									
+			
+				// conversion of coordinates system (X and Y are inverted)
+			      var theCoords = ol.proj.fromLonLat([theY, theX]);
+                              
+			      multiIconFeatures[i] = new ol.Feature({
+                                         geometry: new ol.geom.Point(theCoords),
+                                          name: theName,
+                                          rate: myRate
+                              });
+			      
+			      // multiIconFeatures[i].setStyle(markerStyle);
+                               
+			       /*
+                              var iconStyle = new ol.style.Style({
+                                         image: new ol.style.Icon(({
+                                          anchor: [0.5, 1.0],
+                                          anchorXUnits: 'fraction',
+                                          anchorYUnits: 'fraction',
+                                          src: icon
+                                          }))
+                                 });
+				 */ 
+				 
+				 var iconStyle = styleFunction(icon, theLabel);
+				 
+				 
+				
+                              
+                              multiIconFeatures[i].setStyle(iconStyle); 
+			      
+			      
+			      /*
+			      
+			      // conversion of coordinates system (X and Y are inverted)
+			      var theCoords = ol.proj.fromLonLat([theY, theX]);
+			        
+        			multiIconFeatures[i] = new ol.Feature(new ol.geom.Point(theCoords)); 
+				
+				 //  alert(multiIconFeatures[i]); 
+				// printObject(multiIconFeatures[i]);
+				
+				multiIconFeatures[i].setStyle(markerStyle);
+				
+				   // alert(multiIconFeatures[i]); 
+				// alert(JSON.stringify(multiIconFeatures[i])); 
+				
+				// printObject(multiIconFeatures[i]);
+				
+				 */
+														 					 					 					 
+				} // fine if 2	 
+				
+				 
+	                      
+ 	               } // fine if 1  		   		       
+		      
+		       i++;
+		       // alert(i);
+		      
+	            } // fine for
+		    		   		    
+
+	  // alert(multiIconFeatures); 
+	// printObject(multiIconFeatures); 
+	
+	// ----------------------------------------- 
+	
+	
+	
+	/*
+	// FUNZIONA!					
+		var count = 6;
+      var multiIconFeatures = new Array(count);
+      var e = 4500000;
+      for (var i = 0; i < count; ++i) {
+        var coordinates = [2 * e * Math.random() - e, 2 * e * Math.random() - e];
+        multiIconFeatures[i] = new ol.Feature(new ol.geom.Point(coordinates));
+	multiIconFeatures[i].setStyle(markerStyle);
+	printObject(multiIconFeatures[i]); 
+      }
+	
+	*/
+	
+	/*
+	
+	var multiIconFeatures = [];
+	
+	var coordArray = [
+		 [ 41.90217064,12.45336004 ],
+		 [ 41.9023871, 12.43071 ],
+		 [ 41.9693125, 12.4934085 ],
+		 [ 41.8097032, 12.4039898 ],
+		 [ 41.8890951, 12.4092448 ]
+		];		
+   
+      
+      for (var i = 0; i < coordArray.length; ++i) {
+        var coordinates = ol.proj.fromLonLat([coordArray[i][1], coordArray[i][0]]);
+	
+        multiIconFeatures[i] = new ol.Feature(new ol.geom.Point(coordinates));
+	multiIconFeatures[i].setStyle(markerStyle);
+	printObject(multiIconFeatures[i]); 
+	printObject(multiIconFeatures[i][0]);
+	
+      }
+	
+	*/
+	
+	// printObject(multiIconFeatures); 
+	
+	
+	 
+	 var multiVectorSource = new ol.source.Vector({
+        features: multiIconFeatures
+      });
+      var multiVectorLayer = new ol.layer.Vector({
+        source: multiVectorSource
+      }); 
+      
+      
+      
+      /* 
+      var source = new ol.source.Vector({
+        features: multiIconFeatures
       });
 
-      var map = new ol.Map({
-        layers: [raster, vector],
-        target: 'map',
-        view: new ol.View({
-          center: [-11000000, 4600000],
-          zoom: 4
-        })
+      var vectorLayer = new ol.layer.Vector({
+        source: source
       });
+      
+      */
+      
+       var map2BaseLayer = new ol.layer.Tile({
+                  source: new ol.source.OSM()
+                });
+
+var map2 = new ol.Map({
+              target: 'map2',
+	      layers: [map2BaseLayer, multiVectorLayer],             
+              view: new ol.View({
+                center: roma,
+                zoom: 12
+              })              
+        }); // end var map2
+	
+	// popUp('popup2', map2);     
+  
 	
     </script>
 
