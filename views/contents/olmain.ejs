@@ -206,19 +206,7 @@ var i = 0;
                                           name: theName,
                                           rate: myRate
                               });
-			      
-			      // multiIconFeatures[i].setStyle(markerStyle);
-                               
-			       /*
-                              var iconStyle = new ol.style.Style({
-                                         image: new ol.style.Icon(({
-                                          anchor: [0.5, 1.0],
-                                          anchorXUnits: 'fraction',
-                                          anchorYUnits: 'fraction',
-                                          src: icon
-                                          }))
-                                 });
-				 */ 
+			      			                                   			   
 				 
 				 var iconStyle = styleFunction(icon, theLabel);
 				 
@@ -228,24 +216,7 @@ var i = 0;
                               multiIconFeatures[i].setStyle(iconStyle); 
 			      
 			      
-			      /*
-			      
-			      // conversion of coordinates system (X and Y are inverted)
-			      var theCoords = ol.proj.fromLonLat([theY, theX]);
-			        
-        			multiIconFeatures[i] = new ol.Feature(new ol.geom.Point(theCoords)); 
-				
-				 //  alert(multiIconFeatures[i]); 
-				// printObject(multiIconFeatures[i]);
-				
-				multiIconFeatures[i].setStyle(markerStyle);
-				
-				   // alert(multiIconFeatures[i]); 
-				// alert(JSON.stringify(multiIconFeatures[i])); 
-				
-				// printObject(multiIconFeatures[i]);
-				
-				 */
+		
 														 					 					 					 
 				} // fine if 2	 
 				
@@ -263,51 +234,7 @@ var i = 0;
 	// printObject(multiIconFeatures); 
 	
 	// ----------------------------------------- 
-	
-	
-	
-	/*
-	// FUNZIONA!					
-		var count = 6;
-      var multiIconFeatures = new Array(count);
-      var e = 4500000;
-      for (var i = 0; i < count; ++i) {
-        var coordinates = [2 * e * Math.random() - e, 2 * e * Math.random() - e];
-        multiIconFeatures[i] = new ol.Feature(new ol.geom.Point(coordinates));
-	multiIconFeatures[i].setStyle(markerStyle);
-	printObject(multiIconFeatures[i]); 
-      }
-	
-	*/
-	
-	/*
-	
-	var multiIconFeatures = [];
-	
-	var coordArray = [
-		 [ 41.90217064,12.45336004 ],
-		 [ 41.9023871, 12.43071 ],
-		 [ 41.9693125, 12.4934085 ],
-		 [ 41.8097032, 12.4039898 ],
-		 [ 41.8890951, 12.4092448 ]
-		];		
-   
-      
-      for (var i = 0; i < coordArray.length; ++i) {
-        var coordinates = ol.proj.fromLonLat([coordArray[i][1], coordArray[i][0]]);
-	
-        multiIconFeatures[i] = new ol.Feature(new ol.geom.Point(coordinates));
-	multiIconFeatures[i].setStyle(markerStyle);
-	printObject(multiIconFeatures[i]); 
-	printObject(multiIconFeatures[i][0]);
-	
-      }
-	
-	*/
-	
-	// printObject(multiIconFeatures); 
-	
-	
+			
 	 
 	 var multiVectorSource = new ol.source.Vector({
         features: multiIconFeatures
@@ -316,18 +243,7 @@ var i = 0;
         source: multiVectorSource
       }); 
       
-      
-      
-      /* 
-      var source = new ol.source.Vector({
-        features: multiIconFeatures
-      });
 
-      var vectorLayer = new ol.layer.Vector({
-        source: source
-      });
-      
-      */
       
        var map2BaseLayer = new ol.layer.Tile({
                   source: new ol.source.OSM()
