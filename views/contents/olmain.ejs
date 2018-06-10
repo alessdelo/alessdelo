@@ -29,10 +29,27 @@ var getPassEjs = <%- passEjs %>;
   </form>   
   
   <hr class="my-4">
+  
+    <style>
+      .map {
+       height: 400px;
+       width: 100%;
+      }
+   </style>
+  
+  <h2>OpenLayers - Multipoint Layer </h2>
+  <div id="map2" class="map">
+   	<div id="popup2" class="popup"></div> 
+  </div> 
 
     <script>
     
-        
+  // -------------------------------------
+	// PLACES
+	var roma = ol.proj.fromLonLat([12.529999, 41.900000]);
+	// var vatican = ol.proj.fromLonLat([41.9029468, 12.4544835]);
+// -------------------------------------     
+
       var markerStyle =   new ol.style.Style({
         image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({
           color: '#ffcc00',
