@@ -1,0 +1,278 @@
+
+
+<p class="lead">Create markers from MongoDB</p>
+<hr class="my-4">
+
+<% strMyVar = JSON.stringify(myVar, null, 4); %>
+<%= strMyVar %>
+<% var passEjs = strMyVar; %>
+
+<script>
+var getPassEjs = <%- passEjs %>;
+
+ // Fare il print() di un oggetto
+            function printObject(o) {
+                var out = '';
+                for (var p in o) {
+                  out += p + ': ' + o[p] + '\n';
+                }
+                alert(out);
+            }
+
+
+function randomStr(m) {
+	var m = m || 9; s = '', r = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	for (var i=0; i < m; i++) { s += r.charAt(Math.floor(Math.random()*r.length)); }
+	return s;
+}
+
+function fillCoords(length){
+	var multip = Math.pow(10,length);
+	var randnum = Math.floor(Math.random() * multip);
+	return randnum;
+}
+
+function randomIntFromInterval(min,max,decimals)
+{
+  return Number((Math.random()*(max-min)+min).toFixed(decimals));
+}
+
+// Area limits (Roma):
+// - top-left: 41.9999999, 12.3999999
+// - bot-right: 41.7999999, 12.6599999
+var coordX = randomIntFromInterval(41.8000000,41.9999999,7);
+var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
+
+// retrieves date  from timestamp
+// var timeStr = "2010-01-13T18:31:16Z";
+function dateFromTimestamp(timeStr) {
+	var date = new Date(timeStr);
+	var day = date.getDate();
+	var year = date.getFullYear();
+	var month = date.getMonth()+1;
+	var dateStr = day + "/"+ month + "/" + year;
+	
+	return dateStr;
+	} 
+	
+	// random number 1-10	
+	var theRate = Math.floor(Math.random() * 10)+1; 	
+		
+  /*
+  $(document).ready( function() {
+	$( "input[name='coordx']" ).val(coordX);
+	$( "input[name='coordy']" ).val(coordY);
+	$( "input[name='rate']" ).val(theRate);
+	
+		
+}); // fine document.ready
+
+*/
+
+</script>
+
+
+<form action="/olform" method="post" class="my-2 my-lg-0">
+	<div class="form-raw">
+		<div class="input-group mb-2">
+			<div class="input-group-prepend">
+				<div class="input-group-text">Name</div>
+			</div>
+			<input name="name" class="form-control mr-sm-2" placeholder="Point Name" aria-label="Name">
+		</div>
+     	</div>
+     	    
+      <div class="form-row">
+	  <div class="col">
+	  	
+	  		
+	       			<input type="range" min="1" max="10" value="5" class="slider customRange" id="myRange">
+		
+	    </div>
+	    <div class="col">
+		    <div class="input-group mb-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text">Rate</div>
+				</div>
+				
+		    	 <input name="rate" class="form-control mr-sm-2" aria-label="Rate" placeholder="Rate" value="5" readonly>
+		     </div>
+	    </div>
+	</div>	
+        
+      	<div class="form-row">	   
+	    	 <div class="input-group mb-2">
+			<div class="input-group-prepend">
+				<div class="input-group-text">X coord</div>
+			</div>
+	     		<input name="coordx" class="form-control mr-sm-2" aria-label="CoordX" placeholder="CoordX" readonly>
+	      	 </div>
+	</div>
+	<div class="form-row">
+	   	<div class="input-group mb-2">
+			<div class="input-group-prepend">
+				<div class="input-group-text">Y coord</div>
+			</div>
+	    		<input name="coordy" class="form-control mr-sm-2" aria-label="CoordY" placeholder="CoordY" readonly> 
+		</div>	
+	</div>
+	 	
+     
+	<div class="form-row">
+     		<button id="addItem" class="btn btn-outline-success my-2 my-sm-0" >Add</button>   
+     	</div>	
+  </form>   
+  
+  <hr class="my-4">
+  
+  <div id="map" class="map"></div>
+    <form class="form-inline">
+      <label>Geometry type &nbsp;</label>
+      <select id="type">
+        <option value="Point">Point</option>
+        <option value="LineString">LineString</option>
+        <option value="Polygon">Polygon</option>
+        <option value="Circle">Circle</option>
+      </select>
+    </form>
+    <script>
+    var slider = document.getElementById("myRange");
+    
+    slider.oninput = function() {
+  	$( "input[name='rate']" ).val(this.value);
+	}
+    
+    
+      var raster = new ol.layer.Tile({
+        source: new ol.source.OSM()
+      });
+
+      var source = new ol.source.Vector();
+      var vector = new ol.layer.Vector({
+        source: source,
+        style: new ol.style.Style({
+          fill: new ol.style.Fill({
+            color: 'rgba(255, 255, 255, 0.2)'
+          }),
+          stroke: new ol.style.Stroke({
+            color: '#ffcc33',
+            width: 2
+          }),
+          image: new ol.style.Circle({
+            radius: 7,
+            fill: new ol.style.Fill({
+              color: '#ffcc33'
+            })
+          })
+        })
+      });
+
+      var map = new ol.Map({
+        layers: [raster, vector],
+        target: 'map',
+        view: new ol.View({
+          center: [-11000000, 4600000],
+          zoom: 4
+        })
+      });
+
+      var modify = new ol.interaction.Modify({source: source});
+      map.addInteraction(modify);
+
+      var draw, snap; // global so we can remove them later
+     //  var typeSelect = document.getElementById('type');
+
+      function addInteractions() {
+        draw = new ol.interaction.Draw({
+          source: source,
+          type: 'Point'
+        });
+        map.addInteraction(draw);
+        snap = new ol.interaction.Snap({source: source});
+        map.addInteraction(snap);
+	
+	 // var features = vector.getSource().getFeatures();
+	 // var coords = feature.getGeometry().getCoordinates());
+	 // var coordsStr =  JSON.stringify(coords);
+	
+	 
+	
+
+      }
+
+      /**
+       * Handle change event.
+       */
+       
+       /*
+      typeSelect.onchange = function() {
+        map.removeInteraction(draw);
+        map.removeInteraction(snap);
+        addInteractions();
+      };
+      */
+
+      addInteractions();
+      
+      // Get the array of features
+	 // var features = vector.getSource().getFeatures();
+	
+	 // printObject(features);
+	
+		
+	/* 
+	// Go through this array and get coordinates of their geometry.
+	features.forEach(function(feature) { 
+		 var coords = feature.getGeometry().getCoordinates());
+		// alert(coords);
+	   // console.log(feature.getGeometry().getCoordinates());
+	  // $( "input[name='coordx']" ).val(feature.getGeometry().getCoordinates());
+	}); 
+	*/ 
+	
+	function toWGS84(feature) {
+		var coords = feature.getGeometry().getCoordinates();
+		 var coordsWGS84 = ol.proj.transform([coords[1], coords[0]], 'EPSG:900913','EPSG:4326');
+		 return coordsWGS84;
+	}
+	
+	
+	
+	source.on('addfeature', function(evt){
+   		 var feature = evt.feature;
+		 
+		var coordsWGS84 = toWGS84(feature);
+		 		 				
+		$( "input[name='coordx']" ).val(coordsWGS84[0]);
+		$( "input[name='coordy']" ).val(coordsWGS84[1]); 
+		
+		
+		
+	});
+	
+	
+	source.on('changefeature', function(evt){
+   		 var feature = evt.feature;
+   		 var coordsWGS84 = toWGS84(feature);
+		 
+		 $( "input[name='coordx']" ).val(coordsWGS84[0]);
+		$( "input[name='coordy']" ).val(coordsWGS84[1]);
+	});
+	
+	
+    </script>
+
+  <hr class="my-4">
+  <h4>Inspired by...</h4>
+  <a href="https://openlayers.org/en/latest/examples/draw-and-modify-features.html" target="_blank">Draw and modify features</a>
+  <br>
+  <a href="https://openlayers.org/en/latest/examples/snap.html" target="_blank">Draw and modify features (snap)</a>
+  <br>
+  <a href="https://gis.stackexchange.com/questions/182603/openlayers-get-coordinates-of-drawn-features" target="_blank">Get feature coordinates</a>
+  <br>
+  <a href=" https://openlayers.org/en/latest/apidoc/ol.source.Vector.Event.html" target="_blank">On feature events</a>
+   <br>
+  <a href="http://danielstern.ca/range.css/#/" target="_blank">Range Slider Generator</a>
+    <br> 
+ 
+          
