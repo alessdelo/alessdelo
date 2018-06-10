@@ -204,6 +204,14 @@ var pageData = {
     footer: footer,
     params: []
   },	
+	olmain: { 
+    title:'Open Layers - Main page',
+    content:'../contents/olmain.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
+  },	
 }
 
 
