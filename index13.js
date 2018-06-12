@@ -723,16 +723,16 @@ function olMain(req, res, next) {
 	
 	   UserData.find()
          .then(function(doc) {
-            pageData.olform.params[0] = doc
+            pageData.olmain.params[0] = doc
 		   		   
            
          })
 	   
    }) // fine db.once 	   
 	
-	pageData.olform.params[1] = mapsStyle
+	pageData.olmain.params[1] = mapsStyle
    
-  res.render(index,pageData.olform)
+  res.render(index,pageData.olmain)
  
 } // fine olMain
 
