@@ -668,10 +668,26 @@ function olForm(req, res, next) {
  var mapsStyleRaw = fs.readFileSync('maps/mapstyles/silver.json')
 var mapsStyle = JSON.parse(mapsStyleRaw)
 
-app.get('/olmain', function (req, res) {
-	pageData.olmain.params[1] = mapsStyle
- res.render(index,pageData.olmain)
-})
+app.get('/olmain', olMain);
+
+function olMain(req, res, next) {
+ 
+   mongoose.connect(dbUri)
+
+   var db = mongoose.connection
+   db.on('error', function() {
+      pageData.olmain.params = {'error': 'connection problem!'}
+   })
+ 
+   db.once('open', function() {
+	   
+   }) // fine db.once 	   
+	
+	pageData.olform.params[1] = mapsStyle
+   
+  res.render(index,pageData.olform)
+ 
+} // fine olMain
 
 // ----------------------------------
 // ----------------------------------
