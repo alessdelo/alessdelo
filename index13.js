@@ -681,6 +681,53 @@ function olMain(req, res, next) {
  
    db.once('open', function() {
 	   
+	var Schema = mongoose.Schema
+	
+	// Models
+	var LocationSchema = new Schema({
+		    name: String, 
+			rate: Number,
+		
+			time : { type : Date, default: Date.now },
+		    loc: {
+			type: {
+			    type: String,
+			    default: "Point"
+			},
+			coordinates: {
+			    type: [Number]
+			}
+		    }   
+	}, { collection: "maps1"})
+	   
+	LocationSchema.index({ loc: '2dsphere'});
+	   
+	var UserData = mongoose.model('UserData', LocationSchema) 
+	
+	/*
+	var item = {
+		"name": req.body.name,	
+		"rate": 	req.body.rate,
+		
+		"loc": {
+                    "type": "Point",
+                    "coordinates": [req.body.coordx, req.body.coordy]
+                }
+		
+		}
+	
+	
+	var data = new UserData(item);
+         data.save()
+	*/ 
+	
+	   UserData.find()
+         .then(function(doc) {
+            pageData.olform.params[0] = doc
+		   		   
+           
+         })
+	   
    }) // fine db.once 	   
 	
 	pageData.olform.params[1] = mapsStyle
