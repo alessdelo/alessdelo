@@ -215,9 +215,11 @@ var i = 0;
        alert(testString);
       
       
-     $(".theArray").append("aaaaa - ");
+     $(".theArray").append("aaaaa - "); 
+     
+     				/*
       
-      
+      				
 				// conversion of coordinates system (X and Y are inverted)
 			      var theCoords = ol.proj.fromLonLat([theY, theX]);
                               
@@ -237,6 +239,8 @@ var i = 0;
                               
                               multiIconFeatures[i].setStyle(iconStyle); 
 			      
+			      */
+			      
 			         i++;
 		      		 // alert(i);
 		
@@ -251,9 +255,11 @@ var i = 0;
 		      
 	            } // fine for
 		    		   		    
+/*
+
 
 	  // alert(multiIconFeatures); 
-	 printObject(multiIconFeatures); 
+	  	 	printObject(multiIconFeatures); 
 	
 	// ----------------------------------------- 
 			
@@ -269,11 +275,15 @@ var i = 0;
       
        var map2BaseLayer = new ol.layer.Tile({
                   source: new ol.source.OSM()
-                });
+                }); 
+		
+		// var olMapLayers = [map2BaseLayer, multiVectorLayer];
+		var olMapLayers = [map2BaseLayer];
+		
 
 var map2 = new ol.Map({
               target: 'map2',
-	      layers: [map2BaseLayer, multiVectorLayer],             
+	      layers: olMapLayers,             
               view: new ol.View({
                 center: roma,
                 zoom: 12
