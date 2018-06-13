@@ -696,7 +696,7 @@ function olMain(req, res, next) {
 		    }   
 	}, { collection: "maps1"})
 	   
-	LocationSchema.index({ loc: '2dsphere'});
+	LocationSchema.index({ loc: '2dsphere'})
 	   
 	var UserData = mongoose.model('UserData', LocationSchema) 
 	
@@ -719,9 +719,7 @@ function olMain(req, res, next) {
 	
 	   UserData.find()
          .then(function(doc) {
-            pageData.olmain.params[0] = doc
-		   		   
-           
+            pageData.olmain.params[0] = doc		   		              
          })
 	   
    }) // fine db.once 	
