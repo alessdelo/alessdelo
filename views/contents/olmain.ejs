@@ -137,6 +137,8 @@ var i = 0;
 			    
 			    // test
 			     alert(JSON.stringify(theVal));
+			     
+			       $(".theArray").append("aaaaa - "); 
 			    
 			    /*
 			    
@@ -215,7 +217,7 @@ var i = 0;
        alert(testString);
       */
       
-     $(".theArray").append("aaaaa - "); 
+   
      
      				/*
       
@@ -272,12 +274,13 @@ var i = 0;
       }); 
       
 
-      
+   */
+   
        var map2BaseLayer = new ol.layer.Tile({
                   source: new ol.source.OSM()
                 }); 
 		
-		*/
+		
 		
 		// var olMapLayers = [map2BaseLayer, multiVectorLayer];
 		var olMapLayers = [map2BaseLayer];
@@ -298,7 +301,7 @@ var map2 = new ol.Map({
     </script>
     
   <hr class="my-4">
-  <div class="theArray">@@@</div>
+  <div id="theArray">@@@</div>
 
   <hr class="my-4">
   <h4>Inspired by...</h4>
