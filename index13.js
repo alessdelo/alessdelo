@@ -664,10 +664,6 @@ function olForm(req, res, next) {
 // ----------------------------------
 // 17. OPENLAYERS - MAIN PAGE
 
-// var mapsStyle = require('/static/silver')		
- var mapsStyleRaw = fs.readFileSync('maps/mapstyles/silver.json')
-var mapsStyle = JSON.parse(mapsStyleRaw)
-
 app.get('/olmain', olMain);
 
 function olMain(req, res, next) {
@@ -728,9 +724,13 @@ function olMain(req, res, next) {
            
          })
 	   
-   }) // fine db.once 	   
+   }) // fine db.once 	
 	
-	pageData.olmain.params[1] = mapsStyle
+	// var mapsStyle = require('/static/silver')		
+ 	var mapsStyleRaw2 = fs.readFileSync('maps/mapstyles/silver.json')
+	var mapsStyle2 = JSON.parse(mapsStyleRaw)
+	
+	pageData.olmain.params[1] = mapsStyle2
    
   res.render(index,pageData.olmain)
  
