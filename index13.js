@@ -717,10 +717,22 @@ function olMain(req, res, next) {
          data.save()
 	*/ 
 	
+	 UserData.find({}).exec(function(err, result) {
+      if (!err) {
+        pageData.olmain.params[0] = result
+      } else {
+       pageData.olmain.params[0] = err
+      };
+    });
+	
+	   /*
+	   
 	   UserData.find()
          .then(function(doc) {
             pageData.olmain.params[0] = doc		   		              
          })
+	 
+	 */
 	   
    }) // fine db.once 	
 	
