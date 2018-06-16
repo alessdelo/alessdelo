@@ -19,12 +19,19 @@ function fillCoords(length){
 // var coordX = randomIntFromInterval(41.8000000,41.9999999,7);
 // var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
 
+// GENERATES A RANDOM INTERVAL NUMBER WITH DECIMALS
 function randomIntFromInterval(min,max,decimals)
 {
   return Number((Math.random()*(max-min)+min).toFixed(decimals));
 }
 
-// retrieves date  from timestamp
+// GENERATES A RANDOM INT	
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+// RETRIEVES DATE FROM TIMESTAMP
 // var timeStr = "2010-01-13T18:31:16Z";
 function dateFromTimestamp(timeStr) {
 	var date = new Date(timeStr);
@@ -36,11 +43,3 @@ function dateFromTimestamp(timeStr) {
 	return dateStr;
 	} 
 
-// GENERATES A RANDOM INT
-	
-	// random number 1-10	
-	
-	    function randomInt( ) {
-			var theInt = Math.floor(Math.random() * 10)+1; 
-			return theInt;
-		}
