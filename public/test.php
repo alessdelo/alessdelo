@@ -2,7 +2,7 @@
 
 <script>
 alert("<?php echo $phpTest; ?>");
-<script>
+</script>
 
 <h3>
 <?php echo $phpTest; ?>
