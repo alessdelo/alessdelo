@@ -30,6 +30,15 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
+  /*
+  // HOW TO PASS VARIABLES TO A INPUT FORM
+  $(document).ready( function() {
+	$( "input[name='coordx']" ).val(coordX);
+	$( "input[name='coordy']" ).val(coordY);
+	$( "input[name='rate']" ).val(theRate); 
+	
+		
+}); // fine document.ready
+*/
 
 
