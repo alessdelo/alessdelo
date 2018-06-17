@@ -198,12 +198,22 @@ var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
 	}); 
 	*/ 
 	
+	/*
+		
 	function toWGS84(feature) {
 		var coords = feature.getGeometry().getCoordinates();
 		 var coordsWGS84 = ol.proj.transform([coords[1], coords[0]], 'EPSG:900913','EPSG:4326');
 		 return coordsWGS84;
-	}
+	} 
+	*/
 	
+	
+	function toWGS84(point){
+		 return point.transform(
+  		new OpenLayers.Projection("EPSG:900913"), // transform from Spherical Mercator Projection
+ 		 new OpenLayers.Projection("EPSG:4326") // to WGS 1984
+		 )
+		}
 	
 	
 	source.on('addfeature', function(evt){
