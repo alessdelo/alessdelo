@@ -117,6 +117,9 @@ var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
 
       var source = new ol.source.Vector();
       var vector = new ol.layer.Vector({
+      	projection: map.displayProjection,
+           preFeatureInsert: function(feature) {
+           feature.geometry.transform(projWGS84,proj900913); },
         source: source,
         style: new ol.style.Style({
           fill: new ol.style.Fill({
@@ -136,11 +139,12 @@ var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
       });
 
       var map = new ol.Map({
-      	projection: 'EPSG:4326',
+      	projection: new OpenLayers.Projection("EPSG:900913"),
+        displayProjection: new OpenLayers.Projection("EPSG: 4326"),
         layers: [raster, vector],
         target: 'map',
         view: new ol.View({
-          center: [12.529999, 41.900000],
+          center: [1386313, 5146334],
           zoom: 4
         })
       });
