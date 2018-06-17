@@ -14,10 +14,6 @@ function fillCoords(length){
 }
 
 // GENERATES RANDOM COORDINATES FROM EXTREME POINTS
-// example:
-// Area limits (Roma):
-// var coordX = randomIntFromInterval(41.8000000,41.9999999,7);
-// var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
 
 // GENERATES A RANDOM INTERVAL NUMBER WITH DECIMALS
 function randomIntFromInterval(min,max,decimals)
@@ -25,13 +21,29 @@ function randomIntFromInterval(min,max,decimals)
   return Number((Math.random()*(max-min)+min).toFixed(decimals));
 }
 
+/*
+// example:
+// Area limits (Roma):
+var coordX = randomIntFromInterval(41.8000000,41.9999999,7);
+var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
+*/
+
+// --------------------------
+
 // GENERATES A RANDOM INT	
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+	 /* 
+	// example
+	// external function fro infogenerator.js	
+	var theRate = getRandomInt(1, 10);
+	*/
+
+// --------------------------
 
   /*
-  // HOW TO PASS VARIABLES TO A INPUT FORM
+  // HOW TO PASS VARIABLES TO A FORM INPUT TAG
   $(document).ready( function() {
 	$( "input[name='coordx']" ).val(coordX);
 	$( "input[name='coordy']" ).val(coordY);
