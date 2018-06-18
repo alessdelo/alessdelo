@@ -118,8 +118,7 @@ var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
       var source = new ol.source.Vector();
       var vector = new ol.layer.Vector({
       	projection: map.displayProjection,
-           preFeatureInsert: function(feature) {
-           feature.geometry.transform(projWGS84,proj900913); },
+           
         source: source,
         style: new ol.style.Style({
           fill: new ol.style.Fill({
