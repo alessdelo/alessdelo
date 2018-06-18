@@ -117,7 +117,6 @@ var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
 
       var source = new ol.source.Vector();
       var vector = new ol.layer.Vector({
-      	projection: map.displayProjection,
            
         source: source,
         style: new ol.style.Style({
@@ -139,7 +138,6 @@ var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
 
       var map = new ol.Map({
       	projection: new OpenLayers.Projection("EPSG:900913"),
-        displayProjection: new OpenLayers.Projection("EPSG: 4326"),
         layers: [raster, vector],
         target: 'map',
         view: new ol.View({
