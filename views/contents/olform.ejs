@@ -141,6 +141,7 @@ var coordY = randomIntFromInterval(12.3999999,12.6599999,7);
         layers: [raster, vector],
         target: 'map',
         view: new ol.View({
+		projection: 'EPSG:4326',
           center: [10, 10],
           zoom: 4
         })
