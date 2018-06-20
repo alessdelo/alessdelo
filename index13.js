@@ -755,6 +755,17 @@ function olMain(req, res, next) {
  
 } // fine olMain
 
+
+
+// ---------------------------------
+// VR VIEWER
+
+ app.get('/vrviewer', vrViewer)
+
+function vrViewer (req, res) {
+   res.render(index,pageData.vrviewer)
+  }
+
 // ----------------------------------
 // ----------------------------------
 // ----------------------------------
