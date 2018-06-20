@@ -212,6 +212,15 @@ var pageData = {
     footer: footer,
     params: []
   },	
+	
+	vrviewer: { 
+    title:'VR Viewer',
+    content:'../contents/vrviewer.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
+  }	
 }
 
 
