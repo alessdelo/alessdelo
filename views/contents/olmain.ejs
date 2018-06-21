@@ -297,9 +297,10 @@ var map2 = new ol.Map({
               target: 'map2',
 	      layers: olMapLayers,             
               view: new ol.View({
-                center: roma,
-                zoom: 12
-              })              
+			projection: 'EPSG:4326',
+		  	center: [12.45, 41.90],
+		  	zoom: 15
+		})             
         }); // end var map2
 	
 	// popUp('popup2', map2);     
