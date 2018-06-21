@@ -128,7 +128,7 @@ var multiIconFeatures = [];
 
 var i = 0;
 	 	
-	/*	
+		
 		
 		for(var theKey in dataArray) { 
 		
@@ -166,7 +166,7 @@ var i = 0;
 					 					 
 					 					         
        					
-					
+					/*
 					
 					  if (typeof theVal.time !== 'undefined'){
 					 
@@ -177,7 +177,7 @@ var i = 0;
 					 
 					 }
                                
-                               		
+                               		*/
 					
 					
 													       
@@ -220,11 +220,11 @@ var i = 0;
     // var testString = "<p>"+ theName + " - " + theX + " - " + theY + " - " + theTime + " - " + myRate + " - " +  "</p>";
       var testString = "<p>" + theName + " - " +  theX + " - " + theY + " - " + myRate +  "</p><br>";
        alert(testString);
-      */
+      
       
    
      
-     				/*
+     				
       
       				
 				// conversion of coordinates system (X and Y are inverted)
@@ -281,7 +281,7 @@ var i = 0;
       }); 
       
 
-   */
+  
    
        var map2BaseLayer = new ol.layer.Tile({
                   source: new ol.source.OSM()
@@ -289,8 +289,8 @@ var i = 0;
 		
 		
 		
-		// var olMapLayers = [map2BaseLayer, multiVectorLayer];
-		var olMapLayers = [map2BaseLayer];
+		var olMapLayers = [map2BaseLayer, multiVectorLayer];
+		// var olMapLayers = [map2BaseLayer];
 		
 
 var map2 = new ol.Map({
