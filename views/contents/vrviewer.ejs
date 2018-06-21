@@ -7,9 +7,22 @@
 
 <?php include "/static/test.php"; ?>
 
-<script>
+</script>
 var getPassEjs = <%- passEjs %>;
+<script>
 
+
+<script src="https://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
+
+<div id='vrview'></div>
+
+  <hr class="my-4">
+  <h4>Inspired by...</h4>
+  <a href="https://developers.google.com/vr/develop/web/vrview-web">Google VR Viewer API</a>
+    <br> 
+
+
+<script>
 window.addEventListener('load', onVrViewLoad);
 
 function onVrViewLoad() {
@@ -22,13 +35,3 @@ function onVrViewLoad() {
 
 
 </script>
-
-<script src="https://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
-
-<div id='vrview'></div>
-
-  <hr class="my-4">
-  <h4>Inspired by...</h4>
-  <a href="https://developers.google.com/vr/develop/web/vrview-web">Google VR Viewer API</a>
-    <br> 
-
