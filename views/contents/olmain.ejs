@@ -245,7 +245,7 @@ var i = 0;
                               });
 			      			                                   			   
 				
-				printObject(multiIconFeatures[i]); 
+				// printObject(multiIconFeatures[i]); 
 				
 				 var iconStyle = styleFunction(icon, theLabel);
 				 
@@ -272,7 +272,7 @@ var i = 0;
 		    		   		    
 
 
-/*
+
 	  // alert(multiIconFeatures); 
 	  	 	printObject(multiIconFeatures); 
 	
@@ -286,7 +286,7 @@ var i = 0;
         source: multiVectorSource
       }); 
       
-*/
+
   
    
        var map2BaseLayer = new ol.layer.Tile({
@@ -295,8 +295,8 @@ var i = 0;
 		
 		
 		
-		// var olMapLayers = [map2BaseLayer, multiVectorLayer];
-		var olMapLayers = [map2BaseLayer];
+		var olMapLayers = [map2BaseLayer, multiVectorLayer];
+		// var olMapLayers = [map2BaseLayer];
 		
 
 var map2 = new ol.Map({
