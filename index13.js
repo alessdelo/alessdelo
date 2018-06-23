@@ -220,6 +220,14 @@ var pageData = {
     header: header,
     footer: footer,
     params: []
+  },
+	aframe: { 
+    title:'A-Frame',
+    content:'../contents/aframe.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
   }	
 }
 
@@ -765,6 +773,11 @@ function olMain(req, res, next) {
 function vrViewer (req, res) {
    res.render(index,pageData.vrviewer)
   }
+
+// ---------------------------------
+// VR VIEWER
+
+app.get('/aframe', (req, res) => res.render(index,pageData.aframe))
 
 // ----------------------------------
 // ----------------------------------
