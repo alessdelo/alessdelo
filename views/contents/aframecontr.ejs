@@ -11,13 +11,7 @@ var getPassEjs = <%- passEjs %>;
 
 <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
 
-  <a-scene>
-      <a-sky src="/static/photosphere1.jpg" rotation="0 -130 0"></a-sky>
 
-      <a-text font="kelsonsans" value="Roccaraso, Italy" width="6" position="-2.5 0.25 -1.5"
-              rotation="0 15 0"></a-text>
-    </a-scene>
-    
     
     
     
@@ -87,8 +81,7 @@ AFRAME.registerComponent('set-image', {
     <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
-  </head>
-  <body>
+
     <a-scene>
       <a-assets>
        <img id="city" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
@@ -134,8 +127,6 @@ AFRAME.registerComponent('set-image', {
           raycaster="objects: .link"></a-cursor>
       </a-entity>
     </a-scene>
-  </body>
-</html>
 
 
 
