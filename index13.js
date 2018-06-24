@@ -228,6 +228,14 @@ var pageData = {
     header: header,
     footer: footer,
     params: []
+  },
+aframevid: { 
+    title:'A-Frame Video 360',
+    content:'../contents/aframevid.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
   }	
 }
 
@@ -775,9 +783,15 @@ function vrViewer (req, res) {
   }
 
 // ---------------------------------
-// VR VIEWER
+// A-FRAME VR PHOTOSPHERE
 
 app.get('/aframe', (req, res) => res.render(index,pageData.aframe))
+
+// ---------------------------------
+// A-FRAME VR VIDEO 360
+
+app.get('/aframevid', (req, res) => res.render(index,pageData.aframevid))
+
 
 // ----------------------------------
 // ----------------------------------
