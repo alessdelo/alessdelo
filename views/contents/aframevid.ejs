@@ -31,7 +31,9 @@ var getPassEjs = <%- passEjs %>;
                 value:"Click window to make the video play, if needed."
                 hide-once-playing="#video">
         </a-entity>
-         <a-cursor id="cursor" color="yellow"></a-cursor>
+         <a-cursor 
+              id="cursor" color="yellow" 
+              cursor="fuse: true; maxDistance: 500; timeout: 1000" ></a-cursor>
       </a-camera>      
       
       <!-- Wait for the video to load. -->
