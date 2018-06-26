@@ -10,6 +10,7 @@ var getPassEjs = <%- passEjs %>;
 </script>
 
 <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
 
 
     
@@ -30,7 +31,7 @@ var getPassEjs = <%- passEjs %>;
                 value:"Click window to make the video play, if needed."
                 hide-once-playing="#video">
         </a-entity>
-        <a-cursor></a-cursor>
+         <a-cursor id="cursor" color="yellow"></a-cursor>
       </a-camera>      
       
       <!-- Wait for the video to load. -->
@@ -43,4 +44,6 @@ var getPassEjs = <%- passEjs %>;
                src="/static/video360.mp4" />
         </video>
       </a-assets>
+      
+        <a-entity video-controls="src:#video_1"></a-entity>
     </a-scene>
