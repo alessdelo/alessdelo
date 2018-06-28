@@ -11,12 +11,39 @@ var getPassEjs = <%- passEjs %>;
 
 <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
 
+<script>
+var sky = document.querySelector('#pano');
+var disland = document.querySelector('#disland');
+var downtown = document.querySelector('#downtown');
+
+downtown.addEventListener('click', function() {
+  sky.setAttribute('src', 'vr-downtown.jpg');
+  this.setAttribute('visible', 'false');
+  disland.setAttribute('visible', 'true');
+  disland.setAttribute('position', '-20 -20 200');
+  disland.setAttribute('rotation', '0 180 0');
+});
+
+</script>
+
+
   <a-scene>
-    <a-camera>
-    <a-cursor></a-cursor>
-  </a-camera>
   
-      <a-sky src="/static/photosphere1.jpg" rotation="0 -130 0"></a-sky>
+  
+      <a-sky id="pano" src="/static/photosphere1.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>
+      
+      <a-entity camera look-controls="enabled: true" wasd-controls="enabled: false">
+      <a-entity position="0 0 -0.5"
+            geometry="primitive: ring; radiusOuter: 0.010; radiusInner: 0.007"
+            material="color: #4CC3D9; shader: flat; transparent: true; opacity: 0.5"
+            cursor="fuse: true; maxDistance: 500; timeout: 1000"></a-entity>
+      </a-entity>
+      
+      <a-image id="downtown" height="12" width="56" src="downtown-button.png"
+         position="120 -20 -200" rotation="0 -30 0" opacity="0.5" visible="true">
+         <a-mouseenter opacity="1"></a-mouseenter>
+         <a-mouseleave opacity="0.5"></a-mouseleave>
+      </a-image>
 
       <a-text font="kelsonsans" value="Roccaraso, Italy" width="6" position="-2.5 0.25 -1.5"
               rotation="0 15 0"></a-text>
