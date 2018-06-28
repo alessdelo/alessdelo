@@ -30,7 +30,7 @@ downtown.addEventListener('click', function() {
 */
 
 // `collide` event emitted by a component such as some collider or physics component.
-document.querySelector('#phsph2').addEventListener('collide', function (evt) {
+document.querySelector('#phsph3').addEventListener('collide', function (evt) {
     sky.setAttribute('src', 'photosphere2.jpg');
     this.setAttribute('visible', 'false');
 });
@@ -49,6 +49,11 @@ document.querySelector('#phsph2').addEventListener('collide', function (evt) {
             material="color: #4CC3D9; shader: flat; transparent: true; opacity: 0.5"
             cursor="fuse: true; maxDistance: 500; timeout: 1000"></a-entity>
       </a-entity>
+      
+      <a-box id="phsph3" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"
+           event-set__enter="_event: mouseenter; color: #8FF7FF"
+           event-set__leave="_event: mouseleave; color: #4CC3D9">
+      </a-box>
       
       <a-image id="phsph2" height="56" width="56" src="/static/icon360.png"
          position="120 -20 -200" rotation="0 -30 0" opacity="0.5" visible="true">
