@@ -16,6 +16,8 @@ var getPassEjs = <%- passEjs %>;
 
 
 var sky = document.querySelector('#pano');
+
+var phsph3 = document.querySelector('#phsph3');
 /*
 var disland = document.querySelector('#disland');
 var downtown = document.querySelector('#downtown');
@@ -31,7 +33,7 @@ downtown.addEventListener('click', function() {
 */
 
 // `collide` event emitted by a component such as some collider or physics component.
-document.querySelector('#phsph3').addEventListener('collide', function (evt) {
+phsph3.addEventListener('collide', function (evt) {
     sky.setAttribute('src', 'photosphere2.jpg');
     this.setAttribute('visible', 'false');
 });
