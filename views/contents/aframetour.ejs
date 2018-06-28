@@ -43,12 +43,9 @@ document.querySelector('#phsph3').addEventListener('collide', function (evt) {
   
       <a-sky id="pano" src="/static/photosphere1.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>
       
-      <a-entity camera look-controls="enabled: true" wasd-controls="enabled: false">
-      <a-entity position="0 0 -0.5"
-            geometry="primitive: ring; radiusOuter: 0.010; radiusInner: 0.007"
-            material="color: #4CC3D9; shader: flat; transparent: true; opacity: 0.5"
-            cursor="fuse: true; maxDistance: 500; timeout: 1000"></a-entity>
-      </a-entity>
+    <a-camera>
+      <a-cursor></a-cursor>
+    </a-camera>
       
       <a-box id="phsph3" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"
            event-set__enter="_event: mouseenter; color: #8FF7FF"
