@@ -24,6 +24,12 @@ downtown.addEventListener('click', function() {
   disland.setAttribute('rotation', '0 180 0');
 });
 
+
+// `collide` event emitted by a component such as some collider or physics component.
+document.querySelector('a-entity').addEventListener('collide', function (evt) {
+  console.log('This A-Frame entity collided with another entity!');
+});
+
 </script>
 
 
@@ -53,5 +59,7 @@ downtown.addEventListener('click', function() {
   <h4>Inspired by...</h4>
   <a href="https://aframe.io/blog/charleston/" target="_blank">A-Frame Tour</a>
     <br>
+   <a href="https://aframe.io/docs/0.8.0/introduction/interactions-and-controllers.html" target="_blank">A-Frame Interactions and Controllers</a>
+    <br>   
     
     
