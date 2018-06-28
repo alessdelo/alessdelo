@@ -12,6 +12,8 @@ var getPassEjs = <%- passEjs %>;
 <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
 
 <script>
+
+/*
 var sky = document.querySelector('#pano');
 var disland = document.querySelector('#disland');
 var downtown = document.querySelector('#downtown');
@@ -24,10 +26,12 @@ downtown.addEventListener('click', function() {
   disland.setAttribute('rotation', '0 180 0');
 });
 
+*/
 
 // `collide` event emitted by a component such as some collider or physics component.
-document.querySelector('a-entity').addEventListener('collide', function (evt) {
-  console.log('This A-Frame entity collided with another entity!');
+document.querySelector('#phsph2').addEventListener('collide', function (evt) {
+    sky.setAttribute('src', 'vr-downtown.jpg');
+    this.setAttribute('visible', 'false');
 });
 
 </script>
@@ -45,7 +49,7 @@ document.querySelector('a-entity').addEventListener('collide', function (evt) {
             cursor="fuse: true; maxDistance: 500; timeout: 1000"></a-entity>
       </a-entity>
       
-      <a-image id="downtown" height="56" width="56" src="/static/icon360.png"
+      <a-image id="phsph2" height="56" width="56" src="/static/icon360.png"
          position="120 -20 -200" rotation="0 -30 0" opacity="0.5" visible="true">
          <a-mouseenter opacity="1"></a-mouseenter>
          <a-mouseleave opacity="0.5"></a-mouseleave>
