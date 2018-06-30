@@ -13,6 +13,24 @@ var getPassEjs = <%- passEjs %>;
 <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
 
 <script>
+// Component to change to a sequential color on click.
+AFRAME.registerComponent('cursor-listener', {
+  init: function () {
+    var lastIndex = -1;
+    var COLORS = ['red', 'green', 'blue'];
+    this.el.addEventListener('click', function (evt) {
+      lastIndex = (lastIndex + 1) % COLORS.length;
+      this.setAttribute('material', 'color', COLORS[lastIndex]);
+      console.log('I was clicked at: ', evt.detail.intersection.point);
+    });
+  }
+});
+
+
+
+
+
+
 
 
 var sky = document.querySelector('#pano');
@@ -46,14 +64,12 @@ phsph3.addEventListener('mouseup', function (evt) {
   
       <a-sky id="pano" src="/static/photosphere1.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>
       
-  <a-entity cursor="fuse: true; maxDistance: 30; timeout: 500"
-          position="0 0 -5"
-          geometry="primitive: ring"
-          material="color: white; shader: flat">
-  <a-animation begin="click" easing="ease-in" attribute="scale"
-               fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
-  <a-animation begin="fusing" easing="ease-in" attribute="scale"
-               fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+ <a-entity camera look-controls>
+  <a-entity cursor="fuse: true; fuseTimeout: 500"
+            position="0 0 -1"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            material="color: black; shader: flat">
+  </a-entity>
 </a-entity>
       
       <a-box id="phsph3" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"
