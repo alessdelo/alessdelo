@@ -13,6 +13,12 @@ var getPassEjs = <%- passEjs %>;
 <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
 
 <script>
+
+
+var sky = document.querySelector('#pano');
+
+var phsph3 = document.querySelector('#phsph3');
+
 // Component to change to a sequential color on click.
 AFRAME.registerComponent('cursor-listener', {
   init: function () {
@@ -33,9 +39,6 @@ AFRAME.registerComponent('cursor-listener', {
 
 
 
-var sky = document.querySelector('#pano');
-
-var phsph3 = document.querySelector('#phsph3');
 /*
 var disland = document.querySelector('#disland');
 var downtown = document.querySelector('#downtown');
