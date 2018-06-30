@@ -46,9 +46,15 @@ phsph3.addEventListener('mouseup', function (evt) {
   
       <a-sky id="pano" src="/static/photosphere1.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>
       
-    <a-camera>
-      <a-cursor></a-cursor>
-    </a-camera>
+  <a-entity cursor="fuse: true; maxDistance: 30; timeout: 500"
+          position="0 0 -5"
+          geometry="primitive: ring"
+          material="color: white; shader: flat">
+  <a-animation begin="click" easing="ease-in" attribute="scale"
+               fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+  <a-animation begin="fusing" easing="ease-in" attribute="scale"
+               fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+</a-entity>
       
       <a-box id="phsph3" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"
            event-set__enter="_event: mouseenter; color: #8FF7FF"
