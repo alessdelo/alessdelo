@@ -28,6 +28,8 @@ AFRAME.registerComponent('cursor-listener', {
         lastIndex = (lastIndex + 1) % COLORS.length;
       this.setAttribute('material', 'color', COLORS[lastIndex]);
       alert('I was clicked at: ', evt.detail.intersection.point);
+      sky.setAttribute('src', 'photosphere2.jpg');
+      this.setAttribute('visible', 'false');
     });
   }
 });
