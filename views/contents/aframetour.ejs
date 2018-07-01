@@ -34,7 +34,7 @@ AFRAME.registerComponent('cursor-listener', {
       alert('I was clicked at: ', evt.detail.intersection.point);
       
       this.setAttribute('visible', 'false');
-      sky.setAttribute('src', '/static/photosphere2.jpg');
+      target.setAttribute('src', '/static/photosphere2.jpg');
     });
   }
 });
