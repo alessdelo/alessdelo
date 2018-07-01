@@ -25,7 +25,7 @@ AFRAME.registerComponent('cursor-listener', {
     
     target: {type: 'string'}
   },
-  init: function () {
+  init: function (target) {
     var lastIndex = -1;
     var COLORS = ['red', 'green', 'blue'];
     this.el.addEventListener('click', function (evt) {
