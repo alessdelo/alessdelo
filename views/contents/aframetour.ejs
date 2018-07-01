@@ -28,8 +28,9 @@ AFRAME.registerComponent('cursor-listener', {
         lastIndex = (lastIndex + 1) % COLORS.length;
       this.setAttribute('material', 'color', COLORS[lastIndex]);
       alert('I was clicked at: ', evt.detail.intersection.point);
-      sky.setAttribute('src', '/static/photosphere2.jpg');
+      
       this.setAttribute('visible', 'false');
+      sky.setAttribute('src', '/static/photosphere2.jpg');
     });
   }
 });
@@ -82,7 +83,7 @@ phsph3.addEventListener('mouseup', function (evt) {
   </a-entity>
 </a-entity>
 
-<a-entity id="box" cursor-listener geometry="primitive: box" material="color: blue" position="0.5 0.8 -2" rotation="0 45 0"></a-entity>
+<a-entity id="box" cursor-listener geometry="primitive: box" material="color: blue" position="0.5 1 2" rotation="0 45 0"></a-entity>
       
       <a-box id="phsph3" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"
            event-set__enter="_event: mouseenter; color: #8FF7FF"
