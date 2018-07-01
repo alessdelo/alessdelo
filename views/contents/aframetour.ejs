@@ -26,7 +26,7 @@ schema: {
     target: {type: 'string'}
   },
   
-  init: function (target) {
+  init: function () {
     var lastIndex = -1;
     var COLORS = ['red', 'green', 'blue'];
     this.el.addEventListener('click', function (evt) {
@@ -35,7 +35,7 @@ schema: {
       alert('I was clicked at: ', evt.detail.intersection.point);
       
       this.setAttribute('visible', 'false');
-      document.querySelector('#' + target).setAttribute('src', '/static/photosphere2.jpg');
+      document.querySelector('#' + this.data.target).setAttribute('src', '/static/photosphere2.jpg');
     });
   }
 });
