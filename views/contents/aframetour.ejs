@@ -21,6 +21,10 @@ var phsph3 = document.querySelector('#phsph3');
 
 // Component to change to a sequential color on click.
 AFRAME.registerComponent('cursor-listener', {
+  schema: {
+    
+    target: {type: 'string'}
+  },
   init: function () {
     var lastIndex = -1;
     var COLORS = ['red', 'green', 'blue'];
