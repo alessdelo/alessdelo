@@ -23,7 +23,7 @@ var phsph3 = document.querySelector('#phsph3');
 AFRAME.registerComponent('cursor-listener', {
 schema: {
     
-    target: {type: 'string'}
+    theTarget: {type: 'string'}
   },
   
   init: function () {
@@ -35,7 +35,7 @@ schema: {
       alert('#' + this.data);
       
       this.setAttribute('visible', 'false');
-      document.querySelector('#' + this.data.target).setAttribute('src', '/static/photosphere2.jpg');
+      document.querySelector('#' + this.data.theTarget).setAttribute('src', '/static/photosphere2.jpg');
     });
   }
 });
@@ -88,7 +88,7 @@ phsph3.addEventListener('mouseup', function (evt) {
   </a-entity>
 </a-entity>
 
-<a-entity id="box" cursor-listener="target:pano" geometry="primitive: box" material="color: blue" position="1 2 5" rotation="0 45 0"></a-entity>
+<a-entity id="box" cursor-listener="theTarget:pano" geometry="primitive: box" material="color: blue" position="1 2 5" rotation="0 45 0"></a-entity>
       
       <a-box id="phsph3" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"
            event-set__enter="_event: mouseenter; color: #8FF7FF"
