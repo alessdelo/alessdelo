@@ -11,6 +11,7 @@ var getPassEjs = <%- passEjs %>;
 
 <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
 <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+<script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
 
 <script>
 
@@ -128,6 +129,14 @@ phsph3.addEventListener('mouseup', function (evt) {
 
       <a-text font="kelsonsans" value="Roccaraso, Italy" width="6" position="-2.5 0.25 -1.5"
               rotation="0 15 0"></a-text>
+              
+              <a-gui-slider 	
+                    width="2.5" height="0.75"
+                    onclick="slideActionFunction"
+                    percent="0.29"
+                    margin="0 0 0.05 0"
+                >
+                </a-gui-slider>
     </a-scene>
     
       <hr class="my-4">
