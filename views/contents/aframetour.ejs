@@ -95,7 +95,13 @@ phsph3.addEventListener('mouseup', function (evt) {
 });
 */
 
-document.querySelector('#xVal');
+var xValSlider = document.querySelector('#xVal');
+
+var targetEntity = document.querySelector('#targetEntity');
+
+  xValSlider.addEventListener('change', function(e) {
+      targetEntity.setAttribute('geometry', { q: e.detail.value });
+    });
 
 </script>
 
@@ -118,7 +124,10 @@ document.querySelector('#xVal');
 </a-entity>
 
 <a-entity id="box" cursor-listener="theTarget:pano" geometry="primitive: box" material="color: blue" position="1 2 5" rotation="0 45 0"></a-entity>
-      
+ 
+<a-entity id="targetEntity" geometry="primitive: box" material="color: yellow" position="5 2 5" rotation="0 45 0"></a-entity>
+
+
       <a-box id="phsph3" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"
            event-set__enter="_event: mouseenter; color: #8FF7FF"
            event-set__leave="_event: mouseleave; color: #4CC3D9">
