@@ -94,6 +94,11 @@ phsph3.addEventListener('mouseup', function (evt) {
     this.setAttribute('visible', 'false');
 });
 */
+
+function sliderTest(val) {
+    alert("Slider val: " + val);
+}
+
 </script>
 
 
@@ -139,6 +144,7 @@ phsph3.addEventListener('mouseup', function (evt) {
                     position="0 0 4"
                     min="1"
                     max="10"
+                    onchange="sliderTest(this.value)"
                 >
                 </a-gui-slider>
     </a-scene>
