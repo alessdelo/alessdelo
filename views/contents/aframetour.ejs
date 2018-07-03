@@ -130,12 +130,15 @@ phsph3.addEventListener('mouseup', function (evt) {
       <a-text font="kelsonsans" value="Roccaraso, Italy" width="6" position="-2.5 0.25 -1.5"
               rotation="0 15 0"></a-text>
               
-              <a-gui-slider 	
+              <a-gui-slider 
+                    id="xVal"
                     width="2.5" height="0.75"
                     onclick="slideActionFunction"
                     percent="0.29"
                     margin="0 0 0.05 0"
                     position="0 0 4"
+                    min="1"
+                    max="10"
                 >
                 </a-gui-slider>
     </a-scene>
