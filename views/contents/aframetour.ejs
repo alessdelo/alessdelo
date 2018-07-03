@@ -100,7 +100,7 @@ var xValSlider = document.querySelector('#xVal');
 var targetEntity = document.querySelector('#targetEntity');
 
   xValSlider.addEventListener('change', function(e) {
-      targetEntity.setAttribute('geometry', { q: e.detail.value });
+      targetEntity.setAttribute('position', 'x', "7");
     });
 
 </script>
@@ -148,7 +148,7 @@ var targetEntity = document.querySelector('#targetEntity');
                     onclick="slideActionFunction"
                     percent="0.29"
                     margin="0 0 0.05 0"
-                    position="0 0 4"
+                    position="5 0 4"
                     min="1"
                     max="10"
                     onchange="sliderTest(this.value)"
