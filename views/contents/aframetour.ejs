@@ -104,6 +104,8 @@ var targetEntity = document.querySelector('#targetEntity');
       targetEntity.setAttribute('position', 'x', "7");
       alert(this.value);
     });
+    
+    function testChange() { alert("click");}
 
 </script>
 
@@ -153,7 +155,7 @@ var targetEntity = document.querySelector('#targetEntity');
                     position="5 0 4"
                     min="1"
                     max="10"
-                    onclick="alert('click')"
+                    onchange="testChange"
                   
                 >
                 </a-gui-slider>
