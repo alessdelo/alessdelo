@@ -36,7 +36,7 @@ schema: {
         lastIndex = (lastIndex + 1) % COLORS.length;
       this.setAttribute('material', 'color', COLORS[lastIndex]);
       alert('#' + this.data);
-      
+     document.querySelector('.footer').setAttribute('visible', 'false');
       this.setAttribute('visible', 'false');
       document.querySelector('#' + 'pano').setAttribute('src', '/static/photosphere2.jpg');
     });
