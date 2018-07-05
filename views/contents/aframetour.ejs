@@ -20,6 +20,8 @@ var sky = document.querySelector('#pano');
 
 var phsph3 = document.querySelector('#phsph3');
 
+document.querySelector('.footer').setAttribute('visible', 'false');
+
 // Component to change to a sequential color on click.
 AFRAME.registerComponent('cursor-listener', {
 schema: {
@@ -36,7 +38,7 @@ schema: {
         lastIndex = (lastIndex + 1) % COLORS.length;
       this.setAttribute('material', 'color', COLORS[lastIndex]);
       alert('#' + this.data);
-     document.querySelector('.footer').setAttribute('visible', 'false');
+
       this.setAttribute('visible', 'false');
       document.querySelector('#' + 'pano').setAttribute('src', '/static/photosphere2.jpg');
     });
