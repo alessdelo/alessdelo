@@ -245,14 +245,22 @@ aframecontr: {
     footer: footer,
     params: []
   },
-	aframetour: { 
+aframetour: { 
     title:'A-Frame Tour 360',
     content:'../contents/aframetour.ejs',
     nav: nav,
     header: header,
     footer: footer,
     params: []
-  }	
+  },
+aframetest: { 
+    title:'A-Frame Test',
+    content:'../contents/aframetest.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
+  }
 }
 
 
@@ -818,6 +826,11 @@ app.get('/aframecontr', (req, res) => res.render(index,pageData.aframecontr))
 // A-FRAME TOUR 360
 
 app.get('/aframetour', (req, res) => res.render(index,pageData.aframetour))
+
+// ---------------------------------
+// A-FRAME TEST
+
+app.get('/aframetest', (req, res) => res.render(index,pageData.aframetest))
 
 // ----------------------------------
 // ----------------------------------
