@@ -80,6 +80,16 @@ AFRAME.registerComponent('slid-change', {
             }); 
         }
   });
+  
+ // slid-change="slidVal:10;slidVal:foo"
+
+        function slidVal() {
+            this.el.addEventListener('click', function (evt) {
+            
+                
+                alert(this.data.percent);   
+            }); 
+        }
 
 
 
@@ -158,10 +168,10 @@ var targetEntity = document.querySelector('#targetEntity');
               rotation="0 15 0"></a-text>
               
               <a-gui-slider 
-                    slid-change="slidVal:10;slidVal:foo"
+                    
                     id="xVal"
                     width="2.5" height="0.75"
-                    onclick="slideActionFunction"
+                    onclick="slidVal"
                     percent="0.29"
                     margin="0 0 0.05 0"
                     position="5 0 4"
