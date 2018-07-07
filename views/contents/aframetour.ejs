@@ -66,8 +66,17 @@ schema: {
 });
 
 
-
-
+AFRAME.registerComponent('slid-change', {
+        schema: {    
+            slidVal: {type: 'int'}
+          },
+  
+        init: function () {
+            this.el.addEventListener('click', function (evt) {
+                alert("ok");   
+            }); 
+        }
+  });
 
 
 
