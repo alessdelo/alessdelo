@@ -68,7 +68,8 @@ schema: {
 
 AFRAME.registerComponent('slid-change', {
         schema: {    
-            slidVal: {type: 'int'}
+            slidVal: {type: 'int'},
+            slidVal2: {type: 'string'}
           },
   
         init: function () {
@@ -155,7 +156,7 @@ var targetEntity = document.querySelector('#targetEntity');
               rotation="0 15 0"></a-text>
               
               <a-gui-slider 
-                    slid-change="slidVal=10"
+                    slid-change="slidVal:10;slidVal:foo"
                     id="xVal"
                     width="2.5" height="0.75"
                     onclick="slideActionFunction"
