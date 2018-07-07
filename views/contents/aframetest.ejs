@@ -23,11 +23,22 @@ AFRAME.registerComponent('foo', {
   pause: function () {},
   play: function () {}
 });
+
+AFRAME.registerComponent('log', {
+  schema: {type: 'string'},
+
+  init: function () {
+    var stringToLog = this.data;
+    alert(stringToLog);
+  }
+});
 </script>
 
- <a-scene>
+ 
+ <a-scene log="Hello, Scene!">
       <a-entity foo="color: red; size: 20"></a-entity>
- </a-scene>
+     <a-box log="Hello, Box!"></a-box>
+</a-scene>
 
      <hr class="my-4">
   <h4>Inspired by...</h4>
