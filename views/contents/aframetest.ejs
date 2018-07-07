@@ -12,7 +12,10 @@ var getPassEjs = <%- passEjs %>;
 <script>
 // Registering component in foo-component.js
 AFRAME.registerComponent('foo', {
-  schema: {},
+  schema: {
+    color: {default: '#FFF'},
+    size: {type: 'int', default: 5}
+  }
   init: function () {},
   update: function () {},
   tick: function () {},
@@ -23,7 +26,7 @@ AFRAME.registerComponent('foo', {
 </script>
 
  <a-scene>
-      <a-entity foo></a-entity>
+      <a-entity foo="color: red; size: 20"></a-entity>
  </a-scene>
 
      <hr class="my-4">
