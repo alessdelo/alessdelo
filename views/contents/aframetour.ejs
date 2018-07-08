@@ -66,6 +66,9 @@ schema: {
   }
 });
 
+ // var theSlid = document.querySelector('#xVal');
+                // printObject(this.el); 
+
 
 AFRAME.registerComponent('slid-change', {
         schema: {    
@@ -74,24 +77,13 @@ AFRAME.registerComponent('slid-change', {
           },
   
         init: function () {
-            this.el.addEventListener('click', function (evt) {
-            
-                // var theSlid = document.querySelector('#xVal');
-                // printObject(this.el); 
-                alert("click");
+            this.el.addEventListener('click', function (evt) {                           
+                alert('bla');
             }); 
         }
   });
   
 
-
-        function slidVal() {
-            this.el.addEventListener('click', 
-            
-                
-                alert(this.data.percent);   
-            ); 
-        }
 
 
 
