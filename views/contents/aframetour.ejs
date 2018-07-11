@@ -77,13 +77,13 @@ AFRAME.registerComponent('slid-change', {
           },
   
         init: function () {
-            printObject(this.data);
+            var myData = this.data;
             this.el.addEventListener('click', function (evt) {   
                 // var thePercent = this.el.getAttribute("percent");
                 alert('wwww');
                 printObject(this);
                 printObject(this.el);
-                printObject(this.parent.data);
+                printObject(myData);
                 printObject(this.components);
                 printObject(this.components.position);
                 alert(this.getAttribute("draggable"));
