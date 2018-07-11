@@ -84,6 +84,7 @@ AFRAME.registerComponent('slid-change', {
                 printObject(this);
                 printObject(this.el);
                 printObject(myData);
+                this.setAttribute('draggable', 'true');
                 printObject(this.components);
                 printObject(this.components.position);
                 alert(this.getAttribute("draggable"));
