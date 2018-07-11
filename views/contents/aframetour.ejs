@@ -93,6 +93,9 @@ AFRAME.registerComponent('slid-change', {
                 printObject(this.getAttribute("gui-interactable"));
                 printObject(this.getAttribute("gui-item"));
                 
+                var theSlid = this.getAttribute("gui-slider");
+                alert(theSlid.percent);
+                
                 
             }); 
         }
