@@ -89,9 +89,10 @@ AFRAME.registerComponent('slid-change', {
                 printObject(this.components.position);
                 alert(this.getAttribute("draggable"));
                 printObject(this.components.position.data);
-                printObject(this.components.gui-slider.data);
-                printObject(this.components.gui-interactable);
-                printObject(this.components.slide-change);
+                printObject(this.getAttribute("gui-slider"));
+                printObject(this.getAttribute("gui-interactable"));
+                printObject(this.getAttribute("gui-item"));
+                
                 
             }); 
         }
