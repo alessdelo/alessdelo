@@ -85,10 +85,12 @@ AFRAME.registerComponent('slid-change', {
                 printObject(this.dataset);
                 printObject(this.components);
                 printObject(this.components.position);
+                this.el.getAttribute("dragable");
                 printObject(this.components.position.data);
                 printObject(this.components.gui-slider.data);
                 printObject(this.components.gui-interactable);
                 printObject(this.components.slide-change);
+                
             }); 
         }
   });
