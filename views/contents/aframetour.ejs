@@ -28,8 +28,8 @@ schema: {
   },
   
   init: function () {
-
-
+    var myData = this.data;
+    printObject(myData);
     var lastIndex = -1;
     var COLORS = ['red', 'green', 'blue'];
     this.el.addEventListener('click', function (evt) {
