@@ -106,12 +106,14 @@ AFRAME.registerComponent('slid-change', {
 
 AFRAME.registerComponent('move-el', {
         schema: {    
-            movement: {type: 'string'}  
+            movement: {type: 'string'},  
+            elId: {type: 'string'}  
           },
   
         init: function () {
             var myData = this.data;
             var theMovement = this.data.move-el.movement;
+            var theElement = this.data.move-el.elId;
             this.el.addEventListener('click', function (evt) {   
                 var i = 1;
 
