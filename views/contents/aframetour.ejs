@@ -72,12 +72,12 @@ schema: {
 
 AFRAME.registerComponent('slid-change', {
         schema: {    
-            slidVal: {type: 'int'},
-            slidVal2: {type: 'string'}
+            movement: {type: 'string'}            
           },
   
         init: function () {
             var myData = this.data;
+            var theMovement = this.data.move-el.movement;
             this.el.addEventListener('click', function (evt) {   
                 // var thePercent = this.el.getAttribute("percent");
                 alert('wwww');
@@ -102,23 +102,26 @@ AFRAME.registerComponent('slid-change', {
   });
   
 
-AFRAME.registerComponent('slid-change', {
+AFRAME.registerComponent('move-el', {
         schema: {    
             slidVal: {type: 'int'},
             slidVal2: {type: 'string'}
           },
   
         init: function () {
-            var i = 1;
+            var myData = this.data;
+            var theMovement = this.data.move-el.movement;
+            this.el.addEventListener('click', function (evt) {   
+                var i = 1;
 
-            var interval = setInterval( increment, 1000);
+                var interval = setInterval( increment, 1000);
 
-            function increment(){
-                i = i % 360 + 1;
-            }
+                function increment(){
+                    i = i % 360 + 1;
+                }
 
-        }); 
-     }
+            }); 
+        }
  });
 
 
