@@ -72,7 +72,9 @@ schema: {
 
 AFRAME.registerComponent('slid-change', {
         schema: {    
-            movement: {type: 'string'}            
+             
+            slidVal: {type: 'int'},
+            slidVal2: {type: 'string'}
           },
   
         init: function () {
@@ -104,8 +106,7 @@ AFRAME.registerComponent('slid-change', {
 
 AFRAME.registerComponent('move-el', {
         schema: {    
-            slidVal: {type: 'int'},
-            slidVal2: {type: 'string'}
+            movement: {type: 'string'}  
           },
   
         init: function () {
