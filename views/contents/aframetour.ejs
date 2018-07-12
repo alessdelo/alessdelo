@@ -21,15 +21,18 @@ var phsph3 = document.querySelector('#phsph3');
 
 
 // Component to change to a sequential color on click.
-AFRAME.registerComponent('cursor-listener', {
+AFRAME.registerComponent('change-photo', {
 schema: {
     
-    theTarget: {type: 'string'}
+    theTarget: {type: 'string'},
+    theFile: {type: 'string'}
   },
   
   init: function () {
     var myData = this.data;
     printObject(myData);
+    var myTarget = this.data.theTarget;
+    var myFile = this.data.theFile;
     var lastIndex = -1;
     var COLORS = ['red', 'green', 'blue'];
     this.el.addEventListener('click', function (evt) {
@@ -38,7 +41,7 @@ schema: {
       alert('#' + this.data);
 
       this.setAttribute('visible', 'false');
-      document.querySelector('#' + 'pano').setAttribute('src', '/static/photosphere2.jpg');
+      document.querySelector('#' + myFile).setAttribute('src', '/static/photosphere2.jpg');
     });
   }
 });
@@ -182,7 +185,7 @@ var targetEntity = document.querySelector('#targetEntity');
   </a-entity>
 </a-entity>
 
-<a-entity id="box" cursor-listener="theTarget:pano" geometry="primitive: box" material="color: blue" position="1 2 5" rotation="0 45 0"></a-entity>
+<a-entity id="box" change-photo="theTarget:pano;theFile:photosphere1.jpg" geometry="primitive: box" material="color: blue" position="1 2 5" rotation="0 45 0"></a-entity>
  
 <a-entity id="targetEntity" geometry="primitive: box" material="color: yellow" position="5 2 5" rotation="0 45 0"></a-entity>
 
