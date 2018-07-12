@@ -102,8 +102,24 @@ AFRAME.registerComponent('slid-change', {
   });
   
 
+AFRAME.registerComponent('slid-change', {
+        schema: {    
+            slidVal: {type: 'int'},
+            slidVal2: {type: 'string'}
+          },
+  
+        init: function () {
+            var i = 1;
 
+            var interval = setInterval( increment, 1000);
 
+            function increment(){
+                i = i % 360 + 1;
+            }
+
+        }); 
+     }
+ });
 
 
 /*
