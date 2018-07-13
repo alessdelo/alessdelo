@@ -30,7 +30,7 @@ AFRAME.registerComponent('change-photo', {
     multiple: true,
   
     init: function () {   
-        alert(this.data);
+        printObject(this.data);
         this.el.addEventListener('click', function (evt) {                              
             document.querySelector('#' + myTarget).setAttribute('src', '/static/' + myFile);
             this.setAttribute('visible', 'false');
