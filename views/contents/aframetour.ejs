@@ -51,15 +51,11 @@ AFRAME.registerComponent('hover-color', {
   
     multiple: true,
   
-    init: function () {
-        var myData = this.data;
-        printObject(myData);
-        var myTarget = this.data.theTarget;
-        var myFile = this.data.theFile;
+    init: function () {       
         var lastIndex = -1;
         var COLORS = ['red', 'green', 'blue'];
         
-        this.el.addEventListener('click', function (evt) {
+        this.el.addEventListener('mouseover', function (evt) {
             lastIndex = (lastIndex + 1) % COLORS.length;
             this.setAttribute('material', 'color', COLORS[lastIndex]);
         }); // addEventListener 
