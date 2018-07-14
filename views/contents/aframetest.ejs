@@ -18,14 +18,26 @@ var getPassEjs = <%- passEjs %>;
 
     <a-entity id="scene1">
       <a-sky id="pano1" src="/static/photosphere1.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>
-      <a-cube color="red" onclick="nextScene()"> </a-cube>
+       <a-entity   
+            id="box"            
+            geometry="primitive: box"
+            material="color: blue"
+            position="1 2 5"
+            rotation="0 45 0"
+            onclick="nextScene()"
+        ></a-entity>
     </a-entity>
 
     <a-entity id="scene2" visible="false">
-      <a-sky id="pano2" src="/static/photosphere2.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>
-      <a-cube color="green" position="0 2 -5"> </a-cube>
-      <a-cube color="yellow" position="5 0 -5"> </a-cube>
-      <a-cube color="blue" position="0 0 -1"> </a-cube>
+        <a-sky id="pano2" src="/static/photosphere2.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>
+        <a-entity   
+            id="box"            
+            geometry="primitive: box"
+            material="color: blue"
+            position="1 2 5"
+            rotation="0 45 0"
+            onclick="nextScene()"
+        ></a-entity>
     </a-entity>
 
   </a-scene>
