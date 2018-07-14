@@ -9,6 +9,49 @@
 var getPassEjs = <%- passEjs %>;
 </script>
 
+<script>
+var dataArray = {
+		 "0":{  "name": "scene1",
+          "links":  { "1": {"to": "scene2", pos:[3,2,5], "color": "red"},
+                      "2": {"to": "scene3", pos:[6,2,5]},"color": "green"},
+                      "3": {"to": "scene4", pos:[9,2,5]},"color": "yellow"}
+                    }
+        },
+		 "1":{  "name": "scene2",
+          "links":  { "1": {"to": "scene1", pos:[0,2,5], "color": "blue"},
+                      "2": {"to": "scene3", pos:[6,2,5]},"color": "green"},
+                      "3": {"to": "scene4", pos:[9,2,5]},"color": "yellow"}
+                    }
+        },
+        
+		 "3":{  "name": "scene3",
+          "links":  { "1": {"to": "scene1", pos:[0,2,5], "color": "blue"},
+                      "2": {"to": "scene2", pos:[3,2,5]},"color": "red"},
+                      "3": {"to": "scene4", pos:[9,2,5]},"color": "yellow"}
+                    }
+        }, 
+        
+      "4":{  "name": "scene4",
+          "links":  { "1": {"to": "scene1", pos:[0,2,5], "color": "blue"},
+                      "2": {"to": "scene2", pos:[3,2,5]},"color": "red"},
+                      "3": {"to": "scene3", pos:[6,2,5]},"color": "green"}
+                    }
+        }
+      }; // end dataArray
+        
+        
+                   
+
+		
+
+
+
+
+$( document ).ready(function() {
+    
+});
+</script>
+
   <a-scene>
 
      <a-entity camera look-controls>
