@@ -33,7 +33,7 @@ var getPassEjs = <%- passEjs %>;
             material="color: red"
             position="3 2 5"
             rotation="0 45 0"
-            onclick="nextScene('scene2')"
+            onclick="test('TEST!!!')"
         ></a-entity>
     </a-entity>
 
@@ -52,6 +52,12 @@ var getPassEjs = <%- passEjs %>;
   </a-scene>
 
   <script type="text/javascript">
+  
+ // nextScene('scene2')
+ 
+ function test(bla) {
+    alert(bla);
+ }
 
   function nextScene(theScene) {
     document.getElementById(theScene).setAttribute('visible', 'false');
