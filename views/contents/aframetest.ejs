@@ -37,7 +37,9 @@ var theHtml = '<a-scene>' +
       
 
 var activeProject = "";	
-var activeScene = "";							
+var activeScene = "";	
+var availScenes =[];
+var i = 0;
 
 var dataArray = {
 		 "0":{  "name": "project1",
@@ -107,7 +109,8 @@ $( document ).ready(function() {
 			if(theVal.name == activeProject) {
 				var theLinks = theVal.links;
 				printObject(theLinks); 
-				
+				availScenes[i] = theLinkVal.to;				
+								
 				for(var theLinkKey in theLinks) { 
 					var visibility = false;
 					
@@ -152,7 +155,9 @@ $( document ).ready(function() {
     
 });
 
+function setActiveScene(scene,scenes) {
 
+}
 
 </script>
 
