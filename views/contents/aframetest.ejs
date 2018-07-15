@@ -106,6 +106,12 @@ $( document ).ready(function() {
 			var theProj = theVal.name;
 			
 			
+			 theHtml += '<a-entity id="scene1">'
+			      '<a-sky id="' + scene1 + '" src="/static/aframe/tour1/' + photosphere1 + '.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>';
+			      
+			    
+			
+			
 			if(theVal.name == activeProject) {
 				var theLinks = theVal.links;
 				alert('theLinks');
@@ -130,12 +136,24 @@ $( document ).ready(function() {
 					var visibility = false;
 					if(theLinkVal.to == activeScene) {
 						visibility = true;
-					}					
+					}	
+					
+					 <a-entity id="' + theLinkVal.to + '" geometry="primitive: box" material="color: ' + theLinkVal.to + '" position="3 2 5" rotation="0 45 0" onclick="nextScene(' + theLinkVal.to +')"></a-entity>  
+					                
+					    
+					    
+					    
+					    
+					    
+					 
+				     
 					
 					
-				}
+				} // for1
+				
+				theHtml += '</a-entity>';
 			
-			}
+			} // for2
 			
 			
 			
