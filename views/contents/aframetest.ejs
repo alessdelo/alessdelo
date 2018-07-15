@@ -119,13 +119,13 @@ $( document ).ready(function() {
 				
 					
 					
-					var theLinkVal = dataArray[theLinkKey];
+					var theLinkVal = theLinks[theLinkKey];
 					availScenes[i] = theLinkVal.to; 
 					i++;
 					
 					alert('linkval');
 					printObject(theLinkVal); 
-					// alert('linkval: ' + theLinkVal.to);
+					alert('scene: ' + theLinkVal.to);
 					
 					var visibility = false;
 					if(theLinkVal.to == activeScene) {
