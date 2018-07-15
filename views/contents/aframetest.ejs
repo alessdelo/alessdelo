@@ -108,8 +108,8 @@ $( document ).ready(function() {
 			var theProj = theVal.name;
 			
 			
-			 theHtml += '<a-entity id="scene1">'
-			      '<a-sky id="' + scene1 + '" src="/static/aframe/tour1/' + photosphere1 + '.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>';
+			 theHtml += '<a-entity id="' + theVal.name + '">'
+			      '<a-sky id="' + theVal.name + 'sky' + '" src="/static/aframe/tour1/' + theVal.name + '.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>';
 			      
 			    
 			
@@ -140,7 +140,7 @@ $( document ).ready(function() {
 						visibility = true;
 					}	
 					
-					theHtml += '<a-entity id="' + theLinkVal.to + '" geometry="primitive: box" material="color: ' + theLinkVal.to + '" position="3 2 5" rotation="0 45 0" onclick="nextScene(' + theLinkVal.to +')"></a-entity>';  
+					theHtml += '<a-entity id="' + 'to' + theLinkVal.to + '" geometry="primitive: box" material="color: ' + theLinkVal.to + '" position="3 2 5" rotation="0 45 0" onclick="setActiveScene(' + theLinkVal.to +')"></a-entity>';  
 					                
 					    
 					    
