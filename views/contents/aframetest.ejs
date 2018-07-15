@@ -102,17 +102,26 @@ $( document ).ready(function() {
 			
 			var theVal = dataArray[theKey];
 			var theProj = theVal.name;
-			var theLinks = theVal.links;
-			printObject(theLinks); 
-			for(var theLinkKey in theLinks) { 
-				var theLinkVal = dataArray[theLinkKey]; alert('linkval');
-				printObject(theLinkVal); 
-				// alert('linkval: ' + theLinkVal.to);
+			
+			
+			if(theVal.name == activeProject) {
+				var theLinks = theVal.links;
+				printObject(theLinks); 
+				
+				for(var theLinkKey in theLinks) { 
+					var theLinkVal = dataArray[theLinkKey];
+					alert('linkval');
+					printObject(theLinkVal); 
+					// alert('linkval: ' + theLinkVal.to);
 				}
+			
+			}
+			
+			
+			
 				
 			
-			printObject(theVal); 
-			alert(theProj);
+			
 			
 			
 			
