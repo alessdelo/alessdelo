@@ -112,11 +112,12 @@ $( document ).ready(function() {
 				printObject(theLinks);
 				printObject(theLinks[1]);
 				alert(theLinks[1]['to']);
-				alert(theLinks[]['to']);
+				
 								
 								
 				for(var theLinkKey in theLinks) { 
-					var visibility = false;
+				
+					
 					
 					var theLinkVal = dataArray[theLinkKey];
 					availScenes[i] = theLinkVal.to; 
@@ -126,6 +127,7 @@ $( document ).ready(function() {
 					printObject(theLinkVal); 
 					// alert('linkval: ' + theLinkVal.to);
 					
+					var visibility = false;
 					if(theLinkVal.to == activeScene) {
 						visibility = true;
 					}
