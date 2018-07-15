@@ -102,8 +102,20 @@ $( document ).ready(function() {
 			
 			var theVal = dataArray[theKey];
 			var theProj = theVal.name;
+			var theLinks = theVal.links;
+			
+			for(var theLinkKey in theLinks) { 
+				var theLinkVal = dataArray[theLinkKey];
+				alert(theLinkVal.to);
+				}
+				
+			
 			printObject(theVal); 
 			alert(theProj);
+			
+			
+			
+			
 			
 			
 				                      
