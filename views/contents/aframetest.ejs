@@ -130,7 +130,8 @@ $( document ).ready(function() {
 					var visibility = false;
 					if(theLinkVal.to == activeScene) {
 						visibility = true;
-					}
+					}					
+					
 					
 				}
 			
@@ -164,7 +165,16 @@ $( document ).ready(function() {
     
 });
 
-function setActiveScene(scene,scenes) {
+function setActiveScene(scene) {
+
+	for(var singScene in availScenes) {
+		if (scene == singScene) {
+			document.getElementById(scene).setAttribute('visible', 'true');
+			} else {
+			document.getElementById(scene).setAttribute('visible', 'false');
+			}
+		}
+	
 
 }
 
