@@ -109,10 +109,17 @@ $( document ).ready(function() {
 				printObject(theLinks); 
 				
 				for(var theLinkKey in theLinks) { 
+					var visibility = false;
+					
 					var theLinkVal = dataArray[theLinkKey];
 					alert('linkval');
 					printObject(theLinkVal); 
 					// alert('linkval: ' + theLinkVal.to);
+					
+					if(theLinkVal.to == activeScene) {
+						visibility = true;
+					}
+					
 				}
 			
 			}
