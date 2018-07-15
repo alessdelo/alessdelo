@@ -110,12 +110,15 @@ $( document ).ready(function() {
 				var theLinks = theVal.links;
 				alert('theLinks');
 				printObject(theLinks); 
-				availScenes[i] = theLinkVal.to;				
+								
 								
 				for(var theLinkKey in theLinks) { 
 					var visibility = false;
 					
 					var theLinkVal = dataArray[theLinkKey];
+					availScenes[i] = theLinkVal.to; 
+					i++;
+					
 					alert('linkval');
 					printObject(theLinkVal); 
 					// alert('linkval: ' + theLinkVal.to);
