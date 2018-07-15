@@ -37,7 +37,7 @@ var theHtml = '<a-scene>' +
       
 
 var activeProject = "";	
-var activeScene = "";	
+var activeScene = "scene1";	
 var availScenes =[];
 var i = 0;
 
@@ -92,23 +92,24 @@ $( document ).ready(function() {
 		
 	                if(dataArray.hasOwnProperty(theKey)) { 
 			
-			if (activeProject == "") {
-				activeProject = "project1";
-			}
 			
 			
-			if (activeScene == "") {
-				activeScene = "scene1";
-			}
 			
-			
+					
 			
 			
 			var theVal = dataArray[theKey];
 			var theProj = theVal.name;
 			
+			var visibility = "false";
 			
-			 theHtml += '<a-entity id="' + theVal.name + '">'
+			if(theVal.name == activeScene) {
+						visibility = true;
+					}	
+			
+			
+			
+			 theHtml += '<a-entity id="' + theVal.name + '" visible="' + visibility + '" >'
 			      '<a-sky id="' + theVal.name + 'sky' + '" src="/static/aframe/tour1/' + theVal.name + '.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>';
 			      
 			    
@@ -135,10 +136,7 @@ $( document ).ready(function() {
 					printObject(theLinkVal); 
 					alert('scene: ' + theLinkVal.to);
 					
-					var visibility = false;
-					if(theLinkVal.to == activeScene) {
-						visibility = true;
-					}	
+					
 					
 					theHtml += '<a-entity id="' + 'to' + theLinkVal.to + '" geometry="primitive: box" material="color: ' + theLinkVal.to + '" position="3 2 5" rotation="0 45 0" onclick="setActiveScene(' + theLinkVal.to +')"></a-entity>';  
 					                
