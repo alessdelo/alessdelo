@@ -133,7 +133,7 @@ $( document ).ready(function() {
 				
 				
 				
-				for(var theLinkKey in theLinks) { 
+				for(var linkKey in theVal.links) { 
 				
 					alert('fffff');
 				
@@ -141,21 +141,21 @@ $( document ).ready(function() {
 				
 					/*
 					
-					var theLinkVal = theLinks[theLinkKey];
+					var linkVal = theVal.links[linkKey];
 					
 					
 					
 					
 					alert('linkval');
-					printObject(theLinkVal); 
-					alert('scene: ' + theLinkVal.to + 'x: ' + theLinkVal.pos.x );
+					printObject(linkVal); 
+					alert('scene: ' + linkVal.to + 'x: ' + linkVal.pos.x );
 					
 					
 					
-					availScenes[i] = theLinkVal.to; 
+					availScenes[i] = linkVal.to; 
 					i++;
 					
-					theHtml += '<a-entity id="' + 'to' + theLinkVal.to + '" geometry="primitive: box" material="color: ' + theLinkVal.to + '" position="3 2 5" rotation="0 45 0" onclick="setActiveScene(' + theLinkVal.to +')"></a-entity>';  
+					theHtml += '<a-entity id="' + 'to' + linkVal.to + '" geometry="primitive: box" material="color: ' + linkVal.to + '" position="3 2 5" rotation="0 45 0" onclick="setActiveScene(' + linkVal.to +')"></a-entity>';  
 					                
 					  */ 
 					    
