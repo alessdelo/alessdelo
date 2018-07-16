@@ -132,7 +132,7 @@ $( document ).ready(function() {
 					*/			
 				
 				
-				/*
+				
 				for(var theLinkKey in theLinks) { 
 				
 					
@@ -144,16 +144,16 @@ $( document ).ready(function() {
 					
 					alert('linkval');
 					printObject(theLinkVal); 
-					alert('scene: ' + theLinkVal.to);
+					alert('scene: ' + theLinkVal.to + 'x: ' + theLinkVal.pos.x );
 					
-					
+					/*
 					
 					availScenes[i] = theLinkVal.to; 
 					i++;
 					
 					theHtml += '<a-entity id="' + 'to' + theLinkVal.to + '" geometry="primitive: box" material="color: ' + theLinkVal.to + '" position="3 2 5" rotation="0 45 0" onclick="setActiveScene(' + theLinkVal.to +')"></a-entity>';  
 					                
-					  
+					  */ 
 					    
 					    
 					    
@@ -164,7 +164,7 @@ $( document ).ready(function() {
 					
 				} // for linkKey
 				
-				  */
+				 
 				
 				
 				theHtml += '</a-entity>';
