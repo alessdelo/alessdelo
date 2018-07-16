@@ -111,10 +111,12 @@ $( document ).ready(function() {
 			
 			
 			
-			 theHtml += '<a-entity id="' + theVal.name + '" visible="' + visibility + '" >'
+			 var moreHtml += '<a-entity id="' + theVal.name + '" visible="' + visibility + '" >'
 			      '<a-sky id="' + theVal.name + 'sky' + '" src="/static/aframe/tour1/' + theVal.name + '.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>';
-			      
 			    
+			    alert(moreHtml);
+			  
+			  theHtml +=  moreHtml; 
 			
 			/*
 			if(theVal.name == activeProject) {
