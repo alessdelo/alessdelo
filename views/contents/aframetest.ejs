@@ -99,13 +99,15 @@ $( document ).ready(function() {
 			
 			
 			var theVal = dataArray[theKey];
-			var theProj = theVal.name;
+			
 			
 			var visibility = "false";
 			
 			if(theVal.name == activeScene) {
 						visibility = "true";
-					}	
+					} 
+					
+					alert('scene: '  + ' - ' +  theVal.name + ' - ' + 'visibility: ' + ' - ' + visibility);
 			
 			
 			
