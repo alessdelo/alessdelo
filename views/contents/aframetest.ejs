@@ -155,10 +155,14 @@ $( document ).ready(function() {
 					availScenes[i] = linkVal.to; 
 					i++;
 					
-					var evenMoreHtml = '<a-entity id="' + theVal.name + '_' + linkVal.to + '" geometry="primitive: box" material="color: ' + linkVal.color + '" position="' + linkVal.pos.x + ' ' + linkVal.pos.y + ' ' + linkVal.pos.z + '" rotation="0 45 0" onclick="setActiveScene(\'' + linkVal.to +'\')"></a-entity>';  
+					var evenMoreHtml = '<a-entity id="' + theVal.name + '_' + linkVal.to + '" geometry="primitive: box" material="color: ' + linkVal.color + '" position="' + linkVal.pos.x + ' ' + linkVal.pos.y + ' ' + linkVal.pos.z + '" rotation="0 45 0"></a-entity>';  
 					      alert(evenMoreHtml);         
 					  
 					  theHtml += evenMoreHtml;
+					  
+					  // onclick="setActiveScene(\'' + linkVal.to +'\')
+					  
+					  document.getElementById(theVal.name + '_' + linkVal.to).addEventListener("click", setActiveScene);
 					    
 					    
 					    
