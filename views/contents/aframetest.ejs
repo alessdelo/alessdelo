@@ -112,14 +112,16 @@ $( document ).ready(function() {
 			
 			
 			
-			 var moreHtml = '<a-entity id="' + theVal.name + '" visible="' + visibility + '">' +
-			 		'<a-sky ' +
-						'id="' + theVal.name + 'sky' +
-						'" src="/static/aframe/tour1/' + theVal.name + '.jpg" ' + 
-						'rotation="0 -60 0" ' +
-						'radius="5000" ' +
-						'color="#fff">' +
-					'</a-sky>';
+			 var moreHtml = '<a-entity ' + 
+			 			'id="' + theVal.name + 
+						'" visible="' + visibility + '">' +
+						'<a-sky ' +
+							'id="' + theVal.name + 'sky' + '" ' +
+							 'src="/static/aframe/tour1/' + theVal.name + '.jpg" ' + 
+							'rotation="0 -60 0" ' +
+							'radius="5000" ' +
+							'color="#fff">' +
+						'</a-sky>';
 			      
 			    
 			    alert('moreHtml: ' + moreHtml);
@@ -161,7 +163,13 @@ $( document ).ready(function() {
 					availScenes[i] = linkVal.to; 
 					i++;
 					
-					var evenMoreHtml = '<a-entity id="' + theVal.name + '_' + linkVal.to + '" geometry="primitive: box" material="color: ' + linkVal.color + '" position="' + linkVal.pos.x + ' ' + linkVal.pos.y + ' ' + linkVal.pos.z + '" rotation="0 45 0"></a-entity>';  
+					var evenMoreHtml = '<a-entity ' +
+								'id="' + theVal.name + '_' + linkVal.to + '" ' + 
+								'geometry="primitive: box" ' + 
+								'material="color: ' + linkVal.color + '" ' + 
+								'position="' + linkVal.pos.x + ' ' + linkVal.pos.y + ' ' + linkVal.pos.z + '" ' + 
+								'rotation="0 45 0">' + 
+								'</a-entity>'; 	 
 					      alert(evenMoreHtml);         
 					  
 					  theHtml += evenMoreHtml;
