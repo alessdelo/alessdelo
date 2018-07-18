@@ -260,14 +260,17 @@ function setActiveScene(scene) {
   }
  
  
-
+/*
   // Attach a directly bound event handler
 $( ".cubes" ).on( "click", function( event ) {
     event.preventDefault();
     alert('cubes!');
 });
+*/
 
-
+$( ".cubes" ).click(function() {
+  alert( "Handler for .click() called." );
+});
 
 </script>
 
