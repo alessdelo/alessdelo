@@ -112,7 +112,8 @@ $( document ).ready(function() {
 			
 			
 			
-			 var moreHtml = '<a-entity ' + 
+			 var moreHtml = '<a-entity ' +
+			 			'class="scenes"' + 
 			 			'id="' + theVal.name + 
 						'" visible="' + visibility + '">' +
 						'<a-sky ' +
@@ -257,6 +258,12 @@ function setActiveScene(scene) {
     document.getElementById(theScene).setAttribute('visible', 'true');
     document.getElementById('scene1').setAttribute('visible', 'false');
   }
+  
+  // Attach a directly bound event handler
+$( ".scenes a-entity" ).on( "click", function( event ) {
+    event.preventDefault();
+    alert( $( this ).text() );
+});
 
 
 </script>
