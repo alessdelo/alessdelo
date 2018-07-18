@@ -110,7 +110,8 @@ $( document ).ready(function() {
 					alert('scene: '  + ' - ' +  theVal.name + ' - ' + 'visibility: ' + ' - ' + visibility);
 					
 			
-			
+			availScenes[i] = theVal.name; 
+					i++;
 			
 			 var moreHtml = '<a-entity ' +
 			 			'class="scenes" ' + 
@@ -161,8 +162,7 @@ $( document ).ready(function() {
 					
 					
 					
-					availScenes[i] = theVal.name + '_' + linkVal.to; 
-					i++;
+
 					
 					var evenMoreHtml = '<a-entity ' +
 								'class="cubes" ' +
@@ -273,7 +273,7 @@ function setActiveScene(scene) {
 	// alert(linkScene);
 	// document.getElementById(linkScene).setAttribute('visible', 'true');
 		for(var singScene in availScenes) {
-		if (theScene == singScene) {
+		if (linkScene == singScene) {
 			document.getElementById(linkScene).setAttribute('visible', 'true');
 			} else {
 			document.getElementById(linkScene).setAttribute('visible', 'false');
