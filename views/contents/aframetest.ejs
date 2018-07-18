@@ -161,7 +161,7 @@ $( document ).ready(function() {
 					
 					
 					
-					availScenes[i] = linkVal.to; 
+					availScenes[i] = theVal.name + '_' + linkVal.to; 
 					i++;
 					
 					var evenMoreHtml = '<a-entity ' +
@@ -271,8 +271,14 @@ function setActiveScene(scene) {
 	// alert(selScene);
 	var linkScene = sceneArr[1];
 	// alert(linkScene);
-	document.getElementById(linkScene).setAttribute('visible', 'true');
-	document.getElementById('scene1').setAttribute('visible', 'false');
+	// document.getElementById(linkScene).setAttribute('visible', 'true');
+		for(var singScene in availScenes) {
+		if (theScene == singScene) {
+			document.getElementById(linkScene).setAttribute('visible', 'true');
+			} else {
+			document.getElementById(linkScene).setAttribute('visible', 'false');
+			}
+		} 
   }
 
 
