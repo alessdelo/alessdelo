@@ -165,6 +165,7 @@ $( document ).ready(function() {
 					i++;
 					
 					var evenMoreHtml = '<a-entity ' +
+								'class="cubes"' +
 								'id="' + theVal.name + '_' + linkVal.to + '" ' + 
 								'geometry="primitive: box" ' + 
 								'material="color: ' + linkVal.color + '" ' + 
@@ -257,12 +258,15 @@ function setActiveScene(scene) {
     document.getElementById(theScene).setAttribute('visible', 'true');
     document.getElementById('scene1').setAttribute('visible', 'false');
   }
-  
+ 
+ 
+ /*
   // Attach a directly bound event handler
-$( ".scenes a-entity" ).on( "click", function( event ) {
+$( ".cubes" ).on( "click", function( event ) {
     event.preventDefault();
-    alert( $( this ).text() );
+    alert('cubes!');
 });
+*/
 
 
 </script>
