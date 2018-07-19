@@ -306,13 +306,13 @@ function setActiveScene(scene) {
 	// document.getElementById(linkScene).setAttribute('visible', 'true');
 	
 	
-	 var fakeScenes = ["scene1","scene2","scene3","scene4"];
+	//  var fakeScenes = ["scene1","scene2","scene3","scene4"];
 	// alert(fakeScenes);
 	 
 	
-		for(var keyScene in fakeScenes) {
+		for(var keyScene in availScenes) {
 		
-			var valScene = fakeScenes[keyScene];
+			var valScene = availScenes[keyScene];
 			
 			if (linkScene == valScene) {
 					alert(valScene + ' - true!');
