@@ -260,6 +260,14 @@ aframetest: {
     header: header,
     footer: footer,
     params: []
+  },
+aframelinks: { 
+    title:'A-Frame Insert Links to Other Scenes',
+    content:'../contents/aframelinks.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
   }
 }
 
@@ -831,6 +839,11 @@ app.get('/aframetour', (req, res) => res.render(index,pageData.aframetour))
 // A-FRAME TEST
 
 app.get('/aframetest', (req, res) => res.render(index,pageData.aframetest))
+
+// ---------------------------------
+// A-FRAME LINKS
+
+app.get('/aframelinks', (req, res) => res.render(index,pageData.aframelinks))
 
 // ----------------------------------
 // ----------------------------------
