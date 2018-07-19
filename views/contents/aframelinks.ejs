@@ -17,8 +17,16 @@ var theHtml = '<a-scene>' +
 			  '<a-entity cursor="fuse: true; fuseTimeout: 500" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: black; shader: flat">' + 			  			  				    				    				    
 				     '<a-entity animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-entity>' + 				       
 				     '<a-entity animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1500" fill="backwards" from="1 1 1" to="0.1 0.1 0.1"></a-entity>' + 					  
-			  '</a-entity>' + 
-    			'</a-entity>';
+			  '</a-entity>' + 			  
+			  '<a-entity ' +   
+				    'id="button" ' +            
+				    'geometry="primitive: box" '
+				    'material="color: red" ' +
+				    'position="3 2 5" ' +
+				    'rotation="0 45 0" ' +
+				    'onclick=""' +
+				'></a-entity>' +
+    		      '</a-entity>';
 			
       
 var activeProject = "";	
