@@ -304,15 +304,16 @@ function setActiveScene(scene) {
 	var linkScene = sceneArr[1];
 	// alert(linkScene);
 	// document.getElementById(linkScene).setAttribute('visible', 'true');
-	alert(fakeScenes);
+	
 	
 	 var fakeScenes = [scene1,scene2,scene3,scene4];
+	 alert(fakeScenes);
 	
 		for(var singScene in fakeScenes) {
-		if (linkScene == singScene) {
-			document.getElementById(singScene).setAttribute('visible', 'true');
+			if (linkScene == singScene) {
+				document.getElementById(singScene).setAttribute('visible', 'true');
 			} else {
-			document.getElementById(singScene).setAttribute('visible', 'false');
+				document.getElementById(singScene).setAttribute('visible', 'false');
 			}
 		}
 		 
