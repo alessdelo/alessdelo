@@ -310,13 +310,16 @@ function setActiveScene(scene) {
 	// alert(fakeScenes);
 	 
 	
-		for(var singScene in fakeScenes) {
-			if (linkScene == singScene) {
-					alert(singScene + ' - true!');
-				// document.getElementById(singScene).setAttribute('visible', 'true');
+		for(var keyScene in fakeScenes) {
+		
+			var valScene = fakeScenes[valScene];
+			
+			if (linkScene == valScene) {
+					alert(valScene + ' - true!');
+				// document.getElementById(valScene).setAttribute('visible', 'true');
 			} else {
-				alert(singScene + ' - false!');
-				// document.getElementById(singScene).setAttribute('visible', 'false');
+				alert(valScene + ' - false!');
+				// document.getElementById(valScene).setAttribute('visible', 'false');
 			}
 		} 
 		
