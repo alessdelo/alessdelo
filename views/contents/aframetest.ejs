@@ -264,6 +264,8 @@ function setActiveScene(scene) {
 */
 
 
+
+/*
   function nextScene(theScene) {
     // alert(theScene); 
     // alert('buuuuu');
@@ -275,7 +277,7 @@ function setActiveScene(scene) {
 	// alert(linkScene);
 	// document.getElementById(linkScene).setAttribute('visible', 'true');
 	alert(availScenes);
-	/*
+	
 		for(var singScene in availScenes) {
 		if (linkScene == singScene) {
 			document.getElementById(singScene).setAttribute('visible', 'true');
@@ -283,7 +285,35 @@ function setActiveScene(scene) {
 			document.getElementById(singScene).setAttribute('visible', 'false');
 			}
 		}
-		*/ 
+		 
+  }
+  
+  */ 
+  
+  var fakeScenes = [scene1,scene2,scene3,scene4];
+  
+  
+  
+    function nextScene(theScene) {
+    // alert(theScene); 
+    // alert('buuuuu');
+	var sceneArr = theScene.split("_");
+	// alert(sceneArr[0] + ' - - - ' + sceneArr[1]);
+	var selScene = sceneArr[0];
+	// alert(selScene);
+	var linkScene = sceneArr[1];
+	// alert(linkScene);
+	// document.getElementById(linkScene).setAttribute('visible', 'true');
+	alert(fakeScenes);
+	
+		for(var singScene in fakeScenes) {
+		if (linkScene == singScene) {
+			document.getElementById(singScene).setAttribute('visible', 'true');
+			} else {
+			document.getElementById(singScene).setAttribute('visible', 'false');
+			}
+		}
+		 
   }
 
 
