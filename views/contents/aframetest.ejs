@@ -276,7 +276,7 @@ function setActiveScene(scene) {
 	var linkScene = sceneArr[1];
 	// alert(linkScene);
 	// document.getElementById(linkScene).setAttribute('visible', 'true');
-	alert(availScenes);
+	// alert(availScenes);
 	
 		for(var singScene in availScenes) {
 		if (linkScene == singScene) {
@@ -300,14 +300,15 @@ function setActiveScene(scene) {
 	var sceneArr = theScene.split("_");
 	// alert(sceneArr[0] + ' - - - ' + sceneArr[1]);
 	var selScene = sceneArr[0];
-	// alert(selScene);
+	 alert(selScene);
 	var linkScene = sceneArr[1];
 	// alert(linkScene);
 	// document.getElementById(linkScene).setAttribute('visible', 'true');
 	
 	
 	 var fakeScenes = [scene1,scene2,scene3,scene4];
-	 alert(fakeScenes);
+	 //alert(fakeScenes);
+	 /*
 	
 		for(var singScene in fakeScenes) {
 			if (linkScene == singScene) {
@@ -315,7 +316,9 @@ function setActiveScene(scene) {
 			} else {
 				document.getElementById(singScene).setAttribute('visible', 'false');
 			}
-		}
+		} 
+		
+		*/
 		 
   }
 
