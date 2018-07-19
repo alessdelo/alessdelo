@@ -13,7 +13,7 @@ var getPassEjs = <%- passEjs %>;
 
 <script>
 
-alert('xxx');
+
 
 var theHtml = '<a-scene>' + 
 		     '<a-entity camera look-controls>' + 		     
@@ -23,19 +23,7 @@ var theHtml = '<a-scene>' +
 			  '</a-entity>' + 
     			'</a-entity>';
 			
- /*
-  theHtml +=     '<a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow></a-box>' +
-      '<a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>' +
-      '<a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>' +
-      '<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>' +
-      '<a-sky color="#ECECEC"></a-sky>';
       
-      	 */
-      
-      alert('yyy');
-      alert(theHtml);
-      
-
 var activeProject = "";	
 var activeScene = "scene1";	
 var availScenes =[];
@@ -70,246 +58,91 @@ var dataArray = {
         	}		
       }; //end dataArray
       
-      
-        
-        
-  alert(dataArray);                  
-printObject(dataArray); 
-		
-
-
-
+                  
+// printObject(dataArray); 
 
 $( document ).ready(function() {
 
-		printObject(dataArray); 
-		
-						
-
 		for(var theKey in dataArray) { 
-		
-		
-		
+
 	                if(dataArray.hasOwnProperty(theKey)) { 
-			
-			
-			
-			
-					
-			
-			
-			var theVal = dataArray[theKey];
-			
-			
-			var visibility = "false";
-			
-			if(theVal.name == activeScene) {
-						visibility = "true";
-					} 
-					
-					alert('scene: '  + ' - ' +  theVal.name + ' - ' + 'visibility: ' + ' - ' + visibility);
-					
-			
-			availScenes[i] = theVal.name; 
-					i++;
-			
-			 var moreHtml = '<a-entity ' +
-			 			'class="scenes" ' + 
-			 			'id="' + theVal.name + 
-						'" visible="' + visibility + '">' +
-						'<a-sky ' +
-							'id="' + theVal.name + 'sky' + '" ' +
-							 'src="/static/aframe/tour1/' + theVal.name + '.jpg" ' + 
-							'rotation="0 -60 0" ' +
-							'radius="5000" ' +
-							'color="#fff">' +
-						'</a-sky>';
-			      
-			    
-			    alert('moreHtml: ' + moreHtml);
-			  
-			  theHtml +=  moreHtml; 
-			  
-				alert(theHtml);
-			/*
-			if(theVal.name == activeProject) {
-				var theLinks = theVal.links;
-				alert('theLinks');
-				printObject(theLinks);
-				printObject(theLinks[1]);
-				alert(theLinks[1]['to']);
-				
-					*/			
-				
-				
-				
-				for(var linkKey in theVal.links) { 
-				
-					
-				
-					
-				
-					
-					
-					var linkVal = theVal.links[linkKey];
-					
-					
-					
-					
-					// alert('linkval'); 
-					// printObject(linkVal); 
-					// alert('scene: ' + linkVal.to + 'x: ' + linkVal.pos.x );
-					
-					
-					
 
-					
-					var evenMoreHtml = '<a-entity ' +
-								'class="cubes" ' +
-								'id="' + theVal.name + '_' + linkVal.to + '" ' + 
-								'geometry="primitive: box" ' + 
-								'material="color: ' + linkVal.color + '" ' + 
-								'position="' + linkVal.pos.x + ' ' + linkVal.pos.y + ' ' + linkVal.pos.z + '" ' + 
-								'rotation="0 45 0" ' +
-								'onclick="nextScene(this.id)" ' +
-								'>' + 
-								'</a-entity>'; 	 
-					     // alert(evenMoreHtml);         
-					  
-					  theHtml += evenMoreHtml;  
-					  
-					  // 'onclick="setActiveScene("' + linkVal.to + '")" ' +
-					  
-					 //  document.getElementById(theVal.name + '_' + linkVal.to).addEventListener("click", setActiveScene(linkVal.to));
-					    
-					 //    $(document).on('click','#' + theVal.name + '_' + linkVal.to,setActiveScene(linkVal.to));
-					    
-					    
-					 
+				var theVal = dataArray[theKey];
+						
+				var visibility = "false";
+			
+				if(theVal.name == activeScene) {
+				
+					visibility = "true";
+							
+				} 
 
-					
-					
-				} // for linkKey
-				
-				 
-				
-				
-				theHtml += '</a-entity>';
+				// alert('scene: '  + ' - ' +  theVal.name + ' - ' + 'visibility: ' + ' - ' + visibility);
+
+
+				availScenes[i] = theVal.name; 
+				i++;
+
+				 var moreHtml = '<a-entity ' +
+							'class="scenes" ' + 
+							'id="' + theVal.name + 
+							'" visible="' + visibility + '">' +
+							'<a-sky ' +
+								'id="' + theVal.name + 'sky' + '" ' +
+								 'src="/static/aframe/tour1/' + theVal.name + '.jpg" ' + 
+								'rotation="0 -60 0" ' +
+								'radius="5000" ' +
+								'color="#fff">' +
+							'</a-sky>';
+
+
+				    // alert('moreHtml: ' + moreHtml);
+
+				  theHtml +=  moreHtml; 
+
+					// alert(theHtml);
+
+					for(var linkKey in theVal.links) { 
+
+						var linkVal = theVal.links[linkKey];
+
+						var evenMoreHtml = '<a-entity ' +
+									'class="cubes" ' +
+									'id="' + theVal.name + '_' + linkVal.to + '" ' + 
+									'geometry="primitive: box" ' + 
+									'material="color: ' + linkVal.color + '" ' + 
+									'position="' + linkVal.pos.x + ' ' + linkVal.pos.y + ' ' + linkVal.pos.z + '" ' + 
+									'rotation="0 45 0" ' +
+									'onclick="nextScene(this.id)" ' +
+									'>' + 
+									'</a-entity>';       
+
+						  theHtml += evenMoreHtml;  
+
+					} // for linkKey
+
+					theHtml += '</a-entity>';
+
+				// } // if val.name
 			
-			// } // if val.name
-			
-			
-			
-				
-			
-			
-			
-			
-			
-			
-			
-			
-				                      
+                  
  	               } // fine if dataArray		   		       
-		      
-		    
-		      
+		      		      
 	       } // fine for key-dataArray
 	       
-	           theHtml += '<a-entity class="cubes" id="box" geometry="primitive: box" material="color: red" position="3 5 5" rotation="0 45 0" onclick="nextScene(this.id)" ></a-entity>';
-        
-	      // theHtml += '<a-entity class="cubes" id="box" geometry="primitive: box" material="color: red" position="3 5 5" rotation="0 45 0"></a-entity>';
 	     
-	   theHtml += '</a-scene>';
-	 
-	 alert(theHtml);
-	 
-	 alert('availScenes= ' + availScenes);
+	   theHtml += '</a-scene>';	 
  
-  $("#contents").html(theHtml);       	       
-                   
+  $("#contents").html(theHtml);       	                          
     
-});
-
-function setActiveScene(scene) {
-
-		alert(scene);
-		
-		/*
+}); // document.ready
 
 
-
-	for(var singScene in availScenes) {
-		if (scene == singScene) {
-			document.getElementById(scene).setAttribute('visible', 'true');
-			} else {
-			document.getElementById(scene).setAttribute('visible', 'false');
-			}
-		} 
-		
-		*/
-	
-
-}
-
-
-
-
-/*
-  function nextScene(theScene) {
-    alert(theScene);    
-    document.getElementById(theScene).setAttribute('visible', 'true');
-    document.getElementById('scene1').setAttribute('visible', 'false');
-  }
-*/
-
-
-
-/*
-  function nextScene(theScene) {
-    // alert(theScene); 
-    // alert('buuuuu');
-	var sceneArr = theScene.split("_");
-	// alert(sceneArr[0] + ' - - - ' + sceneArr[1]);
-	var selScene = sceneArr[0];
-	// alert(selScene);
-	// var linkScene = sceneArr[1];
-	// alert(linkScene);
-	// document.getElementById(linkScene).setAttribute('visible', 'true');
-	// alert(availScenes);
-	
-		for(var singScene in availScenes) {
-		if (linkScene == singScene) {
-			document.getElementById(singScene).setAttribute('visible', 'true');
-			} else {
-			document.getElementById(singScene).setAttribute('visible', 'false');
-			}
-		}
-		 
-  }
-  
-  */ 
-  
- 
-  
-  
-  
     function nextScene(theScene) {
-    // alert(theScene); 
-    // alert('buuuuu');
+
 	var sceneArr = theScene.split("_");
-	// alert(sceneArr[0] + ' - - - ' + sceneArr[1]);
 	var selScene = sceneArr[0];
-	// alert(selScene);
 	var linkScene = sceneArr[1];
-	// alert(linkScene);
-	// document.getElementById(linkScene).setAttribute('visible', 'true');
-	
-	
-	//  var fakeScenes = ["scene1","scene2","scene3","scene4"];
-	// alert(fakeScenes);
-	 
-	// alert(availScenes);
 	
 		for(var keyScene in availScenes) {
 		
@@ -321,27 +154,10 @@ function setActiveScene(scene) {
 			} else {
 				// alert(valScene + ' - false!');
 				document.getElementById(valScene).setAttribute('visible', 'false');
-			}
-		} 
-		
-		
-		 
-  }
-
-
-/*
-  // Attach a directly bound event handler
-$( ".cubes" ).on( "click", function( event ) {
-    event.preventDefault();
-    alert('cubes!');
-});
-*/
-
-/*
-$( ".cubes" ).click(function() {
-  	alert( "Handler for .click() called." );
-});
-*/
+			} // if-else
+		} // for		
+				 
+  } // f. nextScene()
 
 </script>
 
