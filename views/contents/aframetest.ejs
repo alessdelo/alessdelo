@@ -312,7 +312,7 @@ function setActiveScene(scene) {
 	
 		for(var keyScene in fakeScenes) {
 		
-			var valScene = String(fakeScenes[keyScene]);
+			var valScene = JSON.stringify(fakeScenes[keyScene]);
 			
 			if (linkScene == valScene) {
 					alert(valScene + ' - true!');
