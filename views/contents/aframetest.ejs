@@ -266,19 +266,22 @@ function setActiveScene(scene) {
     // alert(theScene); 
     // alert('buuuuu');
 	var sceneArr = theScene.split("_");
-	alert(sceneArr[0] + ' - - - ' + sceneArr[1]);
+	// alert(sceneArr[0] + ' - - - ' + sceneArr[1]);
 	var selScene = sceneArr[0];
 	// alert(selScene);
 	var linkScene = sceneArr[1];
 	// alert(linkScene);
 	// document.getElementById(linkScene).setAttribute('visible', 'true');
+	alert(availScenes);
+	/*
 		for(var singScene in availScenes) {
 		if (linkScene == singScene) {
 			document.getElementById(singScene).setAttribute('visible', 'true');
 			} else {
 			document.getElementById(singScene).setAttribute('visible', 'false');
 			}
-		} 
+		}
+		*/ 
   }
 
 
