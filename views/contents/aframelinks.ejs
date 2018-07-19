@@ -1,0 +1,143 @@
+<p class="lead">A-Frame - Insert Links for VR Tour</p>
+<hr class="my-4">
+
+<% strMyVar = JSON.stringify(myVar, null, 4); %>
+<%= strMyVar %>
+<% var passEjs = strMyVar; %>
+
+<script>
+var getPassEjs = <%- passEjs %>;
+</script>
+
+<script type="text/javascript" src="/static/general.js"></script>
+
+<script>
+var theHtml = '<a-scene>' + 
+		     '<a-entity camera look-controls>' + 		     
+			  '<a-entity cursor="fuse: true; fuseTimeout: 500" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: black; shader: flat">' + 			  			  				    				    				    
+				     '<a-entity animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-entity>' + 				       
+				     '<a-entity animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1500" fill="backwards" from="1 1 1" to="0.1 0.1 0.1"></a-entity>' + 					  
+			  '</a-entity>' + 
+    			'</a-entity>';
+			
+      
+var activeProject = "";	
+var activeScene = "scene1";	
+var availScenes =[];
+var i = 0;
+var dataArray = {
+		 "0":{  "name": "scene1",
+          		"links":  { 	"2": {"to": "scene2", "pos":{"x":"3","y":"2","z":"5"}, "color": "red"},
+                      			"3": {"to": "scene3", "pos":{"x":"6","y":"2","z":"5"},"color": "green"},
+                      			"4": {"to": "scene4", "pos":{"x":"9","y":"2","z":"5"},"color": "yellow"}
+                    			}
+       		 },
+		 "1":{  "name": "scene2",
+          		"links":  { 	"1": {"to": "scene1", "pos":{"x":"0","y":"2","z":"5"}, "color": "blue"},			
+                      			"3": {"to": "scene3", "pos":{"x":"6","y":"2","z":"5"},"color": "green"},
+                      			"4": {"to": "scene4", "pos":{"x":"9","y":"2","z":"5"},"color": "yellow"}
+                    			}
+        	},
+        
+		 "3":{  "name": "scene3",
+          		"links":  { 	"1": {"to": "scene1", "pos":{"x":"0","y":"2","z":"5"}, "color": "blue"},
+					"2": {"to": "scene2", "pos":{"x":"3","y":"2","z":"5"}, "color": "red"},                     
+                      			"4": {"to": "scene4", "pos":{"x":"9","y":"2","z":"5"},"color": "yellow"}
+                   			}          		
+        	},
+		
+		 "4":{  "name": "scene4",
+          		"links":  { 	"1": {"to": "scene1", "pos":{"x":"0","y":"2","z":"5"}, "color": "blue"},
+					"2": {"to": "scene2", "pos":{"x":"3","y":"2","z":"5"}, "color": "red"},
+                      			"3": {"to": "scene3", "pos":{"x":"6","y":"2","z":"5"},"color": "green"}                      			
+                   			}          		
+        	}		
+      }; //end dataArray
+      
+                  
+// printObject(dataArray); 
+$( document ).ready(function() {
+		for(var theKey in dataArray) { 
+	                if(dataArray.hasOwnProperty(theKey)) { 
+				var theVal = dataArray[theKey];
+						
+				var visibility = "false";
+			
+				if(theVal.name == activeScene) {
+				
+					visibility = "true";
+							
+				} // if valName
+				// alert('scene: '  + ' - ' +  theVal.name + ' - ' + 'visibility: ' + ' - ' + visibility);
+				availScenes[i] = theVal.name; 
+				i++;
+				 var moreHtml = '<a-entity ' +
+							'class="scenes" ' + 
+							'id="' + theVal.name + 
+							'" visible="' + visibility + '">' +
+							'<a-sky ' +
+								'id="' + theVal.name + 'sky' + '" ' +
+								 'src="/static/aframe/tour1/' + theVal.name + '.jpg" ' + 
+								'rotation="0 -60 0" ' +
+								'radius="5000" ' +
+								'color="#fff">' +
+							'</a-sky>';
+				    // alert('moreHtml: ' + moreHtml);
+				  theHtml +=  moreHtml; 
+					// alert(theHtml);
+					for(var linkKey in theVal.links) { 
+						var linkVal = theVal.links[linkKey];
+						var evenMoreHtml = '<a-entity ' +
+									'class="cubes" ' +
+									'id="' + theVal.name + '_' + linkVal.to + '" ' + 
+									'geometry="primitive: box" ' + 
+									'material="color: ' + linkVal.color + '" ' + 
+									'position="' + linkVal.pos.x + ' ' + linkVal.pos.y + ' ' + linkVal.pos.z + '" ' + 
+									'rotation="0 45 0" ' +
+									'onclick="nextScene(this.id)" ' +
+									'>' + 
+									'</a-entity>';       
+						  theHtml += evenMoreHtml;  
+					} // for linkKey
+					theHtml += '</a-entity>';			
+                  
+ 	               } // fine if dataArray		   		       
+		      		      
+	       } // fine for key-dataArray	       
+	     
+	   theHtml += '</a-scene>';	 
+ 
+  $("#contents").html(theHtml);       	                          
+    
+}); // document.ready
+    function nextScene(theScene) {
+	var sceneArr = theScene.split("_");
+	var selScene = sceneArr[0];
+	var linkScene = sceneArr[1];
+	
+		for(var keyScene in availScenes) {
+		
+			var valScene = availScenes[keyScene];
+			
+			if (linkScene == valScene) {
+					// alert(valScene + ' - true!');
+				 document.getElementById(valScene).setAttribute('visible', 'true');
+			} else {
+				// alert(valScene + ' - false!');
+				document.getElementById(valScene).setAttribute('visible', 'false');
+			} // if-else
+		} // for		
+				 
+  } // f. nextScene()
+</script>
+
+  
+<div id="contents"></div>
+
+
+     <hr class="my-4">
+  <h4>Inspired by...</h4>
+  <a href="https://gist.github.com/jhermsmeier/72626d5fd79c5875248fd2c1e8162489" target="_blank">From Spherical to Cartesian Coords and viceversa</a>
+    <br>
+      <a href="https://aframe.io/docs/0.8.0/introduction/writing-a-component.html" target="_blank">A-Frame Writing a Component</a>
+    <br>
