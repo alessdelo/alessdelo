@@ -111,7 +111,7 @@ $( document ).ready(function() {
 											'position="0 1 0" ' + 
 											'radius="0.2" ' +
 											'visible="false" ' +
-											'onclick="" ' +
+											'onclick="moveEl(up)" ' +
 											'>' + 
 										'</a-sphere>' + 
 									'</a-entity>';       
@@ -152,6 +152,17 @@ $( document ).ready(function() {
      function showArrows(theId) {
      
      	$( "#" + theId + " .arrows").attr("visible","true");
+						 
+  } // f. showArrows()
+  
+       function moveEl(dir) {
+       
+       		var pos = this.parent.position;
+		
+		if(dir == "up") {
+			pos.y++;
+		}
+
 						 
   } // f. showArrows()
   
