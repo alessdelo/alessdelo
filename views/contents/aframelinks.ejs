@@ -111,7 +111,7 @@ $( document ).ready(function() {
 											'position="0 1 0" ' + 
 											'radius="0.2" ' +
 											'visible="false" ' +
-											'onclick="moveEl(\'up\')" ' +
+											'onclick="moveEl()" ' +
 											'>' + 
 										'</a-sphere>' + 
 									'</a-entity>';       
@@ -155,7 +155,7 @@ $( document ).ready(function() {
 						 
   } // f. showArrows()
   
-       function moveEl(dir) {
+       function moveEl() {
        
        		var pos = this.parentElement.position;
 		alert(pos);
