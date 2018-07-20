@@ -103,13 +103,14 @@ $( document ).ready(function() {
 									'material="color: ' + linkVal.color + '" ' + 
 									'position="' + linkVal.pos.x + ' ' + linkVal.pos.y + ' ' + linkVal.pos.z + '" ' + 
 									'rotation="0 45 0" ' +
-									'onclick="nextScene(this.id)" ' +
+									'onclick="showArrows(this.id)" ' +
 									'>' + 
 										'<a-sphere ' +
 											'class="arrows" ' +
 											'material="color: white" ' + 
 											'position="0 1 0" ' + 
 											'radius="0.2" ' +
+											'visible="false" ' +
 											'onclick="" ' +
 											'>' + 
 										'</a-sphere>' + 
@@ -127,6 +128,7 @@ $( document ).ready(function() {
   $("#contents").html(theHtml);       	                          
     
 }); // document.ready
+
     function nextScene(theScene) {
 	var sceneArr = theScene.split("_");
 	var selScene = sceneArr[0];
@@ -146,6 +148,13 @@ $( document ).ready(function() {
 		} // for		
 				 
   } // f. nextScene()
+  
+     function showArrows(theId) {
+     
+     	$( "#" + theId + " .arrows").attr("visible","true");
+						 
+  } // f. showArrows()
+  
 </script>
 
   
