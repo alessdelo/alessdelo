@@ -161,9 +161,14 @@ $( document ).ready(function() {
 		// printObject(subj);
 		// printObject(subj.object3D);
 		// printObject(subj.object3D.position);
-		// alert(subj.parentElement.object3D.position.x);
+		// alert(subj.parentElement.object3D.position.y);
 		var pos = subj.parentElement.object3D.position.y;
-		pos = pos + 0.1;
+		alert(pos);
+		
+		pos = pos + 1;
+		alert(pos);
+		alert(subj.parentElement.object3D.position.y);
+		
 		
 		/*
 		if(dir == "up") {
