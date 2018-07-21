@@ -78,12 +78,22 @@ var dataArray = {
 				  };
 				  
 				  var arrShp = "sphere";
-				  var arrDim = "0.2";
+				  var arrDim = "0.2"; 
+				  var arrHtml = "";
 				  
 				  
 	for(var arrKey in theArrows) { 	
-		var theVal = dataArray[theKey]; 
-		
+		var arrVal = dataArray[theKey]; 
+	arrHtml += '<a-sphere ' +
+											'class="arrows ' + arrVal.class +'" ' +
+											'material="color: ' + arrVal.color + '" ' + 
+											'position="' arrVal.pos.x + ' ' + arrVal.pos.y  + ' ' + arrVal.pos.z  + '" ' + 
+											'radius="0.2" ' +
+											'visible="false" ' +
+											'onclick="moveEl(this)" ' +
+											'>' + 
+										'</a-sphere>'; 	
+										
 		
 		} // for
       
