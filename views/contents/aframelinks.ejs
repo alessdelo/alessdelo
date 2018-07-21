@@ -158,10 +158,12 @@ $( document ).ready(function() {
        function moveEl(subj) {
        
        		// var pos = this.parentElement.id;
-		printObject(subj);
-		printObject(subj.object3D);
-		printObject(subj.object3D.position);
-		alert(subj.parentElement.object3D.position.x);
+		// printObject(subj);
+		// printObject(subj.object3D);
+		// printObject(subj.object3D.position);
+		// alert(subj.parentElement.object3D.position.x);
+		var pos = subj.parentElement.object3D.position.y;
+		pos = pos + 0.1;
 		
 		/*
 		if(dir == "up") {
