@@ -250,11 +250,39 @@ $( document ).ready(function() {
 		alert(subj.parentElement.object3D.position.y);
 		*/ 
 		
-		alert(subj.className);
+		var arrClass = subj.className; 
+		var arrayArr = arrClass.split(" "); 
+		var arrType = arrayArr[0]; 
+		var arrDir = arrayArr[1];
+		var arrWhere = arrayArr[2];				
+		
+		// alert(subj.className);
 		
 		var el = subj.parentElement;				
-		var pos = el.getAttribute('position');
-		pos.y = pos.y + 1;
+		var pos = el.getAttribute('position'); 
+		
+		switch (arrDir) {
+		    case "up":
+			pos.y = pos.y + 1;
+			break;
+		    case "down":
+			pos.y = pos.y - 1;
+			break;
+		    case "right":
+			pos.x = pos.x + 1;
+			break;
+		    case "left":
+			pos.x = pos.x - 1;
+			break;
+		    case "forw":
+			pos.z = pos.z - 1;
+			break;
+		    case "backw":
+			pos.z = pos.z + 1;
+			break;		    
+		}
+		
+		// pos.y = pos.y + 1;
 		el.setAttribute(pos);
 		
 		
