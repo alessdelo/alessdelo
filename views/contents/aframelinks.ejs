@@ -148,7 +148,10 @@ $( document ).ready(function() {
 									'position="' + linkVal.pos.x + ' ' + linkVal.pos.y + ' ' + linkVal.pos.z + '" ' + 
 									'rotation="0 45 0" ' +
 									'onclick="showArrows(this.id)" ' +
-									'>' + 
+									'>' +
+									arrHtml +
+										
+										/*
 										'<a-sphere ' +
 											'class="arrows" ' +
 											'material="color: white" ' + 
@@ -158,6 +161,7 @@ $( document ).ready(function() {
 											'onclick="moveEl(this)" ' +
 											'>' + 
 										'</a-sphere>' + 
+										*/
 									'</a-entity>';       
 						  theHtml += evenMoreHtml;  
 					} // for linkKey
