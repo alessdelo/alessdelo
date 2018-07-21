@@ -161,7 +161,9 @@ $( document ).ready(function() {
 		// printObject(subj);
 		// printObject(subj.object3D);
 		// printObject(subj.object3D.position);
-		// alert(subj.parentElement.object3D.position.y); */
+		// alert(subj.parentElement.object3D.position.y); 
+		
+		/*
 		var pos = subj.parentElement.object3D.position.y;
 		alert(pos);
 		
@@ -171,7 +173,7 @@ $( document ).ready(function() {
 		*/
 		
 		var el = subj.parentElement;				
-		pos = el.getAttribute('position');
+		var pos = el.getAttribute('position');
 		pos.y += 1;
 		el.setAttribute(pos);
 		
