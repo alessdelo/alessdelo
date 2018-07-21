@@ -70,12 +70,12 @@ var dataArray = {
 				  "class": "topUp",
 				  "color": "white"
 				  },
-				"1":{  "dir": "down",
+			"1":{  "dir": "down",		
 			 	 "pos":{"x":"3","y":"2","z":"5"},
 				  "class": "topDown",
 				  "color": "black"
 				  }
-				  };
+			};	  
 				  
 				  var arrShp = "sphere";
 				  var arrDim = "0.2"; 
@@ -93,7 +93,7 @@ $( document ).ready(function() {
 		arrHtml += '<a-sphere ' +
 					'class="arrows ' + arrVal.class +'" ' +							
 					'material="color: ' + arrVal.color + '" ' + 							
-					'position="' arrVal.pos.x + ' ' + arrVal.pos.y  + ' ' + arrVal.pos.z  + '" ' + 
+					'position="' + arrVal.pos.x + ' ' + arrVal.pos.y  + ' ' + arrVal.pos.z  + '" ' + 
 					'radius="' + arrDim + '" ' +
 					'visible="false" ' +							
 					'onclick="moveEl(this)" ' +							
