@@ -89,7 +89,7 @@ var dataArray = {
 $( document ).ready(function() {
 
 	for(var arrKey in theArrows) { 	
-		var arrVal = dataArray[theKey]; 
+		var arrVal = theArrows[arrKey]; 
 		arrHtml += '<a-sphere ' +
 					'class="arrows ' + arrVal.class +'" ' +							
 					'material="color: ' + arrVal.color + '" ' + 							
