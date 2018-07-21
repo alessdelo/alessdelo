@@ -64,9 +64,33 @@ var dataArray = {
         	}		
       }; //end dataArray
       
+     var theArrows = {
+			 "0":{  "dir": "up",
+			 	 "pos":{"x":"3","y":"2","z":"5"},
+				  "class": "topUp",
+				  "color": "white"
+				  },
+				"1":{  "dir": "down",
+			 	 "pos":{"x":"3","y":"2","z":"5"},
+				  "class": "topDown",
+				  "color": "black"
+				  }
+				  };
+				  
+				  var arrShp = "sphere";
+				  var arrDim = "0.2";
+				  
+				  
+	for(var arrKey in theArrows) { 	
+		var theVal = dataArray[theKey]; 
+		
+		
+		} // for
+      
                   
 // printObject(dataArray); 
 $( document ).ready(function() {
+		
 		for(var theKey in dataArray) { 
 	                if(dataArray.hasOwnProperty(theKey)) { 
 				var theVal = dataArray[theKey];
