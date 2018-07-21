@@ -161,13 +161,20 @@ $( document ).ready(function() {
 		// printObject(subj);
 		// printObject(subj.object3D);
 		// printObject(subj.object3D.position);
-		// alert(subj.parentElement.object3D.position.y);
+		// alert(subj.parentElement.object3D.position.y); */
 		var pos = subj.parentElement.object3D.position.y;
 		alert(pos);
 		
 		pos = pos + 1;
 		alert(pos);
 		alert(subj.parentElement.object3D.position.y);
+		*/
+		
+		var el = subj.parentElement;				
+		pos = el.getAttribute('position');
+		pos.y += 1;
+		el.setAttribute(pos);
+		
 		
 		
 		/*
