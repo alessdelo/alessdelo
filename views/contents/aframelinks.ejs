@@ -67,42 +67,42 @@ var dataArray = {
      var theArrows = {
 			 "0":{  "dir": "up",
 			 	 "pos":{"x":"0.2","y":"1","z":"0"},
-				  "class": "topUp",
+				  "where": "top",
 				  "color": "white"
 				  },
 			"1":{  "dir": "down",		
 			 	 "pos":{"x":"-0.2","y":"1","z":"0"},
-				  "class": "topDown",
+				  "where": "top",
 				  "color": "black"			
 				},
 			"2":{  "dir": "up",
 			 	 "pos":{"x":"0.2","y":"-1","z":"0"},
-				  "class": "botUp",
+				  "where": "bot",
 				  "color": "white"
 				  },
 			"3":{  "dir": "down",		
 			 	 "pos":{"x":"-0.2","y":"-1","z":"0"},
-				  "class": "botDown",
+				  "where": "bot",
 				  "color": "black"			
 				},			
 			"4":{  "dir": "right",		
 			 	 "pos":{"x":"1","y":"0","z":"-0.2"},
-				  "class": "rightRight",
+				  "where": "right",
 				  "color": "white"			
 				},	
 			"5":{  "dir": "right",		
 			 	 "pos":{"x":"1","y":"0","z":"0.2"},
-				  "class": "rightLeft",
+				  "where": "right",
 				  "color": "black"			
 				},
 			"4":{  "dir": "left",			
 			 	 "pos":{"x":"-1","y":"0","z":"-0.2"},
-				  "class": "leftLeft",
+				  "where": "left",
 				  "color": "white"			
 				},	
 			"5":{  "dir": "left",		
 			 	 "pos":{"x":"-1","y":"0","z":"0.2"},
-				  "class": "leftRight",
+				  "where": "left",
 				  "color": "black"			
 				}
 			};	  
@@ -121,7 +121,7 @@ $( document ).ready(function() {
 	for(var arrKey in theArrows) { 	
 		var arrVal = theArrows[arrKey]; 
 		arrHtml += '<a-sphere ' +
-					'class="arrows ' + arrVal.class +'" ' +							
+					'class="arrows ' + arrVal.dir + ' ' + arrVal.where + '" ' +							
 					'material="color: ' + arrVal.color + '" ' + 							
 					'position="' + arrVal.pos.x + ' ' + arrVal.pos.y  + ' ' + arrVal.pos.z  + '" ' + 
 					'radius="' + arrDim + '" ' +
