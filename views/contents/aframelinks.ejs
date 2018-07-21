@@ -82,25 +82,32 @@ var dataArray = {
 				  var arrHtml = "";
 				  
 				  
-	for(var arrKey in theArrows) { 	
-		var arrVal = dataArray[theKey]; 
-	arrHtml += '<a-sphere ' +
-				'class="arrows ' + arrVal.class +'" ' +							
-				'material="color: ' + arrVal.color + '" ' + 							
-				'position="' arrVal.pos.x + ' ' + arrVal.pos.y  + ' ' + arrVal.pos.z  + '" ' + 
-				'radius="0.2" ' +
-				'visible="false" ' +							
-				'onclick="moveEl(this)" ' +							
-				'>' + 							
-				'</a-sphere>'; 							
-											
-										
-		
-		} // for
+
       
                   
 // printObject(dataArray); 
 $( document ).ready(function() {
+
+	for(var arrKey in theArrows) { 	
+		var arrVal = dataArray[theKey]; 
+		arrHtml += '<a-sphere ' +
+					'class="arrows ' + arrVal.class +'" ' +							
+					'material="color: ' + arrVal.color + '" ' + 							
+					'position="' arrVal.pos.x + ' ' + arrVal.pos.y  + ' ' + arrVal.pos.z  + '" ' + 
+					'radius="' + arrDim + '" ' +
+					'visible="false" ' +							
+					'onclick="moveEl(this)" ' +							
+					'>' + 							
+					'</a-sphere>'; 							
+											
+										
+		
+		} // for
+		
+		alert(arrHtml);
+		
+		
+
 		
 		for(var theKey in dataArray) { 
 	                if(dataArray.hasOwnProperty(theKey)) { 
