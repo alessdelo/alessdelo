@@ -62,7 +62,20 @@ var dataArray = {
                       			"3": {"to": "scene3", "pos":{"x":"6","y":"2","z":"5"},"color": "green"}                      			
                    			}          		
         	}		
-      }; //end dataArray
+      }; //end dataArray 
+      
+      var arrDist = 1;
+      var arrSide = 0.1; 
+      
+      function defNum(multip, sign) {
+      		var theResult = multip * sign;
+		theResult = theResult.toFixed(2);
+		theResult = theResult.toString(); 		
+		return theResult;				      	
+      }
+      
+      
+      
       
      var theArrows = {
 			 "0":{  "dir": "up",
