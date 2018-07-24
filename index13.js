@@ -852,6 +852,11 @@ app.get('/aframetest', (req, res) => res.render(index,pageData.aframetest))
 
 app.get('/aframelinks', (req, res) => res.render(index,pageData.aframelinks))
 
+// ---------------------------------
+	// DRIVESTORE
+
+app.get('/drivestore', (req, res) => res.render(index,pageData.drivestore))
+
 // ----------------------------------
 // ----------------------------------
 // ----------------------------------
