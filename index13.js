@@ -11,6 +11,7 @@ const path = require('path')
 const mongoose = require('mongoose')
 const assert = require('assert')
 const bodyParser = require('body-parser')
+const THREE = require('three')
 
 
 const PORT = process.env.PORT || 5000
@@ -271,6 +272,14 @@ aframetest: {
 aframelinks: { 
     title:'A-Frame Insert Links to Other Scenes',
     content:'../contents/aframelinks.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
+  },
+hellothree: {	 
+    title:'Three.js hello world',
+    content:'../contents/hellothree.ejs',
     nav: nav,
     header: header,
     footer: footer,
