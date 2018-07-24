@@ -1,1 +1,13 @@
 
+<p class="lead">Three.js - Hello World!</p>
+<hr class="my-4">
+
+<% strMyVar = JSON.stringify(myVar, null, 4); %>
+<%= strMyVar %>
+<% var passEjs = strMyVar; %>
+
+<script>
+var getPassEjs = <%- passEjs %>;
+</script>
+
+<script type="text/javascript" src="/static/general.js"></script>
