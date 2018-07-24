@@ -439,16 +439,16 @@ $( document ).ready(function() {
 		var el = subj.parentElement;				
 		var pos = el.getAttribute('position'); 
 		
-		var polarPos = cartesianToPolar(coord);
+		var polarPos = cartesianToPolar(pos);
 		
 		// lon, lat, length
  
   		switch (arrDir) {
 		    case "up":
-			polarPos.lon = polarPos.lat + 1;
+			polarPos.lat = polarPos.lat + 1;
 			break;
 		    case "down":
-			polarPos.lon = polarPos.lat - 1;
+			polarPos.lat = polarPos.lat - 1;
 			break;
 		    case "right":
 			polarPos.lon = polarPos.lon + 1;
@@ -457,14 +457,16 @@ $( document ).ready(function() {
 			polarPos.lon = polarPos.lon - 1;
 			break;
 		    case "forw":
-			polarPos.lon = polarPos.length - 1;
+			polarPos.length = polarPos.length - 1;
 			break;
 		    case "backw":
-			polarPos.lon = polarPos.length + 1;
+			polarPos.length = polarPos.length + 1;
 			break;		    
 		}
-				
-		el.setAttribute(pos);						
+		
+		var newPos = polarToCartesian( polarPos.lon, polarPos.lat, polarPos.length );
+		
+		el.setAttribute(newPos);						
 							 
   } // f. movePolar()                    
  
