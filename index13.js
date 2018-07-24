@@ -93,6 +93,13 @@ var pageData = {
     header: header,
     footer: footer
   },
+	drivestore: {
+    title:'Drive Image Storing',
+    content:'../contents/drivestore.ejs',
+    nav: nav,
+    header: header,
+    footer: footer
+  },	
   products: {
     title:'the products',
     content:'../contents/products.ejs',
