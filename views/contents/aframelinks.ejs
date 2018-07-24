@@ -438,43 +438,36 @@ $( document ).ready(function() {
 		
 		var el = subj.parentElement;				
 		var pos = el.getAttribute('position'); 
+		
+		var polarPos = cartesianToPolar(coord);
+		
+		// lon, lat, length
  
   		switch (arrDir) {
 		    case "up":
-			pos.y = pos.y + 1;
+			polarPos.lon = polarPos.lat + 1;
 			break;
 		    case "down":
-			pos.y = pos.y - 1;
+			polarPos.lon = polarPos.lat - 1;
 			break;
 		    case "right":
-			pos.x = pos.x + 1;
+			polarPos.lon = polarPos.lon + 1;
 			break;
 		    case "left":
-			pos.x = pos.x - 1;
+			polarPos.lon = polarPos.lon - 1;
 			break;
 		    case "forw":
-			pos.z = pos.z + 1;
+			polarPos.lon = polarPos.length - 1;
 			break;
 		    case "backw":
-			pos.z = pos.z - 1;
+			polarPos.lon = polarPos.length + 1;
 			break;		    
 		}
-		
-		// pos.y = pos.y + 1;
-		el.setAttribute(pos);
-		
-		
-		
-		/*
-		if(dir == "up") {
-			pos.y + 1;
-		}
-		*/
-						 
-  } // f. movePolar()
-
-                    
-  
+				
+		el.setAttribute(pos);						
+							 
+  } // f. movePolar()                    
+ 
 </script>
 
   
