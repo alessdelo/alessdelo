@@ -439,10 +439,10 @@ $( document ).ready(function() {
 		var el = subj.parentElement;				
 		var pos = el.getAttribute('position'); 
 		
-		alert(pos);
+		printObject(pos);
 		
 		var polarPos = cartesianToPolar(pos);
-		alert(polarPos);
+		alert(polarPos.lat);
 		
 		// lon, lat, length
  
@@ -467,11 +467,11 @@ $( document ).ready(function() {
 			break;		    
 		}
 		
-		alert(polarPos);
+		alert(polarPos.lat);
 		
 		var newPos = polarToCartesian( polarPos.lon, polarPos.lat, polarPos.length );
 		
-		alert(newPos);
+		printObject(newPos);
 		
 		el.setAttribute(newPos);						
 							 
