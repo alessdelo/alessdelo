@@ -866,6 +866,11 @@ app.get('/aframelinks', (req, res) => res.render(index,pageData.aframelinks))
 
 app.get('/drivestore', (req, res) => res.render(index,pageData.drivestore))
 
+// ---------------------------------
+// HELLOTHREE	
+
+app.get('/hellothree', (req, res) => res.render(index,pageData.hellothree))
+
 // ----------------------------------
 // ----------------------------------
 // ----------------------------------
