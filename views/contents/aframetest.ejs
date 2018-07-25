@@ -17,9 +17,9 @@ var getPassEjs = <%- passEjs %>;
 
 var theHtml = '<a-scene>' + 
 			 '<a-assets>' +
-    				'<a-asset-item id="tree" src="/path/to/tree.gltf"></a-asset-item>' +
+    				'<a-asset-item id="buster" src="/static/three/busterDrone.gltf"></a-asset-item>' +
  			'</a-assets>' +	
-			'<a-entity gltf-model="#tree"></a-entity>' +
+			'<a-entity gltf-model="#buster"></a-entity>' +
 		     '<a-entity camera look-controls>' + 		     
 			  '<a-entity cursor="fuse: true; fuseTimeout: 500" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: black; shader: flat">' + 			  			  				    				    				    
 				     '<a-entity animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-entity>' + 				       
