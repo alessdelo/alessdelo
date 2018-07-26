@@ -51,7 +51,7 @@ var getPassEjs = <%- passEjs %>;
 			
 			// phong material
 			// var material = new THREE.MeshPhongMaterial( {color: 0x00ff00, envMap: envMap, overdraw: 0.5 } );
-			var material = new THREE.MeshPhongMaterial( {color: 0x00ff00} );
+			var material = new THREE.MeshPhongMaterial(); //  {color: 0x00ff00} 
 			
 			var my3dObj = new THREE.Mesh( geometry, material );
 			scene.add( my3dObj );
