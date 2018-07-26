@@ -31,26 +31,7 @@ var getPassEjs = <%- passEjs %>;
 			scene.add( light );
 			
 			// icosaedron
-			var geometry = new THREE.IcosahedronGeometry(1,0);
-			
-			
-
-			// basic material
-			// var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			// var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			
-			// texture
-			// var textureLoader = new THREE.TextureLoader();
-				// var earthTexture = textureLoader.load( '/static/aframe/tour1/scene2.jpg' );
-			// var material = new THREE.MeshBasicMaterial( { map: earthTexture } ),
-			
-			// metal reflection
-			// var envMap = textureLoader.load( '/static/aframe/tour1/scene2.jpg' );
-			// 	envMap.mapping = THREE.SphericalReflectionMapping;
-			// var material = new THREE.MeshBasicMaterial( { envMap: envMap, overdraw: 0.5 } )
-			
-			// phong material
-			// var material = new THREE.MeshPhongMaterial( {color: 0x00ff00, envMap: envMap, overdraw: 0.5 } );
+			var geometry = new THREE.IcosahedronGeometry(1,0);						
 			var material = new THREE.MeshPhongMaterial(); //  {color: 0x00ff00} 
 			
 			var my3dObj = new THREE.Mesh( geometry, material );
@@ -61,8 +42,8 @@ var getPassEjs = <%- passEjs %>;
 			var animate = function () {
 				requestAnimationFrame( animate );
 
-				cube.rotation.x += 0.01;
-				cube.rotation.y += 0.01;
+				my3dObj.rotation.x += 0.01;
+				my3dObj.rotation.y += 0.01;
 
 				renderer.render( scene, camera );
 			};
