@@ -30,13 +30,16 @@ var getPassEjs = <%- passEjs %>;
 			light.position.set( 10, 10, 10 );
 			scene.add( light );
 			
+			// icosaedron
 			var geometry = new THREE.IcosahedronGeometry(1,0);
 			var material = new THREE.MeshPhongMaterial();
 
+			// basic material
 			// var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 			// var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			var cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
+			
+			var my3dObj = new THREE.Mesh( geometry, material );
+			scene.add( my3dObj );
 
 			camera.position.z = 5;
 
