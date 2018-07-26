@@ -43,11 +43,12 @@ var getPassEjs = <%- passEjs %>;
 			// texture
 			var textureLoader = new THREE.TextureLoader();
 				var earthTexture = textureLoader.load( '/static/aframe/tour1/scene2.jpg' );
+			var material = new THREE.MeshBasicMaterial( { map: earthTexture } ),
 			
 			// metal reflection
 			var envMap = textureLoader.load( '/static/aframe/tour1/scene2.jpg' );
 				envMap.mapping = THREE.SphericalReflectionMapping;
-			var material = new THREE.MeshBasicMaterial( { envMap: envMap, overdraw: 0.5 } )
+			//var material = new THREE.MeshBasicMaterial( { envMap: envMap, overdraw: 0.5 } )
 			
 			var my3dObj = new THREE.Mesh( geometry, material );
 			scene.add( my3dObj );
