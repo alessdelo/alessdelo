@@ -277,9 +277,9 @@ aframelinks: {
     footer: footer,
     params: []
   },
-hellothree: {	 
+threehello: {	 
     title:'Three.js hello world',
-    content:'../contents/hellothree.ejs',
+    content:'../contents/threehello.ejs',
     nav: nav,
     header: header,
     footer: footer,
@@ -869,7 +869,7 @@ app.get('/drivestore', (req, res) => res.render(index,pageData.drivestore))
 // ---------------------------------
 // HELLOTHREE	
 
-app.get('/hellothree', (req, res) => res.render(index,pageData.hellothree))
+app.get('/threehello', (req, res) => res.render(index,pageData.threehello))
 
 // ----------------------------------
 // ----------------------------------
