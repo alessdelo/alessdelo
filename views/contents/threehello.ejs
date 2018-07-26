@@ -32,11 +32,18 @@ var getPassEjs = <%- passEjs %>;
 			
 			// icosaedron
 			var geometry = new THREE.IcosahedronGeometry(1,0);
-			var material = new THREE.MeshPhongMaterial();
+			
+			// phong material
+			//var material = new THREE.MeshPhongMaterial();
 
 			// basic material
 			// var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 			// var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			
+			// metal reflection
+			var envMap = textureLoader.load( '/static/aframe/tour1/scene2.jpg' );
+				envMap.mapping = THREE.SphericalReflectionMapping;
+			var material = new THREE.MeshBasicMaterial( { envMap: envMap, overdraw: 0.5 } )
 			
 			var my3dObj = new THREE.Mesh( geometry, material );
 			scene.add( my3dObj );
