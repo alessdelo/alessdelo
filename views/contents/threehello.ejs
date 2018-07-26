@@ -40,6 +40,10 @@ var getPassEjs = <%- passEjs %>;
 			// var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 			// var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 			
+			// texture
+			var textureLoader = new THREE.TextureLoader();
+				var earthTexture = textureLoader.load( '/static/aframe/tour1/scene2.jpg' );
+			
 			// metal reflection
 			var envMap = textureLoader.load( '/static/aframe/tour1/scene2.jpg' );
 				envMap.mapping = THREE.SphericalReflectionMapping;
