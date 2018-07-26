@@ -34,24 +34,7 @@ var getPassEjs = <%- passEjs %>;
 			// GEOMETRY
 			// icosaedron
 			var geometry = new THREE.IcosahedronGeometry(1,0);
-			
-			
-			
-				// model
-				var loader = new THREE.GLTFLoader();
-				loader.load( 'static/three/busterDrone.gltf', function ( gltf ) {
-					gltf.scene.traverse( function ( child ) {
-						if ( child.isMesh ) {
-							child.material.envMap = envMap;
-						}
-					} );
-					scene.add( gltf.scene );
-				} );
-			
-			
-			
-			
-			
+																					
 			// MATERIAL
 			 var envMap = new THREE.TextureLoader().load( '/static/aframe/tour1/scene2.jpg' );
 			  	envMap.mapping = THREE.EquirectangularReflectionMapping;
