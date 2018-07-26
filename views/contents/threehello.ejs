@@ -30,9 +30,17 @@ var getPassEjs = <%- passEjs %>;
 			light.position.set( 10, 10, 10 );
 			scene.add( light );
 			
+			// GEOMETRY
 			// icosaedron
-			var geometry = new THREE.IcosahedronGeometry(1,0);						
-			var material = new THREE.MeshPhongMaterial(); //  {color: 0x00ff00} 
+			var geometry = new THREE.IcosahedronGeometry(1,0);
+			
+			
+			// MATERIAL
+			var envMap = textureLoader.load( '/static/aframe/tour1/scene2.jpg' );
+			 	envMap.mapping = THREE.SphericalReflectionMapping;
+			
+			// var material = new THREE.MeshPhongMaterial(); //  {color: 0x00ff00} 
+			var material = new THREE.MeshPhongMaterial( {color: 0x00ff00, envMap: envMap, overdraw: 0.5 } );
 			
 			var my3dObj = new THREE.Mesh( geometry, material );
 			scene.add( my3dObj );
