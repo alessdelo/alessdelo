@@ -39,7 +39,7 @@ var getPassEjs = <%- passEjs %>;
 			 var envMap = new THREE.TextureLoader().load( '/static/aframe/tour1/scene2.jpg' );
 			  	// envMap.mapping = THREE.SphericalReflectionMapping;
 			
-			 var material = new THREE.MeshPhongMaterial( { map: envMap, overdraw: 0.5, color: #bfff00 } ); //  {color: 0x00ff00} 
+			 var material = new THREE.MeshPhongMaterial( { map: envMap, overdraw: 0.5, color: 0xbfff00 } ); //  {color: 0x00ff00} 
 			 // var material = new THREE.MeshBasicMaterial( {envMap: envMap, overdraw: 0.5 } );
 			
 			var my3dObj = new THREE.Mesh( geometry, material );
