@@ -172,7 +172,7 @@ var pageData = {
     footer: footer,
     params: 'empty'
   },
-   mapmongo2: {
+mapmongo2: {
     title:'Google Maps random markers with infowindows from array',
     content:'../contents/mapmongo2.ejs',
     nav: nav,
@@ -180,7 +180,7 @@ var pageData = {
     footer: footer,
     params: 'empty'
   },
-	mapmongo3: {
+mapmongo3: {
     title:'Google Maps markers from MongoDB',
     content:'../contents/mapmongo3.ejs',
     nav: nav,
@@ -188,7 +188,7 @@ var pageData = {
     footer: footer,
     params: []
   },
-	leaflet: {
+leaflet: {
     title:'Leaflet markers from MongoDB',
     content:'../contents/leaflet.ejs',
     nav: nav,
@@ -212,7 +212,7 @@ var pageData = {
     footer: footer,
     params: []
   },	
-	olmain: { 
+olmain: { 
     title:'Open Layers - Main page',
     content:'../contents/olmain.ejs',
     nav: nav,
@@ -221,7 +221,7 @@ var pageData = {
     params: []
   },	
 	
-	vrviewer: { 
+vrviewer: { 
     title:'VR Viewer',
     content:'../contents/vrviewer.ejs',
     nav: nav,
@@ -229,7 +229,7 @@ var pageData = {
     footer: footer,
     params: []
   },
-	aframe: { 
+aframe: { 
     title:'A-Frame',
     content:'../contents/aframe.ejs',
     nav: nav,
@@ -280,6 +280,14 @@ aframelinks: {
 threehello: {	 
     title:'Three.js hello world',
     content:'../contents/threehello.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
+  },
+threeobj: {	 
+    title:'Three.js obj import',
+    content:'../contents/threeobj.ejs',
     nav: nav,
     header: header,
     footer: footer,
@@ -867,9 +875,14 @@ app.get('/aframelinks', (req, res) => res.render(index,pageData.aframelinks))
 app.get('/drivestore', (req, res) => res.render(index,pageData.drivestore))
 
 // ---------------------------------
-// HELLOTHREE	
+// THREEHELLO	
 
 app.get('/threehello', (req, res) => res.render(index,pageData.threehello))
+
+// ---------------------------------
+// THREEOBJ	
+
+app.get('/threeobj', (req, res) => res.render(index,pageData.threeobj))
 
 // ----------------------------------
 // ----------------------------------
