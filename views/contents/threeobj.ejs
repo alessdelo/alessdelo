@@ -1,0 +1,25 @@
+<p class="lead">Three.js - Hello World!</p>
+<hr class="my-4">
+
+<% strMyVar = JSON.stringify(myVar, null, 4); %>
+<%= strMyVar %>
+<% var passEjs = strMyVar; %>
+
+<script>
+var getPassEjs = <%- passEjs %>;
+</script>
+
+<script type="text/javascript" src="/static/general.js"></script>
+
+	<style>			
+			canvas { width: 100%; height: 100% }
+		</style>
+
+<script>
+			// constant THREE is declared in index file
+			// const THREE = require('three'); 
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+			
+		
+		</script>
