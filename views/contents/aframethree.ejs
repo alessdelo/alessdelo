@@ -1,3 +1,16 @@
+  <p class="lead">A-Frame</p>
+<hr class="my-4">
+
+<% strMyVar = JSON.stringify(myVar, null, 4); %>
+<%= strMyVar %>
+<% var passEjs = strMyVar; %>
+
+<script>
+var getPassEjs = <%- passEjs %>;
+</script>
+
+<script type="text/javascript" src="/static/general.js"></script>
+  
   <a-scene>
       <a-assets>
         <a-asset-item id="tree-obj" src="/static/three/threeTest1.obj"></a-asset-item>
