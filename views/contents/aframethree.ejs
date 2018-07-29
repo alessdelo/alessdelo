@@ -122,37 +122,23 @@ function showData(data) {
   
   
   
-  for (j = 0; j < theChildren.length; j++) {
-  switch(theChildren[j].indexOf( true )) {
-    case "main":
-        theChildren[j].material = matArr[0];
-        break;
-    case "decor":
-        theChildren[j].material = matArr[1];
-        break;
-    default:
-        theChildren[j].material = matArr[2];
-	}
-  
-}
-  
-  /*
-  
-   var angle = 0;
-  setTimeout(function (){ 
-  	if(angle < 360) {
-			angle++;
-		} else { 
-			angle = 0
-		}
-  	
-            data.object3D.rotation.y = data.object3D.rotation.y - angle;
-        }, 100); 
+ 	for (j = 0; j < theChildren.length; j++) {
 	
-	*/	
+	 	switch(theChildren[j].indexOf( true )) {
+			    case "main":
+				theChildren[j].material = matArr[0];
+				break;
+			    case "decor":
+				theChildren[j].material = matArr[1];
+				break;
+			    default:
+				theChildren[j].material = matArr[2];
+		} // switch
+  
+	} // for	
 	 
   
-  }
+  } // showData()
 
 
   function rotEl(el) {
@@ -165,8 +151,10 @@ function showData(data) {
 		}
   	
            	el.object3D.rotation.y = el.object3D.rotation.y - angle;
-        }, 100);    
-  }
+        }, 100);  
+	
+  } // rotEl()
+  
 </script>
 
  
