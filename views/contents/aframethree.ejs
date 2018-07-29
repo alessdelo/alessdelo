@@ -34,11 +34,6 @@ var getPassEjs = <%- passEjs %>;
  <a-entity >
 
  	 <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" scale="0.04 0.04 0.04"  position="3 0 2" onclick="showData(this)" ></a-entity>
-  	<a-animation attribute="rotation"
-               dur="10000"
-               fill="forwards"
-               to="0 360 0"
-               repeat="indefinite"></a-animation>
   
   </a-entity>
 
@@ -97,8 +92,8 @@ function showData(data) {
   data.object3DMap.mesh.children[0].material = material1;
    
   setTimeout(function (){
-            data.object3D.rotation.x = data.object3D.rotation.x +1;
-        }, 100); 
+            data.object3D.rotation.y = data.object3D.rotation.x +1;
+        }, 50); 
 	
 	
   
