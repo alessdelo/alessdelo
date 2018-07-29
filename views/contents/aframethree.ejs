@@ -85,20 +85,22 @@ var getPassEjs = <%- passEjs %>;
 			 
  
 function showData(data) { 
+	/* 
   printObject(data); 
   printObject(data.object3D); 
   printObject(data.object3DMap.mesh); 
   printObject(data.object3DMap.mesh.children); 
   printObject(data.object3DMap.mesh.children[0]); 
   printObject(data.object3DMap.mesh.children[0].material);
+  */ 
   
   data.object3DMap.mesh.children[0].material = material1;
-  /* 
+   
   setTimeout(function (){
-            makeCircle(item, targetAngle + STEP);
+            data.object3D.rotation.x = data.object3D.rotation.x +1;
         }, 100); 
 	
-	*/
+	
   
   
   }
