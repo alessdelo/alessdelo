@@ -52,9 +52,15 @@ var getPassEjs = <%- passEjs %>;
 			 var material1 = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: 0xbfff00 } ); //  {color: 0x00ff00} 
 			 // var material1 = new THREE.MeshBasicMaterial( {envMap: envMap, overdraw: 0.5 } ); 
 				 var matMetal2 = material1; 
-			 	matMetal2.color.setHex( 0xffffff );
+			 	matMetal2.color.setHex( 0xffffff ); var i = 0;
 			 
-			 
+			 		for(var matKey in matArray) { 
+						                
+						var matVal = matArray[matKey]; 
+						i++;
+						}
+						
+						
 			 
 			 
 			 
