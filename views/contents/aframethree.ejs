@@ -38,6 +38,14 @@ var getPassEjs = <%- passEjs %>;
 
  </a-scene>
  <script>
+ 
+ // MATERIAL
+			 var envMap = new THREE.TextureLoader().load( '/static/aframe/tour1/scene2.jpg' );
+			  	envMap.mapping = THREE.EquirectangularReflectionMapping;
+																						
+			 var material1 = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: 0xbfff00 } ); //  {color: 0x00ff00} 
+			 // var material1 = new THREE.MeshBasicMaterial( {envMap: envMap, overdraw: 0.5 } );
+ 
 function showData(data) { 
   printObject(data); 
   printObject(data.object3D); 
@@ -45,6 +53,8 @@ function showData(data) {
   printObject(data.object3DMap.mesh.children); 
   printObject(data.object3DMap.mesh.children[0]); 
   printObject(data.object3DMap.mesh.children[0].material);
+  
+  data.object3DMap.mesh.children[0].material = material1;
   
   
   }
