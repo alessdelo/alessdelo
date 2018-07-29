@@ -90,9 +90,16 @@ function showData(data) {
   */ 
   
   data.object3DMap.mesh.children[0].material = material1;
-   
-  setTimeout(function (){
-            data.object3D.rotation.y = data.object3D.rotation.x +1;
+  
+   var angle = 0;
+  setTimeout(function (){ 
+  	if(angle < 360) {
+			angle++;
+		} else { 
+			angle = 0
+		}
+  	
+            data.object3D.rotation.y = angle;
         }, 50); 
 	
 	
