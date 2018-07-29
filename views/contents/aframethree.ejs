@@ -110,6 +110,20 @@ function showData(data) {
   
   
   }
+
+
+  function rotEl(el) {
+    var angle = 0;
+ 	 setTimeout(function (){ 
+  		if(angle < 360) {
+			angle++;
+		} else { 
+			angle = 0
+		}
+  	
+           	el.object3D.rotation.y = el.object3D.rotation.y - angle;
+        }, 100);    
+  }
 </script>
 
  
