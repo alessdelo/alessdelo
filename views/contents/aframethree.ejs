@@ -128,22 +128,25 @@ function showData(data) {
 
 		for (j = 0; j < theChildren.length; j++) {
 		
-			printObject(theChildren[j].material);
+			// printObject(theChildren[j].material);
 		
-			/*
+			
 
-			switch(theChildren[j].indexOf( true )) {
-				    case "main":
+			switch(theChildren[j].name.indexOf( true )) {
+				    case "White":
 					theChildren[j].material = matArr[0];
 					break;
-				    case "decor":
+				    case "Yellow":
+					theChildren[j].material = matArr[0];
+					break;
+				    case "Blue":
 					theChildren[j].material = matArr[1];
 					break;
 				    default:
 					theChildren[j].material = matArr[2];
 			} // switch
 			
-			*/
+			
 
 		} // for	
 	 
