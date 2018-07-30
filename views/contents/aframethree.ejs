@@ -43,6 +43,7 @@ var getPassEjs = <%- passEjs %>;
  // MATERIAL
 			 var envMap = new THREE.TextureLoader().load( '/static/photosphere1.jpg' );
 			  	envMap.mapping = THREE.EquirectangularReflectionMapping;
+				envMap.rotation.x = 180;
 																						
 			 var material1 = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: 0xbfff00 } ); //  {color: 0x00ff00} 
 			 // var material1 = new THREE.MeshBasicMaterial( {envMap: envMap, overdraw :: 0.5 } ); 
