@@ -116,28 +116,28 @@ function showData(data) {
   
   
   
-//  data.object3DMap.mesh.children[0].material = material1; 
-  
-  var theChildren = data.object3DMap.mesh.children; 
-  
-  var j;
-  	
-  
- 	for (j = 0; j < theChildren.length; j++) {
-	
-	 	switch(theChildren[j].indexOf( true )) {
-			    case "main":
-				theChildren[j].material = matArr[0];
-				break;
-			    case "decor":
-				theChildren[j].material = matArr[1];
-				break;
-			    default:
-				theChildren[j].material = matArr[2];
-		} // switch
-  
-	} // for	
-	 
+data.object3DMap.mesh.children[0].material = material1; 
+ 	 /*
+	  var theChildren = data.object3DMap.mesh.children; 
+
+	  var j;
+
+
+		for (j = 0; j < theChildren.length; j++) {
+
+			switch(theChildren[j].indexOf( true )) {
+				    case "main":
+					theChildren[j].material = matArr[0];
+					break;
+				    case "decor":
+					theChildren[j].material = matArr[1];
+					break;
+				    default:
+					theChildren[j].material = matArr[2];
+			} // switch
+
+		} // for	
+	 */
   
   } // showData()
 
