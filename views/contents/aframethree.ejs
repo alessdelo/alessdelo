@@ -119,7 +119,7 @@ function showData(data) {
   
   
   
-data.object3DMap.mesh.children[0].material = material1; 
+// data.object3DMap.mesh.children[0].material = material1; 
  	 
 	  var theChildren = data.object3DMap.mesh.children; 
 
@@ -130,13 +130,13 @@ data.object3DMap.mesh.children[0].material = material1;
 
 			switch(theChildren[j].indexOf( true )) {
 				    case "main":
-					theChildren[j].material = matArr[0];
+					theChildren[j].material = matArr.0;
 					break;
 				    case "decor":
-					theChildren[j].material = matArr[1];
+					theChildren[j].material = matArr.1;
 					break;
 				    default:
-					theChildren[j].material = matArr[2];
+					theChildren[j].material = matArr.2;
 			} // switch
 
 		} // for	
