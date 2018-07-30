@@ -53,7 +53,7 @@ var getPassEjs = <%- passEjs %>;
 				
 				var i = 0;	
 				var matArr = [];
-				var propArray = { 
+				var propArr = { 
 							"0" : {"color" : "0xbfff00"},
 							"1" : {"color" : "0x2aa340"},
 							"2" : {"color" : "0xc2e34b"},
@@ -65,16 +65,17 @@ var getPassEjs = <%- passEjs %>;
 							
 							}; 
 							
-							/*
+							
 			 
-			 		for(var propKey in propArray) { 
+			 		for(var propKey in propArr) { 
 						                
-						var propVal = propArray[propKey]; 
+						var propVal = propArr[propKey]; 
 						var matArr[i] = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: propVal.color } );
 						i++;
-						}
 						
-						*/
+					} // for
+						
+						
 						
 						
 						
@@ -93,6 +94,8 @@ function showData(data) {
   
   printObject(data.object3DMap.mesh.children[0].material);
   */ 
+  
+    printObject(matArr);
   
   /* 
   printObject(data.object3DMap.mesh.children[0]); 
