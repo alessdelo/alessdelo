@@ -52,7 +52,7 @@ var getPassEjs = <%- passEjs %>;
 				
 				
 				var i = 0;	
-				var matArr = {};
+				var matArr = [];
 				var propArr = { 
 							"0" : {"color" : "0xbfff00"},
 							"1" : {"color" : "0x2aa340"},
@@ -70,7 +70,7 @@ var getPassEjs = <%- passEjs %>;
 			 		for(var propKey in propArr) { 
 						                
 						var propVal = propArr[propKey]; 
-						matArr.i = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: propVal.color } );
+						matArr[i] = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: propVal.color } );
 						i++;
 						
 					} // for
@@ -95,7 +95,7 @@ function showData(data) {
   printObject(data.object3DMap.mesh.children[0].material);
   */ 
   
-   //  printObject(matArr);
+   printObject(matArr);
   
   /* 
   printObject(data.object3DMap.mesh.children[0]); 
@@ -119,8 +119,9 @@ function showData(data) {
   
   
   
-// data.object3DMap.mesh.children[0].material = material1; 
+data.object3DMap.mesh.children[0].material = material1; 
  	 
+	 /*
 	  var theChildren = data.object3DMap.mesh.children; 
 
 	  var j;
@@ -130,17 +131,17 @@ function showData(data) {
 
 			switch(theChildren[j].indexOf( true )) {
 				    case "main":
-					theChildren[j].material = matArr.0;
+					theChildren[j].material = matArr[0];
 					break;
 				    case "decor":
-					theChildren[j].material = matArr.1;
+					theChildren[j].material = matArr[1];
 					break;
 				    default:
-					theChildren[j].material = matArr.2;
+					theChildren[j].material = matArr[2];
 			} // switch
 
 		} // for	
-	 
+	 */
   
   } // showData()
 
