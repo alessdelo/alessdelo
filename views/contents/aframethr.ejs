@@ -69,7 +69,7 @@
 			 		for(var propKey in propArr) { 
 						                
 						var propVal = propArr[propKey]; 
-						matArr[i] = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: 0xbfff00 } );
+						matArr[i] = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: propVal.color } );
 						i++;
 						
 					} // for
