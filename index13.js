@@ -277,9 +277,9 @@ aframelinks: {
     footer: footer,
     params: []
   },
-aframethree1: { 
+aframethr: { 
     title:'A-Frame Embed Three.gs feature into A-Frame Scenes',
-    content:'../contents/aframethree1.ejs',
+    content:'../contents/aframethr.ejs',
     nav: nav,
     header: header,
     footer: footer,
@@ -880,7 +880,7 @@ app.get('/aframelinks', (req, res) => res.render(index,pageData.aframelinks))
 // ---------------------------------
 // A-FRAME THREE
 
-app.get('/aframethree1', (req, res) => res.render(index,pageData.aframethree1))
+app.get('/aframethr', (req, res) => res.render(index,pageData.aframethr))
 
 // ---------------------------------
 	// DRIVESTORE
