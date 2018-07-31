@@ -12,10 +12,14 @@ var getPassEjs = <%- passEjs %>;
 <script type="text/javascript" src="/static/general.js"></script>
   
   <a-scene>
-      <a-assets>
+     <!-- 
+     
+     <a-assets>
         <a-asset-item id="tree-obj" src="/static/three/threeTest1.obj"></a-asset-item>
         <a-asset-item id="tree-mtl" src="/static/three/threeTest1.mtl"></a-asset-item>
       </a-assets>
+      
+      -->
   
       <a-sky id="pano" src="/static/photosphere1.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>
       
@@ -33,7 +37,7 @@ var getPassEjs = <%- passEjs %>;
     
  <a-entity >
 
-	<a-sphere material="color: blue" position="0 1 0" radius="0.8" ></a-sphere>
+	<a-sphere material="color: blue" position="4 1 0" radius="0.8" ></a-sphere>
 
  	 <!-- <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" scale="0.04 0.04 0.04"  position="3 0 2" onclick="showData(this); rotEl(this);" ></a-entity> -->
   
