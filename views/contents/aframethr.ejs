@@ -1,14 +1,173 @@
-
-  <a-scene>
-    <a-camera>
-    <a-cursor></a-cursor>
-  </a-camera>
+<script type="text/javascript" src="/static/general.js"></script>
   
-      <a-sky src="/static/photosphere1.jpg" rotation="0 -130 0"></a-sky>
+  <a-scene>
+     <!-- 
+     
+     <a-assets>
+        <a-asset-item id="tree-obj" src="/static/three/threeTest1.obj"></a-asset-item>
+        <a-asset-item id="tree-mtl" src="/static/three/threeTest1.mtl"></a-asset-item>
+      </a-assets>
+      
+      -->
+  
+      <a-sky id="pano" src="/static/photosphere1.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>
+      
+     <a-entity camera look-controls>
+          <a-entity cursor="fuse: true; fuseTimeout: 500"
+                position="0 0 -1"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                material="color: black; shader: flat">
+                 <a-entity animation begin="click" easing="ease-in" attribute="scale" dur="150"
+                   fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-entity>
+                <a-entity animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1500"
+                   fill="backwards" from="1 1 1" to="0.1 0.1 0.1"></a-entity>
+          </a-entity>
+    </a-entity>
+    
+ <a-entity >
 
-      <a-text font="kelsonsans" value="Roccaraso, Italy" width="6" position="-2.5 0.25 -1.5"
-              rotation="0 15 0"></a-text>
-    </a-scene>
+	<a-sphere material="color: blue" position="4 1 0" radius="0.8" ></a-sphere>
+
+ 	 <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" scale="0.04 0.04 0.04"  position="3 0 2" onclick="showData(this); rotEl(this);" ></a-entity> 
+  
+  </a-entity>
+
+ </a-scene>
+ <script>
+ 
+ $( document ).ready(function() {
+		$( ".footer" ).hide(); 
+ }
+ 
+
+ 
+ // MATERIAL
+			 var envMap = new THREE.TextureLoader().load( '/static/photosphere1.jpg' );
+			  	envMap.mapping = THREE.EquirectangularReflectionMapping;
+				envMap.rotation.x = 120;
+																						
+			 var material1 = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: 0xbfff00 } ); //  {color: 0x00ff00} 
+			 // var material1 = new THREE.MeshBasicMaterial( {envMap: envMap, overdraw :: 0.5 } ); 
+				 var matMetal2 = material1; 
+			 	matMetal2.color.setHex( 0xffffff );
+				
+				
+				
+				var i = 0;	
+				var matArr = [];
+				var propArr = { 
+							"0" : {"color" : "0xbfff00"},
+							"1" : {"color" : "0x2aa340"},
+							"2" : {"color" : "0xc2e34b"},
+							"3" : {"color" : "0xe34bbd"},
+							"4" : {"color" : "0x98a5d6"},
+							"5" : {"color" : "0xe6a33e"},
+							"6" : {"color" : "0x2b302b"},
+							"7" : {"color" : "0xf7f7e1"}
+							
+							}; 
+							
+							
+			 
+			 		for(var propKey in propArr) { 
+						                
+						var propVal = propArr[propKey]; 
+						matArr[i] = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: propVal.color } );
+						i++;
+						
+					} // for
+						
+						
+						
+			
+						
+						
+			 
+			 
+			 
+
+	
+function showData(data) { 
+ 
+ 
+  	/*
+  printObject(data); 
+  printObject(data.object3D); 
+  printObject(data.object3DMap.mesh); 
+  printObject(data.object3DMap.mesh.children); 
+  
+  
+  printObject(data.object3DMap.mesh.children[0].material);
+  */ 
+  
+   // printObject(matArr);
+  
+  /* 
+  printObject(data.object3DMap.mesh.children[0]); 
+  printObject(data.object3DMap.mesh.children[1]); 
+  printObject(data.object3DMap.mesh.children[2]); 
+  printObject(data.object3DMap.mesh.children[3]); 
+  printObject(data.object3DMap.mesh.children[4]); 
+  printObject(data.object3DMap.mesh.children[5]); 
+  printObject(data.object3DMap.mesh.children[6]); 
+  printObject(data.object3DMap.mesh.children[7]); 
+  printObject(data.object3DMap.mesh.children[8]); 
+  printObject(data.object3DMap.mesh.children[9]); 
+  printObject(data.object3DMap.mesh.children[10]); 
+  printObject(data.object3DMap.mesh.children[11]); 
+  printObject(data.object3DMap.mesh.children[12]); 
+  printObject(data.object3DMap.mesh.children[13]); 
+  printObject(data.object3DMap.mesh.children[14]); 
+  printObject(data.object3DMap.mesh.children[15]); 
+  printObject(data.object3DMap.mesh.children[16]); 
+  */
+  
+  
+  
+// data.object3DMap.mesh.children[0].material = material1; 
+ 	 
+
+	  var theChildren = data.object3DMap.mesh.children; 
+		for (j = 0; j < theChildren.length; j++) {
+		
+			// printObject(theChildren[j].material);
+		
+			
+			switch(theChildren[j].name.indexOf( true )) {
+				    case "White":
+					theChildren[j].material = matArr[0];
+					break;
+				    case "Yellow":
+					theChildren[j].material = matArr[1];
+					break;
+				    case "Blue":
+					theChildren[j].material = matArr[2];
+					break;
+				    default:
+					theChildren[j].material = matArr[3];
+			} // switch
+			
+			
+		} // for	
+	 
+  
+  } // showData()
+  function rotEl(el) {
+    var angle = 0;
+ 	 setTimeout(function (){ 
+  		if(angle < 360) {
+			angle++;
+		} else { 
+			angle = 0
+		}
+  	
+           	el.object3D.rotation.y = el.object3D.rotation.y - angle;
+        }, 100);  
+	
+  } // rotEl()
+
+  
+</script>
 
 
     
