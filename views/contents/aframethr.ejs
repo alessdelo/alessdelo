@@ -1,0 +1,24 @@
+<p class="lead">A-Frame</p>
+<hr class="my-4">
+
+<% strMyVar = JSON.stringify(myVar, null, 4); %>
+<%= strMyVar %>
+<% var passEjs = strMyVar; %>
+
+<script>
+var getPassEjs = <%- passEjs %>;
+</script>
+
+  <a-scene>
+    <a-camera>
+    <a-cursor></a-cursor>
+  </a-camera>
+  
+      <a-sky src="/static/photosphere1.jpg" rotation="0 -130 0"></a-sky>
+
+      <a-text font="kelsonsans" value="Roccaraso, Italy" width="6" position="-2.5 0.25 -1.5"
+              rotation="0 15 0"></a-text>
+    </a-scene>
+
+
+    
