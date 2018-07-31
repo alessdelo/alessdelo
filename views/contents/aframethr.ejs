@@ -127,10 +127,10 @@ function showData(data) {
 	  var theChildren = data.object3DMap.mesh.children; 
 		for (j = 0; j < theChildren.length; j++) {
 		
-			 printObject(theChildren[j].material.name);
+			 alert(theChildren[j].material.name);
 		
 			
-			switch(theChildren[j].name.indexOf(true)) {
+			switch(theChildren[j].name.indexOf(0)) {
 				    case "White":
 					theChildren[j].material = matArr[0];					
 					break;
