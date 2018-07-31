@@ -26,7 +26,7 @@
 
 	<!-- <a-sphere material="color: blue" position="4 1 0" radius="0.8" ></a-sphere> -->
 
- 	 <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" scale="0.04 0.04 0.04"  position="3 0 2" onclick="showData(this); animate(this);" ></a-entity> 
+ 	 <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" scale="0.04 0.04 0.04"  position="3 0 2" onclick="showData(this); rotEl(this);" ></a-entity> 
 
 
  </a-scene>
@@ -166,12 +166,6 @@ function showData(data) {
 	
   } // rotEl()
   
-function animate(el) {
-	el.object3D.rotation.y += 0.005;
-	el.object3D.rotation.z += 0.01;
-	renderer.render( scene, camera );
-	requestAnimationFrame( animate );
-}
 
   
 </script>
