@@ -127,7 +127,7 @@ function showData(data) {
 	  var theChildren = data.object3DMap.mesh.children; 
 		for (j = 0; j < theChildren.length; j++) {
 		
-			printObject(theChildren[j].material);
+			// printObject(theChildren[j].material);
 		
 			
 			switch(theChildren[j].name.includes(true)) {
@@ -140,8 +140,20 @@ function showData(data) {
 				    case "Blue":
 					theChildren[j].material = matArr[2];
 					break;
-				    default:
+				    case "Green":
+					theChildren[j].material = matArr[3];
+					break;
+				    case "Pewter":
 					theChildren[j].material = matArr[4];
+					break;
+				    case "Carpet":
+					theChildren[j].material = matArr[5];
+					break;
+				    case "material":
+					theChildren[j].material = matArr[6];
+					break;
+				    default:
+					theChildren[j].material = matArr[0];
 			} // switch
 			
 			
