@@ -160,14 +160,22 @@ function showData(data) {
 		} else { 
 			angle = 0
 		}
+		
+		var radAngle = degToRad(angle)
+
+
   	
-           	el.object3D.rotation.y = el.object3D.rotation.y - angle;
+           	el.object3D.rotation.y = el.object3D.rotation.y - radAngle;
         }, 600);  
 	
   } // rotEl()
   
 
-  
+function degToRad(degrees) {
+  var pi = Math.PI;
+  return degrees * (pi/180);
+}
+ 
 </script>
 
 
