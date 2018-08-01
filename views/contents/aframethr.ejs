@@ -129,8 +129,17 @@ function showData(data) {
 		
 			 alert(theChildren[j].material.name);
 		
+					if(theChildren[j].material.name.IndexOf("White") == 0)  {			   
+							theChildren[j].material = matArr[1];					
+					} 
 					
-		
+					if(theChildren[j].material.name.IndexOf("Yellow") == 0)  {			   
+							theChildren[j].material = matArr[2];					
+					} // if
+					
+					
+					
+					/*
 					for (jj = 0; jj < matArr.length; jj++) { 
 			
 				           	if(theChildren[j].material.name.IndexOf(matArr[jj].name) == 0)  {			   
@@ -138,6 +147,7 @@ function showData(data) {
 						 } // if
 					
 					} // for 2
+					*/
 	
 		} // for 1	
 	 
