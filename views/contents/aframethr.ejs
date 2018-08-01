@@ -130,33 +130,33 @@ function showData(data) {
 			 alert(theChildren[j].material.name);
 		
 			
-			switch(theChildren[j].name) {
-				    case "White":
-					if(theChildren[j].name.IndexOf("White") > -1)
+			switch(true) {
+				    
+				   case theChildren[j].name.IndexOf("White") > -1:
 					theChildren[j].material = matArr[0];					
 					break;
-				    case "Yellow":
-				    	if(theChildren[j].name.IndexOf("Yellow") > -1)
+				    
+				    case theChildren[j].name.IndexOf("Yellow") > -1:
 					theChildren[j].material = matArr[1];
 					break;
-				    case "Blue":
-					if(theChildren[j].name.IndexOf("Blue") > -1)
+				    
+				    case theChildren[j].name.IndexOf("Blue") > -1:
 					theChildren[j].material = matArr[2];
 					break;
-				    case "Green":
-					if(theChildren[j].name.IndexOf("Green") > -1)
+				    
+				    case theChildren[j].name.IndexOf("Green") > -1:
 					theChildren[j].material = matArr[3];
 					break;
-				    case "Pewter":
-				    	if(theChildren[j].name.IndexOf("Pewter") > -1)
+				    
+				    case theChildren[j].name.IndexOf("Pewter") > -1:
 					theChildren[j].material = matArr[4];
 					break;
-				    case "Carpet":
-				    	if(theChildren[j].name.IndexOf("Carpet") > -1)
+				    
+				    case theChildren[j].name.IndexOf("Carpet") > -1:
 					theChildren[j].material = matArr[5];
 					break;
-				    case "material":
-				    	if(theChildren[j].name.IndexOf("material") > -1)
+				    
+				    case theChildren[j].name.IndexOf("material") > -1:
 					theChildren[j].material = matArr[6];
 					break;
 				    default:
