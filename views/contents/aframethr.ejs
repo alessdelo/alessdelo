@@ -129,17 +129,38 @@ function showData(data) {
 		
 			 alert(theChildren[j].material.name);
 			 
-			 		/*
-		
-					if(theChildren[j].material.name.IndexOf("White") == 0)  {			   
-							theChildren[j].material = matArr[1];					
-					} 
-					
-					if(theChildren[j].material.name.IndexOf("Yellow") == 0)  {			   
-							theChildren[j].material = matArr[2];					
-					} // if
-					
-					*/
+			 		switch(true) {
+				    
+				   case theChildren[j].material.name.IndexOf("White") > -1:
+					theChildren[j].material = matArr[0];					
+					break;
+				    
+				    case theChildren[j].material.name.IndexOf("Yellow") > -1:
+					theChildren[j].material = matArr[1];
+					break;
+				    
+				    case theChildren[j].material.name.IndexOf("Blue") > -1:
+					theChildren[j].material = matArr[2];
+					break;
+				    
+				    case theChildren[j].material.name.IndexOf("Green") > -1:
+					theChildren[j].material = matArr[3];
+					break;
+				    
+				    case theChildren[j].material.name.IndexOf("Pewter") > -1:
+					theChildren[j].material = matArr[4];
+					break;
+				    
+				    case theChildren[j].material.name.IndexOf("Carpet") > -1:
+					theChildren[j].material = matArr[5];
+					break;
+				    
+				    case theChildren[j].material.name.IndexOf("material") > -1:
+					theChildren[j].material = matArr[6];
+					break;
+				    default:
+					theChildren[j].material = matArr[0];
+			} // switch
 					
 					/*
 					for (jj = 0; jj < matArr.length; jj++) { 
