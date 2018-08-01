@@ -53,14 +53,14 @@
 				var i = 0;	
 				var matArr = [];
 				var propArr = { 
-							"0" : {"color" : 0xbfff00},
-							"1" : {"color" : 0x2aa340},
-							"2" : {"color" : 0xc2e34b},
-							"3" : {"color" : 0xe34bbd},
-							"4" : {"color" : 0x98a5d6},
-							"5" : {"color" : 0xe6a33e},
-							"6" : {"color" : 0x2b302b},
-							"7" : {"color" : 0xf7f7e1}
+							"White" : {"color" : 0xbfff00},
+							"Yellow" : {"color" : 0x2aa340},
+							"Blue" : {"color" : 0xc2e34b},
+							"Green" : {"color" : 0xe34bbd},
+							"Pewter" : {"color" : 0x98a5d6},
+							"Carpet" : {"color" : 0xe6a33e},
+							"material" : {"color" : 0x2b302b},
+							"none" : {"color" : 0xf7f7e1}
 							
 							}; 
 							
@@ -69,7 +69,7 @@
 			 		for(var propKey in propArr) { 
 						                
 						var propVal = propArr[propKey]; 
-						matArr[i] = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: propVal.color } );
+						matArr[i] = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: propVal.color, name: propKey } );
 						i++;
 						
 					} // for
@@ -81,7 +81,7 @@
 						
 			 
 			 
-			 
+// var matNames = ["White", "Yellow", "Blue", "Green", "Pewter","Carpet", "material", "none"];			 
 
 	
 function showData(data) { 
@@ -129,42 +129,17 @@ function showData(data) {
 		
 			 alert(theChildren[j].material.name);
 		
+					 var jj = 0;
+		
+					for (jj = 0; jjj < matArr.length; jj++) { 
 			
-			switch(true) {
-				    
-				   case (theChildren[j].name.IndexOf("White") > -1):
-					theChildren[j].material = matArr[0];					
-					break;
-				    
-				    case (theChildren[j].name.IndexOf("Yellow") > -1):
-					theChildren[j].material = matArr[1];
-					break;
-				    
-				    case (theChildren[j].name.IndexOf("Blue") > -1):
-					theChildren[j].material = matArr[2];
-					break;
-				    
-				    case (theChildren[j].name.IndexOf("Green") > -1):
-					theChildren[j].material = matArr[3];
-					break;
-				    
-				    case (theChildren[j].name.IndexOf("Pewter") > -1):
-					theChildren[j].material = matArr[4];
-					break;
-				    
-				    case (theChildren[j].name.IndexOf("Carpet") > -1):
-					theChildren[j].material = matArr[5];
-					break;
-				    
-				    case (theChildren[j].name.IndexOf("material") > -1):
-					theChildren[j].material = matArr[6];
-					break;
-				    default:
-					theChildren[j].material = matArr[0];
-			} // switch
-			
-			
-		} // for	
+				           	if(theChildren[j].name.IndexOf(matArr[jj].name) == 0)  {			   
+							theChildren[j].material = matArr[jj];					
+						 } // if
+					
+					} // for 2
+	
+		} // for 1	
 	 
   
   } // showData()
