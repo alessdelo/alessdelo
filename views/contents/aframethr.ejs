@@ -129,6 +129,8 @@ function showData(data) {
 		
 			 alert(theChildren[j].material.name); 
 			 
+			 		strSwitch(theChildren[j].material);
+			 
 			 		/*
 			 
 			 		switch(theChildren[j].name) {
@@ -209,7 +211,7 @@ function degToRad(degrees) {
   return degrees * (pi/180);
 }
 
-function strSwitch(str, target) {
+function strSwitch(str) {
     // var seed = {'hi': 'HELLO. ', 'how are you': 'I AM FINE'};
     // var botResponse = [];
 
@@ -218,8 +220,8 @@ function strSwitch(str, target) {
     	var theVal = propArr[key];
     
     	
-        if (str.indexOf(key) !== -1) {
-            target.material = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: theVal.color, name: propKey } );
+        if (str.name.indexOf(key) !== -1) {
+            str.material = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: theVal.color, name: propKey } );
         }
     }
 }
