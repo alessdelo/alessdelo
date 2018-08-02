@@ -202,6 +202,21 @@ function degToRad(degrees) {
   var pi = Math.PI;
   return degrees * (pi/180);
 }
+
+function strSwitch(str, target) {
+    // var seed = {'hi': 'HELLO. ', 'how are you': 'I AM FINE'};
+    // var botResponse = [];
+
+    for (var key in propArr) { 
+    
+    	var theVal = propArr[key];
+    
+    	
+        if (str.indexOf(key) !== -1) {
+            target.material = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: theVal.color, name: propKey } );
+        }
+    }
+}
  
 </script>
 
