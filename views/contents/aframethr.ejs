@@ -221,7 +221,7 @@ function strSwitch(str) {
     
     	
         if (str.name.indexOf(key) !== -1) {
-            str.material = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: theVal.color, name: propKey } );
+            str = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: theVal.color, name: key } );
         }
     }
 }
