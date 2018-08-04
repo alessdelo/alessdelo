@@ -169,16 +169,16 @@ function showData(data) {
 			*/
 			
 			
-					
-					
-					for (jj = 0; jj < matArr.length; jj++) { 
+					for (var matKey in matArr) { 
+    
+    							var matVal = matArr[matKey];										
 			
-				           	if(theChildren[j].material.name.IndexOf(matArr[jj].name) !== -1)  { 
+				           	if(theChildren[j].material.name.IndexOf(matVal.name) !== -1)  { 						
 						
-								alert (matArr[jj].name);
+								alert (matVal.name);
 						
 								
-							theChildren[j].material = matArr[jj];					
+							theChildren[j].material = matVal;					
 						 } // if
 					
 					} // for 2
