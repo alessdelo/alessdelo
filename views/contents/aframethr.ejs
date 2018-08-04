@@ -173,7 +173,11 @@ function showData(data) {
 					
 					for (jj = 0; jj < matArr.length; jj++) { 
 			
-				           	if(theChildren[j].material.name.IndexOf(matArr[jj].name) !== -1)  {			   
+				           	if(theChildren[j].material.name.IndexOf(matArr[jj].name) !== -1)  { 
+						
+								alert (matArr[jj].name);
+						
+								
 							theChildren[j].material = matArr[jj];					
 						 } // if
 					
