@@ -175,19 +175,15 @@ function showData(data) {
 							
 							
 			
-				           	// if(theChildren[j].material.name.IndexOf(matVal.name) !== -1)  { 
+				           	if(theChildren[j].material.name == matVal.name)  { 
 						
-								printObject(matVal);						
-						
+								// printObject(matVal);						
+								// alert("matVal: " + matVal.name);
+								// alert("theChildren[j].material.name: " + theChildren[j].material.name);
 								
-								alert("matVal: " + matVal.name);
-								alert("theChildren[j].material.name: " + theChildren[j].material.name);
+								theChildren[j].material = matVal;	
 								
-								
-						
-								
-							// theChildren[j].material = matVal;					
-						// } // if
+						} // if
 					
 					} // for 2
 					
