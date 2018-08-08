@@ -1,1 +1,232 @@
+<script type="text/javascript" src="/static/general.js"></script>
+  
+  <a-scene>
 
+     
+     <a-assets>
+        <a-asset-item id="tree-obj" src="/static/three/threeTest1.obj"></a-asset-item>
+        <a-asset-item id="tree-mtl" src="/static/three/threeTest1.mtl"></a-asset-item>
+      </a-assets>
+
+  
+      <a-sky id="pano" src="/static/photosphere1.jpg" rotation="0 -60 0" radius="5000" color="#fff"></a-sky>
+      
+     <a-entity camera look-controls>
+          <a-entity cursor="fuse: true; fuseTimeout: 500"
+                position="0 0 -1"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                material="color: black; shader: flat">
+                 <a-entity animation begin="click" easing="ease-in" attribute="scale" dur="150"
+                   fill="forwards" from="0.1 0.1 0.1" to="1 1 1"></a-entity>
+                <a-entity animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1500"
+                   fill="backwards" from="1 1 1" to="0.1 0.1 0.1"></a-entity>
+          </a-entity>
+    </a-entity>
+
+
+	<!-- <a-sphere material="color: blue" position="4 1 0" radius="0.8" ></a-sphere> -->
+
+ 	 <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" scale="0.04 0.04 0.04"  position="3 0 2" onclick="showData(this); rotEl(this);" ></a-entity> 
+
+
+ </a-scene>
+ <script>
+ 
+ $( document ).ready(function() {
+		$( ".footer" ).hide(); 
+ });
+ 
+ 
+ // MATERIAL
+			 var envMap = new THREE.TextureLoader().load( '/static/photosphere1.jpg' );
+			  	envMap.mapping = THREE.EquirectangularReflectionMapping;
+				envMap.rotation.x = 120;
+																						
+			 var material1 = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: 0xbfff00 } ); //  {color: 0x00ff00} 
+			 // var material1 = new THREE.MeshBasicMaterial( {envMap: envMap, overdraw :: 0.5 } ); 
+				 var matMetal2 = material1; 
+			 	matMetal2.color.setHex( 0xffffff );
+				
+				
+				
+				var i = 0;	
+				var matArr = [];
+				var propArr = { 
+							White : {"color" : 0xbfff00},
+							Yellow : {"color" : 0x2aa340},
+							Blue : {"color" : 0xc2e34b},
+							Green : {"color" : 0xe34bbd},
+							Pewter : {"color" : 0x98a5d6},
+							Carpet : {"color" : 0xe6a33e},
+							material : {"color" : 0x2b302b},
+							none : {"color" : 0xf7f7e1}
+							
+							}; 
+							
+							
+			 
+			 		for(var propKey in propArr) { 
+						                
+						var propVal = propArr[propKey]; 
+						matArr[i] = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: propVal.color, name: propKey } );
+						i++;
+						
+					} // for
+						
+						
+						
+			
+						
+						
+			 
+			 
+// var matNames = ["White", "Yellow", "Blue", "Green", "Pewter","Carpet", "material", "none"];			 
+	
+function showData(data) { 
+ 
+ 
+  	/*
+  printObject(data); 
+  printObject(data.object3D); 
+  printObject(data.object3DMap.mesh); 
+  printObject(data.object3DMap.mesh.children); 
+  
+  
+  printObject(data.object3DMap.mesh.children[0].material);
+  */ 
+  
+   // printObject(matArr);
+  
+  /* 
+  printObject(data.object3DMap.mesh.children[0]); 
+  printObject(data.object3DMap.mesh.children[1]); 
+  printObject(data.object3DMap.mesh.children[2]); 
+  printObject(data.object3DMap.mesh.children[3]); 
+  printObject(data.object3DMap.mesh.children[4]); 
+  printObject(data.object3DMap.mesh.children[5]); 
+  printObject(data.object3DMap.mesh.children[6]); 
+  printObject(data.object3DMap.mesh.children[7]); 
+  printObject(data.object3DMap.mesh.children[8]); 
+  printObject(data.object3DMap.mesh.children[9]); 
+  printObject(data.object3DMap.mesh.children[10]); 
+  printObject(data.object3DMap.mesh.children[11]); 
+  printObject(data.object3DMap.mesh.children[12]); 
+  printObject(data.object3DMap.mesh.children[13]); 
+  printObject(data.object3DMap.mesh.children[14]); 
+  printObject(data.object3DMap.mesh.children[15]); 
+  printObject(data.object3DMap.mesh.children[16]); 
+  */
+  
+  
+  
+// data.object3DMap.mesh.children[0].material = material1; 
+ 	 
+	  var theChildren = data.object3DMap.mesh.children; 
+		for (j = 0; j < theChildren.length; j++) {
+		
+			 alert(theChildren[j].material.name); 
+			 
+			 		strSwitch(theChildren[j].material);
+			 
+			 		/*
+			 
+			 		switch(theChildren[j].name) {
+				    case "White":
+					if(theChildren[j].material.name.IndexOf("White") == 0)
+					theChildren[j].material = matArr[0];					
+					break;
+				    case "Yellow":
+				    	if(theChildren[j].material.name.IndexOf("Yellow") == 0)
+					theChildren[j].material = matArr[1];
+					break;
+				    case "Blue":
+					if(theChildren[j].material.name.IndexOf("Blue") == 0)
+					theChildren[j].material = matArr[2];
+					break;
+				    case "Green":
+					if(theChildren[j].material.name.IndexOf("Green") == 0)
+					theChildren[j].material = matArr[3];
+					break;
+				    case "Pewter":
+				    	if(theChildren[j].material.name.IndexOf("Pewter") == 0)
+					theChildren[j].material = matArr[4];
+					break;
+				    case "Carpet":
+				    	if(theChildren[j].material.name.IndexOf("Carpet") == 0)
+					theChildren[j].material = matArr[5];
+					break;
+				    case "material":
+				    	if(theChildren[j].material.name.IndexOf("material") == 0)
+					theChildren[j].material = matArr[6];
+					break;
+				    default:
+					theChildren[j].material = matArr[0];
+			} // switch 
+			
+			*/
+			
+			
+					for (var matKey in matArr) { 
+    
+    							var matVal = matArr[matKey]; 	
+							
+							
+			
+				           	if(theChildren[j].material.name == matVal.name)  { 
+						
+								// printObject(matVal);						
+								// alert("matVal: " + matVal.name);
+								// alert("theChildren[j].material.name: " + theChildren[j].material.name);
+								
+								theChildren[j].material = matVal;	
+								
+						} // if
+					
+					} // for 2
+					
+	
+		} // for 1	
+	 
+  
+  } // showData()
+  
+  
+  
+  function rotEl(el) {
+    var angle = 0;
+ 	 setInterval(function (){ 
+  		if(angle < 360) {
+			angle++;
+		} else { 
+			angle = 0
+		}
+		
+		var radAngle = degToRad(angle)
+  	
+           	el.object3D.rotation.y = radAngle; // el.object3D.rotation.y - radAngle;
+        }, 250);  
+	
+  } // rotEl()
+  
+function degToRad(degrees) {
+  var pi = Math.PI;
+  return degrees * (pi/180);
+}
+function strSwitch(str) {
+    // var seed = {'hi': 'HELLO. ', 'how are you': 'I AM FINE'};
+    // var botResponse = [];
+    for (var key in propArr) { 
+    
+    	var theVal = propArr[key];
+    
+    	
+        if (str.name.indexOf(key) !== -1) {
+            str = new THREE.MeshPhongMaterial( { envMap: envMap, overdraw: 0.5, color: theVal.color, name: key } );
+        }
+    }
+}
+ 
+</script>
+
+
+    
