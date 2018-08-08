@@ -278,13 +278,21 @@ aframelinks: {
     params: []
   },
 aframethr: { 
-    title:'A-Frame Embed Three.gs feature into A-Frame Scenes',
+    title:'A-Frame Embed Three.js feature into A-Frame Scenes',
     content:'../contents/aframethr.ejs',
     nav: nav,
     header: header,
     footer: footer,
     params: []
-  },	
+  },
+aframethr2: { 
+    title:'A-Frame Embed 3d model (obj) into A-Frame Scenes with three.js materials',
+    content:'../contents/aframethr2.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
+  },
 threehello: {	 
     title:'Three.js hello world',
     content:'../contents/threehello.ejs',
@@ -881,6 +889,11 @@ app.get('/aframelinks', (req, res) => res.render(index,pageData.aframelinks))
 // A-FRAME THREE
 
 app.get('/aframethr', (req, res) => res.render(index,pageData.aframethr))
+
+// ---------------------------------
+// A-FRAME THREE - import objcar
+
+app.get('/aframethr2', (req, res) => res.render(index,pageData.aframethr2))
 
 // ---------------------------------
 	// DRIVESTORE
