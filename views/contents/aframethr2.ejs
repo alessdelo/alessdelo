@@ -26,7 +26,7 @@
 
 	<!-- <a-sphere material="color: blue" position="4 1 0" radius="0.8" ></a-sphere> -->
 
- 	 <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" scale="0.05 0.05 0.05"  position="8 1 8" onclick="showData(this); rotEl(this);" material="color: orange" ></a-entity> 
+ 	 <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" scale="0.5 0.5 0.5"  position="0 0 -1.7" onclick="showData(this); rotEl(this);" material="color: orange" ></a-entity> 
 
 
  </a-scene>
@@ -172,16 +172,16 @@ function showData(data) {
 							
 							
 			
-				           	if(theChildren[j].material.name == matVal.name)  { 
+				           	// if(theChildren[j].material.name == matVal.name)  { 
 						
 								// printObject(matVal);						
 								// alert("matVal: " + matVal.name);
 								// alert("theChildren[j].material.name: " + theChildren[j].material.name);
 								
-								theChildren[j].material = matVal;	
+								// theChildren[j].material = matVal;	
 								
 						} else {
-							theChildren[j].material = matArr[0];
+							// theChildren[j].material = matArr[0];
 						} // if-else
 					
 					} // for 2
