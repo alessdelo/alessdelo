@@ -324,11 +324,11 @@ var map2 = new ol.Map({
         stopEvent: false,
         offset: [0, -50]
       });
-      map.addOverlay(popup);
+      map2.addOverlay(popup);
       
             // display popup on click
-      map.on('click', function(evt) {
-        var feature = map.forEachFeatureAtPixel(evt.pixel,
+      map2.on('click', function(evt) {
+        var feature = map2.forEachFeatureAtPixel(evt.pixel,
           function(feature) {
             return feature;
           });
@@ -347,14 +347,14 @@ var map2 = new ol.Map({
       });
 
       // change mouse cursor when over marker
-      map.on('pointermove', function(e) {
+      map2.on('pointermove', function(e) {
         if (e.dragging) {
           $(element).popover('destroy');
           return;
         }
-        var pixel = map.getEventPixel(e.originalEvent);
-        var hit = map.hasFeatureAtPixel(pixel);
-        map.getTarget().style.cursor = hit ? 'pointer' : '';
+        var pixel = map2.getEventPixel(e.originalEvent);
+        var hit = map2.hasFeatureAtPixel(pixel);
+        map2.getTarget().style.cursor = hit ? 'pointer' : '';
       });
   
 	
