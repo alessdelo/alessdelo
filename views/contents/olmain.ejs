@@ -326,8 +326,9 @@ var fpControl = new OpenLayers.Control.FeaturePopups();
     });
     map2.addControl(fpControl);
 	
-	
-	
+ map2.on('singleclick', function(evt) {
+      printObject(fpControl);
+	});	
 	
 	    /*      
         // Add a click handler to the map to render the popup.
