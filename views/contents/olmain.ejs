@@ -314,48 +314,39 @@ var map2 = new ol.Map({
 	// popUp('popup2', map2);    
 	
 	
-	
-	
-	var element = document.getElementById('popup2');
+		
 
-      var popup = new Overlay({
-        element: element,
-        positioning: 'bottom-center',
-        stopEvent: false,
-        offset: [0, -50]
-      });
-      map2.addOverlay(popup);
+          
+ 
+ 
+    
+    //Add a selector control to the vectorLayer with popup functions
+    var controls = {
+      selector: new OpenLayers.Control.SelectFeature(vectorLayer, { onSelect: createPopup, onUnselect: destroyPopup })
+    };
+
+    function createPopup(feature) {
+      feature.popup = new OpenLayers.Popup.FramedCloud("pop",
+          feature.geometry.getBounds().getCenterLonLat(),
+          null,
+          '<div class="markerContent">'+feature.attributes.description+'</div>',
+          null,
+          true,
+          function() { controls['selector'].unselectAll(); }
+      );
+      //feature.popup.closeOnMove = true;
+      map.addPopup(feature.popup);
+    }
+
+    function destroyPopup(feature) {
+      feature.popup.destroy();
+      feature.popup = null;
+    }
+    
+    map.addControl(controls['selector']);
+    controls['selector'].activate();
       
-            // display popup on click
-      map2.on('click', function(evt) {
-        var feature = map2.forEachFeatureAtPixel(evt.pixel,
-          function(feature) {
-            return feature;
-          });
-        if (feature) {
-          var coordinates = feature.getGeometry().getCoordinates();
-          popup.setPosition(coordinates);
-          $(element).popover({
-            placement: 'top',
-            html: true,
-            content: feature.get('name')
-          });
-          $(element).popover('show');
-        } else {
-          $(element).popover('destroy');
-        }
-      });
 
-      // change mouse cursor when over marker
-      map2.on('pointermove', function(e) {
-        if (e.dragging) {
-          $(element).popover('destroy');
-          return;
-        }
-        var pixel = map2.getEventPixel(e.originalEvent);
-        var hit = map2.hasFeatureAtPixel(pixel);
-        map2.getTarget().style.cursor = hit ? 'pointer' : '';
-      });
   
 	
     </script>
