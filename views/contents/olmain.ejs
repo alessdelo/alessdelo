@@ -256,6 +256,10 @@ var i = 0;
                               
                               multiIconFeatures[i].setStyle(iconStyle); 
 			      
+			      multiIconFeatures[i].on('singleclick', function(evt) {
+      
+     					 alert('map clicked');
+			      });	
 			      
 			      
 			         i++;
@@ -313,14 +317,14 @@ var map2 = new ol.Map({
 	
 	// popUp('popup2', map2);    
 	
-	      /**
-       * Add a click handler to the map to render the popup.
-       */
+	    /*      
+        // Add a click handler to the map to render the popup.
+                         
       map2.on('singleclick', function(evt) {
       
       alert('map clicked');
       
-      /*
+    
         var coordinate = evt.coordinate;
         var hdms = toStringHDMS(toLonLat(coordinate));
 
@@ -328,10 +332,9 @@ var map2 = new ol.Map({
             '</code>';
         overlay.setPosition(coordinate);
 	
-	*/
-      });
-		
-
+	
+      });		
+*/
           
  
  /*
