@@ -322,14 +322,14 @@ var map2 = new ol.Map({
     
     //Add a selector control to the vectorLayer with popup functions
     var controls = {
-      selector: new OpenLayers.Control.SelectFeature(vectorLayer, { onSelect: createPopup, onUnselect: destroyPopup })
+      selector: new OpenLayers.Control.SelectFeature(multiVectorLayer, { onSelect: createPopup, onUnselect: destroyPopup })
     };
 
     function createPopup(feature) {
       feature.popup = new OpenLayers.Popup.FramedCloud("pop",
           feature.geometry.getBounds().getCenterLonLat(),
           null,
-          '<div class="markerContent">'+feature.attributes.description+'</div>',
+          '<div class="markerContent">'+'bla... bla...'+'</div>',
           null,
           true,
           function() { controls['selector'].unselectAll(); }
