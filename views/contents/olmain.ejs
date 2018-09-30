@@ -313,12 +313,28 @@ var map2 = new ol.Map({
 	
 	// popUp('popup2', map2);    
 	
+	      /**
+       * Add a click handler to the map to render the popup.
+       */
+      map2.on('singleclick', function(evt) {
+      
+      alert('map clicked');
+      
+      /*
+        var coordinate = evt.coordinate;
+        var hdms = toStringHDMS(toLonLat(coordinate));
+
+        content.innerHTML = '<p>You clicked here:</p><code>' + hdms +
+            '</code>';
+        overlay.setPosition(coordinate);
 	
+	*/
+      });
 		
 
           
  
- 
+ /*
     
     //Add a selector control to the vectorLayer with popup functions
     var controls = {
@@ -346,7 +362,7 @@ var map2 = new ol.Map({
     map.addControl(controls['selector']);
     controls['selector'].activate();
       
-
+*/
   
 	
     </script>
