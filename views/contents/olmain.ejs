@@ -289,6 +289,8 @@ var i = 0;
       }); 
       
 
+
+
   
    
        var map2BaseLayer = new ol.layer.Tile({
@@ -312,6 +314,20 @@ var map2 = new ol.Map({
         }); // end var map2
 	
 	// popUp('popup2', map2);    
+	
+	
+	
+var fpControl = new OpenLayers.Control.FeaturePopups();
+    fpControl.addLayer(multiVectorLayer, {
+        templates: {
+            single: "<h2>aaaa</h2>bbbbbb"
+            // .name is attributes.name on features, and so on.
+        }
+    });
+    map.addControl(fpControl);
+	
+	
+	
 	
 	    /*      
         // Add a click handler to the map to render the popup.
