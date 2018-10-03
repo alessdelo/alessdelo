@@ -312,8 +312,14 @@ var map2 = new ol.Map({
 		})             
         }); // end var map2
 	
-	// popUp('popup2', map2);    
+	// popUp('popup2', map2);   
 	
+// ---------------------------------------------------------------------	
+// select interaction working on "click"
+      var selectClick = new Select({
+        condition: click,
+	layers: multiVectorLayer
+      });
 // ---------------------------------------------------------------------
 
       // Popup showing the position the user clicked
