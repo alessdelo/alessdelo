@@ -16,7 +16,7 @@
     "mongodb": "^3.0.5",
     "mongoose": "^5.0.11",
     "body-parser": "^1.18.2",
-    "ol": "^5.2.0",
+    "ol": "^5.1.2",
     "three":"^0.94.0"
   },
   "devDependencies": {
