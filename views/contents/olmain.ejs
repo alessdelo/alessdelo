@@ -315,11 +315,20 @@ var map2 = new ol.Map({
 	// popUp('popup2', map2);   
 	
 // ---------------------------------------------------------------------	
+// SELECT
+
 // select interaction working on "click"
-      var selectClick = new Select({
+      var select = new Select({
         condition: click,
 	layers: multiVectorLayer
       });
+      
+      map.addInteraction(select);
+          select.on('select', function(e) {
+            alert('Selected!');
+      });
+      
+      
 // ---------------------------------------------------------------------
 
       // Popup showing the position the user clicked
