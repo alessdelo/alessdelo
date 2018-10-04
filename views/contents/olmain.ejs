@@ -318,15 +318,14 @@ var map2 = new ol.Map({
 // SELECT
 
 // select interaction working on "click"
-      var select = new Select({
-        condition: click,
+      var select = new Select({        
 	layers: [multiVectorLayer],
-	style: [color: black, width:
+	style: [color: black, width:4]
       });
       
       map.addInteraction(select);
       var selectedFeatures = select.getFeatures();
-      selectedFeatures.on('singleclick', function(e) {
+      selectedFeatures.on('select', function(e) {
             alert('Selected!');
       });
       
