@@ -324,10 +324,14 @@ var map2 = new ol.Map({
       });
       
       map.addInteraction(select);
-      var selectedFeatures = select.getFeatures();
-      selectedFeatures.on('select', function(e) {
+      select.on('select', function(e) {
             alert('Selected!');
       });
+      
+       //   var selectedFeatures = select.getFeatures();
+     // selectedFeatures.on('select', function(e) {
+         //   alert('Selected!');
+    //  });
       
       
 // ---------------------------------------------------------------------
