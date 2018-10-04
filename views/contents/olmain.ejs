@@ -326,7 +326,7 @@ var map2 = new ol.Map({
       
       map.addInteraction(select);
       var selectedFeatures = select.getFeatures();
-      selectedFeatures.on('add', function(e) {
+      selectedFeatures.on('singleclick', function(e) {
             alert('Selected!');
       });
       
