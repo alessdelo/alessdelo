@@ -1,0 +1,5 @@
+- views/contents/olmain
+  - inserere ol come modulo node anziché importarlo nell'header
+  - creare i popup
+    - con la classe Select()
+  
