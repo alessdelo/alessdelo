@@ -320,7 +320,8 @@ var map2 = new ol.Map({
 
 // select interaction working on "click"
       var select = new Select({
-      	layers:[multiVectorLayer]
+      	layers:[multiVectorLayer],
+	style: {scale:1.5}
       });
       
       map.addInteraction(select);
