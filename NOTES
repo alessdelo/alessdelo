@@ -2,4 +2,6 @@
   - inserere ol come modulo node anziché importarlo nell'header
   - creare i popup
     - con la classe Select()
+    
+  - la mappa, nella conversione delle coordinate, da WGS84 a viene schiacciata visivamente anche se le coordinate tornano bene. 
   
