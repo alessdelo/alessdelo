@@ -319,8 +319,9 @@ var map2 = new ol.Map({
 // SELECT
 
 // select interaction working on "click"
-      var select = new Select(
-      );
+      var select = new Select({
+      	layers:[multiVectorLayer]
+      });
       
       map.addInteraction(select);
       select.on('select', function(e) {
