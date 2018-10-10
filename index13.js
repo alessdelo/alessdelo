@@ -854,7 +854,7 @@ function olMain(req, res, next) {
 // ---------------------------------
 // OPENLAYERS - IMPORT KML	
 
-app.get('/threeobj', (req, res) => res.render(index,pageData.threeobj))
+app.get('/olkml', (req, res) => res.render(index,pageData.olkml))
 
 // ---------------------------------
 // VR VIEWER
