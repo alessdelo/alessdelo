@@ -11,28 +11,31 @@ var getPassEjs = <%- passEjs %>;
 
 <script type="text/javascript" src="/static/general.js"></script>
 
+<div id="map" class="map"></div>
+
 <script>
-var map = new OpenLayers.Map({
-    div: "map",
-    layers: [
-        new OpenLayers.Layer.WMS(
-            "WMS", "http://vmap0.tiles.osgeo.org/wms/vmap0",
-            {layers: "basic"}
-        ),
-        new OpenLayers.Layer.Vector("KML", {
-            strategies: [new OpenLayers.Strategy.Fixed()],
-            protocol: new OpenLayers.Protocol.HTTP({
-                url: "kml/lines.kml",
-                format: new OpenLayers.Format.KML({
-                    extractStyles: true, 
-                    extractAttributes: true,
-                    maxDepth: 2
-                })
-            })
+    var layers = [
+        new TileLayer({
+          source: new OSM()
+        }),
+        new TileLayer({
+          extent: [-13884991, 2870341, -7455066, 6338219],
+          source: new TileWMS({
+            url: 'https://ahocevar.com/geoserver/wms',
+            params: {'LAYERS': 'topp:states', 'TILED': true},
+            serverType: 'geoserver',
+            // Countries have transparency, so do not fade tiles:
+            transition: 0
+          })
         })
-    ],
-    center: new OpenLayers.LonLat(-112.169, 36.099),
-    zoom: 11
-});
+      ];
+      var map = new Map({
+        layers: layers,
+        target: 'map',
+        view: new View({
+          center: [-10997148, 4569099],
+          zoom: 4
+        })
+      });
 
 </script>
