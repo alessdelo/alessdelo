@@ -219,7 +219,15 @@ olmain: {
     header: header,
     footer: footer,
     params: []
-  },	
+  },
+olkml: { 
+    title:'Open Layers - Import KML file',
+    content:'../contents/olkml.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
+  },
 	
 vrviewer: { 
     title:'VR Viewer',
@@ -843,7 +851,10 @@ function olMain(req, res, next) {
  
 } // fine olMain
 
+// ---------------------------------
+// OPENLAYERS - IMPORT KML	
 
+app.get('/threeobj', (req, res) => res.render(index,pageData.threeobj))
 
 // ---------------------------------
 // VR VIEWER
