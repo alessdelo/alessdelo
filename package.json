@@ -21,9 +21,7 @@
   },
   "devDependencies": {
     "request": "^2.81.0",
-    "tape": "^4.7.0",
-    "rollup": "^0.61.2",
-    "parcel-bundler":"^1.10.2"
+    "tape": "^4.7.0"
   },
   "repository": {
     "type": "git",
