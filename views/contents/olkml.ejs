@@ -37,10 +37,10 @@ var getPassEjs = <%- passEjs %>;
             ratio: 1,
             serverType: 'geoserver'
           })
-        })
+        });
 		
 	
-		 var olMapLayers = [mapBaseLayer];
+		 var olMapLayers = [mapBaseLayer, wmsLayer];
 		
 var map = new ol.Map({
               target: 'map',
