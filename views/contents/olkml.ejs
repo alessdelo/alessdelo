@@ -26,28 +26,24 @@ var getPassEjs = <%- passEjs %>;
 <div id="map" class="map"></div>
 
 <script>
-    var layers = [
-        new TileLayer({
-          source: new OSM()
-        }),
-        new TileLayer({
-          extent: [-13884991, 2870341, -7455066, 6338219],
-          source: new TileWMS({
-            url: 'https://ahocevar.com/geoserver/wms',
-            params: {'LAYERS': 'topp:states', 'TILED': true},
-            serverType: 'geoserver',
-            // Countries have transparency, so do not fade tiles:
-            transition: 0
-          })
-        })
-      ];
-      var map = new Map({
-        layers: layers,
-        target: 'map',
-        view: new View({
-          center: [-10997148, 4569099],
-          zoom: 4
-        })
-      });
+       var mapBaseLayer = new ol.layer.Tile({
+                  source: new ol.source.OSM()
+                }); 
+		
+		
+		
+	
+		// var olMapLayers = [mapBaseLayer];
+		
+var map = new ol.Map({
+              target: 'map',
+	      layers: olMapLayers,             
+              view: new ol.View({
+			projection: 'EPSG:4326',
+		  	center: [12.45, 41.90],
+		  	zoom: 15
+		})             
+        }); // end var map
+	
 
 </script>
