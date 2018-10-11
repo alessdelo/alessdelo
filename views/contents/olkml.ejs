@@ -29,8 +29,10 @@ var getPassEjs = <%- passEjs %>;
        var mapBaseLayer = new ol.layer.Tile({
                   source: new ol.source.OSM()
                 }); 
+		
+		/*
      var wmsLayer = new ImageLayer({
-     /*
+     
           extent: [-13884991, 2870341, -7455066, 6338219],
           source: new ImageWMS({
             url: 'https://ahocevar.com/geoserver/wms',
@@ -38,9 +40,9 @@ var getPassEjs = <%- passEjs %>;
             ratio: 1,
             serverType: 'geoserver'
           })
-	  */
+	  
         });
-		
+		*/
 	
 		 var olMapLayers = [mapBaseLayer];
 		
