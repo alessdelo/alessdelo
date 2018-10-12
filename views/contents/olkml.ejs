@@ -26,10 +26,10 @@ var getPassEjs = <%- passEjs %>;
 <div id="map" class="map"></div>
 
 <script>
-      import Map from 'ol/Map.js';
-      import View from 'ol/View.js';
-      import {getCenter} from 'ol/extent.js';
-      import {Image as ImageLayer, Tile as TileLayer} from 'ol/layer.js';
+      import Map from 'https://openlayers.org/en/v5.2.0/build/Map.js';
+      import View from 'https://openlayers.org/en/v5.2.0/build/View.js';
+      import {getCenter} from 'https://openlayers.org/en/v5.2.0/build/extent.js';
+      import {Image as ImageLayer, Tile as TileLayer} from 'https://openlayers.org/en/v5.2.0/build/layer.js';
 
        var mapBaseLayer = new ol.layer.Tile({
                   source: new ol.source.OSM()
