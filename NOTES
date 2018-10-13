@@ -4,4 +4,9 @@
     - con la classe Select()
     
   - la mappa, nella conversione delle coordinate, da WGS84 a viene schiacciata visivamente anche se le coordinate tornano bene. 
-  
+ 
+ ---------------------------------------------------- 
+ 
+ - views/contents/olkml
+    - stesso problema: non importa le classi di Openlayers con la procedura " import {class} from {ol/classFile} '
+       avendo preventivamente installato il pacchetto node "ol" nel file package.json
