@@ -26,19 +26,27 @@ var getPassEjs = <%- passEjs %>;
 <div id="map" class="map"></div>
 
 <script>
-      import Map from 'ol/Map.js';
-      /*
-      import View from 'ol/View.js';
-      import KML from 'ol/format/KML.js';
-      import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer.js';
-      import BingMaps from 'ol/source/BingMaps.js';
-      import VectorSource from 'ol/source/Vector.js';
-      */
+      // import Map from 'ol/Map.js';      
+      // import View from 'ol/View.js';
+      // import KML from 'ol/format/KML.js';
+      // import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer.js';
+      // import BingMaps from 'ol/source/BingMaps.js';
+      // import VectorSource from 'ol/source/Vector.js';
+      
 
 
-            var mapBaseLayer = new ol.layer.Tile({
-                  source: new ol.source.OSM()
-                }); 
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([37.41, 8.82]),
+          zoom: 4
+        })
+      });
 		
 		//  var wmsLayer = new ImageLayer();
 		
