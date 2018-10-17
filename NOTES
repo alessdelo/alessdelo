@@ -10,3 +10,6 @@
  - views/contents/olkml
     - stesso problema: non importa le classi di Openlayers con la procedura " import {class} from {ol/classFile} '
        avendo preventivamente installato il pacchetto node "ol" nel file package.json
+   - il problema potrebbe stare anche nell'uso del pacchetto node "parcel-bundler" che permette di importare le classi...
+   
+   - comunque la questione principale è che non importa il pacchetto "ol" da package.json ma openlayers si può importare solo dall'header...
