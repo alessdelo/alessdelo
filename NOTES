@@ -13,3 +13,9 @@
    - il problema potrebbe stare anche nell'uso del pacchetto node "parcel-bundler" che permette di importare le classi...
    
    - comunque la questione principale è che non importa il pacchetto "ol" da package.json ma openlayers si può importare solo dall'header...
+
+ ---------------------------------------------------- 
+ 
+ DA FARE
+ 
+  - importare su aframe un oggetto 3d scansionato con fotogrammetria
