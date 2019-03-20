@@ -316,6 +316,14 @@ threeobj: {
     header: header,
     footer: footer,
     params: []
+  },
+angular1: {	 
+    title:'Angular Tests',
+    content:'../contents/angular1.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
   }
 }
 
@@ -920,6 +928,11 @@ app.get('/threehello', (req, res) => res.render(index,pageData.threehello))
 // THREEOBJ	
 
 app.get('/threeobj', (req, res) => res.render(index,pageData.threeobj))
+
+// ---------------------------------
+// ANGULAR 1	
+
+app.get('/angular1', (req, res) => res.render(index,pageData.angular1))
 
 // ----------------------------------
 // ----------------------------------
