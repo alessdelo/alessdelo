@@ -2,17 +2,13 @@
 <a href="https://www.html.it/pag/52626/mv-in-angularjs/">view source</a>
 
 		<script type="text/javascript">
-			angular.module("myApp", [])
-				.controller("userController",
-					function($scope) {
-						$scope.utente = { nome: "Mario", cognome: "Rossi"};
-						$scope.saluta = function() {
-							return "Buongiorno " +
-								   $scope.utente.nome + " " +
-								   $scope.utente.cognome + "!"
-						};
-					});
-		</script>
+angular.module("myApp", []);
+	myApp.controller("userController", 
+		function($scope) {
+			$scope.nome = "Mario";
+			$scope.cognome = "Rossi";
+	});
+</script>
   <div ng-app="myApp">
 
 	
