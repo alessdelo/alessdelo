@@ -1,4 +1,34 @@
- <h2>hello angular!</h2>
+<h2>Model View Controller (MVC)</h2>
+<a href="https://www.html.it/pag/52626/mv-in-angularjs/">view source</a>
+
+		<script type="text/javascript">
+			angular.module("myApp", [])
+				.controller("userController",
+					function($scope) {
+						$scope.utente = { nome: "Mario", cognome: "Rossi"};
+						$scope.saluta = function() {
+							return "Buongiorno " +
+								   $scope.utente.nome + " " +
+								   $scope.utente.cognome + "!"
+						};
+					});
+		</script>
+  <div ng-app="myApp">
+
+	
+
+	<div ng-controller="userController">
+	   <p>Nome: <input type="text" ng-model="utente.nome"></p>
+	   <p>Cognome: <input type="text" ng-model="utente.cognome"></p>
+	   <p>{{saluta()}}</p>
+	</div>
+</div>
+
+-----------------------------------------------------------------------------
+ 
+
+
+<h2>hello angular!</h2>
 <a href="https://www.html.it/pag/52589/hello-angular/">view source</a>
 <div ng-app>
 		<p>Inserisci il tuo nome: <input type="text" ng-model="name"></p>
