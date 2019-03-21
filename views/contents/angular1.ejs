@@ -22,7 +22,7 @@ angular.module("myApp", []);
         </div>
   </div>
   
-  
+ <script type="text/javascript"> 
   var myapp = angular.module("myapp", []);
 myapp.controller("HelloCtrl",function($scope){
     $scope.user = {
@@ -40,6 +40,8 @@ myapp.controller("HelloCtrl",function($scope){
 angular.element(document).ready(function() {
     angular.bootstrap(document.querySelector('#app'), ['myapp']);
 });
+
+</script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 
