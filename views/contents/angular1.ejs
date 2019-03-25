@@ -22,34 +22,4 @@ angular.module("myApp", []);
         </div>
   </div>
   
- <script type="text/javascript"> 
-  var myapp = angular.module("myapp", []);
-myapp.controller("HelloCtrl",function($scope){
-    $scope.user = {
-        name: "name123",
-        nickName: "nickName123",
-
-        callMe: function(){
-          console.log('called');
-        var userObject = $scope.user;
-        return userObject.name + " Known as " + userObject.nickName;
-      }
-    };
-});
-
-angular.element(document).ready(function() {
-    angular.bootstrap(document.querySelector('#app'), ['myapp']);
-});
-
-</script>
-
-<div id="app" ng-controller="HelloCtrl">
-        <!--הטופס-->
-        First Name:<input type="text" ng-model="user.name" />
-        <br />
-        Last Name:<input type="text" ng-model="user.nickName" />
-        <br />
-{{user.callMe()}}
-</div>
-
 
