@@ -17,6 +17,13 @@
     
     <hr class="my-4">
     
+    <style>
+    .done-true {
+        text-decoration: line-through;
+        color: grey;
+    }
+    <\style>
+    
     
     <script>
     angular.module('todoApp', [])
@@ -48,6 +55,7 @@
     };
   }); 
     </script>
+    
     
         <h2>Todo</h2>
     <div ng-controller="TodoListController as todoList">
