@@ -12,6 +12,7 @@ const mongoose = require('mongoose')
 const assert = require('assert')
 const bodyParser = require('body-parser')
 const THREE = require('three')
+const ANGULAR = require('angular')
 
 
 const PORT = process.env.PORT || 5000
