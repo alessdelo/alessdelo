@@ -295,7 +295,7 @@ aframethr: {
   },
 aframear: { 
     title:'A-Frame Augmented Reality',
-    content:'../contents/aframar.ejs',
+    content:'../contents/aframear.ejs',
     nav: nav,
     header: header,
     footer: footer,
