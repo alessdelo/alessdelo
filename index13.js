@@ -293,6 +293,14 @@ aframethr: {
     footer: footer,
     params: []
   },
+aframear: { 
+    title:'A-Frame Augmented Reality',
+    content:'../contents/aframar.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
+  },
 aframethr2: { 
     title:'A-Frame Embed 3d model (obj) into A-Frame Scenes with three.js materials',
     content:'../contents/aframethr2.ejs',
@@ -913,6 +921,11 @@ app.get('/aframethr', (req, res) => res.render(index,pageData.aframethr))
 // A-FRAME THREE - import objcar
 
 app.get('/aframethr2', (req, res) => res.render(index,pageData.aframethr2))
+
+// ---------------------------------
+// A-FRAME AR
+
+app.get('/aframear', (req, res) => res.render(index,pageData.aframear))
 
 // ---------------------------------
 	// DRIVESTORE
