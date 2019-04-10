@@ -10,7 +10,9 @@
   <%- include(nav) %>
 
 <div class="jumbotron">
-  <h1 class="display-4"><%= title %></h1>
+  <div class="intro">
+      <h1 class="display-4"><%= title %></h1>
+  </div>
   
     
 
@@ -18,11 +20,16 @@
 <% if(typeof params !== 'undefined') { 
 
 var writeParams = Object.entries(params) %>
-   <p>params: <%= writeParams %></p>
-    <%- include(content, {myVar:params}) %>
-<% } else { %>  
- <p>no params</p>
-   <%- include(content) %>
+   <div class="intro">
+       <p>params: <%= writeParams %></p>
+   </div>    
+       <%- include(content, {myVar:params}) %>
+      
+<% } else { %> 
+   <div class="intro">
+     <p>no params</p>
+   </div> 
+      <%- include(content) %>
 <% }  %> 
    
    <%- include(footer) %>
