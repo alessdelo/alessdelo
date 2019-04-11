@@ -20,6 +20,8 @@ overflow: hidden;
 }
 </style>
   <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
+  <a-marker-camera type='pattern' url='/static/ar/pattern-marker.patt'></a-marker-camera>
+  
     <!-- handle marker with your own pattern -->
     <a-marker type='pattern' url='/static/ar/pattern-marker.patt'>
       <a-box position='0 0.5 0' material='color: red;'></a-box>
