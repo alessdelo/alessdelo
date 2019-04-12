@@ -23,9 +23,10 @@ overflow: hidden;
 </style>
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
        <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false>
-		<a-marker-camera preset="hiro">
-			<a-box position='0 0.5 0' material="opacity: 0.5;"></a-box>
-		</a-marker-camera>
+		<a-marker preset="hiro">
+		    <a-box position='0 0.5 0' material="opacity: 0.5;"></a-box>
+		</a-marker>
+		<a-entity camera></a-entity>
 	</a-scene>
 
 
