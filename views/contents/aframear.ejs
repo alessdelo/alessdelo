@@ -3,6 +3,8 @@
  <!-- ISSUES -->
  <!-- camera full zoom -->
  <!-- https://github.com/jeromeetienne/AR.js/issues/369 -->
+  <!-- AR does not work -->
+ <!--  https://github.com/jeromeetienne/AR.js/issues/355 -->
  <!-- VR mode is black -->
  
  <script>
@@ -20,7 +22,7 @@ overflow: hidden;
 }
 </style>
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+       <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false; hidden>
 
         <a-assets>
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"></a-asset-item>
