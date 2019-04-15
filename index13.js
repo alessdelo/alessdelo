@@ -309,6 +309,14 @@ aframethr2: {
     footer: footer,
     params: []
   },
+aframe9: { 
+    title:'A-Frame Augmented Reality',
+    content:'../contents/aframe9.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
+  },
 threehello: {	 
     title:'Three.js hello world',
     content:'../contents/threehello.ejs',
@@ -926,6 +934,11 @@ app.get('/aframethr2', (req, res) => res.render(index,pageData.aframethr2))
 // A-FRAME AR
 
 app.get('/aframear', (req, res) => res.render(index,pageData.aframear))
+
+// ---------------------------------
+// A-FRAME 9.0
+
+app.get('/aframe9', (req, res) => res.render(index,pageData.aframe9))
 
 // ---------------------------------
 	// DRIVESTORE
