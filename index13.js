@@ -317,6 +317,14 @@ aframe9: {
     footer: footer,
     params: []
   },
+aframeleap: { 
+    title:'A-Frame with Leap Motion',
+    content:'../contents/aframeleap.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
+  },
 threehello: {	 
     title:'Three.js hello world',
     content:'../contents/threehello.ejs',
@@ -939,6 +947,11 @@ app.get('/aframear', (req, res) => res.render(index,pageData.aframear))
 // A-FRAME 9.0
 
 app.get('/aframe9', (req, res) => res.render(index,pageData.aframe9))
+
+// ---------------------------------
+// A-FRAME WITH LEAP MOTION
+
+app.get('/aframeleap', (req, res) => res.render(index,pageData.aframeleap))
 
 // ---------------------------------
 	// DRIVESTORE
