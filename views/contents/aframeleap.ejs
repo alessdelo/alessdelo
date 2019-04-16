@@ -1,0 +1,27 @@
+<!-- DOCUMENTATION -->
+ <!-- https://github.com/openleap/aframe-leap-hands/blob/master/README.md -->
+ 
+  <script src="//unpkg.com/aframe-leap-hands/dist/aframe-leap-hands.umd.js"></script>
+
+ <script>
+	 $( document ).ready(function() {
+	    $( ".footer, .intro" ).hide();
+	});
+ </script>
+ 
+ 
+
+<style>
+body {
+margin : 0px;
+overflow: hidden;
+}
+</style>
+
+
+<a-scene>
+      <a-entity camera="near: 0.01" look-controls position="0 1.5 0">
+        <a-entity leap-hand="hand: left"></a-entity>
+        <a-entity leap-hand="hand: right"></a-entity>
+      </a-entity>
+</a-scene>
