@@ -22,8 +22,8 @@ overflow: hidden;
 
 <a-scene leap="vr: true" physics="debug: true">
       <a-entity camera="near: 0.01" look-controls position="0 1.5 0">
-        <a-entity leap-hand="hand: right"></a-entity>
-        <a-entity leap-hand="hand: left"></a-entity>
+        <a-entity leap-hand="hand: right; enablePhysics: true"></a-entity>
+        <a-entity leap-hand="hand: left; enablePhysics: true"></a-entity>
 	
 
       </a-entity>
