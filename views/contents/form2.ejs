@@ -26,7 +26,12 @@ document.getElementById("upload_widget").addEventListener("click", function(){
   }, false);
   
    clUrl = $.cloudinary.url('alessdelo', {format: 'json', type: 'list'});
-   printObject('clUrl');
+   
+   
+   document.getElementById("theList").addEventListener("click", function(){
+    printObject('clUrl');
+  }, false);
+   
 </script>
 
 <a href="https://cloudinary.com/documentation/upload_widget">source</a>
@@ -36,9 +41,9 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 
 <!-- <p> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p> -->
 
+<br>
 
-
-<!-- <button id="uploader" class="cloudinary-button">Upload</button> -->
+<button id="theList" class="cloudinary-button">List</button>
 
 
  
