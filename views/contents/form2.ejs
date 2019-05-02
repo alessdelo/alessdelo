@@ -20,6 +20,9 @@ var myWidget = cloudinary.createUploadWidget({
 document.getElementById("upload_widget").addEventListener("click", function(){
     myWidget.open();
   }, false);
+  
+   clUrl = $.cloudinary.url('alessdelo', {format: 'json', type: 'list'});
+   alert('clUrl');
 </script>
 
 <a href="https://cloudinary.com/documentation/upload_widget">source</a>
