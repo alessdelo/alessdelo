@@ -27,10 +27,11 @@ document.getElementById("upload_widget").addEventListener("click", function(){
   
    clUrl = $.cloudinary.url('alessdelo/test1', {format: 'json', type: 'list'});
    
-   
+   */
    document.getElementById("theList").addEventListener("click", function(){
     printObject('clUrl');
   }, false);
+  */
    
 </script>
 
@@ -42,6 +43,18 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 <!-- <p> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p> -->
 
 <br>
+
+<script>
+
+  
+   document.getElementById("theList").addEventListener("click", function(){
+    cloudinary.v2.api.resources(
+  { resource_type: 'raw' }, 
+  function(error, result){printObject(result);});
+  
+  }, false);
+   
+  </script>
 
 <button id="theList" class="cloudinary-button">List</button>
 
