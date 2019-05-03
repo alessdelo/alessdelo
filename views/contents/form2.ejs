@@ -46,6 +46,27 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 <button id="theList" class="cloudinary-button">List</button>
 
 
+
+<!-- <p> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p> -->
+
+<br>
+
+<script type="text/javascript" src="https://product-gallery.cloudinary.com/all.js"></script>
+<div class="wrap" id="wrap"></div>
+<script>
+  cloudinary.galleryWidget({
+    container: '#wrap',
+    cloudName: 'alessdelo',
+    mediaAssets: [{
+      tag: "dress"
+    }, {
+      tag: "dress",
+      mediaType: "video"
+    }],
+  }).render();
+</script>
+
+
  
 
 
