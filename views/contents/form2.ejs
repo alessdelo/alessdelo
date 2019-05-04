@@ -44,12 +44,13 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 
 <br>
 
+
+
+<%- cloudinary.v2.api.resources({ type: 'upload', prefix: 'alessdelo' }, function(error, result){printObject(result)}); %>
+
 <script>
-
-<%- cloudinary.v2.api.resources({ type: 'upload', prefix: '' }, function(error, result){printObject(result)}); %>
-
 /*
-var fetchImg = cloudinary.v2.api.resources({ type: 'upload', prefix: '' }, function(error, result){printObject(result)});
+var fetchImg = cloudinary.v2.api.resources({ type: 'upload', prefix: 'alessdelo' }, function(error, result){printObject(result)});
 
 document.getElementById("fetch").addEventListener("click", function(){
     fetchImg.open();
