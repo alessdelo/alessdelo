@@ -48,13 +48,23 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 
 var fetchImg = cloudinary.v2.api.resources({ type: 'upload', prefix: '' }, function(error, result){printObject(result)});
 
+document.getElementById("fetch").addEventListener("click", function(){
+    fetchImg.open();
+  }, false);
+
+/*
 document.getElementById("theList").addEventListener("click", function(){
     printObject('clUrl');
   }, false);
-
+  */
+  
+  
+/*
 document.getElementById("fetch").addEventListener("click", function(){
   cloudinary.v2.api.resources({ type: 'upload', prefix: '' }, function(error, result){printObject(result)});
 });
+*/
+
 
   /*
    document.getElementById("theList").addEventListener("click", function(){
