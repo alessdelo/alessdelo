@@ -46,11 +46,16 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 
 <script>
 
+<%- cloudinary.v2.api.resources({ type: 'upload', prefix: '' }, function(error, result){printObject(result)}); %>
+
+/*
 var fetchImg = cloudinary.v2.api.resources({ type: 'upload', prefix: '' }, function(error, result){printObject(result)});
 
 document.getElementById("fetch").addEventListener("click", function(){
     fetchImg.open();
   }, false);
+*/
+
 
 /*
 document.getElementById("theList").addEventListener("click", function(){
