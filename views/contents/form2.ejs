@@ -95,16 +95,15 @@ document.getElementById("fetch").addEventListener("click", function(){
 <script type="text/javascript" src="https://product-gallery.cloudinary.com/all.js"></script>
 <div class="wrap" id="wrap"></div>
 <script>
-  cloudinary.galleryWidget({
-    container: '#wrap',
-    cloudName: 'alessdelo',
-    mediaAssets: [{
-      tag: "foo"
-    }
+  
+  var myGallery = cloudinary.galleryWidget({ 
+      container: "wrap", 
+      cloudName: "alessdelo", 
+      mediaAssets: [{ tag: "foo" }],
+      imageBreakpoint: 200 });
       
-      
+  myGallery.render();
 
-  }).render();
 </script>
 
 <div id="wrap">the wrap</div>
