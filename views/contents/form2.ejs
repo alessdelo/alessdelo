@@ -36,7 +36,7 @@ document.getElementById("upload_widget").addEventListener("click", function(){
    
    document.getElementById("theList").addEventListener("click", function(){
       cloudinary.v2.api.resources(
-      function(error, result){printObject(result)});
+      function(error, result){alert(result, error)});
   });
   
    
