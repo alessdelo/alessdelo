@@ -33,11 +33,12 @@ document.getElementById("upload_widget").addEventListener("click", function(){
    // clUrl = $.cloudinary.url('alessdelo/test1', {format: 'json', type: 'list'});
   
   
-   /*
+   
    document.getElementById("theList").addEventListener("click", function(){
-    printObject('clUrl');
-  }, false);
-  */
+      cloudinary.v2.api.resources(
+      function(error, result){console.log(result;)});
+  };
+  
    
 </script>
 
@@ -71,11 +72,11 @@ document.getElementById("theList").addEventListener("click", function(){
   */
   
   
-/*
+
 document.getElementById("fetch").addEventListener("click", function(){
   cloudinary.v2.api.resources({ type: 'upload', prefix: '' }, function(error, result){printObject(result)});
 });
-*/
+
 
 
   /*
