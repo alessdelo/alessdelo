@@ -1,3 +1,110 @@
+  -
+     // clUrl = $.cloudinary.url('alessdelo/test1', {format: 'json', type: 'list'});
+  
+  
+   /*
+   document.getElementById("fetch").addEventListener("click", function(){
+      printObject('test');
+      cloudinary.v2.api.resources(
+      function(error, result){alert(result, error)});
+  });
+  */
+  
+  
+  $( "#test" ).click(function() {
+  alert( "Handler for .click() called." );
+});
+  
+  
+   // clUrl = $.cloudinary.url('alessdelo/test1', {format: 'json', type: 'list'});
+  
+  
+   /*
+   document.getElementById("fetch").addEventListener("click", function(){
+      printObject('test');
+      cloudinary.v2.api.resources(
+      function(error, result){alert(result, error)});
+  });
+  */
+   
+</script>
+
+<a href="https://cloudinary.com/documentation/upload_widget">source</a>
+
+<img src="https://res.cloudinary.com/alessdelo/image/upload/v1556801121/alessdelo/test1/u0g8hinuwe1z384vg6cj.jpg" alt="bla">
+
+
+<!-- <p> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p> -->
+
+<br>
+
+
+<button id="test" class="cloudinary-button">test</button>
+  
+  
+  
+  
+  
+  
+  
+
+<script>
+/*
+var fetchImg = cloudinary.v2.api.resources({ type: 'upload', prefix: 'alessdelo' }, function(error, result){printObject(result, error)});
+document.getElementById("fetch").addEventListener("click", function(){
+    fetchImg.open();
+  }, false);
+*/
+/*
+document.getElementById("theList").addEventListener("click", function(){
+    printObject('clUrl');
+  }, false);
+  */
+  
+  /*
+document.getElementById("fetch").addEventListener("click", function(){
+  cloudinary.v2.api.resources({ type: 'upload', prefix: '' }, function(error, result){printObject(result)});
+});
+*/
+  /*
+   document.getElementById("theList").addEventListener("click", function(){
+        cloudinary.v2.api.resources(
+              { resource_type: 'raw' }, 
+              function(error, result){printObject(result);});
+  }, false);
+  */
+   
+  </script>
+
+<button id="fetch" class="cloudinary-button">Fetch</button>
+
+
+
+<!-- <p> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p> -->
+
+<br>
+
+
+<script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript">
+</script>  
+
+<script>
+  
+  var myGallery = cloudinary.galleryWidget({ 
+      container: "wrap", 
+      cloudName: "alessdelo", 
+      mediaAssets: [{ tag: "foo" }],
+      imageBreakpoint: 200 });
+      
+  myGallery.render();
+</script>
+
+<div id="wrap" style="max-width:80%;margin:auto" >the wrap</div>
+  
+  
+  -------------------------------------------------------------------
+  
+  
   <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
 
   
