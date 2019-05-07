@@ -23,14 +23,18 @@ var myWidget = cloudinary.createUploadWidget({
   }
 )
 
-$( "#fetch" ).click(function() {
-  alert( "Handler for .click() called." );
-});
+
 
 
 document.getElementById("upload_widget").addEventListener("click", function(){
     myWidget.open();
   }, false);
+  
+  
+  $( "#test" ).click(function() {
+  alert( "Handler for .click() called." );
+});
+  
   
    // clUrl = $.cloudinary.url('alessdelo/test1', {format: 'json', type: 'list'});
   
@@ -53,6 +57,10 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 <!-- <p> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p> -->
 
 <br>
+
+
+<button id="test" class="cloudinary-button">test</button>
+
 
 
 
