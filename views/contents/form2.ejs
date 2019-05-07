@@ -35,7 +35,7 @@ document.getElementById("upload_widget").addEventListener("click", function(){
 $(document).ready(function(){
   $("#test").click(function() {
     printObject("test jquery");
-    cloudinary.v2.api.resources(function(error, result){printObject(error)});
+    cloudinary.v2.api.resources(function(error, result){printObject("error")});
   });
 });
 
