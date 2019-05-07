@@ -32,6 +32,12 @@ document.getElementById("upload_widget").addEventListener("click", function(){
  alert('test');
  printObject('test');
  
+ request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, (err, res, body) => {
+  if (err) { return printObject(err); }
+  printObject(body.url);
+  printObject(body.explanation);
+});
+ 
 $(document).ready(function(){
   $("#test").click(function() {
     printObject("test jquery");
