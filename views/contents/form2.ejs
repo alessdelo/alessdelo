@@ -28,10 +28,38 @@ document.getElementById("upload_widget").addEventListener("click", function(){
   }, false);
   
  // ----------------------------------------------------------------------------
+  
+ <script src="https://media-library.cloudinary.com/global/all.js"></script>
+ 
+ 
+ window.ml = cloudinary.createMediaLibrary({
+   cloud_name: 'alessdelo',
+   api_key: process.env.CLOUDINARY_API_KEY,
+   username: 'ale.ele.internos@gmail.com',
+   button_class: 'myBtn',
+   button_caption: 'Select Image or Video',
+ }, {
+     insertHandler: function (data) {
+       data.assets.forEach(asset => { console.log("Inserted asset:",
+       JSON.stringify(asset, null, 2)) })
+       }
+    },
+    document.getElementById("open-btn")
+)
+
+ 
+  // ----------------------------------------------------------------------------
  
  alert('test');
  printObject('test');
  
+ cl_image_tag("https://upload.wikimedia.org/wikipedia/commons/0/0c/Scarlett_Johansson_Césars_2014.jpg"
+  :type => :fetch, :width => 300, :height => 300, 
+  :crop => :crop, :gravity => :north_west,
+  :radius => :max, :effect => :sharpen, :fetch_format => :auto)
+
+ 
+ /*
  const request = require('request');
  
  request('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', { json: true }, (err, res, body) => {
@@ -39,6 +67,7 @@ document.getElementById("upload_widget").addEventListener("click", function(){
   printObject(body.url);
   printObject(body.explanation);
 });
+*/
  
 $(document).ready(function(){
   $("#test").click(function() {
