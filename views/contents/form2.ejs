@@ -59,11 +59,12 @@ document.getElementById("upload_widget").addEventListener("click", function(){
  alert('test');
  printObject('test');
  
+ /*
  cl_image_tag("https://upload.wikimedia.org/wikipedia/commons/0/0c/Scarlett_Johansson_Césars_2014.jpg"
   :type => :fetch, :width => 300, :height => 300, 
   :crop => :crop, :gravity => :north_west,
   :radius => :max, :effect => :sharpen, :fetch_format => :auto)
-
+*/
  
  /*
  const request = require('request');
@@ -74,14 +75,15 @@ document.getElementById("upload_widget").addEventListener("click", function(){
   printObject(body.explanation);
 });
 */
- 
+
+/*
 $(document).ready(function(){
   $("#test").click(function() {
     printObject("test jquery");
     cloudinary.v2.api.resources(function(error, result){printObject("error")});
   });
 });
-
+*/
 
 /*
 document.getElementById("test").addEventListener("click", function(){
