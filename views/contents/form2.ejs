@@ -37,6 +37,8 @@ document.getElementById("upload_widget").addEventListener("click", function(){
  
  <script>
  
+ alert("api key = " + process.env.CLOUDINARY_API_KEY);
+ 
  window.ml = cloudinary.createMediaLibrary({
    cloud_name: 'alessdelo',
    api_key: process.env.CLOUDINARY_API_KEY,
