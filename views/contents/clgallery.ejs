@@ -1,0 +1,22 @@
+<script src="https://media-library.cloudinary.com/global/all.js"></script>
+ 
+ <script>
+ 
+ alert("api key = ");
+ 
+ window.ml = cloudinary.createMediaLibrary({
+   cloud_name: 'alessdelo',
+   api_key: process.env.CLOUDINARY_API_KEY,
+   username: 'ale.ele.internos@gmail.com',
+   button_class: 'myBtn',
+   button_caption: 'Select Image or Video',
+ }, {
+     insertHandler: function (data) {
+       data.assets.forEach(asset => { console.log("Inserted asset:",
+       JSON.stringify(asset, null, 2)) })
+       }
+    },
+    document.getElementById("open-btn")
+)
+  // ----------------------------------------------------------------------------
+</script>
