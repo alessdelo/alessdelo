@@ -1,0 +1,40 @@
+<p class="lead">This is a simple basic Bootstrap form</p>
+<hr class="my-4">
+
+
+<button id="upload_widget" class="cloudinary-button">Upload files</button>
+
+<script type="text/javascript" src="/static/general.js"></script>
+
+
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  
+
+<script>  
+// Cloudinary Upload Widjet
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'alessdelo', 
+  uploadPreset: 'alessdelo_preset'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info); 
+      alert('Done! Here is the image info: ', result.info); 
+      printObject(result.info);
+    }
+  }
+)
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
+  
+// ----------------------------------------------------------------------------
+  
+ </script>
+  
+<!-- <p> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p> -->
+  
+<br>
+
+<p> retrieve an uploaded image having the address </p>
+
+<br>
+
+<img src="https://res.cloudinary.com/alessdelo/image/upload/v1556801121/alessdelo/test1/u0g8hinuwe1z384vg6cj.jpg" alt="bla">
