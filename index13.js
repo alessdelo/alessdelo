@@ -361,6 +361,22 @@ angular1: {
     header: header,
     footer: footer,
     params: []
+  },
+clupload: {	 
+    title:'Cloudinary Upload Widjet',
+    content:'../contents/clupload.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
+  },
+clgallery: {	 
+    title:'Cloudinary Gallery',
+    content:'../contents/clgallery.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
   }
 }
 
@@ -986,6 +1002,15 @@ app.get('/threeobj', (req, res) => res.render(index,pageData.threeobj))
 // ANGULAR 1	
 
 app.get('/angular1', (req, res) => res.render(index,pageData.angular1))
+
+// ---------------------------------
+// CLOUDINARY
+
+    //	Cloudinary Upload Widjet
+    app.get('/clupload', (req, res) => res.render(index,pageData.clupload))
+
+    //	Cloudinary Gallery
+    app.get('/clgallery', (req, res) => res.render(index,pageData.clgallery))
 
 // ----------------------------------
 // ----------------------------------
