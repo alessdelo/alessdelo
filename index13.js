@@ -1012,7 +1012,7 @@ app.get('/angular1', (req, res) => res.render(index,pageData.angular1))
     //	Cloudinary Gallery
 
     app.get('/clgallery', function (req, res) {
-	pageData.clgallery.params[1] = mapsStyle
+	pageData.clgallery.params[1] = process.env.CLOUDINARY_API_KEY
         res.render(index,pageData.clgallery)
     })
 
