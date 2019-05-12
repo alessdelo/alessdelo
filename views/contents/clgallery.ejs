@@ -2,12 +2,14 @@
 <hr class="my-4">
 <% strMyVar = JSON.stringify(myVar, null, 4); %>
 <%= strMyVar %>
+<% var passEjs = strMyVar; %>
 
 <script src="https://media-library.cloudinary.com/global/all.js"></script>
  
  <script>
  var getPassEjs = <%- passEjs %>;
  
+ alert("getPassEjs = " + getPassEjs );
  alert("api key = ");
  
  window.ml = cloudinary.createMediaLibrary({
