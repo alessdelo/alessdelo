@@ -1011,6 +1011,10 @@ app.get('/angular1', (req, res) => res.render(index,pageData.angular1))
 
     //	Cloudinary Gallery
     app.get('/clgallery', (req, res) => res.render(index,pageData.clgallery))
+    app.get('/clgallery', function (req, res) {
+	pageData.clgallery.params[1] = cloudinary.config
+        res.render(index,pageData.clgallery)
+    })
 
 // ----------------------------------
 // ----------------------------------
