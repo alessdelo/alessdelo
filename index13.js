@@ -1010,9 +1010,9 @@ app.get('/angular1', (req, res) => res.render(index,pageData.angular1))
     app.get('/clupload', (req, res) => res.render(index,pageData.clupload))
 
     //	Cloudinary Gallery
-    app.get('/clgallery', (req, res) => res.render(index,pageData.clgallery))
+
     app.get('/clgallery', function (req, res) {
-	pageData.clgallery.params[1] = cloudinary.config
+	pageData.clgallery.params[1] = mapsStyle
         res.render(index,pageData.clgallery)
     })
 
