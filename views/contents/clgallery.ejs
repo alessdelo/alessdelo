@@ -20,7 +20,7 @@
    button_caption: 'Select Image or Video',
  }, {
      insertHandler: function (data) {
-       data.assets.forEach(asset => { console.log("Inserted asset:",
+       data.assets.forEach(asset => { printObject("Inserted asset:",
        JSON.stringify(asset, null, 2)) })
        }
     },
