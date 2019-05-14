@@ -1,1 +1,39 @@
+<p class="lead">Cloudinary - Product Gallery Widjet</p>
+<hr class="my-4">
+<% strMyVar = JSON.stringify(myVar, null, 4); %>
+<%= strMyVar %>
+<% var passEjs = strMyVar; %>
 
+<script type="text/javascript" src="/static/general.js"></script>
+
+<script src="https://product-gallery.cloudinary.com/all.js" type="text/javascript"></script>  
+ 
+ <script>
+ var getPassEjs = parseInt(<%- passEjs %>);
+ 
+ alert("getPassEjs = " + getPassEjs );
+ alert("api key = ");
+ 
+ </script>
+ 
+ 
+<div id="my-gallery" style="max-width:80%;margin:auto">
+</div>
+
+<script>  
+const myGallery= cloudinary.galleryWidget({
+  container: "#my-gallery",
+  cloudName: "alessdelo",
+  mediaAssets: [
+    {tag: "DamagedHelmet"}, // by default mediaType: "image"
+    {tag: "DamagedHelmet", mediaType: "video"}, 
+    {tag: "DamagedHelmet360", mediaType: "spin"},
+    {publicId: "DamagedHelmet3D", mediaType: "3d"}
+  ]
+});
+
+myGallery.render();
+
+alert('finished');
+
+</script>
