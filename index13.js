@@ -377,6 +377,14 @@ clgallery: {
     header: header,
     footer: footer,
     params: []
+  },
+clprodgal: {	 
+    title:'Cloudinary Product Gallery Widjet',
+    content:'../contents/clprodgal.ejs',
+    nav: nav,
+    header: header,
+    footer: footer,
+    params: []
   }
 }
 
@@ -1014,6 +1022,13 @@ app.get('/angular1', (req, res) => res.render(index,pageData.angular1))
     app.get('/clgallery', function (req, res) {
 	pageData.clgallery.params[0] = process.env.CLOUDINARY_API_KEY
         res.render(index,pageData.clgallery)
+    })
+
+    //	Cloudinary Product Gallery Widjet
+
+    app.get('/clprodgal', function (req, res) {
+	pageData.clprodgal.params[0] = process.env.CLOUDINARY_API_KEY
+        res.render(index,pageData.clprodgal)
     })
 
 // ----------------------------------
